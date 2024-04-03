@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '@theme-original/Footer';
+// import Footer from '@theme-original/Footer';
 import type FooterType from '@theme/Footer';
 import type {WrapperProps} from '@docusaurus/types';
 

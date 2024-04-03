@@ -8,7 +8,7 @@ I am on a journey of self-discovery, self-learning, and simple living and I'd lo
 I'm glad you found me and I can't wait to connect!!
 
 <h3>Skills</h3>
-<p align="left">
+<p>
 <a href="https://www.typescriptlang.org/">
     <img
       src="https://cdn.iconscout.com/icon/free/png-256/free-typescript-3521774-2945272.png?f=webp"
