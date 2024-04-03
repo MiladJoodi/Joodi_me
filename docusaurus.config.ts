@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: "You can call me Joodi",
   tagline: "Simplify Code in One Minute",
-  favicon: 'img/logo.svg',
+  favicon: 'img/logo.png',
 
   // Set the production url of your site here
   url: 'https://joodi.me',
@@ -61,7 +61,7 @@ const config: Config = {
       title: 'Joodi',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -84,59 +84,59 @@ const config: Config = {
         },
       ],
     },
-    // footer: {
-    //   style: 'dark',
-    //   links: [
-    //     {
-    //       title: 'Docs',
-    //       items: [
-    //         {
-    //           label: 'Tutorial',
-    //           to: '/docs/intro',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: 'Community',
-    //       items: [
-    //         {
-    //           label: 'Stack Overflow',
-    //           href: 'https://stackoverflow.com/users/14670559/joodi',
-    //         },
-    //         {
-    //           label: 'GitHub',
-    //           href: 'https://github.com/facebook/docusaurus',
-    //         },
-    //         {
-    //           label: 'Linkedin',
-    //           href: 'https://www.linkedin.com/in/MiladJoodi/',
-    //         },
-    //         {
-    //           label: 'Twitter',
-    //           href: 'https://twitter.com/milad_joodi',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       title: 'More',
-    //       items: [
-    //         {
-    //           label: 'Blog',
-    //           to: '/blog',
-    //         },
-    //         {
-    //           label: 'Dev',
-    //           to: 'https://dev.to/joodi',
-    //         },
-    //         {
-    //           label: 'Medium',
-    //           to: 'https://medium.com/@MiladJoodi',
-    //         },
-    //       ],
-    //     },
-    //   ],
-    //   copyright: `Copyright © ${new Date().getFullYear()} by Joodi`,
-    // },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Tutorial',
+              to: '/docs/intro',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/users/14670559/joodi',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
+            },
+            {
+              label: 'Linkedin',
+              href: 'https://www.linkedin.com/in/MiladJoodi/',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/milad_joodi',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+            {
+              label: 'Dev',
+              to: 'https://dev.to/joodi',
+            },
+            {
+              label: 'Medium',
+              to: 'https://medium.com/@MiladJoodi',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} by Joodi`,
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

@@ -8,7 +8,7 @@ type Props = WrapperProps<typeof FooterType>;
 export default function FooterWrapper(props: Props): JSX.Element {
   return (
     <>
-      <Footer {...props} />
+      {/* <Footer {...props} /> */}
     </>
   );
 }
