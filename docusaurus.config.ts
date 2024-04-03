@@ -3,9 +3,9 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: "This is Joodi",
-  tagline: "I'm trying to show simplify the codes",
-  favicon: 'img/logo.png',
+  title: "You can call me Joodi",
+  tagline: "Simplify Code in One Minute",
+  favicon: 'img/logo.svg',
 
   // Set the production url of your site here
   url: 'https://joodi.me',
@@ -61,7 +61,7 @@ const config: Config = {
       title: 'Joodi',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.png',
+        src: 'img/logo.svg',
       },
       items: [
         {
