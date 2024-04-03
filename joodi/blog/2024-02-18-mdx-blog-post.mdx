@@ -1,0 +1,36 @@
+---
+slug: display-images-from-all-domains
+title: How to display images from all domains in Next.js
+authors:
+  name: Joodi
+  title: Published in Linkedin
+  url: https://dev.to/joodi/strapi-is-great-1il2
+  image_url: https://avatars.githubusercontent.com/u/43522323?v=4
+tags: [next.js]
+---
+
+To allow Next.js to display images from all domains, modify your "next.config.js" file to add an object with protocol and hostname properties to the "remotePatterns" array property.
+
+
+:::tip
+
+Use ** in **next.config.mjs**
+
+```jsx
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+              protocol: "https",
+              hostname: "**",
+            },
+          ],
+    }
+};
+
+export default nextConfig;
+```
+
+
+:::

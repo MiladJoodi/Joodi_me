@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* 18181b */
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+body{
+  overflow-y: hidden;
+  height: calc(100vh-100px);
+  font-family: "Poppins" !important;
+}
+.features_src-components-HomepageFeatures-styles-module{
+  padding: 0 !important;
+}
+.hero{
+  /* background-color: #f5f5f5; */
+    /* background-color: rgb(235, 235, 235); */
+
+    /* background-image: linear-gradient(to top, #09203f 0%, #537895 100%); */
+/* background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%); */
+
+
+/* background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%); */
+
+
+
+
+}
+.header{
+  height: 100vh;
+}
+.hero{
+  /* height: 100vh; */
+
+  background: none !important;
+  /* background-color: #CDDCDC; */
+  /* background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%); */
+  /* background-blend-mode: screen, overlay; */
+
+  background-image: url("https://tailwindcss.com/_next/static/media/docs@tinypng.d9e4dcdc.png");
+
+}
+.hero__title, .hero__subtitle{
+  color: #18181b;
+  /* color: white; */
+}
+.button--lg{
+  width: 100%;
+  max-width: 250px;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero__title {
+    font-size: 2.5rem;
+    padding-top: 30px;
+  }
+}
