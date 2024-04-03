@@ -61,7 +61,7 @@ const config: Config = {
       title: 'Joodi',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.png',
+        src: 'img/logo.svg',
       },
       items: [
         {
