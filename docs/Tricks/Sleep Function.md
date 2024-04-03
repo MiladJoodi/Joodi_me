@@ -2,10 +2,9 @@
 sidebar_position: 3
 ---
 
-# Connect with Mongoose
+# Sleep Function
 
 you can use this cool manual js sleep function:
-
 
 
 and  before the fetch, you can call it like:
