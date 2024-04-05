@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Form Validation React Hook Form & Server Action
+# React Hook Form & Server Action
 
 Don't forget "use client" for form component
 
