@@ -78,7 +78,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'http://github.com/miladjoodi',
+          href: 'https://github.com/MiladJoodi/Joodi_me',
           label: 'GitHub',
           position: 'right',
         },
