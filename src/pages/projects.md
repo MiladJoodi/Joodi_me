@@ -82,7 +82,6 @@
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
   </tr>
-    </tr>
       <tr>
     <td>
     <img
@@ -124,10 +123,136 @@
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
   </tr>
-
-
+    <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474148976/weqc.jpg"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Next.js <br />
+    Tailwind Css <br />
+    Aceternity Ui <br />
+    </td>
+    <td>
+    Responsive Portfolio <br/>
+    <a href="https://github.com/MiladJoodi/Portfolio_2" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+    <tr>
+    <td>
+    <img
+      src="https://s31.picofile.com/file/8474147842/ty.jpg"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Typescript <br />
+    Next.js <br />
+    Tailwind Css<br />
+    Next-Auth<br />
+    </td>
+    <td>
+    Restaurant Food Delivery App <br/>
+    <a href="https://github.com/MiladJoodi/Restaurant_Food_Delivery_App" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+      <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474148100/New_Project.png"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Typescript <br />
+    Next.js <br />
+    Tailwind Css<br />
+    Next-Auth<br />
+    </td>
+    <td>
+    Nexu-Auth Credentials<br/> with Username and Password<br/> & Github Providers <br/>
+    <a href="https://github.com/MiladJoodi/Credentials_and_Github_NextAuth_MongoDB" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+    </tr>
+    <tr>
+    <td>
+    <img
+      src="https://s31.picofile.com/file/8474148234/swww.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Next.js <br />
+    Tailwind Css<br />
+    </td>
+    <td>
+    Simple Educal Online<br/>
+    <a href="https://github.com/MiladJoodi/Simple_Educal_Online_Website" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+    <tr>
+    <td>
+    <img
+      src="https://s31.picofile.com/file/8474148518/er5.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Typescript <br />
+    Next.js <br />
+    Framer Motion<br />
+    Css<br />
+    </td>
+    <td>
+    Book App <br/>
+    <a href="https://github.com/MiladJoodi/Book_App_Nextjs" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+    <tr>
+    <td>
+    <img
+      src="https://s31.picofile.com/file/8474148718/high.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Next.js <br />
+    Tailwind Css<br />
+    Headless ui<br />
+    </td>
+    <td>
+    Highly Responsive Gallery <br/>
+    <a href="https://github.com/MiladJoodi/Highly_Responsive_Website" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
     
-  
   
   <tr>
     <td>.</td>
