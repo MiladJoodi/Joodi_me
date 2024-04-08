@@ -35,7 +35,7 @@ export const toBase64=(str:string)=>typeof window==="undefined"?Buffer.from(str)
 
 
 Set placeholder at Image:
-```
+```jsx
 <Image
         src={item?.image || "/placeholder.png"}
         placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
