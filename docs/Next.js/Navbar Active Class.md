@@ -2,12 +2,12 @@
 sidebar_position: 3
 ---
 
-# Navbar active class
+# Navbar active class 
 
 Don't forget "use client"
 
 
-![title](https://s30.picofile.com/file/8474190300/ac.jpg)
+![title](https://s31.picofile.com/file/8474190650/saq.jpg)
 
 Create a file at `_components/Header.tsx`:
 
@@ -87,6 +87,27 @@ const Navlink = ({item}:{ item: NavlinkProps }) => {
 }
 
 export default Navlink;
+```
+
+
+Custom style in : `global.css`
+```
+/* Custom style */
+.active{
+  color: rgb(224 93 93);
+  position: relative;
+
+  &:before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 45%;
+    background-color: rgb(224 93 93);
+  }
+}
 ```
 
 
