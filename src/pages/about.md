@@ -271,10 +271,17 @@ I'm glad you found me and I can't wait to connect!!
       height="39"
     />
   </a>
-    <a href="https://strapi.io/">
+    <a href="https://clerk.com/">
     <img
       src="https://pipedream.com/s.v0/app_dBhw8k/logo/orig"
       width="38"
+      height="38"
+    />
+  </a>
+  <a href="https://kinde.com/">
+    <img
+      src="https://s31.picofile.com/file/8474203634/kindde.jpg"
+      width="60"
       height="38"
     />
   </a>
@@ -309,9 +316,16 @@ I'm glad you found me and I can't wait to connect!!
       height="40"
     />
   </a>
-  <a href="https://clerk.com/">
-    <imgmo
-      src="https://camo.githubusercontent.com/3b900b4e92e96c14c9e00818d9bd3a97d8b9de9344be4f5455113ac3f85eced8/68747470733a2f2f696d616765732e636c65726b2e636f6d2f7374617469632f6c6f676f2d6c696768742d6d6f64652d343030783430302e706e67"
+  <a href="https://www.framer.com/motion/">
+    <img
+      src="https://seeklogo.com/images/F/framer-motion-logo-DA1E33CAA1-seeklogo.com.png"
+      width="37"
+      height="37"
+    />
+  </a>
+  <a href="https://docusaurus.io/">
+    <img
+      src="https://camo.githubusercontent.com/21b4f633bdf74b9bcb372669da2adf0779f21986a581e6bb997767eb07cb005d/68747470733a2f2f646f63757361757275732e696f2f696d672f646f63757361757275732e737667"
       width="41"
       height="41"
     />
