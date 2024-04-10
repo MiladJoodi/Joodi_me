@@ -22,10 +22,12 @@
     <td>
     Typescript <br />
     Next.js <br />
-    Tailwind CSS <br />
-    Embla Carousel <br />
-    App Router <br />
-    Shimmer Loading <br />
+    Tailwind Css <br />
+    ShadCN UI <br />
+    Calendly <br />
+    React Youtube <br />
+    AOS for Animation <br />
+    Particles Background <br />
     </td>
         <td>
         Highstorm Landing Page <br/>
