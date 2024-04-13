@@ -13,6 +13,33 @@
   <tr>
     <td>
     <img
+      src="https://camo.githubusercontent.com/53c6f758820e38abd583da26f79d4adee6ab8fa71aa2d012222de704324a5c8c/68747470733a2f2f7333302e7069636f66696c652e636f6d2f66696c652f383437343330323237362f70686f746f6772617068795f365f2e4a5047"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Next.js <br />
+    Tailwind Css <br />
+    Shadcn UI <br />
+    Framer Motion <br />
+    React Count Up <br />
+    React Awesome Reveal <br />
+    Next-theme for Dark <br />
+    Swiper for Sliders <br />
+    </td>
+        <td>
+        Photography Template <br/>
+        2024-04-13 <br/>
+    <a href="https://github.com/MiladJoodi/HighStorm" target="_top">
+    <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
       src="https://s31.picofile.com/file/8474257150/highstorm_1_.JPG"
       alt="ts"
       width="320"
@@ -31,6 +58,7 @@
     </td>
         <td>
         Highstorm Landing Page <br/>
+        2024-04-11 <br/>
     <a href="https://github.com/MiladJoodi/HighStorm" target="_top">
     <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
