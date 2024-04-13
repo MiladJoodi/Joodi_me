@@ -323,18 +323,25 @@ I'm glad you found me and I can't wait to connect!!
       height="40"
     />
   </a>
+    <a href="https://swiperjs.com/">
+    <img
+      src="https://swiperjs.com/images/swiper-logo.svg"
+      width="35"
+      height="35"
+    />
+  </a>
   <a href="https://www.framer.com/motion/">
     <img
       src="https://seeklogo.com/images/F/framer-motion-logo-DA1E33CAA1-seeklogo.com.png"
-      width="37"
-      height="37"
+      width="34"
+      height="34"
     />
   </a>
   <a href="https://docusaurus.io/">
     <img
       src="https://camo.githubusercontent.com/21b4f633bdf74b9bcb372669da2adf0779f21986a581e6bb997767eb07cb005d/68747470733a2f2f646f63757361757275732e696f2f696d672f646f63757361757275732e737667"
-      width="41"
-      height="41"
+      width="38"
+      height="38"
     />
   </a>
 
@@ -343,25 +350,7 @@ I'm glad you found me and I can't wait to connect!!
 
 <h3>The Latest Experiences:</h3>
 
- ✔ [Mini University Details App](https://github.com/MiladJoodi/Coursera_News_App) - Next.js , Tailwind.css and Clerk for auth.
-
- ✔ [Job Finder App](https://github.com/MiladJoodi/Job_Finder_React_js_Tailwind_css) - React.js & Tailwind css
-
-  ✔ [Online Glocery Store](https://github.com/MiladJoodi/Online_Glocery_Store_Next.js_Tailwind_Strapi) - Full-stack Online Grocery Store app using Next.js, Strapi, Tailwind css & Shadcn Ui.
- 
- ✔ [Restaurant Food Delivery App](https://restaurant-food-delivery-app.vercel.app/) - Typescript, Next js & Tailwind css.
- 
- ✔ [Doctor Appointment Booking App](https://doctor-appointment-booking-coral.vercel.app/) - Next.js & Tailwind css.
- 
- ✔ [Real E-State Website](https://real-estate-theta-gray.vercel.app/) - Typescript, Next.js & Tailwind css.
-
- ✔ [ECommerce Pizza Website](https://e-commerce-pizza-website.vercel.app/) - Next.js & Tailwind css.
-
- ✔ [Highly Responsive Website](https://highly-responsive-website.vercel.app/) - React js & Tailwind css.
-
- ✔ [Responsive Portfolio](https://portfolio-2-plum-eta.vercel.app/) - Next.js, Tailwind & Aceternity.
-
- ✔ [Explore Anime](https://anime-nextjs-blond.vercel.app/) - Next.js SSR with Server Actions, Infinite Scroll & Framer Motion.
+ ✔ [View All Projects](https://joodi.me/projects)
 
 
 
