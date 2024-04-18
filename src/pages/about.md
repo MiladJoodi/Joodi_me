@@ -344,6 +344,20 @@ I'm glad you found me and I can't wait to connect!!
       height="38"
     />
   </a>
+  <a href="https://docusaurus.io/">
+    <img
+      src="https://react-hook-form.com/images/logo/react-hook-form-logo-only.png"
+      width="38"
+      height="38"
+    />
+  </a>
+  <a href="https://formik.org/">
+    <img
+      src="https://img.stackshare.io/service/8846/preview.png"
+      width="38"
+      height="38"
+    />
+  </a>
 
 </p>
 
