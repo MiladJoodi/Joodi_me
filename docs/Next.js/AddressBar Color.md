@@ -9,7 +9,7 @@ themeColor
 
 ![title](https://s30.picofile.com/file/8474617768/address.jpg)
 
-Create a file at `layout.tsx`:
+ `layout.tsx`:
 
 ```tsx
 import type { Viewport } from 'next'
