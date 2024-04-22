@@ -2,6 +2,7 @@
 
 # About Me
 
+This is Joodi (Meaning of Joodi is Kind, working) \
 A self taught Web Developer who enjoys creating content on web develop and Front-End. \
 Sharing what I learn as I learn it to help and motivate others is what keeps me going. \
 I am on a journey of self-discovery, self-learning, and simple living and I'd love for you to join me.
