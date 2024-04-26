@@ -449,6 +449,33 @@
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
   </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474737400/jo.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Typescript <br />
+    React.js <br />
+    i18next<br />
+    React Icons<br />
+    </td>
+    <td>
+    Personal Website <br/>
+    2023-12-26 <br/>
+    <a href="https://milad-joodi-biography.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Biography" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
     <tr>
     <td>
     <img
@@ -502,7 +529,229 @@
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
   </tr>
-    
+    <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474734992/r2.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Typescript <br />
+    Next.js <br />
+    Tailwind Css<br />
+    Framer Motion<br />
+    Infinite Scroll<br />
+    Server Actions<br />
+    </td>
+    <td>
+    Anime Explore <br/>
+    Server Side App <br/>
+    2024-02-21 <br/>
+    <a href="https://anime-nextjs-blond.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Anime_Nextjs" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474735226/r3.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    React.js <br />
+    Tailwind Css<br />
+    Framer Motion<br />
+    React Toastify<br />
+    React icons<br />
+    </td>
+    <td>
+    Amin Panel <br/>
+    2023-12-23 <br/>
+    <a href="https://tailwind-projects-three.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Tailwind_Projects/tree/main/02.Dashboard-AP" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474735492/q1.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    React.js <br />
+    React Router Dom <br />
+    React Icons<br />
+    </td>
+    <td>
+    CMS - Persian <br/>
+    2023-11-14 <br/>
+    <a href="https://cms-persian-2.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Projects/tree/main/cms_shop_persian2" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474735418/a1.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    React.js <br />
+    Chart.js <br />
+    Recharts<br />
+    React Icons<br />
+    </td>
+    <td>
+    Dashboard Admin <br/>
+    2023-10-03 <br/>
+    <a href="https://dashboard-admin-oregbqmt3-miladjoodi.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/React_Projects/tree/main/01.Dashboard_Admin" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s31.picofile.com/file/8474736434/z1.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    React.js <br />
+    Bootstrap <br />
+    React Router Dom<br />
+    Recharts<br />
+    React Icons <br />
+    </td>
+    <td>
+    Dashboard Admin <br/>
+    2024-02-21 <br/>
+    <a href="https://dashboard-admin-persian.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Projects/tree/main/Dashboard-Persian" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s31.picofile.com/file/8474736726/d1.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    React.js <br />
+    Tailwind Css<br />
+    i18next<br />
+    React Toggle<br />
+    </td>
+    <td>
+    Multi Language Form <br/>
+    2024-01-07 <br/>
+    <a href="https://multilang-ten.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/React_Exersices3/tree/main/18.react-i18next-RegisterForm" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474737118/dash1.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Next.js <br />
+    Chartjs<br />
+    React Hook Form<br />
+    React Hot Toast<br />
+    Jsonwebtoken<br />
+    Bcryptjs<br />
+    Cookie<br />
+    </td>
+    <td>
+    Dashboard - Auth <br/>
+    2024-01-01 <br/>
+    <a href="https://dashboard-auth-nine.vercel.app/signup" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Next_Exersices1/tree/main/11.Dashboard-Auth-Jwt" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474735942/rr1.png"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    React.js <br />
+    Context <br />
+    React Icons<br />
+    </td>
+    <td>
+    Shopping Cart <br/>
+    Context <br/>
+    2023-10-05 <br/>
+    <a href="https://shoppingpersian1.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Projects/tree/main/shopping_persian_1" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
   
   <tr>
     <td>.</td>
