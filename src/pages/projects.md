@@ -503,7 +503,6 @@
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
   </tr>
-    <tr>
     <td>
     <img
       src="https://s31.picofile.com/file/8474148718/high.JPG"
@@ -631,7 +630,7 @@
     <td>
     Dashboard Admin <br/>
     2023-10-03 <br/>
-    <a href="https://dashboard-admin-oregbqmt3-miladjoodi.vercel.app/" target="_top">
+    <a href="https://dashboard-admin-sage-eight.vercel.app/" target="_top">
     <span>Preview</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a><br/>
@@ -752,6 +751,58 @@
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
   </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s31.picofile.com/file/8474737568/c1.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Html <br />
+    Css <br />
+    </td>
+    <td>
+    Agency Landing Page <br/>
+    2024-03-25 <br/>
+    <a href="https://landing-page-codsoft.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/CODSOFT/tree/main/02.Landing-Page_Agency" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+    <tr>
+    <tr>
+    <td>
+    <img
+      src="https://s31.picofile.com/file/8474737876/yu.png"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Html <br />
+    Css <br />
+    </td>
+    <td>
+    Shop - Landing Page <br/>
+    2023-08-16 <br/>
+    <a href="https://camo.githubusercontent.com/0034c7ba1b9ea80c00f0eace745c6a63df0ae514e26be381a1365519901ccb8c/68747470733a2f2f7333312e7069636f66696c652e636f6d2f66696c652f383436373235383535302f73637265656e636170747572655f66696c655f435f55736572735f48505f4465736b746f705f50726f6a6563745f325f696e6465785f68746d6c5f323032335f30385f31365f32315f33335f35322e706e67" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Projects/tree/main/Project-2" target="_top">
+     <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+    <tr>
   
   <tr>
     <td>.</td>
