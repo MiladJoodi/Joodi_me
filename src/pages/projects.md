@@ -29,7 +29,11 @@
         <td>
         Shavaz<br/>
         2024-04-25 <br/>
-    <a href="https://shavaz.vercel.app/" target="_top">
+    <a href="https://real-estate-miladjoodi.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>    
+    <a href="https://github.com/MiladJoodi/Shavaz" target="_top">
     <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
@@ -51,12 +55,16 @@
         <td>
         Solo Travel Landing Page<br/>
         2024-04-18 <br/>
+    <a href="https://travel-website-beta-gold.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Travel_Website" target="_top">
     <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
   </tr>
-  <tr>
+   <tr>
     <td>
     <img
       src="https://camo.githubusercontent.com/53c6f758820e38abd583da26f79d4adee6ab8fa71aa2d012222de704324a5c8c/68747470733a2f2f7333302e7069636f66696c652e636f6d2f66696c652f383437343330323237362f70686f746f6772617068795f365f2e4a5047"
@@ -78,6 +86,37 @@
         <td>
         Photography Template <br/>
         2024-04-13 <br/>
+    <a href="https://photography-website-alpha.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Photography_Website" target="_top">
+    <span>Source</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
+      src="https://s30.picofile.com/file/8474732684/r1.JPG"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Next.js <br />
+    Tailwind Css <br />
+    Shadcn UI <br />
+    Lucide for icons <br />
+    </td>
+        <td>
+        Responsive Real E-State <br/>
+        2024-03-01 <br/>
+    <a href="https://real-estate-miladjoodi.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Photography_Website" target="_top">
     <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -105,6 +144,10 @@
         <td>
         Highstorm Landing Page <br/>
         2024-04-11 <br/>
+    <a href="https://high-storm.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/HighStorm" target="_top">
     <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -129,6 +172,11 @@
     </td>
         <td>
         Nexus <br/>
+        2024-04-18 <br/>
+    <a href="https://nexus-amber.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Nexus" target="_top">
     <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -150,7 +198,12 @@
     Lucide for icons <br />
     </td>
         <td>
-        Nexus <br/>
+        Job Board <br/>
+        2024-04-18 <br/>
+    <a href="https://job-board-sepia-six.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Job_Board" target="_top">
     <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -175,6 +228,11 @@
     </td>
         <td>
         Mini University Details <br/>
+        2024-03-31 <br/>
+    <a href="https://uni-news-app.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Coursera_News_App" target="_top">
     <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -197,6 +255,11 @@
     </td>
     <td>
     Job Finder UI<br/>
+    2024-03-25 <br/>
+    <a href="https://job-finder-react-js-tailwind-css.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Job_Finder_React_js_Tailwind_css" target="_top">
      <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -222,7 +285,13 @@
     Lucide Icon<br />
     </td>
     <td>
-    Full stack <br/> Online Grocery Store App <br/>
+    Full stack <br/> 
+    Online Grocery Store App <br/>
+    2024-03-25 <br/>
+    <a href="https://job-finder-react-js-tailwind-css.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Job_Finder_React_js_Tailwind_css" target="_top">
      <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -243,8 +312,13 @@
     Shadcn ui<br />
     </td>
     <td>
-    Doctor Appointment <br/> Booking App <br/>
-    <a href="https://github.com/MiladJoodi/ECommerce_Pizza_Website" target="_top">
+    Doctor Appointment <br/>
+    2024-04-05 <br/>
+    <a href="https://doctor-appointment-booking-coral.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
+    <a href="https://github.com/MiladJoodi/Doctor_Appointment_Booking_App" target="_top">
      <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a></td>
@@ -264,6 +338,11 @@
     </td>
     <td>
     ECommerce Pizza <br/>
+    2024-04-18 <br/>
+    <a href="https://e-commerce-pizza-website.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/ECommerce_Pizza_Website" target="_top">
      <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -285,6 +364,11 @@
     </td>
     <td>
     Responsive Portfolio <br/>
+    2024-02-26 <br/>
+    <a href="https://portfolio-2-plum-eta.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Portfolio_2" target="_top">
      <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -307,6 +391,11 @@
     </td>
     <td>
     Restaurant Food Delivery App <br/>
+    2024-03-18 <br/>
+    <a href="https://restaurant-food-delivery-app.vercel.app/" target="_top">
+    <span>Preview</span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>
     <a href="https://github.com/MiladJoodi/Restaurant_Food_Delivery_App" target="_top">
      <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
@@ -329,6 +418,7 @@
     </td>
     <td>
     Nexu-Auth Credentials<br/> with Username and Password<br/> & Github Providers <br/>
+    2024-03-18 <br/>
     <a href="https://github.com/MiladJoodi/Credentials_and_Github_NextAuth_MongoDB" target="_top">
      <span>Source</span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
