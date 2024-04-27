@@ -5,7 +5,7 @@
 
 <table>
   <tr>
-    <th>Preview</th>p
+    <th>Preview</th>
     <th>Technologies</th>
     <th>Description</th>
   </tr>
