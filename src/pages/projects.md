@@ -822,7 +822,7 @@
     <td>
     Shop - Landing Page <br/>
     2023-08-16 <br/>
-    <a href="https://camo.githubusercontent.com/0034c7ba1b9ea80c00f0eace745c6a63df0ae514e26be381a1365519901ccb8c/68747470733a2f2f7333312e7069636f66696c652e636f6d2f66696c652f383436373235383535302f73637265656e636170747572655f66696c655f435f55736572735f48505f4465736b746f705f50726f6a6563745f325f696e6465785f68746d6c5f323032335f30385f31365f32315f33335f35322e706e67" target="_top">
+    <a href="https://s30.picofile.com/file/8474845500/html_min.png" target="_top">
     <span>Preview </span>
     <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
     </a><br/>
