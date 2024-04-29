@@ -11,7 +11,7 @@ We will need two things to start, a form, to post to the form action, and the se
 #### Form Actions
 Let’s start on the server side first. To create a server action we create another module in our application, for example `action.ts`  and in that file we define a server action like so:
 
-```tex
+```tsx
 "use server";
 
 type FormState = {
