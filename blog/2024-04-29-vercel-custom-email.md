@@ -4,12 +4,14 @@ title: How to create free email forwarding for your vercel app custom domain
 authors:
   name: Joodi
   title: Published in Linkedin
-  url: https://www.linkedin.com/posts/miladjoodi_kinde-nextabrauth-nextjsabrauthentication-activity-7170461082841464832-LT0H/?utm_source=share&utm_medium=member_desktop
+  url: https://www.linkedin.com/posts/miladjoodi_vercel-nextjs-improvmx-activity-7190726145284182018-Si5k?utm_source=share&utm_medium=member_desktop
   image_url: https://avatars.githubusercontent.com/u/43522323?v=4
-tags: [nextjs, nextjs14, improvmx ]
+tags: [nextjs, nextjs14, improvMX ]
 ---
- During my day to day use, I missed having a personalized email service with my domain, for example info@joodi.me
+ During my day to day use, I missed having a personalized email service with my domain, for example info[at]joodi.me
 I looked on the Vercel dashboard and saw that they didn't offer this type of service, so I started searching for third-party services and found **[ImprovMX](https://improvmx.com/)** .
+
+![](https://s30.picofile.com/file/8474852726/wroject.png)
 
 What is ImprovMX?
 ImprovMX offers an email forwarding service. What it basically does is catch all emails that arrive at your domain, for example, all emails that arrive at @joodi.me will be redirected to another email that I informed.
