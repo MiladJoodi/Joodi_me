@@ -6,7 +6,7 @@ authors:
   title: Published in Linkedin
   url: https://www.linkedin.com/posts/miladjoodi_kinde-nextabrauth-nextjsabrauthentication-activity-7170461082841464832-LT0H/?utm_source=share&utm_medium=member_desktop
   image_url: https://avatars.githubusercontent.com/u/43522323?v=4
-tags: [nextjs, nextjs14, kende ]
+tags: [nextjs, nextjs14, kinde ]
 ---
 **[Kinde](https://kinde.com/)**
  Are you seeking a robust and secure authentication solution for your applications? ✔️
