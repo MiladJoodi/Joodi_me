@@ -84,12 +84,11 @@ We can display that state easily by simply adding it to the JSX.
       ...
     </form>
   );
-
 ```
 
 show Toast with Shadcn
-
-     useEffect(()=> {
+```tsx 
+useEffect(()=> {
         if(state.message === "success"){
             toast({
                 title: "Hooray 🍕",
@@ -103,6 +102,7 @@ show Toast with Shadcn
             })
         }
     }, [state])
+```
     
 
 
