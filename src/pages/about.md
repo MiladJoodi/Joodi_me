@@ -359,6 +359,13 @@ I'm glad you found me and I can't wait to connect!!
       height="38"
     />
   </a>
+  <a href="https://apexcharts.com/" target="_blank" rel="noreferrer">
+    <img
+      src="https://apexcharts.com/wp-content/themes/apexcharts/img/apexcharts-logo-trimmed.svg"
+      width="38"
+      height="38"
+    />
+  </a>
 
 </p>
 
