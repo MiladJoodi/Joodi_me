@@ -871,7 +871,7 @@
     Tailwind Css <br />
     </td>
     <td>
-    Simple Login Page<br/>
+    Responsive Login Page<br/>
     2024-05-16 <br/>
     <a href="https://miladjoodi.github.io/Login_Screen_Tailwind/" target="_top">
     <span>Preview </span>
