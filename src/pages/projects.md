@@ -13,6 +13,37 @@
   <tr>
     <td>
     <img
+      src="https://camo.githubusercontent.com/f3f9f56d9938892434653217ae85dde41f020c486451f10b592fbd00859311df/68747470733a2f2f7333302e7069636f66696c652e636f6d2f66696c652f383437353634323638342f666f726d312e706e67"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Typescript <br />
+    Next.js <br />
+    Tailwind Css <br />
+    ShadCn UI ✔️<br />
+    React-hook-form ✔️<br />
+    Zod ✔️<br />
+    React-Icons <br />
+    </td>
+        <td>
+        Signin & Signup<br/>
+        Form Validation<br/>
+        2024-05-18 <br/>
+    <a href="https://form-shadcn.vercel.app/signup" target="_top">
+    <span>Preview </span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>    
+    <a href="https://github.com/MiladJoodi/SignIn_SignUp_FormValidation" target="_top">
+    <span>Source </span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
       src="https://s30.picofile.com/file/8475511892/simple_dashboard.JPG"
       alt="ts"
       width="320"
@@ -22,7 +53,7 @@
     <td>
     React.js <br />
     Tailwind Css <br />
-    ApexCharts <br />
+    ApexCharts ✔️<br />
     </td>
         <td>
         Simple Dashboard Admin<br/>
@@ -49,7 +80,7 @@
     Typescript <br />
     Next.js <br />
     Tailwind Css <br />
-    MongoDB <br />
+    MongoDB ✔️<br />
     Prisma ✔️ <br />
     Server Action️ <br />
     React Icons <br />
@@ -79,7 +110,7 @@
     Typescript <br />
     Next.js <br />
     Tailwind Css <br />
-    Swiper <br />
+    Swiper ✔️<br />
     React Slick <br />
     </td>
         <td>
@@ -133,11 +164,11 @@
     Next.js <br />
     Tailwind Css <br />
     Shadcn UI <br />
-    Framer Motion <br />
+    Framer Motion ✔️<br />
     React Count Up <br />
     React Awesome Reveal <br />
-    Next-theme for Dark <br />
-    Swiper for Sliders <br />
+    Next-theme for Dark ✔️<br />
+    Swiper<br />
     </td>
         <td>
         Photography Template <br/>
@@ -194,7 +225,7 @@
     ShadCN UI <br />
     Calendly <br />
     React Youtube <br />
-    AOS for Animation <br />
+    AOS for Animation ✔️<br />
     Particles Background <br />
     </td>
         <td>
@@ -250,7 +281,7 @@
     <td>
     Next.js <br />
     Tailwind CSS <br />
-    Kinde for Auth <br />
+    Kinde for Auth ✔️<br />
     Lucide for icons <br />
     </td>
         <td>
@@ -280,7 +311,7 @@
     Tailwind Css <br />
     MongoDB <br />
     Mongoose <br />
-    Clerk for Auth <br />
+    Clerk for Auth ✔️<br />
     </td>
         <td>
         Mini University Details <br/>
@@ -415,7 +446,7 @@
     <td>
     Next.js <br />
     Tailwind Css <br />
-    Aceternity Ui <br />
+    Aceternity Ui ✔️<br />
     </td>
     <td>
     Responsive Portfolio <br/>
@@ -442,7 +473,7 @@
     Typescript <br />
     Next.js <br />
     Tailwind Css<br />
-    Next-Auth<br />
+    Next-Auth ✔️<br />
     </td>
     <td>
     Restaurant Food Delivery App <br/>
@@ -469,7 +500,7 @@
     Typescript <br />
     Next.js <br />
     Tailwind Css<br />
-    Next-Auth<br />
+    Next-Auth <br />
     </td>
     <td>
     Next-Auth Credentials<br/> with Username and Password<br/> & Github Providers <br/>
@@ -516,7 +547,7 @@
     <td>
     Typescript <br />
     React.js <br />
-    i18next<br />
+    i18next ✔️<br />
     React Icons<br />
     </td>
     <td>
@@ -543,7 +574,7 @@
     <td>
     Typescript <br />
     Next.js <br />
-    Framer Motion<br />
+    Framer Motion ✔️<br />
     Css<br />
     </td>
     <td>
@@ -570,7 +601,7 @@
     <td>
     Next.js <br />
     Tailwind Css<br />
-    Headless ui<br />
+    Headless ui ✔️<br />
     </td>
     <td>
     Highly Responsive Gallery <br/>
@@ -598,8 +629,8 @@
     Next.js <br />
     Tailwind Css<br />
     Framer Motion<br />
-    Infinite Scroll<br />
-    Server Actions<br />
+    Infinite Scroll ✔️<br />
+    Server Actions ✔️<br />
     </td>
     <td>
     Anime Explore <br/>
@@ -735,7 +766,7 @@
     <td>
     React.js <br />
     Tailwind Css<br />
-    i18next<br />
+    i18next ✔️<br />
     React Toggle<br />
     </td>
     <td>
