@@ -2,6 +2,7 @@
 
 # About Me
 
+This is Joodi (Meaning of Joodi is Kind, working) \
 A self taught Web Developer who enjoys creating content on web develop and Front-End. \
 Sharing what I learn as I learn it to help and motivate others is what keeps me going. \
 I am on a journey of self-discovery, self-learning, and simple living and I'd love for you to join me.
@@ -354,6 +355,13 @@ I'm glad you found me and I can't wait to connect!!
   <a href="https://formik.org/">
     <img
       src="https://img.stackshare.io/service/8846/preview.png"
+      width="38"
+      height="38"
+    />
+  </a>
+  <a href="https://apexcharts.com/" target="_blank" rel="noreferrer">
+    <img
+      src="https://apexcharts.com/wp-content/themes/apexcharts/img/apexcharts-logo-trimmed.svg"
       width="38"
       height="38"
     />
