@@ -13,7 +13,7 @@
   <tr>
     <td>
     <img
-      src="https://s32.picofile.com/file/8477724418/mobs2.jpg"
+      src="https://s32.picofile.com/file/8477725176/mobs2t.png"
       alt="ts"
       width="200"
       height="200"
