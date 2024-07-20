@@ -15,7 +15,7 @@
     <img
       src="https://s32.picofile.com/file/8477725176/mobs2t.png"
       alt="ts"
-      width="200"
+      width="320"
       height="200"
     />
     </td>
