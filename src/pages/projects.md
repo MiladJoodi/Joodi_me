@@ -26,7 +26,7 @@
     Shadcn <br />
     MongoDB<br />
     Mongoose<br />
-    Clerk<br />
+    Clerk ✔️<br />
     React Hook Form<br />
     Zod<br />
     Server Actions<br />
