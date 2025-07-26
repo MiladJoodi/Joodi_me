@@ -13,6 +13,33 @@
   <tr>
     <td>
     <img
+      src="https://s34.picofile.com/file/8486110176/pwa_s6_.png"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Typescript <br />
+    Next.js <br />
+    Tailwind CSS <br />
+    PWA ✔️<br />
+    </td>
+        <td>
+        PWA Starter <br/>
+        2025-07-26 <br/>
+    <a href="https://miladjoodi.netlify.app/" target="_top">
+    <span>Preview </span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>    
+    <a href="https://github.com/MiladJoodi/PWA_Starter" target="_top">
+    <span>Source </span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+  <tr>
+    <td>
+    <img
       src="https://s32.picofile.com/file/8479043242/hamed.png"
       alt="ts"
       width="320"
@@ -44,6 +71,32 @@
     </a></td>
   </tr>
   <tr>
+    <td>
+    <img
+      src="https://camo.githubusercontent.com/014a400ba471fc243b0049685c8d9c2e4bb802feb110cf3236b9b3c1be5fb99f/68747470733a2f2f7333342e7069636f66696c652e636f6d2f66696c652f383438363038373238342f303030612e706e67"
+      alt="ts"
+      width="320"
+      height="200"
+    />
+    </td>
+    <td>
+    Typescript <br />
+    Next.js <br />
+    Tailwind CSS <br />
+    </td>
+        <td>
+        Github Followers Tracker <br/>
+        2025-07-26 <br/>
+    <a href="https://github-followers-tracker.netlify.app/" target="_top">
+    <span>Preview </span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a><br/>    
+    <a href="https://github.com/MiladJoodi/Github-Followers-Tracker_v2" target="_top">
+    <span>Source </span>
+    <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_node_modules-@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
+    </a></td>
+  </tr>
+    <tr>
     <td>
     <img
       src="https://s32.picofile.com/file/8478453934/desk_sass_2_.JPG"
@@ -1147,6 +1200,3 @@
     <td>.</td>
   </tr>
 </table>
-
-
-
