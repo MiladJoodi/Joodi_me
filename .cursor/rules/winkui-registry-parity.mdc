@@ -3,53 +3,35 @@ description: Docs UI and installable registry must be the same latest version �
 alwaysApply: true
 ---
 
-# WinkUI registry parity — what you see is what installs
+# WinkUI registry parity — single source
 
-Consumers install **copied source** via `npx winkui add <name>` from `public/r/` (built from `registry/`). That payload must match the UI shown in docs previews (`@winkui/ui` / demos). **Never ship an older or divergent version.**
-
-## Sources of truth (keep in sync)
+**Source of truth for UI:** `packages/ui/src/components/…`  
+`npm run registry:build` reads that source, rewrites imports to `@/…`, and writes `public/r/`.
 
 | Surface | Path | Role |
 |---|---|---|
-| Docs preview | `packages/ui/src/components/…` | What you see on the site |
-| Install payload | `registry/ui/<name>/…` (also `registry/blocks/`, `registry/charts/`) | What `registry:build` inlines into `public/r/` |
-| Examples / demos | `registry/examples/<name>/…` | Must match the same latest API and look |
+| Edit here | `packages/ui/src/components/…` | Docs preview + install payload |
+| Blocks / charts | `registry/blocks/`, `registry/charts/` | Still authored under `registry/` |
+| Built output | `public/r/<item>.json` | What `add` installs — never hand-edit |
 
-Allowed drift: **import paths only** (e.g. `@winkui/ui/lib/utils` vs `@/lib/utils`). Markup, variants, tokens, sizes, behavior, and a11y must be identical.
+Do **not** keep a second hand-edited copy under `registry/ui/`.
 
-**Every variant** shown in the reference demo (default, destructive, …) must look the same in docs preview and in what `add` installs. Do not ship a “close enough” restyle.
+## After any UI edit
 
-## Required workflow after any UI edit
-
-1. Change the component (or example) to the desired final look.
-2. Mirror the same change in **both** `packages/ui` and `registry/` (and examples if they embed the UI).
-3. Run `npm run registry:build` so `public/r/<item>.json` and `public/r/registry.json` pick up the new content.
-4. Do **not** leave `public/r/` stale — unbuilt registry = users get the old version.
+1. Change `packages/ui/src/components/<name>.tsx` (and examples if needed).
+2. Run `npm run registry:build`.
+3. Spot-check `public/r/<name>.json`.
 
 ```bash
-# After editing button (or any registry item):
-# 1) packages/ui/src/components/button.tsx
-# 2) registry/ui/button/button.tsx   # same UI, consumer imports
+# Edit button → rebuild install payload
+# packages/ui/src/components/button.tsx
 npm run registry:build
 ```
 
-## Do / Don’t
+## Checklist
 
-```tsx
-// ✅ Same classes, variants, tokens in both mirrors; then rebuild
-// packages/ui/…/button.tsx  ↔  registry/ui/button/button.tsx
-
-// ❌ Edit only docs package and skip registry/
-// ❌ Edit registry/ but skip packages/ui (docs shows stale UI)
-// ❌ Commit UI changes without npm run registry:build
-// ❌ Hand-edit public/r/*.json — always regenerate from registry/
-```
-
-## Checklist (before merge / ship)
-
-- [ ] Docs preview and `registry/` source match (except import aliases)
-- [ ] Examples use the same latest API as the component
+- [ ] Only `packages/ui` (or blocks/charts) was edited for UI
 - [ ] `npm run registry:build` run after the change
-- [ ] Spot-check: content in `public/r/<name>.json` matches what you saw in the browser
+- [ ] Docs preview matches what lands in `public/r/<name>.json`
 
-Human docs: `registry/README.md` · build script: `scripts/build-registry.mjs`
+Human docs: `registry/README.md` · build: `scripts/build-registry.mjs`

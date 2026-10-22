@@ -17,6 +17,12 @@ import {
   AlertDialogSmall,
 } from "@/registry/examples/alert-dialog"
 import {
+  AttachmentDefault,
+  AttachmentGroupExample,
+  AttachmentSizes,
+  AttachmentStates,
+} from "@/registry/examples/attachment"
+import {
   ButtonDefault,
   ButtonDestructive,
   ButtonGhost,
@@ -58,10 +64,23 @@ export const registry = {
         "A modal dialog that interrupts the user with important content and expects a response.",
     },
     {
+      name: "attachment",
+      type: "registry:ui" as const,
+      title: "Attachment",
+      description:
+        "File and media attachment cards with upload states, sizes, and actions.",
+    },
+    {
       name: "button",
       type: "registry:ui" as const,
       title: "Button",
       description: "Displays a button or a component that looks like a button.",
+    },
+    {
+      name: "spinner",
+      type: "registry:ui" as const,
+      title: "Spinner",
+      description: "A loading spinner.",
     },
   ],
   blocks: [
@@ -136,6 +155,30 @@ export const registry = {
       type: "registry:example" as const,
       title: "Destructive",
       component: AlertDialogDestructive,
+    },
+    {
+      name: "attachment-default",
+      type: "registry:example" as const,
+      title: "Default",
+      component: AttachmentDefault,
+    },
+    {
+      name: "attachment-states",
+      type: "registry:example" as const,
+      title: "States",
+      component: AttachmentStates,
+    },
+    {
+      name: "attachment-sizes",
+      type: "registry:example" as const,
+      title: "Sizes",
+      component: AttachmentSizes,
+    },
+    {
+      name: "attachment-group",
+      type: "registry:example" as const,
+      title: "Group",
+      component: AttachmentGroupExample,
     },
     {
       name: "button-default",

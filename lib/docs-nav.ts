@@ -34,6 +34,10 @@ export const docsNav: {
           href: "/docs/components/alert-dialog",
         },
         {
+          title: "Attachment",
+          href: "/docs/components/attachment",
+        },
+        {
           title: "Button",
           href: "/docs/components/button",
           featured: true,

@@ -1,5 +1,7 @@
-import { cn } from "@winkui/ui/lib/utils"
+import * as React from "react"
 import { Loader2Icon } from "lucide-react"
+
+import { cn } from "@winkui/ui/lib/utils"
 
 function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
   return (

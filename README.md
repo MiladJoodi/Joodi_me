@@ -71,7 +71,7 @@ Manual checks:
 
 ## Add a component
 
-1. `registry/ui/<name>/…` + mirror in `packages/ui` for docs previews
+1. `packages/ui/src/components/<name>.tsx` (single source; `registry:build` → `public/r/`)
 2. Examples under `registry/examples/<name>/` + `registry/index.ts`
 3. `scripts/registry-items.mjs` + `npm run registry:build`
 4. `lib/docs-nav.ts` + docs: `npx @winkui/ui@latest init` then `add <name>`

@@ -43,16 +43,39 @@ function contentHash(files) {
   return hash.digest("hex").slice(0, 12)
 }
 
+/**
+ * packages/ui uses @winkui/ui/*; consumers get @/* after install.
+ */
+function rewriteConsumerImports(content) {
+  return content
+    .replace(
+      /from\s+["']@winkui\/ui\/components\/([^"']+)["']/g,
+      'from "@/components/ui/$1"'
+    )
+    .replace(
+      /from\s+["']@winkui\/ui\/hooks\/([^"']+)["']/g,
+      'from "@/hooks/$1"'
+    )
+    .replace(
+      /from\s+["']@winkui\/ui\/lib\/([^"']+)["']/g,
+      'from "@/lib/$1"'
+    )
+}
+
 function buildItemPayload(item, version, generatedAt) {
   const files = item.files.map((file) => {
     const abs = path.join(root, file.path)
     if (!existsSync(abs)) {
       throw new Error(`Missing registry file: ${file.path}`)
     }
+    let content = readFileSync(abs, "utf8")
+    if (file.path.startsWith("packages/ui/")) {
+      content = rewriteConsumerImports(content)
+    }
     const payload = {
-      path: file.path,
+      path: file.target || file.path,
       type: file.type,
-      content: readFileSync(abs, "utf8"),
+      content,
     }
     if (file.target) payload.target = file.target
     return payload

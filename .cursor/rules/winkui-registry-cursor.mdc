@@ -6,7 +6,7 @@ alwaysApply: true
 
 # WinkUI registry — cursor pointer on clickables
 
-Applies to **installable** sources: `registry/ui|blocks|charts|examples` and their `packages/ui` mirrors (what `winkui add` ships).
+Applies to **installable** sources: `packages/ui` (UI) and `registry/blocks|charts|examples` (what `winkui add` ships).
 
 ## Rule
 
@@ -30,6 +30,6 @@ const buttonVariants = cva("… cursor-pointer disabled:pointer-events-none …"
 
 ## Parity
 
-Change both `packages/ui` and `registry/` then `npm run registry:build`.
+Edit `packages/ui`, then `npm run registry:build`.
 
 Docs site chrome still uses `.cursor/rules/winkui-site-cursor.mdc` as well.

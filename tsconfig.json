@@ -19,8 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@winkui/ui/*": ["./packages/ui/src/*"]
+      "@/components/ui/*": ["./packages/ui/src/components/*"],
+      "@winkui/ui/*": ["./packages/ui/src/*"],
+      "@/*": ["./*"]
     }
   },
   "include": [

@@ -45,8 +45,8 @@ Same action → same control. Do not invent one-off copy / toggle / clear button
 
 What docs show must be what users install. No stale registry payloads.
 
-- Keep `packages/ui` and `registry/` in sync (import paths may differ only)
-- After UI edits: mirror both sides → `npm run registry:build`
+- UI source of truth: `packages/ui` → `npm run registry:build` → `public/r/`
+- Do not hand-edit duplicate `registry/ui/` copies
 - Authoritative rule: `.cursor/rules/winkui-registry-parity.mdc`
 <!-- END:winkui-registry-parity -->
 

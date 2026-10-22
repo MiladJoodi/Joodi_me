@@ -27,10 +27,9 @@ registry/
     chart-area/
       chart-area.tsx
       index.ts
-  ui/                   # legacy / registry payload sources only
-    button/
-      button.tsx
 ```
+
+UI components: author in `packages/ui/src/components/` only (`registry:build` → `public/r/`).
 
 Rules:
 

@@ -16,6 +16,162 @@
   }
 }
 
+/* Text shimmer (attachment uploading/processing) — based on currentColor */
+@property --shimmer-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 20deg;
+}
+@property --shimmer-image {
+  syntax: "*";
+  inherits: false;
+}
+@property --shimmer-text-fill {
+  syntax: "*";
+  inherits: false;
+}
+
+@theme inline {
+  @keyframes tw-shimmer {
+    from {
+      background-position: 100% 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+}
+
+@utility shimmer {
+  /* Narrower band so most of the glyph stays at full currentColor */
+  --_spread: var(--shimmer-spread, calc(1.5ch + 24px));
+  --_base: currentColor;
+  /* Opaque lift — never fade toward the card (was alpha*0.2 → washed out) */
+  --_highlight: var(
+    --shimmer-color,
+    color-mix(in oklab, currentColor 72%, white)
+  );
+
+  background-image: var(
+    --shimmer-image,
+    linear-gradient(
+      calc(90deg + var(--shimmer-angle)),
+      var(--_base) calc(50% - var(--_spread)),
+      color-mix(in oklab, var(--_highlight), var(--_base) 45%)
+        calc(50% - var(--_spread) * 0.5),
+      var(--_highlight) 50%,
+      color-mix(in oklab, var(--_highlight), var(--_base) 45%)
+        calc(50% + var(--_spread) * 0.5),
+      var(--_base) calc(50% + var(--_spread))
+    )
+  );
+  background-repeat: no-repeat;
+  background-size: calc(200% + var(--_spread) * 2) 100%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--shimmer-text-fill, transparent);
+  animation: tw-shimmer var(--shimmer-duration, 2s) linear infinite;
+
+  @variant dark {
+    --_highlight: var(
+      --shimmer-color,
+      color-mix(in oklab, currentColor 55%, white)
+    );
+  }
+
+  &:where([dir="rtl"], [dir="rtl"] *) {
+    animation-direction: reverse;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer {
+    animation: none;
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+/*
+ * Attachment uploading/processing title shimmer.
+ * Plain selectors — reliable when `group-data-*:shimmer` is not emitted.
+ */
+.winkui[data-slot="attachment"][data-state="uploading"]
+  [data-slot="attachment-title"],
+.winkui[data-slot="attachment"][data-state="processing"]
+  [data-slot="attachment-title"] {
+  --_spread: var(--shimmer-spread, calc(1.5ch + 24px));
+  --_base: currentColor;
+  --_highlight: var(
+    --shimmer-color,
+    color-mix(in oklab, currentColor 72%, white)
+  );
+  background-image: linear-gradient(
+    calc(90deg + var(--shimmer-angle, 20deg)),
+    var(--_base) calc(50% - var(--_spread)),
+    color-mix(in oklab, var(--_highlight), var(--_base) 45%)
+      calc(50% - var(--_spread) * 0.5),
+    var(--_highlight) 50%,
+    color-mix(in oklab, var(--_highlight), var(--_base) 45%)
+      calc(50% + var(--_spread) * 0.5),
+    var(--_base) calc(50% + var(--_spread))
+  );
+  background-repeat: no-repeat;
+  background-size: calc(200% + var(--_spread) * 2) 100%;
+  background-position: 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: tw-shimmer var(--shimmer-duration, 2s) linear infinite;
+}
+
+.dark
+  .winkui[data-slot="attachment"][data-state="uploading"]
+  [data-slot="attachment-title"],
+.dark
+  .winkui[data-slot="attachment"][data-state="processing"]
+  [data-slot="attachment-title"],
+.winkui.dark[data-slot="attachment"][data-state="uploading"]
+  [data-slot="attachment-title"],
+.winkui.dark[data-slot="attachment"][data-state="processing"]
+  [data-slot="attachment-title"] {
+  --_highlight: var(
+    --shimmer-color,
+    color-mix(in oklab, currentColor 55%, white)
+  );
+}
+
+[dir="rtl"]
+  .winkui[data-slot="attachment"][data-state="uploading"]
+  [data-slot="attachment-title"],
+[dir="rtl"]
+  .winkui[data-slot="attachment"][data-state="processing"]
+  [data-slot="attachment-title"],
+.winkui[data-slot="attachment"][data-state="uploading"]:dir(rtl)
+  [data-slot="attachment-title"],
+.winkui[data-slot="attachment"][data-state="processing"]:dir(rtl)
+  [data-slot="attachment-title"] {
+  animation-direction: reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .winkui[data-slot="attachment"][data-state="uploading"]
+    [data-slot="attachment-title"],
+  .winkui[data-slot="attachment"][data-state="processing"]
+    [data-slot="attachment-title"] {
+    animation: none;
+    background-image: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
 @utility container-wrapper {
   @apply mx-auto w-full max-w-[var(--content-max)] px-[var(--page-gutter)];
 }

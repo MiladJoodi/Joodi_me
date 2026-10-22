@@ -45,3 +45,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# UI source of truth is packages/ui → public/r (do not reintroduce hand-edited copies)
+/registry/ui/
