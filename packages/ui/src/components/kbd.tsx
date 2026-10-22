@@ -1,4 +1,4 @@
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 
 function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
   return (

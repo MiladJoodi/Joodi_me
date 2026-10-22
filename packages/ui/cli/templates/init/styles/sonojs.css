@@ -1,12 +1,14 @@
 ﻿/**
- * SonoJS design system — scoped to `.sonojs`.
- * Does not override the host app's :root theme.
- * Components ship with class `sonojs` so tokens apply locally.
+ * SonoJS design system — theme tokens on `:root` / `.dark`.
+ * `init` imports this from globals.css; `add` only copies components.
  */
 
 @custom-variant dark (&:is(.dark *));
 
-/* Map utilities → CSS vars (values come from `.sonojs`, not :root) */
+/* Keep invalid/checked utilities available for installable controls */
+@source inline("border-destructive bg-destructive text-destructive data-[state=checked]:bg-destructive data-[state=checked]:border-destructive data-[invalid=true]:text-destructive data-[invalid=true]:[&_[data-slot=label]]:text-destructive data-[invalid=true]:[&_[data-slot=field-label]]:text-destructive");
+
+/* Map utilities → CSS vars (values from :root) */
 @theme inline {
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -36,6 +38,7 @@
   /* Accordion open/close (same as tw-animate-css on the docs site) */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
 
   @keyframes tw-shimmer {
     from {
@@ -43,6 +46,18 @@
     }
     to {
       background-position: 0 0;
+    }
+  }
+
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
     }
   }
 }
@@ -178,20 +193,17 @@
   }
 }
 
-/*
- * Token scope for installable components.
- * `color` lives in @layer base so utilities like `text-destructive` still win
- * (SonoJS.css is imported after Tailwind; an unlayered rule would override them).
- */
 @layer base {
-  .sonojs {
-    /* Scope tokens so host theme (e.g. body color) cannot wash out controls */
-    color: var(--foreground);
+  * {
     border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
   }
 }
 
-.sonojs {
+:root {
   --content-max: 1280px;
   --sidebar-width: 240px;
   --page-gutter: 16px;
@@ -241,6 +253,9 @@
 
   /* Radius — SonoJS (base 10px · control ~8 · surface 10) */
   --radius: 0.625rem;
+  /* Aliases used by components (`rounded-(--cell-radius)` → --radius-md) */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
   --radius-tooltip: calc(var(--radius) * 0.6);
   --radius-control: calc(var(--radius) * 0.8);
   --radius-surface: var(--radius);
@@ -248,6 +263,15 @@
   --radius-input: var(--radius-control);
   --radius-card: var(--radius-surface);
   --radius-dialog: var(--radius-surface);
+
+  /* Code Block chrome — VS Code Dark+ (same in light + dark host themes) */
+  --code-bg: #1e1e1e;
+  --code-fg: #d4d4d4;
+  --code-border: #2b2b2b;
+  --code-header-bg: #252526;
+  --code-header-fg: #858585;
+  --code-line-number: #858585;
+  --code-selection: #264f78;
 
   --background: #ffffff;
   --foreground: #09090b;
@@ -289,8 +313,7 @@
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.dark .sonojs,
-.sonojs.dark {
+.dark {
   --background: #09090b;
   --foreground: #fafafa;
   --card: #18181b;

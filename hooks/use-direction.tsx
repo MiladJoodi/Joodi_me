@@ -9,4 +9,4 @@ export {
   DirectionContextProvider,
   useDirection,
   useDocumentDirection,
-} from "@winkui/ui/hooks/use-direction"
+} from "@sonojs/ui/hooks/use-direction"

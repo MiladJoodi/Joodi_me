@@ -1,4 +1,4 @@
-import { Badge } from "@winkui/ui/components/badge"
+import { Badge } from "@sonojs/ui/components/badge"
 
 export function BadgeVariants() {
   return (

@@ -1,6 +1,6 @@
 "use client"
 
-import { Calendar } from "@winkui/ui/components/calendar"
+import { Calendar } from "@sonojs/ui/components/calendar"
 
 export function CalendarCaption() {
   return (

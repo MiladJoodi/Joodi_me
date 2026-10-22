@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Avatar as AvatarPrimitive } from "radix-ui"
 
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 
 function Avatar({
   className,
@@ -19,7 +19,7 @@ function Avatar({
       className={cn(
         // rounded-full so AvatarGroup ring is circular (square ring → vertical seams).
         // No overflow-hidden so AvatarBadge can sit on the corner.
-        "winkui group/avatar relative flex size-8 shrink-0 rounded-full bg-background select-none data-[size=lg]:size-10 data-[size=sm]:size-6",
+        "sonojs group/avatar relative flex size-8 shrink-0 rounded-full bg-background select-none data-[size=lg]:size-10 data-[size=sm]:size-6",
         className
       )}
       {...props}
@@ -80,7 +80,7 @@ function AvatarGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="avatar-group"
       className={cn(
-        "winkui group/avatar-group flex -space-x-2 rtl:space-x-reverse *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background",
+        "sonojs group/avatar-group flex -space-x-2 rtl:space-x-reverse *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background",
         className
       )}
       {...props}

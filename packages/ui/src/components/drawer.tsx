@@ -1,19 +1,54 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@winkui/ui/lib/utils"
 import { Drawer as DrawerPrimitive } from "vaul"
 
-function Drawer({
-  ...props
-}: React.ComponentProps<typeof DrawerPrimitive.Root>) {
-  return <DrawerPrimitive.Root data-slot="drawer" {...props} />
+import { useDirection } from "@sonojs/ui/hooks/use-direction"
+import {
+  resolveEdgeSide,
+  type EdgeSide,
+} from "@sonojs/ui/lib/direction"
+import { cn } from "@sonojs/ui/lib/utils"
+
+type DrawerRootProps = Omit<
+  React.ComponentProps<typeof DrawerPrimitive.Root>,
+  "direction"
+> & {
+  /**
+   * Prefer `start` / `end` so the edge flips with writing direction.
+   * `left` / `right` stay physical (do not flip in RTL).
+   * `top` / `bottom` are unchanged.
+   */
+  direction?: EdgeSide
+}
+
+function Drawer({ direction = "bottom", ...props }: DrawerRootProps) {
+  const { dir } = useDirection()
+  // Vaul only understands physical left/right — resolve logical edges first
+  // so open/close animation originates from the visual edge in both LTR and RTL.
+  const resolvedDirection = resolveEdgeSide(direction, dir, "bottom")
+
+  return (
+    <DrawerPrimitive.Root
+      data-slot="drawer"
+      // Vaul DialogProps is a fadeFromIndex union; omit+spread loses the discriminant.
+      {...(props as React.ComponentProps<typeof DrawerPrimitive.Root>)}
+      direction={resolvedDirection}
+    />
+  )
 }
 
 function DrawerTrigger({
+  className,
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Trigger>) {
-  return <DrawerPrimitive.Trigger data-slot="drawer-trigger" {...props} />
+  return (
+    <DrawerPrimitive.Trigger
+      data-slot="drawer-trigger"
+      className={cn("cursor-pointer", className)}
+      {...props}
+    />
+  )
 }
 
 function DrawerPortal({
@@ -23,9 +58,16 @@ function DrawerPortal({
 }
 
 function DrawerClose({
+  className,
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Close>) {
-  return <DrawerPrimitive.Close data-slot="drawer-close" {...props} />
+  return (
+    <DrawerPrimitive.Close
+      data-slot="drawer-close"
+      className={cn("cursor-pointer", className)}
+      {...props}
+    />
+  )
 }
 
 function DrawerOverlay({
@@ -36,7 +78,7 @@ function DrawerOverlay({
     <DrawerPrimitive.Overlay
       data-slot="drawer-overlay"
       className={cn(
-        "fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0",
+        "fixed inset-0 z-50 bg-black/50 duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0",
         className
       )}
       {...props}
@@ -49,22 +91,28 @@ function DrawerContent({
   children,
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Content>) {
+  // Portal under <body> — set dir so text/logical CSS match DirectionProvider.
+  const { dir } = useDirection()
+
   return (
-    <DrawerPortal data-slot="drawer-portal">
+    <DrawerPortal>
       <DrawerOverlay />
       <DrawerPrimitive.Content
         data-slot="drawer-content"
+        dir={dir}
         className={cn(
-          "group/drawer-content fixed z-50 flex h-auto flex-col bg-background",
-          "data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-lg data-[vaul-drawer-direction=top]:border-b",
-          "data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-lg data-[vaul-drawer-direction=bottom]:border-t",
+          "sonojs group/drawer-content fixed z-50 flex h-auto flex-col bg-background text-foreground",
+          // After resolveEdgeSide, Vaul's data attribute is always physical.
+          // Keep physical left/right here so positioning matches Vaul's animation origin.
+          "data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-(--radius-dialog) data-[vaul-drawer-direction=top]:border-b",
+          "data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-(--radius-dialog) data-[vaul-drawer-direction=bottom]:border-t",
           "data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-3/4 data-[vaul-drawer-direction=right]:border-l data-[vaul-drawer-direction=right]:sm:max-w-sm",
           "data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-3/4 data-[vaul-drawer-direction=left]:border-r data-[vaul-drawer-direction=left]:sm:max-w-sm",
           className
         )}
         {...props}
       >
-        <div className="mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
+        <div className="mx-auto mt-4 hidden h-2 w-25 shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
         {children}
       </DrawerPrimitive.Content>
     </DrawerPortal>
@@ -76,7 +124,7 @@ function DrawerHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="drawer-header"
       className={cn(
-        "flex flex-col gap-0.5 p-4 group-data-[vaul-drawer-direction=bottom]/drawer-content:text-center group-data-[vaul-drawer-direction=top]/drawer-content:text-center md:gap-1.5 md:text-left",
+        "flex flex-col gap-0.5 p-4 group-data-[vaul-drawer-direction=bottom]/drawer-content:text-center group-data-[vaul-drawer-direction=top]/drawer-content:text-center md:gap-1.5 md:text-start",
         className
       )}
       {...props}

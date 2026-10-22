@@ -1,6 +1,6 @@
 import { BadgeCheck, BookmarkIcon } from "lucide-react"
 
-import { Badge } from "@winkui/ui/components/badge"
+import { Badge } from "@sonojs/ui/components/badge"
 
 export function BadgeIconExample() {
   return (

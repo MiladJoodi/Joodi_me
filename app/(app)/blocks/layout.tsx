@@ -1,5 +1,5 @@
 import { BlocksListIndex, BlocksSidebar } from "@/components/sidebar-nav"
-import { SidebarProvider } from "@winkui/ui/components/sidebar"
+import { SidebarProvider } from "@sonojs/ui/components/sidebar"
 
 export default function BlocksLayout({
   children,

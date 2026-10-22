@@ -4,7 +4,7 @@
  * Demo only — for your app, swap the DayPicker import in calendar.tsx:
  *   import { DayPicker } from "react-day-picker/persian"
  */
-import * as React from "react"
+import React from "react"
 import {
   ChevronDownIcon,
   ChevronLeftIcon,
@@ -13,9 +13,9 @@ import {
 import { getDefaultClassNames } from "react-day-picker"
 import { DayPicker } from "react-day-picker/persian"
 
-import { Button, buttonVariants } from "@winkui/ui/components/button"
-import { CalendarDayButton } from "@winkui/ui/components/calendar"
-import { cn } from "@winkui/ui/lib/utils"
+import { Button, buttonVariants } from "@sonojs/ui/components/button"
+import { CalendarDayButton } from "@sonojs/ui/components/calendar"
+import { cn } from "@sonojs/ui/lib/utils"
 
 export function CalendarHijri() {
   const [date, setDate] = React.useState<Date | undefined>(
@@ -53,7 +53,7 @@ function PersianCalendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        "winkui group/calendar bg-background p-2 [--cell-radius:var(--radius-md)] [--cell-size:--spacing(7)]",
+        "sonojs group/calendar bg-background p-2 [--cell-radius:var(--radius-md)] [--cell-size:--spacing(7)]",
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className

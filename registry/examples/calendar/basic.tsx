@@ -1,6 +1,6 @@
 "use client"
 
-import { Calendar } from "@winkui/ui/components/calendar"
+import { Calendar } from "@sonojs/ui/components/calendar"
 
 export function CalendarBasic() {
   return <Calendar mode="single" className="rounded-lg border" />

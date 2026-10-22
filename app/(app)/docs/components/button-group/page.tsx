@@ -2,6 +2,7 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
   type VariantExample,
 } from "@/components/docs"
 import { highlightCode } from "@/lib/highlight-code"
@@ -547,40 +548,63 @@ async function getButtonGroupExamples(): Promise<VariantExample[]> {
     {
       name: "button-group-default",
       title: "Default",
+      description: "Grouped actions with a nested overflow menu.",
       requires: ["dropdown-menu"],
     },
-    { name: "button-group-orientation", title: "Orientation" },
-    { name: "button-group-size", title: "Size" },
+    {
+      name: "button-group-orientation",
+      title: "Orientation",
+      description: 'Use `orientation="vertical"` for a stacked group.',
+    },
+    {
+      name: "button-group-size",
+      title: "Size",
+      description: "Match button sizes inside the group.",
+    },
     {
       name: "button-group-nested",
       title: "Nested",
+      description: "Nest groups with input and tooltip chrome.",
       requires: ["input-group", "tooltip"],
     },
-    { name: "button-group-separator", title: "Separator" },
-    { name: "button-group-split", title: "Split" },
+    {
+      name: "button-group-separator",
+      title: "Separator",
+      description: "Insert `ButtonGroupSeparator` between related actions.",
+    },
+    {
+      name: "button-group-split",
+      title: "Split",
+      description: "Primary action plus a chevron for secondary choices.",
+    },
     {
       name: "button-group-input",
       title: "Input",
+      description: "Pair an input with trailing buttons.",
       requires: ["input"],
     },
     {
       name: "button-group-input-group",
       title: "Input Group",
+      description: "Compose with `InputGroup` for richer field chrome.",
       requires: ["input-group", "tooltip"],
     },
     {
       name: "button-group-dropdown",
       title: "Dropdown",
+      description: "Attach a dropdown menu to the group.",
       requires: ["dropdown-menu"],
     },
     {
       name: "button-group-select",
       title: "Select",
+      description: "Combine select and input controls in one group.",
       requires: ["input", "select"],
     },
     {
       name: "button-group-popover",
       title: "Popover",
+      description: "Open a popover from a group trigger.",
       requires: ["field", "popover", "textarea"],
     },
   ]
@@ -610,19 +634,11 @@ export default async function ButtonGroupDocsPage() {
         </p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
+      <section className="space-y-4">
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add button-group`}
-        />
-      </section>
+      <DocsInstallation name="button-group" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

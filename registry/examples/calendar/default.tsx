@@ -1,8 +1,8 @@
 "use client"
 
-import * as React from "react"
+import React from "react"
 
-import { Calendar } from "@winkui/ui/components/calendar"
+import { Calendar } from "@sonojs/ui/components/calendar"
 
 export function CalendarDefault() {
   const [date, setDate] = React.useState<Date | undefined>(new Date())

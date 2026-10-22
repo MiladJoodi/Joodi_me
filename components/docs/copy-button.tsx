@@ -4,7 +4,7 @@ import * as React from "react"
 import { CheckIcon, CopyIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@winkui/ui/components/button"
+import { Button } from "@sonojs/ui/components/button"
 
 export function CopyButton({
   value,

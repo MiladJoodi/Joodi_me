@@ -1,0 +1,36 @@
+---
+description: Same action = same control (copy button, icon actions, shared chrome)
+alwaysApply: true
+---
+
+# SonoJS UI consistency — same action, same control
+
+When a control does the **exact same job** (copy, theme toggle, search clear, …), reuse the **existing shared component**. Do not invent a one-off unless the user explicitly asks for a different look or behavior.
+
+## Copy (canonical)
+
+- Use `CopyButton` from `@/components/docs` everywhere copy-to-clipboard is needed.
+- Code samples: wrap with `ComponentSource` from `@/components/docs` (includes the copy icon). Do **not** hand-roll a second copy icon or a labeled “Copy” text button for the same action.
+- Code theme: shiki `dark-plus` (VS Code Dark+) + `--code-*` chrome. Do not invent per-page zinc/primary code colors.
+- Appearance: simple ghost **icon-only** button — Lucide `CopyIcon` idle, `CheckIcon` after success. No toast required unless asked.
+
+```tsx
+// ✅
+import { CopyButton, ComponentSource } from "@/components/docs"
+
+<ComponentSource title="button.tsx" code={source} />
+<CopyButton value={cliCommand} />
+
+// ❌ Duplicate / divergent copy UIs
+<button onClick={() => navigator.clipboard.writeText(code)}>Copy</button>
+```
+
+## General rule
+
+| Situation | Do |
+|---|---|
+| Same action already has a shared control | Import and reuse it |
+| New repeated action (2+ places) | Extract one shared component first |
+| User asks for a different style for one spot | Only then diverge — and say so in the PR |
+
+Applies to docs chrome (`app/`, `components/`). Do not change shipped `registry/` primitives for this rule unless the action lives there too.

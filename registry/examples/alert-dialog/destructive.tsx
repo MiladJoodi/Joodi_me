@@ -11,8 +11,8 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@winkui/ui/components/alert-dialog"
-import { Button } from "@winkui/ui/components/button"
+} from "@sonojs/ui/components/alert-dialog"
+import { Button } from "@sonojs/ui/components/button"
 
 export function AlertDialogDestructive() {
   return (

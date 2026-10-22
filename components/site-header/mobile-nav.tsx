@@ -15,12 +15,12 @@ import {
 
 import type { SiteNavItem } from "@/lib/config"
 import { cn } from "@/lib/utils"
-import { buttonVariants } from "@winkui/ui/components/button"
+import { buttonVariants } from "@sonojs/ui/components/button"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@winkui/ui/components/popover"
+} from "@sonojs/ui/components/popover"
 
 const NAV_ICONS: Record<string, LucideIcon> = {
   "/docs": BookOpenIcon,

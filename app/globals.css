@@ -4,6 +4,11 @@
 @import "../styles/style-vega.css" layer(base);
 @import "../styles/direction.css";
 
+/* Scan installable UI + registry so component-only utilities (e.g. card radius/padding) emit. */
+@source "../packages/ui/src/**/*.{ts,tsx}";
+@source "../registry/**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
+
 @custom-variant style-vega (&:where(.style-vega *));
 @custom-variant dark (&:is(.dark *));
 
@@ -197,11 +202,25 @@
     }
   }
 
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
   --breakpoint-3xl: 1600px;
-  --font-sans: var(--font-wink-sans);
-  --font-mono: var(--font-wink-mono);
-  --font-heading: var(--font-wink-sans);
-  /* Tailwind rounded-* ↔ WinkUI radius scale */
+  --font-sans: var(--font-sono-sans);
+  --font-mono: var(--font-sono-mono);
+  --font-heading: var(--font-sono-sans);
+  /* Tailwind rounded-* ↔ SonoJS radius scale */
   --radius-sm: calc(var(--radius) * 0.6); /* ~6px */
   --radius-md: calc(var(--radius) * 0.8); /* ~8px — controls */
   --radius-lg: var(--radius); /* 10px — surfaces */
@@ -295,6 +314,7 @@
   --code-bg: #1e1e1e;
   --code-fg: #d4d4d4;
   --code-border: #2b2b2b;
+  --code-header-bg: #252526;
   --code-header-fg: #858585;
   --code-line-number: #858585;
   --code-selection: #264f78;
@@ -309,7 +329,7 @@
   --code: var(--code-bg);
   --code-foreground: var(--code-fg);
 
-  /* Control sizes — WinkUI (default = 32px / h-8) */
+  /* Control sizes — SonoJS (default = 32px / h-8) */
   --size-button-sm: 28px; /* h-7 */
   --size-button-md: 32px; /* h-8 */
   --size-button-lg: 36px; /* h-9 */
@@ -325,7 +345,7 @@
   --touch-target: 44px;
 
   /*
-   * Border radius — WinkUI
+   * Border radius — SonoJS
    * Base 0.625rem (10px) · sm ~6 · md ~8 (controls) · lg 10 (surfaces)
    */
   --radius: 0.625rem;
@@ -447,13 +467,13 @@
   }
 
   /* Code blocks — selection independent of brand primary */
-  .wink-code-block ::selection,
-  .wink-code-block *::selection {
+  .sono-code-block ::selection,
+  .sono-code-block *::selection {
     background: var(--code-selection);
     color: var(--code-fg);
   }
 
-  :where(code):not(.wink-code-block code):not(pre code) {
+  :where(code):not(.sono-code-block code):not(pre code) {
     font-family: var(--font-mono), ui-monospace, monospace;
     font-size: var(--text-code);
     font-weight: 400;
@@ -461,7 +481,7 @@
   }
 }
 
-@utility wink-inline-code {
+@utility sono-inline-code {
   border-radius: var(--radius-tooltip);
   background: var(--muted);
   padding: 0.125rem 0.375rem;
@@ -471,7 +491,7 @@
   line-height: var(--leading-code);
 }
 
-@utility wink-code-block {
+@utility sono-code-block {
   overflow: hidden;
   border-radius: var(--radius-code);
   border: 1px solid var(--code-border);
@@ -479,7 +499,7 @@
   color: var(--code-fg);
 }
 
-@utility wink-code-pre {
+@utility sono-code-pre {
   overflow-x: auto;
   padding: var(--space-4);
   font-family: var(--font-mono), ui-monospace, monospace;
@@ -491,17 +511,17 @@
   color: var(--code-fg);
 }
 
-@utility wink-code-shiki {
+@utility sono-code-shiki {
   overflow-x: auto;
 }
 
 @layer components {
   /* Shiki output — lock typography (nested @utility rules were not sticking) */
-  .wink-code-shiki pre,
-  .wink-code-shiki pre.shiki,
-  .wink-code-shiki code,
-  .wink-code-shiki .line,
-  .wink-code-shiki span {
+  .sono-code-shiki pre,
+  .sono-code-shiki pre.shiki,
+  .sono-code-shiki code,
+  .sono-code-shiki .line,
+  .sono-code-shiki span {
     font-family: var(--font-mono), ui-monospace, monospace;
     /* 14px = VS Code editor default; keep synced with --text-code */
     font-size: 14px !important;
@@ -509,8 +529,8 @@
     line-height: var(--leading-code);
   }
 
-  .wink-code-shiki pre,
-  .wink-code-shiki pre.shiki {
+  .sono-code-shiki pre,
+  .sono-code-shiki pre.shiki {
     margin: 0;
     overflow-x: auto;
     padding: var(--space-4);
@@ -520,11 +540,11 @@
     color: var(--code-fg);
   }
 
-  .wink-code-shiki code {
+  .sono-code-shiki code {
     background: transparent;
   }
 
-  .wink-code-shiki .line {
+  .sono-code-shiki .line {
     display: inline-block;
     min-width: 100%;
   }
@@ -552,7 +572,7 @@
   }
 }
 
-@keyframes wink-fade-up {
+@keyframes sono-fade-up {
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -563,7 +583,7 @@
   }
 }
 
-@keyframes wink-fade-in {
+@keyframes sono-fade-in {
   from {
     opacity: 0;
   }

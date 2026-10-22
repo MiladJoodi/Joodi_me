@@ -1,12 +1,12 @@
 import { BotIcon, ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@winkui/ui/components/button"
-import { ButtonGroup } from "@winkui/ui/components/button-group"
+import { Button } from "@sonojs/ui/components/button"
+import { ButtonGroup } from "@sonojs/ui/components/button-group"
 import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@winkui/ui/components/field"
+} from "@sonojs/ui/components/field"
 import {
   Popover,
   PopoverContent,
@@ -14,8 +14,8 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@winkui/ui/components/popover"
-import { Textarea } from "@winkui/ui/components/textarea"
+} from "@sonojs/ui/components/popover"
+import { Textarea } from "@sonojs/ui/components/textarea"
 
 export function ButtonGroupPopover() {
   return (

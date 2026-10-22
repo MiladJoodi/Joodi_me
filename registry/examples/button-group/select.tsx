@@ -3,16 +3,16 @@
 import * as React from "react"
 import { ArrowRightIcon } from "lucide-react"
 
-import { Button } from "@winkui/ui/components/button"
-import { ButtonGroup } from "@winkui/ui/components/button-group"
-import { Input } from "@winkui/ui/components/input"
+import { Button } from "@sonojs/ui/components/button"
+import { ButtonGroup } from "@sonojs/ui/components/button-group"
+import { Input } from "@sonojs/ui/components/input"
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectTrigger,
-} from "@winkui/ui/components/select"
+} from "@sonojs/ui/components/select"
 
 const CURRENCIES = [
   {

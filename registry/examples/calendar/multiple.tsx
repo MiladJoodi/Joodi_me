@@ -1,7 +1,7 @@
 "use client"
 
-import { Calendar } from "@winkui/ui/components/calendar"
-import { Card, CardContent } from "@winkui/ui/components/card"
+import { Calendar } from "@sonojs/ui/components/calendar"
+import { Card, CardContent } from "@sonojs/ui/components/card"
 
 export function CalendarMultiple() {
   return (

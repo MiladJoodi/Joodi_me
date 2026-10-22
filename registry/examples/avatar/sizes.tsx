@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@winkui/ui/components/avatar"
+} from "@sonojs/ui/components/avatar"
 
 export function AvatarSizes() {
   return (

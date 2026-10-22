@@ -1,17 +1,17 @@
-# `@winkui/ui`
+# `@sonojs/ui`
 
-WinkUI package + CLI (copy-source install).
+SonoJS package + CLI (copy-source install).
 
 ```bash
-npx @winkui/ui@latest init
-npx @winkui/ui@latest add button
+npx @sonojs/ui@latest init
+npx @sonojs/ui@latest add button
 ```
 
-- `init` → scoped design system (`.winkui` tokens, host theme untouched), utils, `components.json`, auto-import in `globals.css`
-- `add <name>` → copies into `components/ui/` (components include class `winkui`)
+- `init` → theme tokens on `:root` (`styles/sonojs.css` + import in `globals.css`), utils, `components.json`
+- `add <name>` → copies into `components/ui/`
 
 ```ts
 import { Button } from "@/components/ui/button"
 ```
 
-In this monorepo, the docs site also imports previews from `@winkui/ui/components/*`.
+In this monorepo, the docs site also imports previews from `@sonojs/ui/components/*`.

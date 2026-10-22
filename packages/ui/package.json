@@ -22,11 +22,13 @@
   "exports": {
     "./globals.css": "./src/styles/globals.css",
     "./postcss.config": "./postcss.config.mjs",
-    "./lib/*": "./src/lib/*.ts",
+    "./lib/*": "./src/lib/*",
     "./lib/direction": "./src/lib/direction.ts",
+    "./lib/highlighter": "./src/lib/highlighter.tsx",
     "./components/*": "./src/components/*.tsx",
     "./hooks/*": "./src/hooks/*",
-    "./hooks/use-direction": "./src/hooks/use-direction.tsx"
+    "./hooks/use-direction": "./src/hooks/use-direction.tsx",
+    "./hooks/use-highlighted-code": "./src/hooks/use-highlighted-code.ts"
   },
   "scripts": {
     "lint": "eslint .",
@@ -38,6 +40,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
+    "@tanstack/react-table": "^9.3.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -47,10 +50,11 @@
     "lucide-react": "^0.474.0",
     "next-themes": "^0.4.6",
     "radix-ui": "^1.4.3",
-    "react-day-picker": "^9.7.0",
+    "react-day-picker": "^9.14.0",
     "react-hook-form": "^7.62.0",
     "react-resizable-panels": "^4",
     "recharts": "^3.8.0",
+    "shiki": "^4.5.0",
     "sonner": "^2.0.0",
     "tailwind-merge": "^3.7.0",
     "vaul": "^1.1.2"

@@ -4,7 +4,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@winkui/ui/components/alert"
+} from "@sonojs/ui/components/alert"
 
 export function AlertDestructive() {
   return (

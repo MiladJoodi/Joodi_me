@@ -1,16 +1,16 @@
 "use client"
 
-import * as React from "react"
+import React from "react"
 import { Clock2Icon } from "lucide-react"
 
-import { Calendar } from "@winkui/ui/components/calendar"
-import { Card, CardContent, CardFooter } from "@winkui/ui/components/card"
-import { Field, FieldGroup, FieldLabel } from "@winkui/ui/components/field"
+import { Calendar } from "@sonojs/ui/components/calendar"
+import { Card, CardContent, CardFooter } from "@sonojs/ui/components/card"
+import { Field, FieldGroup, FieldLabel } from "@sonojs/ui/components/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@winkui/ui/components/input-group"
+} from "@sonojs/ui/components/input-group"
 
 export function CalendarTime() {
   const [date, setDate] = React.useState<Date | undefined>(

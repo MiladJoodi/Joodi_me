@@ -44,20 +44,20 @@ function contentHash(files) {
 }
 
 /**
- * packages/ui uses @winkui/ui/*; consumers get @/* after install.
+ * packages/ui uses @sonojs/ui/*; consumers get @/* after install.
  */
 function rewriteConsumerImports(content) {
   return content
     .replace(
-      /from\s+["']@winkui\/ui\/components\/([^"']+)["']/g,
+      /from\s+["']@sonojs\/ui\/components\/([^"']+)["']/g,
       'from "@/components/ui/$1"'
     )
     .replace(
-      /from\s+["']@winkui\/ui\/hooks\/([^"']+)["']/g,
+      /from\s+["']@sonojs\/ui\/hooks\/([^"']+)["']/g,
       'from "@/hooks/$1"'
     )
     .replace(
-      /from\s+["']@winkui\/ui\/lib\/([^"']+)["']/g,
+      /from\s+["']@sonojs\/ui\/lib\/([^"']+)["']/g,
       'from "@/lib/$1"'
     )
 }
@@ -111,7 +111,7 @@ function toIndexEntry(item) {
 
 function writeAtomic(dir, files) {
   mkdirSync(path.dirname(dir), { recursive: true })
-  const staging = mkdtempSync(path.join(tmpdir(), "winkui-r-"))
+  const staging = mkdtempSync(path.join(tmpdir(), "sonojs-r-"))
   try {
     for (const [name, contents] of Object.entries(files)) {
       writeFileSync(path.join(staging, name), contents, "utf8")
@@ -162,8 +162,8 @@ function main() {
 
   const index = {
     $schema: "https://ui.shadcn.com/schema/registry.json",
-    name: "winkui",
-    homepage: "https://winkui.dev",
+    name: "sonojs",
+    homepage: "https://sonojs.dev",
     version,
     generatedAt,
     items: builtItems.map(toIndexEntry),

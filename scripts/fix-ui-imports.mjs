@@ -9,14 +9,14 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const componentsDir = path.join(root, "packages", "ui", "src", "components")
 
 const replacements = [
-  [/from "cn"/g, 'from "@winkui/ui/lib/utils"'],
-  [/from 'cn'/g, "from '@winkui/ui/lib/utils'"],
-  [/from "@\/registry\/new-york-v4\/ui\//g, 'from "@winkui/ui/components/'],
-  [/from '@\/registry\/new-york-v4\/ui\//g, "from '@winkui/ui/components/"],
-  [/from "@\/registry\/new-york-v4\/hooks\//g, 'from "@winkui/ui/hooks/'],
-  [/from '@\/registry\/new-york-v4\/hooks\//g, "from '@winkui/ui/hooks/"],
-  [/from "@\/registry\/new-york-v4\/lib\//g, 'from "@winkui/ui/lib/'],
-  [/from '@\/registry\/new-york-v4\/lib\//g, "from '@winkui/ui/lib/"],
+  [/from "cn"/g, 'from "@sonojs/ui/lib/utils"'],
+  [/from 'cn'/g, "from '@sonojs/ui/lib/utils'"],
+  [/from "@\/registry\/new-york-v4\/ui\//g, 'from "@sonojs/ui/components/'],
+  [/from '@\/registry\/new-york-v4\/ui\//g, "from '@sonojs/ui/components/"],
+  [/from "@\/registry\/new-york-v4\/hooks\//g, 'from "@sonojs/ui/hooks/'],
+  [/from '@\/registry\/new-york-v4\/hooks\//g, "from '@sonojs/ui/hooks/"],
+  [/from "@\/registry\/new-york-v4\/lib\//g, 'from "@sonojs/ui/lib/'],
+  [/from '@\/registry\/new-york-v4\/lib\//g, "from '@sonojs/ui/lib/"],
 ]
 
 let changed = 0

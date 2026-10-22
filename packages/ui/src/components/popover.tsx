@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 import { Popover as PopoverPrimitive } from "radix-ui"
 
 function Popover({

@@ -2,10 +2,10 @@
 
 import { useMemo } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 
-import { Label } from "@winkui/ui/components/label"
-import { Separator } from "@winkui/ui/components/separator"
+import { Label } from "@sonojs/ui/components/label"
+import { Separator } from "@sonojs/ui/components/separator"
 
 function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
   return (

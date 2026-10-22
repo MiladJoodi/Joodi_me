@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import { ComponentSource } from "@/components/docs"
-import { buttonVariants } from "@winkui/ui/components/button"
+import { buttonVariants } from "@sonojs/ui/components/button"
 import { cn } from "@/lib/utils"
 
 export default function DocsIndexPage() {
@@ -15,19 +15,19 @@ export default function DocsIndexPage() {
       <ComponentSource
         title="1. Init design system"
         lang="bash"
-        code={`npx @winkui/ui@latest init`}
+        code={`npx @sonojs/ui@latest init`}
       />
       <ComponentSource
         title="2. Add a component"
         lang="bash"
-        code={`npx @winkui/ui@latest add button`}
+        code={`npx @sonojs/ui@latest add button`}
       />
       <div className="flex flex-wrap gap-3">
         <Link
-          href="/docs/components/button"
+          href="/docs/components/accordion"
           className={cn(buttonVariants({ variant: "default" }), "cursor-pointer")}
         >
-          Button component
+          Browse components
         </Link>
         <Link
           href="/blocks"

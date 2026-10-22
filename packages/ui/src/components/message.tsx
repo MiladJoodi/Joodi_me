@@ -1,5 +1,5 @@
 import * as React from "react"
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 
 function MessageGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (

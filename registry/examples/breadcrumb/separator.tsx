@@ -8,7 +8,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@winkui/ui/components/breadcrumb"
+} from "@sonojs/ui/components/breadcrumb"
 
 export function BreadcrumbSeparatorExample() {
   return (

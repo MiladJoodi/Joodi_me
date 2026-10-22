@@ -13,8 +13,8 @@ import {
   Trash2Icon,
 } from "lucide-react"
 
-import { Button } from "@winkui/ui/components/button"
-import { ButtonGroup } from "@winkui/ui/components/button-group"
+import { Button } from "@sonojs/ui/components/button"
+import { ButtonGroup } from "@sonojs/ui/components/button-group"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,7 +27,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@winkui/ui/components/dropdown-menu"
+} from "@sonojs/ui/components/dropdown-menu"
 
 export function ButtonGroupDefault() {
   const [label, setLabel] = React.useState("personal")

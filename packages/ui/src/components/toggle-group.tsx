@@ -2,10 +2,10 @@
 
 import * as React from "react"
 import { type VariantProps } from "class-variance-authority"
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 import { ToggleGroup as ToggleGroupPrimitive } from "radix-ui"
 
-import { toggleVariants } from "@winkui/ui/components/toggle"
+import { toggleVariants } from "@sonojs/ui/components/toggle"
 
 const ToggleGroupContext = React.createContext<
   VariantProps<typeof toggleVariants> & {

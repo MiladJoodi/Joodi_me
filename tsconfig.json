@@ -20,7 +20,7 @@
     ],
     "paths": {
       "@/components/ui/*": ["./packages/ui/src/components/*"],
-      "@winkui/ui/*": ["./packages/ui/src/*"],
+      "@sonojs/ui/*": ["./packages/ui/src/*"],
       "@/*": ["./*"]
     }
   },

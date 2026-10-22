@@ -1,6 +1,8 @@
 export { CodePanel } from "./code-panel"
 export { ComponentSource } from "./component-source"
 export { CopyButton } from "./copy-button"
+export { InstallNeedsHint } from "./install-needs-hint"
 export { ComponentVariantPreview } from "./variant-preview"
 export type { VariantExample } from "./variant-preview"
 export { DocsApiProps } from "./api-props"
+export { DocsInstallation } from "./docs-installation"

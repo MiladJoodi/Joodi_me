@@ -11,8 +11,8 @@ import {
   VolumeOffIcon,
 } from "lucide-react"
 
-import { Button } from "@winkui/ui/components/button"
-import { ButtonGroup } from "@winkui/ui/components/button-group"
+import { Button } from "@sonojs/ui/components/button"
+import { ButtonGroup } from "@sonojs/ui/components/button-group"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,7 +20,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@winkui/ui/components/dropdown-menu"
+} from "@sonojs/ui/components/dropdown-menu"
 
 export function ButtonGroupDropdown() {
   return (

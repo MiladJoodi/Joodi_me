@@ -4,7 +4,7 @@ import * as React from "react"
 import { CodeIcon, EyeIcon } from "lucide-react"
 
 import { CodePanel } from "@/components/docs/code-panel"
-import { CopyButton } from "@/components/docs/copy-button"
+import { InstallNeedsHint } from "@/components/docs/install-needs-hint"
 import {
   DirectionProvider,
   DirectionToggle,
@@ -16,36 +16,66 @@ import { getRegistryExample } from "@/registry/index"
 export type VariantExample = {
   name: string
   title: string
+  /**
+   * One short line above the preview (outside the player chrome).
+   * Prefer naming the prop/API in backticks, e.g. Use `size="sm"` for …
+   */
+  description?: string
   /** Consumer-facing source for this variant (shown in Code tab). */
   code?: string
   /** Pre-highlighted HTML from `highlightCode` on the server. */
   codeHtml?: string
   /**
    * Extra registry items this example needs (not required by the main
-   * component). Shown as a soft install hint under the toolbar.
+   * component). Shown as “This example also needs” under the Code tab only.
    */
   requires?: string[]
+  /**
+   * Extra npm packages this example needs beyond the main component
+   * (e.g. lucide-react). Same footer bar on the Code tab; command uses `npm i …`.
+   */
+  npmRequires?: string[]
 }
 
 type ViewMode = "preview" | "code"
 
-function RequiresHint({ names }: { names: string[] }) {
-  const command = `npx @winkui/ui@latest add ${names.join(" ")}`
-
+/** Renders `` `code` `` spans inside a plain description string. */
+function DescriptionText({ text }: { text: string }) {
+  const parts = text.split(/(`[^`]+`)/g)
   return (
-    <div className="flex flex-wrap items-center gap-2 border-t border-border/60 bg-muted/20 px-3 py-2 text-[12.5px] text-muted-foreground">
-      <span className="shrink-0">This example also needs</span>
-      <code className="rounded-md border border-border/70 bg-background px-1.5 py-0.5 font-mono text-[12px] text-foreground">
-        {names.join(", ")}
-      </code>
-      <span className="shrink-0">—</span>
-      <code className="min-w-0 flex-1 truncate rounded-md border border-border/70 bg-background px-1.5 py-0.5 font-mono text-[11.5px] text-foreground sm:flex-none">
-        {command}
-      </code>
-      <CopyButton
-        value={command}
-        className="text-muted-foreground hover:bg-muted hover:text-foreground"
-      />
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith("`") && part.endsWith("`") && part.length > 2) {
+          return (
+            <code
+              key={i}
+              className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em] text-foreground"
+            >
+              {part.slice(1, -1)}
+            </code>
+          )
+        }
+        return <React.Fragment key={i}>{part}</React.Fragment>
+      })}
+    </>
+  )
+}
+
+function ExampleLead({
+  title,
+  description,
+}: {
+  title: string
+  description?: string
+}) {
+  return (
+    <div className="space-y-1.5">
+      <h3 className="text-h4 tracking-tight text-foreground">{title}</h3>
+      {description ? (
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          <DescriptionText text={description} />
+        </p>
+      ) : null}
     </div>
   )
 }
@@ -53,9 +83,12 @@ function RequiresHint({ names }: { names: string[] }) {
 export function ComponentVariantPreview({
   examples,
   className,
+  showDirection = true,
 }: {
   examples: VariantExample[]
   className?: string
+  /** Hide LTR/RTL when the preview has no directional layout (e.g. code). */
+  showDirection?: boolean
 }) {
   const [active, setActive] = React.useState(examples[0]?.name ?? "")
   const [dir, setDir] = React.useState<Direction>("ltr")
@@ -65,85 +98,94 @@ export function ComponentVariantPreview({
   const meta = examples.find((item) => item.name === active)
   const hasCode = Boolean(meta?.code && meta?.codeHtml)
   const requires = meta?.requires?.filter(Boolean) ?? []
+  const npmRequires = meta?.npmRequires?.filter(Boolean) ?? []
 
   React.useEffect(() => {
     if (!hasCode && view === "code") setView("preview")
   }, [hasCode, view])
 
   return (
-    <div
-      className={cn(
-        "overflow-hidden rounded-xl border border-border/80",
-        className
-      )}
-    >
-      <div className="flex items-start gap-2 border-b border-border/80 bg-muted/30 p-2">
-        <div className="flex min-w-0 flex-1 flex-wrap gap-1">
-          {examples.map((item) => (
-            <button
-              key={item.name}
-              type="button"
-              onClick={() => setActive(item.name)}
-              className={cn(
-                "cursor-pointer rounded-md px-2.5 py-1.5 text-[12.5px] font-medium transition-colors",
-                active === item.name
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-              )}
-            >
-              {item.title}
-            </button>
-          ))}
-        </div>
-        <div className="flex shrink-0 items-center gap-1.5 self-start">
-          {view === "preview" ? (
-            <DirectionToggle value={dir} onValueChange={setDir} />
-          ) : null}
-          {hasCode ? (
-            <div className="inline-flex h-8 items-center rounded-md border border-border/80 bg-background p-0.5">
-              {(
-                [
-                  { id: "preview", label: "Preview", Icon: EyeIcon },
-                  { id: "code", label: "Code", Icon: CodeIcon },
-                ] as const
-              ).map((tab) => (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setView(tab.id)}
-                  aria-label={tab.label}
-                  title={tab.label}
-                  className={cn(
-                    "inline-flex size-7 cursor-pointer items-center justify-center rounded-sm transition-colors",
-                    view === tab.id
-                      ? "bg-muted text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  <tab.Icon className="size-3.5" aria-hidden />
-                </button>
-              ))}
-            </div>
-          ) : null}
-        </div>
-      </div>
-
-      {view === "preview" ? (
-        <DirectionProvider
-          dir={dir}
-          className="flex min-h-32 items-center justify-center bg-background p-8"
-        >
-          {Preview ? <Preview /> : null}
-        </DirectionProvider>
-      ) : meta?.code && meta?.codeHtml ? (
-        <CodePanel
-          title={`${meta.title}.tsx`}
-          code={meta.code}
-          html={meta.codeHtml}
-        />
+    <div className={cn("space-y-3", className)}>
+      {meta ? (
+        <ExampleLead title={meta.title} description={meta.description} />
       ) : null}
 
-      {requires.length > 0 ? <RequiresHint names={requires} /> : null}
+      <div className="overflow-hidden rounded-xl border border-border/80">
+        <div className="flex items-start gap-2 border-b border-border/80 bg-muted/30 p-2">
+          <div className="flex min-w-0 flex-1 flex-wrap gap-1">
+            {examples.map((item) => (
+              <button
+                key={item.name}
+                type="button"
+                onClick={() => setActive(item.name)}
+                className={cn(
+                  "cursor-pointer rounded-md px-2.5 py-1.5 text-[12.5px] font-medium transition-colors",
+                  active === item.name
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
+                )}
+              >
+                {item.title}
+              </button>
+            ))}
+          </div>
+          <div className="flex shrink-0 items-center gap-1.5 self-start">
+            {view === "preview" && showDirection ? (
+              <DirectionToggle value={dir} onValueChange={setDir} />
+            ) : null}
+            {hasCode ? (
+              <div className="inline-flex h-8 items-center rounded-md border border-border/80 bg-background p-0.5">
+                {(
+                  [
+                    { id: "preview", label: "Preview", Icon: EyeIcon },
+                    { id: "code", label: "Code", Icon: CodeIcon },
+                  ] as const
+                ).map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setView(tab.id)}
+                    aria-label={tab.label}
+                    title={tab.label}
+                    className={cn(
+                      "inline-flex size-7 cursor-pointer items-center justify-center rounded-sm transition-colors",
+                      view === tab.id
+                        ? "bg-muted text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    <tab.Icon className="size-3.5" aria-hidden />
+                  </button>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        </div>
+
+        {view === "preview" ? (
+          showDirection ? (
+            <DirectionProvider
+              dir={dir}
+              className="flex min-h-32 items-center justify-center bg-background p-8"
+            >
+              {Preview ? <Preview /> : null}
+            </DirectionProvider>
+          ) : (
+            <div className="flex min-h-32 items-center justify-center bg-background p-8">
+              {Preview ? <Preview /> : null}
+            </div>
+          )
+        ) : meta?.code && meta?.codeHtml ? (
+          <>
+            <CodePanel
+              title={`${meta.title}.tsx`}
+              code={meta.code}
+              html={meta.codeHtml}
+            />
+            <InstallNeedsHint registry={requires} npm={npmRequires} />
+          </>
+        ) : null}
+      </div>
     </div>
   )
 }

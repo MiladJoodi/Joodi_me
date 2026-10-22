@@ -11,10 +11,10 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@winkui/ui/components",
-    "utils": "@winkui/ui/lib/utils",
-    "hooks": "@winkui/ui/hooks",
-    "lib": "@winkui/ui/lib",
-    "ui": "@winkui/ui/components"
+    "components": "@sonojs/ui/components",
+    "utils": "@sonojs/ui/lib/utils",
+    "hooks": "@sonojs/ui/hooks",
+    "lib": "@sonojs/ui/lib",
+    "ui": "@sonojs/ui/components"
   }
 }

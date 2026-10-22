@@ -1,5 +1,5 @@
 /**
- * WinkUI direction utilities.
+ * SonoJS direction utilities.
  * Prefer Tailwind logical utilities (ms/me, ps/pe, start/end, text-start, border-s).
  * Use these only for glyphs that must mirror in RTL (chevrons, arrows, carets).
  */

@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 import { HoverCard as HoverCardPrimitive } from "radix-ui"
 
 function HoverCard({
@@ -11,10 +11,15 @@ function HoverCard({
 }
 
 function HoverCardTrigger({
+  className,
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Trigger>) {
   return (
-    <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
+    <HoverCardPrimitive.Trigger
+      data-slot="hover-card-trigger"
+      className={cn("cursor-pointer", className)}
+      {...props}
+    />
   )
 }
 

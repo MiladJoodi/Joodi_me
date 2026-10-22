@@ -79,7 +79,7 @@ async function ensureGlobalsImport(cwd) {
 
 /**
  * Install SonoJS design system + utils into a consumer project.
- * Tokens are scoped to `.sonojs` — does not override host :root theme.
+ * Theme tokens land on `:root` via styles/sonojs.css (imported from globals.css).
  */
 export async function initSonojsProject({
   cwd = process.cwd(),

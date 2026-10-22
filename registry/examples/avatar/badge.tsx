@@ -5,7 +5,7 @@ import {
   AvatarBadge,
   AvatarFallback,
   AvatarImage,
-} from "@winkui/ui/components/avatar"
+} from "@sonojs/ui/components/avatar"
 
 export function AvatarBadgeExample() {
   return (

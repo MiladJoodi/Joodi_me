@@ -1,4 +1,4 @@
-# WinkUI
+# SonoJS
 
 Accessible React + Tailwind component library with calm defaults, first-class RTL/LTR, and a tiny docs/registry shell.
 
@@ -16,7 +16,7 @@ Accessible React + Tailwind component library with calm defaults, first-class RT
 | Sizes | Nova: Button default h-8 (32) · sm h-7 · lg h-9 · Input h-8 · radius 0.625rem · Sidebar ~240 · Content max ~1280 |
 | Spacing | 4px scale (see `AGENTS.md` Design System Standards) |
 
-RTL/LTR: set `dir` on `<html>`, see `/docs/direction`. Rules: `.cursor/rules/winkui-direction.mdc`, `registry/README.md`.
+RTL/LTR: set `dir` on `<html>`, see `/docs/direction`. Rules: `.cursor/rules/sonojs-direction.mdc`, `registry/README.md`.
 
 ## Develop
 
@@ -25,11 +25,11 @@ npm install
 npm run dev
 ```
 
-Consumers use the **`@winkui/ui`** CLI (copy-source install):
+Consumers use the **`@sonojs/ui`** CLI (copy-source install):
 
 ```bash
-npx @winkui/ui@latest init          # design system + lib/utils + components.json
-npx @winkui/ui@latest add button    # → components/ui/button.tsx
+npx @sonojs/ui@latest init          # design system + lib/utils + components.json
+npx @sonojs/ui@latest add button    # → components/ui/button.tsx
 ```
 
 ```ts
@@ -48,7 +48,7 @@ Host-agnostic policy (no Redis, no CDN-specific purge APIs):
 | `public/r/*.json` | Stable URLs; `Cache-Control: public, max-age=0, must-revalidate` via `next.config.ts`. Never `immutable`. |
 | `/_next/static/*` | Next.js defaults (content-hashed, long-lived). Do not override. |
 
-Registry index and item JSON share `version` + `generatedAt` from one atomic `registry:build`. The CLI refuses `winkui add` when those diverge.
+Registry index and item JSON share `version` + `generatedAt` from one atomic `registry:build`. The CLI refuses `sonojs add` when those diverge.
 
 ### Verify after deploy / locally
 
@@ -57,8 +57,8 @@ npm run build
 npm run start
 # other terminal:
 npm run verify:cache
-npm run winkui -- init --cwd /tmp/winkui-smoke --overwrite
-npm run winkui -- add button --registry ./public/r --cwd /tmp/winkui-smoke --overwrite
+npm run sonojs -- init --cwd /tmp/sonojs-smoke --overwrite
+npm run sonojs -- add button --registry ./public/r --cwd /tmp/sonojs-smoke --overwrite
 ```
 
 Manual checks:
@@ -74,6 +74,6 @@ Manual checks:
 1. `packages/ui/src/components/<name>.tsx` (single source; `registry:build` → `public/r/`)
 2. Examples under `registry/examples/<name>/` + `registry/index.ts`
 3. `scripts/registry-items.mjs` + `npm run registry:build`
-4. `lib/docs-nav.ts` + docs: `npx @winkui/ui@latest init` then `add <name>`
+4. `lib/docs-nav.ts` + docs: `npx @sonojs/ui@latest init` then `add <name>`
 
 See `registry/README.md`.

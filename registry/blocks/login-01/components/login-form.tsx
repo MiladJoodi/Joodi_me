@@ -1,14 +1,14 @@
 import { cn } from "@/lib/utils"
-import { Button } from "@winkui/ui/components/button"
+import { Button } from "@sonojs/ui/components/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@winkui/ui/components/card"
-import { Input } from "@winkui/ui/components/input"
-import { Label } from "@winkui/ui/components/label"
+} from "@sonojs/ui/components/card"
+import { Input } from "@sonojs/ui/components/input"
+import { Label } from "@sonojs/ui/components/label"
 
 export default function LoginForm({
   className,

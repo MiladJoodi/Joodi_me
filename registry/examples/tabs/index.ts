@@ -1,0 +1,5 @@
+export { TabsDefault } from "./default"
+export { TabsLine } from "./line"
+export { TabsVertical } from "./vertical"
+export { TabsDisabled } from "./disabled"
+export { TabsIcons } from "./icons"

@@ -2,15 +2,36 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
 } from "@/components/docs"
 import { withVariantCode } from "@/lib/docs-variant-examples"
 
 const exampleDefs = [
-  { name: "avatar-default", title: "Default" },
-  { name: "avatar-basic", title: "Basic" },
-  { name: "avatar-sizes", title: "Sizes" },
-  { name: "avatar-badge", title: "Badge" },
-  { name: "avatar-group", title: "Group" },
+  {
+    name: "avatar-default",
+    title: "Default",
+    description: "Image, fallback, status badge, and overlapping groups.",
+  },
+  {
+    name: "avatar-basic",
+    title: "Basic",
+    description: "Image with a text fallback when the source fails.",
+  },
+  {
+    name: "avatar-sizes",
+    title: "Sizes",
+    description: 'Use `size` — `sm`, default, or `lg`.',
+  },
+  {
+    name: "avatar-badge",
+    title: "Badge",
+    description: "Add `AvatarBadge` for status or a small icon.",
+  },
+  {
+    name: "avatar-group",
+    title: "Group",
+    description: "Overlap avatars with `AvatarGroup` and an overflow count.",
+  },
 ]
 
 const usageSource = `import {
@@ -41,19 +62,11 @@ export default async function AvatarDocsPage() {
         </p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
+      <section className="space-y-4">
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add avatar`}
-        />
-      </section>
+      <DocsInstallation name="avatar" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

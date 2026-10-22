@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:ui",
+  "title": "Collapsible",
+  "description": "An interactive component which expands and collapses a panel.",
+  "dependencies": [
+    "radix-ui",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/collapsible.tsx",
+      "type": "registry:ui",
+      "content": "\"use client\"\n\nimport { Collapsible as CollapsiblePrimitive } from \"radix-ui\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Collapsible({\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {\n  return (\n    <CollapsiblePrimitive.Root\n      data-slot=\"collapsible\"\n      className={cn(className)}\n      {...props}\n    />\n  )\n}\n\nfunction CollapsibleTrigger({\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {\n  return (\n    <CollapsiblePrimitive.CollapsibleTrigger\n      data-slot=\"collapsible-trigger\"\n      className={cn(\"cursor-pointer\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction CollapsibleContent({\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {\n  return (\n    <CollapsiblePrimitive.CollapsibleContent\n      data-slot=\"collapsible-content\"\n      className={cn(className)}\n      {...props}\n    />\n  )\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent }\n",
+      "target": "components/ui/collapsible.tsx"
+    }
+  ],
+  "version": "0.1.0+ffe9840d3c1e",
+  "generatedAt": "2026-10-22T18:31:00.457Z"
+}

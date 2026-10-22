@@ -10,7 +10,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@winkui/ui/components/card"
+} from "@sonojs/ui/components/card"
 
 const chartData = [
   { month: "Jan", store: 186 },

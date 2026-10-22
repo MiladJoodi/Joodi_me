@@ -2,6 +2,7 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
   type VariantExample,
 } from "@/components/docs"
 import { highlightCode } from "@/lib/highlight-code"
@@ -9,7 +10,7 @@ import { highlightCode } from "@/lib/highlight-code"
 const calendarSources: Record<string, string> = {
   "calendar-default": `"use client"
 
-import * as React from "react"
+import React from "react"
 
 import { Calendar } from "@/components/ui/calendar"
 
@@ -35,7 +36,7 @@ export function CalendarBasic() {
 }`,
   "calendar-range": `"use client"
 
-import * as React from "react"
+import React from "react"
 import { addDays } from "date-fns"
 import { type DateRange } from "react-day-picker"
 
@@ -80,7 +81,7 @@ export function CalendarCaption() {
 }`,
   "calendar-presets": `"use client"
 
-import * as React from "react"
+import React from "react"
 import { addDays } from "date-fns"
 
 import { Button } from "@/components/ui/button"
@@ -138,7 +139,7 @@ export function CalendarPresets() {
 }`,
   "calendar-time": `"use client"
 
-import * as React from "react"
+import React from "react"
 import { Clock2Icon } from "lucide-react"
 
 import { Calendar } from "@/components/ui/calendar"
@@ -204,7 +205,7 @@ export function CalendarTime() {
 }`,
   "calendar-booked-dates": `"use client"
 
-import * as React from "react"
+import React from "react"
 
 import { Calendar } from "@/components/ui/calendar"
 import { Card, CardContent } from "@/components/ui/card"
@@ -238,7 +239,7 @@ export function CalendarBookedDates() {
 }`,
   "calendar-custom-days": `"use client"
 
-import * as React from "react"
+import React from "react"
 import { addDays } from "date-fns"
 import { type DateRange } from "react-day-picker"
 
@@ -287,7 +288,7 @@ export function CalendarCustomDays() {
 }`,
   "calendar-week-numbers": `"use client"
 
-import * as React from "react"
+import React from "react"
 
 import { Calendar } from "@/components/ui/calendar"
 import { Card, CardContent } from "@/components/ui/card"
@@ -332,7 +333,7 @@ export function CalendarMultiple() {
 
 "use client"
 
-import * as React from "react"
+import React from "react"
 
 import { Calendar } from "@/components/ui/calendar"
 
@@ -357,7 +358,7 @@ export function CalendarHijri() {
 
 const usageSource = `"use client"
 
-import * as React from "react"
+import React from "react"
 
 import { Calendar } from "@/components/ui/calendar"
 
@@ -375,19 +376,73 @@ export function Example() {
 }`
 
 async function getCalendarExamples(): Promise<VariantExample[]> {
-  const base = [
-    { name: "calendar-default", title: "Default" },
-    { name: "calendar-basic", title: "Basic" },
-    { name: "calendar-range", title: "Range" },
-    { name: "calendar-caption", title: "Caption" },
-    { name: "calendar-presets", title: "Presets" },
-    { name: "calendar-time", title: "Time" },
-    { name: "calendar-booked-dates", title: "Booked" },
-    { name: "calendar-custom-days", title: "Custom" },
-    { name: "calendar-week-numbers", title: "Week Numbers" },
-    { name: "calendar-multiple", title: "Multiple" },
-    { name: "calendar-hijri", title: "Hijri" },
-  ] as const
+  const base: VariantExample[] = [
+    {
+      name: "calendar-default",
+      title: "Default",
+      description: 'Single date selection with `captionLayout="dropdown"`.',
+    },
+    {
+      name: "calendar-basic",
+      title: "Basic",
+      description: 'A minimal calendar with `mode="single"`.',
+    },
+    {
+      name: "calendar-range",
+      title: "Range Calendar",
+      description: 'Use `mode="range"` to enable range selection.',
+      requires: ["card"],
+    },
+    {
+      name: "calendar-caption",
+      title: "Month and Year Selector",
+      description:
+        'Use `captionLayout="dropdown"` to show month and year dropdowns.',
+    },
+    {
+      name: "calendar-presets",
+      title: "Presets",
+      description: "Quick-select common ranges beside the calendar.",
+      requires: ["card"],
+    },
+    {
+      name: "calendar-time",
+      title: "Date and Time",
+      description: "Pick a date and pair it with a time field.",
+      requires: ["card", "field", "input-group"],
+      npmRequires: ["lucide-react"],
+    },
+    {
+      name: "calendar-booked-dates",
+      title: "Booked Dates",
+      description: "Disable or mark dates that are already booked.",
+      requires: ["card"],
+    },
+    {
+      name: "calendar-custom-days",
+      title: "Custom Days",
+      description: "Customize day cells for special rendering.",
+      requires: ["card"],
+    },
+    {
+      name: "calendar-week-numbers",
+      title: "Week Numbers",
+      description: "Show ISO week numbers alongside the month grid.",
+      requires: ["card"],
+    },
+    {
+      name: "calendar-multiple",
+      title: "Multiple",
+      description: 'Use `mode="multiple"` to select several dates.',
+      requires: ["card"],
+    },
+    {
+      name: "calendar-hijri",
+      title: "Persian / Hijri",
+      description: "Render the calendar with a Persian (Jalali) locale.",
+      npmRequires: ["lucide-react"],
+    },
+  ]
 
   return Promise.all(
     base.map(async (item) => {
@@ -414,19 +469,11 @@ export default async function CalendarDocsPage() {
         </p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
+      <section className="space-y-4">
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add calendar`}
-        />
-      </section>
+      <DocsInstallation name="calendar" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

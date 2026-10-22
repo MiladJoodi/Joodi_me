@@ -2,13 +2,27 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
 } from "@/components/docs"
 import { withVariantCode } from "@/lib/docs-variant-examples"
 
 const exampleDefs = [
-  { name: "alert-default", title: "Default" },
-  { name: "alert-destructive", title: "Destructive" },
-  { name: "alert-action", title: "Action", requires: ["button"] },
+  {
+    name: "alert-default",
+    title: "Default",
+    description: "Neutral callout for success or informational messages.",
+  },
+  {
+    name: "alert-destructive",
+    title: "Destructive",
+    description: 'Use `variant="destructive"` for errors and failures.',
+  },
+  {
+    name: "alert-action",
+    title: "Action",
+    description: "Add `AlertAction` for a button aligned to the end edge.",
+    requires: ["button"],
+  },
 ]
 
 const alertSource = `import { AlertCircleIcon } from "lucide-react"
@@ -43,19 +57,11 @@ export default async function AlertDocsPage() {
         </p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
+      <section className="space-y-4">
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add alert`}
-        />
-      </section>
+      <DocsInstallation name="alert" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

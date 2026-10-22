@@ -1,0 +1,87 @@
+---
+description: Declare registry + npm deps; surface them via CLI + lines after add — not as docs Dependencies blocks
+alwaysApply: true
+---
+
+# SonoJS registry dependencies
+
+When adding or porting a registry component / block / chart, **dependencies must be complete in the registry JSON**. Users discover them from **`sonojs add` output** (`+` lines), not from a docs “Dependencies / npm i …” code block.
+
+## Declare in `scripts/registry-items.mjs`
+
+| Field | Use for |
+|---|---|
+| `registryDependencies` | Other SonoJS registry items the source imports (`separator`, `button`, `spinner`, …). CLI installs them first and prints each as `+ path`. |
+| `dependencies` | npm packages the installed file needs (`react-day-picker`, `date-fns`, `recharts`, …). CLI prints each as `+ <pkg>` then `npm i …`. |
+
+Do **not** omit a dep because “the monorepo already has it” — consumers only get what the registry JSON lists.
+
+**Pin versions when latest would break the component.** Example: calendar needs DayPicker v9 APIs — declare `react-day-picker@^9.14.0`, not bare `react-day-picker` (npm would pull v10 and drop dropdown border/radius). Versioned specs are always passed to `npm i` so a wrong major already in the consumer gets corrected.
+
+After edits: `npm run registry:build` and confirm `public/r/<name>.json`.
+
+## Examples / demos
+
+If a **docs example** imports another installable SonoJS component that the main item’s source also needs, add it to `registryDependencies`.
+
+If it is example-only chrome, keep it out of the item’s registry deps — still fine for the docs preview.
+
+## Docs Installation + “Also needs”
+
+Use shared `DocsInstallation` on every component docs page. Same visual language as button-group example footers (“This example also needs …”).
+
+```tsx
+<DocsInstallation name="calendar" />
+```
+
+Renders:
+
+1. Code player — only `npx @sonojs/ui@latest add <name>`
+2. Soft bar under it when the item has deps — **Also needs** `npx … add button && npm i date-fns lucide-react react-day-picker` (command only; no duplicate name list)
+
+- `registryDependencies` → `npx @sonojs/ui@latest add …`
+- npm `dependencies` → `npm i …` for notable packages (**include** `lucide-react`, `react-day-picker`, `date-fns`, …)
+- Skip only baseline noise: `clsx`, `tailwind-merge`, `radix-ui`, `class-variance-authority`
+- **Do not** invent a second section titled “Dependencies”
+- button-group → Also needs `separator`; calendar → Also needs `button`, `date-fns`, `lucide-react`, `react-day-picker@^9.14.0`
+
+### Example footers
+
+Per-variant extras (not pulled by the main item) use the same bar via `requires` / `npmRequires` on `VariantExample`:
+
+```ts
+requires: ["card", "field", "input-group"],
+npmRequires: ["lucide-react"],
+```
+
+Label stays **This example also needs**.
+
+## CLI contract (required everywhere)
+
+`sonojs add <name>` must:
+
+1. Recursively install `registryDependencies` (each file logged with `+`).
+2. Collect `dependencies`, skip init baseline (`clsx`, `tailwind-merge`) and bare names already in the consumer `package.json`, then **run `npm i …` for the rest** (log each as `+ <pkg>`). Version-pinned specs (e.g. `react-day-picker@^9.14.0`) always install so the range is enforced. Do not only print a tip — missing packages cause TS2307.
+
+Shared helper: `packages/cli/src/install-npm.mjs` and `packages/ui/cli/src/install-npm.mjs` (keep in sync).
+
+Example after `add calendar`:
+
+```text
+  + components/ui/button.tsx
+  + components/ui/calendar.tsx
+
+Installing npm packages:
+  + date-fns
+  + lucide-react
+  + react-day-picker@^9.14.0
+  (npm i runs here)
+```
+
+## Checklist (new / updated item)
+
+- [ ] `registryDependencies` lists every SonoJS UI import in the component source
+- [ ] `dependencies` lists every required npm package
+- [ ] Docs page uses `<DocsInstallation name="…" />` only (no npm Dependencies block)
+- [ ] `npm run registry:build` run
+- [ ] Spot-check: `add` copies files with `+` and actually runs `npm i` for missing packages (no TS2307)

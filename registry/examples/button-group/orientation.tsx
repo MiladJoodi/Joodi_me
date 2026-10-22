@@ -1,7 +1,7 @@
 import { MinusIcon, PlusIcon } from "lucide-react"
 
-import { Button } from "@winkui/ui/components/button"
-import { ButtonGroup } from "@winkui/ui/components/button-group"
+import { Button } from "@sonojs/ui/components/button"
+import { ButtonGroup } from "@sonojs/ui/components/button-group"
 
 export function ButtonGroupOrientation() {
   return (

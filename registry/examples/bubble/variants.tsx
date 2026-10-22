@@ -2,7 +2,7 @@ import {
   Bubble,
   BubbleContent,
   BubbleReactions,
-} from "@winkui/ui/components/bubble"
+} from "@sonojs/ui/components/bubble"
 
 export function BubbleVariants() {
   return (

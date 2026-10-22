@@ -4,8 +4,8 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-<!-- BEGIN:winkui-direction -->
-# WinkUI direction (RTL + LTR)
+<!-- BEGIN:sonojs-direction -->
+# SonoJS direction (RTL + LTR)
 
 Direction is a **core architecture** requirement for every new registry component, block, chart, and docs chrome.
 
@@ -13,12 +13,12 @@ Direction is a **core architecture** requirement for every new registry componen
 - Use logical properties only (`ms`/`me`, `ps`/`pe`, `start`/`end`, `text-start`).
 - Use `DirectionProvider` + `useDirection()` from `@/components/direction` for scoped demos; `getStartSide` / `getEndSide` for edge chrome.
 - Directional icons: class `icon-dir`.
-- Authoritative rule: `.cursor/rules/winkui-direction.mdc`
+- Authoritative rule: `.cursor/rules/sonojs-direction.mdc`
 - Human docs: `/docs/direction` · registry checklist: `registry/README.md`
-<!-- END:winkui-direction -->
+<!-- END:sonojs-direction -->
 
-<!-- BEGIN:winkui-folder-structure -->
-# WinkUI folder structure
+<!-- BEGIN:sonojs-folder-structure -->
+# SonoJS folder structure
 
 Group files **per component / block / chart / example set**. No flat dumps of related siblings.
 
@@ -27,44 +27,68 @@ Group files **per component / block / chart / example set**. No flat dumps of re
 - Package UI: `packages/ui/src/components/…` (folder when multi-file)
 - Site chrome: `components/<feature>/…` when 2+ related files (`docs/`, `direction/`, `site-header/`, `sidebar-nav/`)
 - Docs: `app/(app)/docs/components/<name>/page.tsx`
-- Authoritative rule: `.cursor/rules/winkui-folder-structure.mdc`
-<!-- END:winkui-folder-structure -->
+- Authoritative rule: `.cursor/rules/sonojs-folder-structure.mdc`
+<!-- END:sonojs-folder-structure -->
 
-<!-- BEGIN:winkui-ui-consistency -->
-# WinkUI UI consistency
+<!-- BEGIN:sonojs-ui-consistency -->
+# SonoJS UI consistency
 
 Same action → same control. Do not invent one-off copy / toggle / clear buttons.
 
 - Copy: `CopyButton` (`@/components/docs`) — simple icon only
 - Code blocks: `ComponentSource` (includes copy)
-- Authoritative rule: `.cursor/rules/winkui-ui-consistency.mdc`
-<!-- END:winkui-ui-consistency -->
+- Authoritative rule: `.cursor/rules/sonojs-ui-consistency.mdc`
+<!-- END:sonojs-ui-consistency -->
 
-<!-- BEGIN:winkui-registry-parity -->
-# WinkUI registry parity
+<!-- BEGIN:sonojs-docs-examples -->
+# SonoJS docs examples
+
+Each variant needs a **title** + **one short description** above the preview player (outside the bordered chrome). Put API tokens in backticks. Do not crowd the demo.
+
+- Authoritative rule: `.cursor/rules/sonojs-docs-examples.mdc`
+<!-- END:sonojs-docs-examples -->
+
+<!-- BEGIN:sonojs-docs-featured -->
+# SonoJS docs featured
+
+High-traffic / core docs pages get `featured: true` in `lib/docs-nav.ts` (green sidebar bullet). Keep it sparse.
+
+- Authoritative rule: `.cursor/rules/sonojs-docs-featured.mdc`
+<!-- END:sonojs-docs-featured -->
+
+<!-- BEGIN:sonojs-registry-parity -->
+# SonoJS registry parity
 
 What docs show must be what users install. No stale registry payloads.
 
 - UI source of truth: `packages/ui` → `npm run registry:build` → `public/r/`
 - Do not hand-edit duplicate `registry/ui/` copies
-- Authoritative rule: `.cursor/rules/winkui-registry-parity.mdc`
-<!-- END:winkui-registry-parity -->
+- Authoritative rule: `.cursor/rules/sonojs-registry-parity.mdc`
+<!-- END:sonojs-registry-parity -->
 
-<!-- BEGIN:winkui-registry-cursor -->
+<!-- BEGIN:sonojs-registry-deps -->
+# SonoJS registry dependencies
+
+Declare complete `registryDependencies` + npm `dependencies` in `scripts/registry-items.mjs`. After `add`, CLI installs registry files and runs `npm i` for missing packages (`+` lines). Docs: `<DocsInstallation />` shows `add` plus an “Also needs” bar (same UI as button-group example footers) for nested registry items + npm (including lucide). Examples use `requires` / `npmRequires`.
+
+- Authoritative rule: `.cursor/rules/sonojs-registry-deps.mdc`
+<!-- END:sonojs-registry-deps -->
+
+<!-- BEGIN:sonojs-registry-cursor -->
 # Registry cursor pointer
 
 Installable UI (`registry/` + `packages/ui`): every clickable control needs `cursor-pointer` (disabled → not-allowed / pointer-events-none).
 
-Authoritative rule: `.cursor/rules/winkui-registry-cursor.mdc`
-<!-- END:winkui-registry-cursor -->
+Authoritative rule: `.cursor/rules/sonojs-registry-cursor.mdc`
+<!-- END:sonojs-registry-cursor -->
 
-<!-- BEGIN:winkui-no-third-party-branding -->
+<!-- BEGIN:sonojs-no-third-party-branding -->
 # No third-party UI kit branding
 
 Do not name other component-kit brands in docs, comments, or package copy. Describe tokens and pixels instead. Sole exception: registry `$schema` URLs for JSON format compatibility.
 
-Authoritative rule: `.cursor/rules/winkui-no-third-party-branding.mdc`
-<!-- END:winkui-no-third-party-branding -->
+Authoritative rule: `.cursor/rules/sonojs-no-third-party-branding.mdc`
+<!-- END:sonojs-no-third-party-branding -->
 
 <!-- BEGIN:design-system-standards -->
 # Design System Standards
@@ -84,7 +108,7 @@ Tokens live in `app/globals.css` (and `styles/vega-tokens.css` for theme surface
 
 ## Component dimensions
 
-Size scale = WinkUI control scale (heights/padding/radius). Do **not** change fonts or brand colors when aligning sizes. Legacy default was `h-9` (36px); current styles use **`h-8` (32px)**.
+Size scale = SonoJS control scale (heights/padding/radius). Do **not** change fonts or brand colors when aligning sizes. Legacy default was `h-9` (36px); current styles use **`h-8` (32px)**.
 
 - Button: xs `h-6` · sm `h-7` · **default `h-8` (32px)** · lg `h-9` · icon `size-8` / `size-6` / `size-7` / `size-9`; `text-sm` / weight 500
 - Input / Select trigger: **`h-8`** · `px-2.5` · `rounded-md` · Input also `text-base md:text-sm`
@@ -104,7 +128,7 @@ Radius scale (`--radius: 0.625rem` / 10px):
 - Surfaces (cards, code, dialogs): 10px (`--radius-lg` / `--radius-surface`)
 - Pills / avatars: full round only when appropriate
 
-Fonts (Geist) and brand colors stay WinkUI — only dimensions and radius follow the token scale above.
+Fonts (Geist) and brand colors stay SonoJS — only dimensions and radius follow the token scale above.
 
 ## Spacing
 
@@ -142,7 +166,7 @@ Accessible contrast and visible focus rings required.
 Apply to all code blocks, snippets, component source examples, and CLI samples. Shared component: `ComponentSource`. Tokens: `--code-*` in `app/globals.css`.
 
 **Typography**
-- Font: Geist Mono (`--font-wink-mono`)
+- Font: Geist Mono (`--font-sono-mono`)
 - Size: 14px (mobile + desktop, VS Code default) · Line-height: 1.65 · Weight: 400 · Tab size: 2
 - Preserve whitespace; no wrap by default — horizontal scroll
 - Line numbers optional and subtle (`--code-line-number`)

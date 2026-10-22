@@ -8,12 +8,12 @@ export default function DirectionDocsPage() {
       <header className="space-y-3">
         <h1 className="text-h1">Direction (RTL / LTR)</h1>
         <p className="text-lg leading-relaxed text-foreground">
-          To use WinkUI in a right-to-left layout, set{" "}
-          <code className="wink-inline-code">dir=&quot;rtl&quot;</code> on the
+          To use SonoJS in a right-to-left layout, set{" "}
+          <code className="sono-inline-code">dir=&quot;rtl&quot;</code> on the
           HTML element. That&apos;s it.
         </p>
         <p className="leading-relaxed text-muted-foreground">
-          WinkUI components follow the direction automatically. You do not need
+          SonoJS components follow the direction automatically. You do not need
           to configure each component. They inherit direction from their parent.
         </p>
       </header>
@@ -40,7 +40,7 @@ export default function DirectionDocsPage() {
         <h2 className="text-h3">RTL section inside an LTR app</h2>
         <p className="text-sm leading-relaxed text-muted-foreground">
           Need one block in the other direction? Wrap it with{" "}
-          <code className="wink-inline-code">DirectionProvider</code>.
+          <code className="sono-inline-code">DirectionProvider</code>.
         </p>
         <ComponentSource
           title="DirectionProvider"
@@ -63,7 +63,7 @@ export function RtlSection() {
         <h2 className="text-h3">For contributors (building components)</h2>
         <p className="text-sm leading-relaxed text-muted-foreground">
           App developers can skip this section. It is for people who add new
-          WinkUI components.
+          SonoJS components.
         </p>
         <ul className="list-disc space-y-2 ps-5 text-sm leading-relaxed text-muted-foreground">
           <li>

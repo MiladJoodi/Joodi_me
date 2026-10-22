@@ -13,5 +13,8 @@
     "bin",
     "src",
     "templates"
-  ]
+  ],
+  "dependencies": {
+    "@tanstack/react-table": "^9.3.1"
+  }
 }

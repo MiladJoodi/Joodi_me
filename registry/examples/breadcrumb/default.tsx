@@ -8,15 +8,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@winkui/ui/components/breadcrumb"
-import { Button } from "@winkui/ui/components/button"
+} from "@sonojs/ui/components/breadcrumb"
+import { Button } from "@sonojs/ui/components/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@winkui/ui/components/dropdown-menu"
+} from "@sonojs/ui/components/dropdown-menu"
 
 export function BreadcrumbDefault() {
   return (

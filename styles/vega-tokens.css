@@ -1,5 +1,5 @@
 /**
- * Vega (calm) surfaces + WinkUI primary palette.
+ * Vega (calm) surfaces + SonoJS primary palette.
  * Primary: #2563EB (light) / #396EF0 (dark, AA vs white).
  * Unlayered so these beat `.theme-*` Primary Color overrides.
  */
@@ -9,7 +9,7 @@
 /* -------------------------------------------------------------------------- */
 
 .style-vega {
-  /* WinkUI primary — #2563EB */
+  /* SonoJS primary — #2563EB */
   --vega-primary: #2563eb;
   --vega-primary-foreground: #ffffff;
   --vega-primary-hover: #1d4ed8;
@@ -69,7 +69,7 @@
   --color-chart-4: var(--vega-chart-4);
   --color-chart-5: var(--vega-chart-5);
 
-  /* Border radius — WinkUI scale (aligned with app/globals.css) */
+  /* Border radius — SonoJS scale (aligned with app/globals.css) */
   --radius: 0.625rem;
   --radius-tooltip: calc(var(--radius) * 0.6);
   --radius-control: calc(var(--radius) * 0.8);

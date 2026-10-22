@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 import { Separator as SeparatorPrimitive } from "radix-ui"
 
 function Separator({

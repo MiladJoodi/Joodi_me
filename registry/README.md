@@ -1,8 +1,8 @@
-# WinkUI registry
+# SonoJS registry
 
 ```bash
-npx @winkui/ui@latest init
-npx @winkui/ui@latest add button
+npx @sonojs/ui@latest init
+npx @sonojs/ui@latest add button
 ```
 
 ## Single source (UI)
@@ -24,5 +24,5 @@ Blocks/charts still live under `registry/blocks/`, `registry/charts/`.
 
 ```bash
 # Docs / registry server running on :3000, or use the folder:
-npx @winkui/ui@latest add button --registry I:/Github/new/FableUI/public/r --cwd /path/to/app --overwrite
+npx @sonojs/ui@latest add button --registry I:/Github/new/FableUI/public/r --cwd /path/to/app --overwrite
 ```

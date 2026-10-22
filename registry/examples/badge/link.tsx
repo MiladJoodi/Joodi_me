@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon } from "lucide-react"
 
-import { Badge } from "@winkui/ui/components/badge"
+import { Badge } from "@sonojs/ui/components/badge"
 
 export function BadgeLinkExample() {
   return (

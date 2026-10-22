@@ -2,16 +2,41 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
 } from "@/components/docs"
 import { withVariantCode } from "@/lib/docs-variant-examples"
 
 const exampleDefs = [
-  { name: "button-default", title: "Default" },
-  { name: "button-outline", title: "Outline" },
-  { name: "button-secondary", title: "Secondary" },
-  { name: "button-ghost", title: "Ghost" },
-  { name: "button-destructive", title: "Destructive" },
-  { name: "button-sizes", title: "Sizes" },
+  {
+    name: "button-default",
+    title: "Default",
+    description: "Primary action filled with brand blue.",
+  },
+  {
+    name: "button-outline",
+    title: "Outline",
+    description: 'Use `variant="outline"` for secondary chrome on a surface.',
+  },
+  {
+    name: "button-secondary",
+    title: "Secondary",
+    description: 'Use `variant="secondary"` for quieter filled actions.',
+  },
+  {
+    name: "button-ghost",
+    title: "Ghost",
+    description: 'Use `variant="ghost"` for low-emphasis toolbar actions.',
+  },
+  {
+    name: "button-destructive",
+    title: "Destructive",
+    description: 'Use `variant="destructive"` for delete and irreversible actions.',
+  },
+  {
+    name: "button-sizes",
+    title: "Sizes",
+    description: "Control height with `size` — xs, sm, default, lg, and icon sizes.",
+  },
 ]
 
 const buttonSource = `import { Button } from "@/components/ui/button"
@@ -33,19 +58,11 @@ export default async function ButtonDocsPage() {
         </p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
+      <section className="space-y-4">
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add button`}
-        />
-      </section>
+      <DocsInstallation name="button" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

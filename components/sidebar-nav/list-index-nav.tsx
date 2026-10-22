@@ -7,14 +7,14 @@ import { MenuIcon } from "lucide-react"
 import { useDirection } from "@/hooks/use-direction"
 import { getStartSide } from "@/lib/direction"
 import { cn } from "@/lib/utils"
-import { Button } from "@winkui/ui/components/button"
+import { Button } from "@sonojs/ui/components/button"
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@winkui/ui/components/sheet"
+} from "@sonojs/ui/components/sheet"
 
 export function ListIndexNav({
   title = "Index",

@@ -2,16 +2,42 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
 } from "@/components/docs"
 import { withVariantCode } from "@/lib/docs-variant-examples"
 
 const exampleDefs = [
-  { name: "bubble-default", title: "Default" },
-  { name: "bubble-variants", title: "Variants" },
-  { name: "bubble-alignment", title: "Alignment" },
-  { name: "bubble-group", title: "Group" },
-  { name: "bubble-reactions", title: "Reactions" },
-  { name: "bubble-link-button", title: "Link / Button" },
+  {
+    name: "bubble-default",
+    title: "Default",
+    description: "A short thread with grouped messages and reactions.",
+  },
+  {
+    name: "bubble-variants",
+    title: "Variants",
+    description:
+      "Switch `variant` — default, secondary, muted, tinted, outline, ghost, or destructive.",
+  },
+  {
+    name: "bubble-alignment",
+    title: "Alignment",
+    description: 'Use `align="end"` for the current user side.',
+  },
+  {
+    name: "bubble-group",
+    title: "Group",
+    description: "Wrap consecutive bubbles from the same sender in `BubbleGroup`.",
+  },
+  {
+    name: "bubble-reactions",
+    title: "Reactions",
+    description: "Anchor `BubbleReactions` with `side` and `align`.",
+  },
+  {
+    name: "bubble-link-button",
+    title: "Link / Button",
+    description: "Set `asChild` on `BubbleContent` to render a button or link.",
+  },
 ]
 
 const usageSource = `import {
@@ -50,18 +76,10 @@ export default async function BubbleDocsPage() {
       </header>
 
       <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add bubble`}
-        />
-      </section>
+      <DocsInstallation name="bubble" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

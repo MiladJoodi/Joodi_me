@@ -1,5 +1,5 @@
-import { Badge } from "@winkui/ui/components/badge"
-import { Spinner } from "@winkui/ui/components/spinner"
+import { Badge } from "@sonojs/ui/components/badge"
+import { Spinner } from "@sonojs/ui/components/spinner"
 
 export function BadgeSpinnerExample() {
   return (

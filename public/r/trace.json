@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "trace",
+  "type": "registry:ui",
+  "title": "Trace",
+  "description": "Rows for agent steps — reasoning, tool calls, sources, and plans.",
+  "dependencies": [
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "components/ui/trace.tsx",
+      "type": "registry:ui",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ChevronRightIcon } from \"lucide-react\"\n\nimport {\n Collapsible,\n CollapsibleContent,\n CollapsibleTrigger,\n} from \"@/components/ui/collapsible\"\nimport { cn } from \"@/lib/utils\"\n\nfunction Trace({ className, ...props }: React.ComponentProps<\"div\">) {\n return (\n <div\n data-slot=\"trace\"\n className={cn(\n \"flex w-full min-w-0 flex-col gap-2 *:has-[>[data-slot=trace-line]]:flex *:has-[>[data-slot=trace-line]]:w-fit *:has-[>[data-slot=trace-line]]:max-w-full *:has-[>[data-slot=trace-line]]:min-w-0 *:has-[>[data-slot=trace-line]]:rounded-md *:has-[>[data-slot=trace-line]]:text-start *:has-[>[data-slot=trace-line]]:outline-none\",\n className\n )}\n {...props}\n />\n )\n}\n\nfunction TraceLine({\n className,\n status,\n ...props\n}: React.ComponentProps<\"span\"> & {\n status?: \"running\" | \"error\" | \"pending\"\n}) {\n return (\n <span\n data-slot=\"trace-line\"\n data-status={status}\n className={cn(\n \"flex w-fit max-w-full min-w-0 items-center gap-2 text-sm text-muted-foreground transition-colors in-[a,button]:cursor-pointer in-[a:hover,button:hover]:text-foreground data-[status=error]:text-destructive data-[status=error]:in-[a:hover,button:hover]:text-destructive data-[status=pending]:opacity-60 data-[status=running]:*:data-[slot=trace-title]:shimmer\",\n className\n )}\n {...props}\n />\n )\n}\n\nfunction TraceIcon({ className, ...props }: React.ComponentProps<\"span\">) {\n return (\n <span\n data-slot=\"trace-icon\"\n aria-hidden=\"true\"\n className={cn(\n \"flex size-4 shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [[data-slot=trace-title]~&]:-ms-1\",\n className\n )}\n {...props}\n />\n )\n}\n\nfunction TraceTitle({ className, ...props }: React.ComponentProps<\"span\">) {\n return (\n <span\n data-slot=\"trace-title\"\n className={cn(\"min-w-0 truncate motion-reduce:shimmer-none\", className)}\n {...props}\n />\n )\n}\n\nfunction TraceDescription({\n className,\n ...props\n}: React.ComponentProps<\"span\">) {\n return (\n <span\n data-slot=\"trace-description\"\n className={cn(\n \"shrink-0 text-muted-foreground/70 tabular-nums\",\n className\n )}\n {...props}\n />\n )\n}\n\nfunction TraceCollapsible({\n className,\n ...props\n}: React.ComponentProps<typeof Collapsible>) {\n return (\n <Collapsible\n data-slot=\"trace-collapsible\"\n className={cn(\"flex w-full min-w-0 flex-col\", className)}\n {...props}\n />\n )\n}\n\nfunction TraceCollapsibleTrigger({\n className,\n children,\n ...props\n}: React.ComponentProps<typeof CollapsibleTrigger>) {\n return (\n <CollapsibleTrigger\n data-slot=\"trace-collapsible-trigger\"\n className={cn(\n \"group/trace-collapsible-trigger flex w-fit max-w-full min-w-0 cursor-pointer items-center gap-1 rounded-md text-start text-muted-foreground transition-colors outline-none hover:text-foreground has-[[data-status=error]]:text-destructive\",\n className\n )}\n {...props}\n >\n {children}\n <ChevronRightIcon className=\"pointer-events-none size-4 shrink-0 icon-dir transition-transform duration-200 group-data-[state=open]/trace-collapsible-trigger:rotate-90\" />\n </CollapsibleTrigger>\n )\n}\n\nfunction TraceCollapsibleContent({\n className,\n children,\n ...props\n}: React.ComponentProps<typeof CollapsibleContent>) {\n return (\n <CollapsibleContent\n data-slot=\"trace-collapsible-content\"\n className=\"min-w-0 overflow-hidden duration-200 [--radix-accordion-content-height:var(--radix-collapsible-content-height)] data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down\"\n {...props}\n >\n <div\n data-slot=\"trace-collapsible-content-inner\"\n className={cn(\n \"mt-2 mb-1 ms-[calc(--spacing(2)-1px)] min-w-0 border-s pe-1 ps-4 leading-relaxed wrap-break-word text-muted-foreground\",\n className\n )}\n >\n {children}\n </div>\n </CollapsibleContent>\n )\n}\n\nexport {\n Trace,\n TraceLine,\n TraceIcon,\n TraceTitle,\n TraceDescription,\n TraceCollapsible,\n TraceCollapsibleTrigger,\n TraceCollapsibleContent,\n}\n",
+      "target": "components/ui/trace.tsx"
+    }
+  ],
+  "version": "0.1.0+ffe9840d3c1e",
+  "generatedAt": "2026-10-22T18:31:00.457Z"
+}

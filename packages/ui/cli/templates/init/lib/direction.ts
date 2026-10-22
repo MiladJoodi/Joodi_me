@@ -30,6 +30,21 @@ export function getEndSide(dir: Direction): "left" | "right" {
   return dir === "rtl" ? "left" : "right"
 }
 
+export type EdgeSide = "top" | "bottom" | "left" | "right" | "start" | "end"
+
+export type PhysicalEdgeSide = "top" | "bottom" | "left" | "right"
+
+export function resolveEdgeSide(
+  side: EdgeSide | undefined,
+  dir: Direction,
+  fallback: PhysicalEdgeSide = "bottom"
+): PhysicalEdgeSide {
+  const value = side ?? fallback
+  if (value === "start") return getStartSide(dir)
+  if (value === "end") return getEndSide(dir)
+  return value
+}
+
 export function readElementDirection(
   el?: Element | null,
   fallback: Direction = DEFAULT_DIRECTION

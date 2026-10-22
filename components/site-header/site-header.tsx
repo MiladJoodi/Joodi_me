@@ -8,7 +8,7 @@ import { MobileNav } from "@/components/site-header/mobile-nav"
 import { ModeSwitcher } from "@/components/site-header/mode-switcher"
 import { siteConfig } from "@/lib/config"
 import { cn } from "@/lib/utils"
-import { Separator } from "@winkui/ui/components/separator"
+import { Separator } from "@sonojs/ui/components/separator"
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -37,10 +37,10 @@ export function SiteHeader() {
               aria-hidden
               className="flex size-6 items-center justify-center rounded-[var(--radius-button)] bg-primary text-[length:var(--text-caption)] font-semibold tracking-tight text-primary-foreground shadow-xs"
             >
-              W
+              S
             </span>
             <span className="text-[length:var(--text-secondary)] leading-none font-semibold tracking-tight text-foreground">
-              Wink<span className="text-primary">UI</span>
+              Sono<span className="text-primary">JS</span>
             </span>
             <span className="sr-only">{siteConfig.name}</span>
           </Link>

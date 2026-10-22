@@ -8,9 +8,9 @@ import {
   DirectionToggle,
 } from "@/components/direction"
 import type { Direction } from "@/lib/direction"
-import { Button } from "@winkui/ui/components/button"
-import { Input } from "@winkui/ui/components/input"
-import { Label } from "@winkui/ui/components/label"
+import { Button } from "@sonojs/ui/components/button"
+import { Input } from "@sonojs/ui/components/input"
+import { Label } from "@sonojs/ui/components/label"
 
 export function DirectionTryIt() {
   const [dir, setDir] = React.useState<Direction>("ltr")

@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@winkui/ui/components/accordion"
+} from "@sonojs/ui/components/accordion"
 
 export function AccordionDefault() {
   return (

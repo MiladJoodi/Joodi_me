@@ -4,7 +4,7 @@ import {
   Bubble,
   BubbleContent,
   BubbleGroup,
-} from "@winkui/ui/components/bubble"
+} from "@sonojs/ui/components/bubble"
 
 export function BubbleLinkButton() {
   return (

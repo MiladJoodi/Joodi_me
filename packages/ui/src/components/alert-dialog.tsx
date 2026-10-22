@@ -4,9 +4,9 @@ import * as React from "react"
 import { AlertDialog as AlertDialogPrimitive } from "radix-ui"
 import type { VariantProps } from "class-variance-authority"
 
-import { buttonVariants } from "@winkui/ui/components/button"
-import { useDirection } from "@winkui/ui/hooks/use-direction"
-import { cn } from "@winkui/ui/lib/utils"
+import { buttonVariants } from "@sonojs/ui/components/button"
+import { useDirection } from "@sonojs/ui/hooks/use-direction"
+import { cn } from "@sonojs/ui/lib/utils"
 
 function AlertDialog({
   ...props
@@ -77,7 +77,7 @@ function AlertDialogContent({
         data-size={size}
         dir={dir}
         className={cn(
-          "winkui group/alert-dialog-content fixed top-[50%] left-[50%] z-50 grid w-full translate-x-[-50%] translate-y-[-50%] gap-4 overflow-hidden rounded-xl bg-popover p-4 text-popover-foreground outline-none ring-1 ring-foreground/10 duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
+          "sonojs group/alert-dialog-content fixed top-[50%] left-[50%] z-50 grid w-full translate-x-[-50%] translate-y-[-50%] gap-4 overflow-hidden rounded-xl bg-popover p-4 text-popover-foreground outline-none ring-1 ring-foreground/10 duration-100 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
           className
         )}
         {...props}

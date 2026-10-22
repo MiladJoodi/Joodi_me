@@ -2,6 +2,7 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
   type VariantExample,
 } from "@/components/docs"
 import { highlightCode } from "@/lib/highlight-code"
@@ -305,17 +306,35 @@ async function getBreadcrumbExamples(): Promise<VariantExample[]> {
     {
       name: "breadcrumb-default",
       title: "Default",
+      description: "Full trail with a dropdown overflow and custom separator.",
       requires: ["button", "dropdown-menu"],
     },
-    { name: "breadcrumb-basic", title: "Basic" },
-    { name: "breadcrumb-separator", title: "Separator" },
+    {
+      name: "breadcrumb-basic",
+      title: "Basic",
+      description: "A simple path of links and the current page.",
+    },
+    {
+      name: "breadcrumb-separator",
+      title: "Separator",
+      description: "Customize the separator between items.",
+    },
     {
       name: "breadcrumb-dropdown",
       title: "Dropdown",
+      description: "Collapse middle segments into a dropdown menu.",
       requires: ["dropdown-menu"],
     },
-    { name: "breadcrumb-ellipsis", title: "Collapsed" },
-    { name: "breadcrumb-link", title: "Link" },
+    {
+      name: "breadcrumb-ellipsis",
+      title: "Collapsed",
+      description: "Use an ellipsis when the trail is too long.",
+    },
+    {
+      name: "breadcrumb-link",
+      title: "Link",
+      description: "Compose breadcrumb items as navigable links.",
+    },
   ]
 
   return Promise.all(
@@ -342,19 +361,11 @@ export default async function BreadcrumbDocsPage() {
         </p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
+      <section className="space-y-4">
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add breadcrumb`}
-        />
-      </section>
+      <DocsInstallation name="breadcrumb" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

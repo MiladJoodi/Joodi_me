@@ -1,0 +1,39 @@
+---
+description: Docs example titles + short descriptions above the preview player
+globs: app/(app)/docs/**/*.tsx
+alwaysApply: false
+---
+
+# SonoJS docs examples — title + description
+
+Every variant in `ComponentVariantPreview` should read like a small docs section (same idea as common component-kit docs): a clear **title**, then **one short sentence**, then the player.
+
+## Placement
+
+- Title + description sit **above** the bordered preview chrome — never inside the demo area, never as overlays on the component.
+- Keep them quiet: `text-h4` title, `text-sm text-muted-foreground` body (do **not** use `text-secondary` — that token is a surface color and washes out the copy). One sentence max.
+- Do **not** add a section heading like “Examples” / “Preview” above the player — the per-variant title is enough.
+- Do not stack long paragraphs, callout boxes, or badge clusters above the player.
+
+## Writing
+
+```ts
+{
+  name: "card-small",
+  title: "Small",
+  description: 'Use `size="sm"` for a more compact card.',
+}
+```
+
+- **Title**: short label (matches the tab), Title Case when it’s a feature name (“Edge to Edge”, “Month and Year Selector”).
+- **Description**: what to change / when to use it. Put API tokens in backticks (`` `mode="range"` ``, `` `size="sm"` ``) — `ComponentVariantPreview` renders them as inline code.
+- Prefer prop/API guidance over marketing copy. Skip fluff (“powerful”, “beautiful”).
+- If an example needs extras beyond the main component, use the footer bar (same as button-group): `requires` for registry items, `npmRequires` for packages like `lucide-react` — do **not** bury install instructions in the description.
+
+## Required on new / updated docs
+
+When adding or editing `app/(app)/docs/components/<name>/page.tsx` examples:
+
+1. Every `exampleDefs` / `VariantExample` entry has `title` + `description`.
+2. Descriptions stay ≤ ~1 sentence.
+3. Spot-check LTR/RTL: lead text is outside the `DirectionProvider` preview (correct — don’t put the lead inside the flipped demo).

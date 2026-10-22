@@ -1,5 +1,5 @@
 import { DocsListIndex, DocsSidebar } from "@/components/sidebar-nav"
-import { SidebarProvider } from "@winkui/ui/components/sidebar"
+import { SidebarProvider } from "@sonojs/ui/components/sidebar"
 
 /** Docs depend on registry metadata + static MDX/TSX — bake at build; refresh on deploy. */
 export const dynamic = "force-static"

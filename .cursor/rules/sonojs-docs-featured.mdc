@@ -1,0 +1,29 @@
+---
+description: Mark high-traffic docs nav items with featured green bullet
+globs: lib/docs-nav.ts,app/(app)/docs/**/*
+alwaysApply: true
+---
+
+# SonoJS docs — featured (green bullet)
+
+In `lib/docs-nav.ts`, `featured: true` shows a **bright green** sidebar bullet (`SidebarNavBullet`).
+
+## When to set `featured: true`
+
+Mark a docs page if it is **commonly used / core** for building UIs — something most apps reach for early:
+
+- Primitives: Button, Input, Checkbox, Select, Switch, Label
+- Structure: Card, Accordion, Tabs, Dialog / Alert Dialog, Sheet
+- Data: Avatar, Table / Data Table, Calendar / Date Picker, Combobox
+- Cross-cutting docs that matter for the product (e.g. Direction)
+
+## When NOT to feature
+
+- Niche / secondary: Bubble, Attachment, Context Menu, Carousel, Code Block, Collapsible, Command palette variants, Button Group (unless it becomes a primary pattern)
+- Do not feature every new component — green should stay sparse so it signals importance
+
+## Checklist (new docs component)
+
+1. Add the page to `lib/docs-nav.ts` (alpha in its group).
+2. If it matches the “commonly used / core” bar above → `featured: true`.
+3. If unsure → leave featured off; easier to promote later than to dilute the green dots.

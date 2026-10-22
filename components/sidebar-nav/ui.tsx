@@ -73,10 +73,8 @@ export function SidebarNavBullet({
   if (featured) {
     return (
       <span
-        className={cn(
-          "size-1.5 shrink-0 rounded-full bg-[var(--chart-up)]",
-          className
-        )}
+        className={cn("size-1.5 shrink-0 rounded-full", className)}
+        style={{ backgroundColor: "#4ade80" }}
         title="Featured"
         aria-label="Featured"
       />

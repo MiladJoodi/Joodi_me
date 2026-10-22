@@ -1,11 +1,11 @@
 "use client"
 
-import * as React from "react"
+import React from "react"
 import { addDays } from "date-fns"
 
-import { Button } from "@winkui/ui/components/button"
-import { Calendar } from "@winkui/ui/components/calendar"
-import { Card, CardContent, CardFooter } from "@winkui/ui/components/card"
+import { Button } from "@sonojs/ui/components/button"
+import { Calendar } from "@sonojs/ui/components/calendar"
+import { Card, CardContent, CardFooter } from "@sonojs/ui/components/card"
 
 export function CalendarPresets() {
   const [date, setDate] = React.useState<Date | undefined>(

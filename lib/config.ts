@@ -1,4 +1,4 @@
-const PRODUCTION_APP_URL = "https://winkui.example"
+const PRODUCTION_APP_URL = "https://sonojs.example"
 const LOCAL_APP_URL = "http://localhost:3000"
 
 function resolveAppUrl() {
@@ -15,12 +15,14 @@ export type SiteNavItem = {
 }
 
 export const siteConfig = {
-  name: "WinkUI",
+  name: "SonoJS",
   url: resolveAppUrl(),
   description:
-    "Accessible React components with calm defaults and first-class RTL/LTR — built to ship in production apps.",
+    "Agent-friendly React components — set up MCP, then ask your agent to build with SonoJS.",
+  /** Placeholder until the real npx MCP command ships. Works with any MCP client. */
+  mcpInitCommand: "npx @sonojs/ui@latest mcp init",
   links: {
-    github: "https://github.com/example/winkui",
+    github: "https://github.com/example/sonojs",
   },
   navItems: [
     { href: "/docs", label: "Docs" },

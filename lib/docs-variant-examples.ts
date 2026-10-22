@@ -8,6 +8,7 @@ import { highlightCode } from "@/lib/highlight-code"
 const EXAMPLE_FOLDERS = [
   "alert-dialog",
   "attachment",
+  "button-group",
   "breadcrumb",
   "accordion",
   "avatar",
@@ -15,6 +16,55 @@ const EXAMPLE_FOLDERS = [
   "bubble",
   "alert",
   "button",
+  "context-menu",
+  "code-block",
+  "collapsible",
+  "combobox",
+  "command",
+  "carousel",
+  "checkbox",
+  "card",
+  "data-table",
+  "date-picker",
+  "dialog",
+  "drawer",
+  "dropdown-menu",
+  "empty",
+  "field",
+  "hover-card",
+  "input-group",
+  "input-otp",
+  "input",
+  "item",
+  "kbd",
+  "label",
+  "marker",
+  "menubar",
+  "message-scroller",
+  "message",
+  "native-select",
+  "navigation-menu",
+  "pagination",
+  "popover",
+  "progress",
+  "radio-group",
+  "resizable",
+  "scroll-area",
+  "select",
+  "separator",
+  "sheet",
+  "skeleton",
+  "slider",
+  "spinner",
+  "switch",
+  "table",
+  "tabs",
+  "textarea",
+  "toast",
+  "toggle-group",
+  "toggle",
+  "tooltip",
+  "trace",
 ] as const
 
 function exampleFilePath(exampleName: string): string | null {
@@ -37,15 +87,15 @@ function exampleFilePath(exampleName: string): string | null {
 function toConsumerSource(source: string): string {
   return source
     .replace(
-      /from\s+["']@winkui\/ui\/components\/([^"']+)["']/g,
+      /from\s+["']@sonojs\/ui\/components\/([^"']+)["']/g,
       'from "@/components/ui/$1"'
     )
     .replace(
-      /from\s+["']@winkui\/ui\/hooks\/([^"']+)["']/g,
+      /from\s+["']@sonojs\/ui\/hooks\/([^"']+)["']/g,
       'from "@/hooks/$1"'
     )
     .replace(
-      /from\s+["']@winkui\/ui\/lib\/([^"']+)["']/g,
+      /from\s+["']@sonojs\/ui\/lib\/([^"']+)["']/g,
       'from "@/lib/$1"'
     )
 }
@@ -55,7 +105,10 @@ function toConsumerSource(source: string): string {
  * Used by docs Preview | Code chrome.
  */
 export async function withVariantCode(
-  examples: Pick<VariantExample, "name" | "title" | "requires">[]
+  examples: Pick<
+    VariantExample,
+    "name" | "title" | "description" | "requires" | "npmRequires"
+  >[]
 ): Promise<VariantExample[]> {
   return Promise.all(
     examples.map(async (item) => {

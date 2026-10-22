@@ -15,8 +15,8 @@ import {
   AttachmentDescription,
   AttachmentMedia,
   AttachmentTitle,
-} from "@winkui/ui/components/attachment"
-import { Spinner } from "@winkui/ui/components/spinner"
+} from "@sonojs/ui/components/attachment"
+import { Spinner } from "@sonojs/ui/components/spinner"
 
 export function AttachmentStates() {
   return (

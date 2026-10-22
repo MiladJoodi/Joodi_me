@@ -2,13 +2,26 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
 } from "@/components/docs"
 import { withVariantCode } from "@/lib/docs-variant-examples"
 
 const exampleDefs = [
-  { name: "alert-dialog-default", title: "Default" },
-  { name: "alert-dialog-small", title: "Small" },
-  { name: "alert-dialog-destructive", title: "Destructive" },
+  {
+    name: "alert-dialog-default",
+    title: "Default",
+    description: "Confirm a sensitive action before it runs.",
+  },
+  {
+    name: "alert-dialog-small",
+    title: "Small",
+    description: "A tighter dialog for short confirmations.",
+  },
+  {
+    name: "alert-dialog-destructive",
+    title: "Destructive",
+    description: "Style the confirm action for irreversible deletes.",
+  },
 ]
 
 const alertDialogSource = `import {
@@ -61,18 +74,10 @@ export default async function AlertDialogDocsPage() {
       </header>
 
       <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add alert-dialog`}
-        />
-      </section>
+      <DocsInstallation name="alert-dialog" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

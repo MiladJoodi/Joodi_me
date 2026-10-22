@@ -11,7 +11,7 @@ export default function ComponentsIndexPage() {
       <h1 className="text-h1">Components</h1>
       <p className="text-muted-foreground">
         Install with{" "}
-        <code className="wink-inline-code">npx @winkui/ui@latest add …</code>{" "}
+        <code className="sono-inline-code">npx @sonojs/ui@latest add …</code>{" "}
         per component.
       </p>
       <ul className="space-y-2">

@@ -1,9 +1,10 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 
 import { RegistryConsistencyError } from "../src/consistency.mjs"
 import { initSonojsProject } from "../src/init.mjs"
+import { installNpmDependencies } from "../src/install-npm.mjs"
 import { installRegistryItemFiles } from "../src/install.mjs"
 import { resolveRegistryItem } from "../src/resolve.mjs"
 
@@ -58,7 +59,7 @@ async function cmdInit(rest) {
     registryUrl,
   })
 
-  console.log("SonoJS initialized (tokens scoped to .sonojs — host theme untouched)")
+  console.log("SonoJS initialized (theme tokens on :root via styles/sonojs.css)")
   for (const file of written) console.log(`  + ${file}`)
   for (const file of skipped) {
     console.log(`  ~ skip (exists): ${file}  (use --overwrite)`)
@@ -110,11 +111,7 @@ async function cmdAdd(name, rest) {
 
   await addOne(name)
 
-  if (npmDeps.size > 0) {
-    console.log(
-      `\nInstall peer deps if needed:\n  npm i ${[...npmDeps].join(" ")}`
-    )
-  }
+  installNpmDependencies(cwd, [...npmDeps])
 }
 
 async function main() {

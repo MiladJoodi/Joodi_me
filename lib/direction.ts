@@ -1,5 +1,5 @@
 /**
- * WinkUI direction primitives.
+ * SonoJS direction primitives.
  *
  * Direction is inherited from the nearest ancestor `dir` (usually `<html>`).
  * Components must NOT hardcode `dir="ltr"` / `dir="rtl"` unless they create an
@@ -38,6 +38,28 @@ export function getStartSide(dir: Direction): "left" | "right" {
 /** Sheet / drawer side that opens from the inline-end edge. */
 export function getEndSide(dir: Direction): "left" | "right" {
   return dir === "rtl" ? "left" : "right"
+}
+
+/** Edges accepted by Drawer / Sheet (logical + physical). */
+export type EdgeSide = "top" | "bottom" | "left" | "right" | "start" | "end"
+
+/** Physical edges Vaul / positioned overlays understand. */
+export type PhysicalEdgeSide = "top" | "bottom" | "left" | "right"
+
+/**
+ * Resolve logical `start` / `end` to physical `left` / `right` for libraries
+ * that only understand physical sides (e.g. Vaul drawer `direction`).
+ * Pass `left` / `right` through unchanged when you need a fixed physical edge.
+ */
+export function resolveEdgeSide(
+  side: EdgeSide | undefined,
+  dir: Direction,
+  fallback: PhysicalEdgeSide = "bottom"
+): PhysicalEdgeSide {
+  const value = side ?? fallback
+  if (value === "start") return getStartSide(dir)
+  if (value === "end") return getEndSide(dir)
+  return value
 }
 
 /**

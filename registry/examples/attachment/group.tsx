@@ -10,7 +10,7 @@ import {
   AttachmentMedia,
   AttachmentTitle,
   AttachmentTrigger,
-} from "@winkui/ui/components/attachment"
+} from "@sonojs/ui/components/attachment"
 
 const images = [
   {

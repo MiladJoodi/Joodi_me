@@ -2,13 +2,26 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
 } from "@/components/docs"
 import { withVariantCode } from "@/lib/docs-variant-examples"
 
 const exampleDefs = [
-  { name: "accordion-default", title: "Default" },
-  { name: "accordion-multiple", title: "Multiple" },
-  { name: "accordion-disabled", title: "Disabled" },
+  {
+    name: "accordion-default",
+    title: "Default",
+    description: 'Single open item with `type="single"` and `collapsible`.',
+  },
+  {
+    name: "accordion-multiple",
+    title: "Multiple",
+    description: 'Use `type="multiple"` so several items can stay open.',
+  },
+  {
+    name: "accordion-disabled",
+    title: "Disabled",
+    description: "Disable an item so its trigger cannot be opened.",
+  },
 ]
 
 const accordionSource = `import {
@@ -44,19 +57,11 @@ export default async function AccordionDocsPage() {
         </p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
+      <section className="space-y-4">
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add accordion`}
-        />
-      </section>
+      <DocsInstallation name="accordion" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

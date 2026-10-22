@@ -6,7 +6,7 @@ import {
   AttachmentDescription,
   AttachmentMedia,
   AttachmentTitle,
-} from "@winkui/ui/components/attachment"
+} from "@sonojs/ui/components/attachment"
 
 export function AttachmentSizes() {
   return (

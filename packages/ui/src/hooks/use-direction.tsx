@@ -8,7 +8,7 @@ import {
   isRtl,
   normalizeDirection,
   readElementDirection,
-} from "@winkui/ui/lib/direction"
+} from "@sonojs/ui/lib/direction"
 
 const DirectionContext = React.createContext<Direction | null>(null)
 

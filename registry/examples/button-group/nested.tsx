@@ -1,18 +1,18 @@
 import { AudioLinesIcon, PlusIcon } from "lucide-react"
 
-import { Button } from "@winkui/ui/components/button"
-import { ButtonGroup } from "@winkui/ui/components/button-group"
+import { Button } from "@sonojs/ui/components/button"
+import { ButtonGroup } from "@sonojs/ui/components/button-group"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@winkui/ui/components/input-group"
+} from "@sonojs/ui/components/input-group"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@winkui/ui/components/tooltip"
+} from "@sonojs/ui/components/tooltip"
 
 export function ButtonGroupNested() {
   return (

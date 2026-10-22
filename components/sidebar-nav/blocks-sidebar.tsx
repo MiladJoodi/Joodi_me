@@ -32,7 +32,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@winkui/ui/components/collapsible"
+} from "@sonojs/ui/components/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -40,7 +40,7 @@ import {
   SidebarGroupContent,
   SidebarMenu,
   SidebarMenuItem,
-} from "@winkui/ui/components/sidebar"
+} from "@sonojs/ui/components/sidebar"
 
 function BlocksSidebarBody({ className }: { className?: string }) {
   const pathname = usePathname()

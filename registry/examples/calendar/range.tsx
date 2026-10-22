@@ -1,11 +1,11 @@
 "use client"
 
-import * as React from "react"
+import React from "react"
 import { addDays } from "date-fns"
 import { type DateRange } from "react-day-picker"
 
-import { Calendar } from "@winkui/ui/components/calendar"
-import { Card, CardContent } from "@winkui/ui/components/card"
+import { Calendar } from "@sonojs/ui/components/calendar"
+import { Card, CardContent } from "@sonojs/ui/components/card"
 
 export function CalendarRange() {
   const [dateRange, setDateRange] = React.useState<DateRange | undefined>({

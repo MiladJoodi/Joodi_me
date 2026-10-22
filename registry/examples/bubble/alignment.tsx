@@ -1,4 +1,4 @@
-import { Bubble, BubbleContent } from "@winkui/ui/components/bubble"
+import { Bubble, BubbleContent } from "@sonojs/ui/components/bubble"
 
 export function BubbleAlignment() {
   return (

@@ -2,6 +2,7 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
   type VariantExample,
 } from "@/components/docs"
 import { highlightCode } from "@/lib/highlight-code"
@@ -113,12 +114,37 @@ export function Example() {
 
 async function getBadgeExamples(): Promise<VariantExample[]> {
   const base: VariantExample[] = [
-    { name: "badge-default", title: "Default" },
-    { name: "badge-variants", title: "Variants" },
-    { name: "badge-icon", title: "Icon" },
-    { name: "badge-spinner", title: "Spinner", requires: ["spinner"] },
-    { name: "badge-link", title: "Link" },
-    { name: "badge-colors", title: "Colors" },
+    {
+      name: "badge-default",
+      title: "Default",
+      description: "A simple status label.",
+    },
+    {
+      name: "badge-variants",
+      title: "Variants",
+      description: "Default, secondary, outline, and destructive styles.",
+    },
+    {
+      name: "badge-icon",
+      title: "Icon",
+      description: "Compose a Lucide icon beside the label.",
+    },
+    {
+      name: "badge-spinner",
+      title: "Spinner",
+      description: "Show a loading spinner inside the badge.",
+      requires: ["spinner"],
+    },
+    {
+      name: "badge-link",
+      title: "Link",
+      description: "Use `asChild` to render the badge as a link.",
+    },
+    {
+      name: "badge-colors",
+      title: "Colors",
+      description: "Semantic color treatments for status.",
+    },
   ]
 
   return Promise.all(
@@ -146,19 +172,11 @@ export default async function BadgeDocsPage() {
         </p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
+      <section className="space-y-4">
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add badge`}
-        />
-      </section>
+      <DocsInstallation name="badge" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

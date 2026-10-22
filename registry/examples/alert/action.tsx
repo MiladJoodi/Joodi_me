@@ -3,8 +3,8 @@ import {
   AlertAction,
   AlertDescription,
   AlertTitle,
-} from "@winkui/ui/components/alert"
-import { Button } from "@winkui/ui/components/button"
+} from "@sonojs/ui/components/alert"
+import { Button } from "@sonojs/ui/components/button"
 
 export function AlertActionExample() {
   return (

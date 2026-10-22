@@ -15,7 +15,9 @@ const revalidateImmediately = [
 
 const nextConfig: NextConfig = {
   // Workspace package — must transpile + watch for HMR
-  transpilePackages: ["@winkui/ui"],
+  transpilePackages: ["@sonojs/ui"],
+  // Keep Shiki off Turbopack transforms (token colors / grammars stay intact)
+  serverExternalPackages: ["shiki"],
   async headers() {
     return [
       {

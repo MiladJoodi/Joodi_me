@@ -2,14 +2,31 @@ import {
   ComponentSource,
   ComponentVariantPreview,
   DocsApiProps,
+  DocsInstallation,
 } from "@/components/docs"
 import { withVariantCode } from "@/lib/docs-variant-examples"
 
 const exampleDefs = [
-  { name: "attachment-default", title: "Default" },
-  { name: "attachment-states", title: "States" },
-  { name: "attachment-sizes", title: "Sizes" },
-  { name: "attachment-group", title: "Group" },
+  {
+    name: "attachment-default",
+    title: "Default",
+    description: "File card with media, title, description, and actions.",
+  },
+  {
+    name: "attachment-states",
+    title: "States",
+    description: "Uploading, error, and complete states for attachments.",
+  },
+  {
+    name: "attachment-sizes",
+    title: "Sizes",
+    description: "Compact and larger attachment layouts.",
+  },
+  {
+    name: "attachment-group",
+    title: "Group",
+    description: "Stack multiple attachments in one list.",
+  },
 ]
 
 const attachmentSource = `import { FileCodeIcon, XIcon } from "lucide-react"
@@ -56,18 +73,10 @@ export default async function AttachmentDocsPage() {
       </header>
 
       <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
         <ComponentVariantPreview examples={examples} />
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Installation</h2>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code={`npx @winkui/ui@latest add attachment`}
-        />
-      </section>
+      <DocsInstallation name="attachment" />
 
       <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>

@@ -1,8 +1,8 @@
-import { Button } from "@winkui/ui/components/button"
+import { Button } from "@sonojs/ui/components/button"
 import {
   ButtonGroup,
   ButtonGroupSeparator,
-} from "@winkui/ui/components/button-group"
+} from "@sonojs/ui/components/button-group"
 
 export function ButtonGroupSeparatorExample() {
   return (

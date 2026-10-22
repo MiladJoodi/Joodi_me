@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@winkui/ui/lib/utils"
+import { cn } from "@sonojs/ui/lib/utils"
 import type { Label as LabelPrimitive } from "radix-ui"
 import { Slot } from "radix-ui"
 import {
@@ -14,7 +14,7 @@ import {
   type FieldValues,
 } from "react-hook-form"
 
-import { Label } from "@winkui/ui/components/label"
+import { Label } from "@sonojs/ui/components/label"
 
 const Form = FormProvider
 
