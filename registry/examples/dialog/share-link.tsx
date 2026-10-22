@@ -1,5 +1,7 @@
 "use client"
 
+import * as React from "react"
+
 import { Button } from "@sonojs/ui/components/button"
 import {
   Dialog,
@@ -14,13 +16,23 @@ import {
 import { Input } from "@sonojs/ui/components/input"
 import { Label } from "@sonojs/ui/components/label"
 
-export function DialogCustomClose() {
+const SHARE_PATH = "/docs/components/dialog"
+
+export function DialogShareLink() {
+  const [link, setLink] = React.useState(
+    `https://sonojs.dev${SHARE_PATH}`
+  )
+
+  React.useEffect(() => {
+    setLink(`${window.location.origin}${SHARE_PATH}`)
+  }, [])
+
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline">Share</Button>
       </DialogTrigger>
-      <DialogContent showCloseButton={false} size="sm">
+      <DialogContent showCloseButton={false}>
         <DialogHeader>
           <DialogTitle>Share link</DialogTitle>
           <DialogDescription>
@@ -32,11 +44,7 @@ export function DialogCustomClose() {
             <Label htmlFor="link" className="sr-only">
               Link
             </Label>
-            <Input
-              id="link"
-              defaultValue="https://example.com/share/abc"
-              readOnly
-            />
+            <Input id="link" value={link} readOnly dir="ltr" />
           </div>
         </div>
         <DialogFooter className="sm:justify-start">

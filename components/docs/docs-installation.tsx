@@ -9,12 +9,32 @@ import {
 /**
  * Installation: CLI `add` player + the same “Also needs” bar as button-group
  * examples for registryDependencies and npm deps (including lucide-react).
+ *
+ * Pass `names` when the page is a composition (e.g. date-picker → calendar + popover).
  */
-export async function DocsInstallation({ name }: { name: string }) {
-  const meta = await readRegistryInstallMeta(name)
-  const registry = [...(meta.registryDependencies ?? [])].sort()
-  const npm = docsHintNpmDeps(meta.dependencies)
-  const code = docsInstallBash(name)
+export async function DocsInstallation({
+  name,
+  names,
+}: {
+  name?: string
+  names?: string[]
+}) {
+  const primary = names?.length ? names : name ? [name] : []
+  if (primary.length === 0) {
+    throw new Error("DocsInstallation requires `name` or `names`")
+  }
+
+  const metas = await Promise.all(primary.map(readRegistryInstallMeta))
+  const primarySet = new Set(primary)
+  const registry = [
+    ...new Set(
+      metas
+        .flatMap((m) => m.registryDependencies ?? [])
+        .filter((dep) => !primarySet.has(dep))
+    ),
+  ].sort()
+  const npm = docsHintNpmDeps(metas.flatMap((m) => m.dependencies ?? []))
+  const code = docsInstallBash(primary)
   const hasNeeds = registry.length > 0 || npm.length > 0
 
   return (

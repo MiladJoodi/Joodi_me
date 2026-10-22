@@ -8,11 +8,14 @@ import { Menubar as MenubarPrimitive } from "radix-ui"
 
 function Menubar({
   className,
+  dir: dirProp,
   ...props
 }: React.ComponentProps<typeof MenubarPrimitive.Root>) {
+  const { dir: dirCtx } = useDirection()
   return (
     <MenubarPrimitive.Root
       data-slot="menubar"
+      dir={dirProp ?? dirCtx}
       className={cn(
         "flex h-9 items-center gap-1 rounded-md border bg-background p-1 shadow-xs",
         className
@@ -71,14 +74,13 @@ function MenubarContent({
   sideOffset = 8,
   ...props
 }: React.ComponentProps<typeof MenubarPrimitive.Content>) {
-  // Portal renders under <body>; set dir so RTL from DirectionProvider still applies.
+  // Portal under <body> — HTML dir for CSS; Root `dir` covers Radix positioning.
   const { dir } = useDirection()
 
   return (
     <MenubarPortal>
       <MenubarPrimitive.Content
         data-slot="menubar-content"
-        dir={dir}
         align={align}
         alignOffset={alignOffset}
         sideOffset={sideOffset}
@@ -87,6 +89,7 @@ function MenubarContent({
           className
         )}
         {...props}
+        {...({ dir } as React.HTMLAttributes<HTMLDivElement>)}
       />
     </MenubarPortal>
   )
@@ -253,12 +256,12 @@ function MenubarSubContent({
   return (
     <MenubarPrimitive.SubContent
       data-slot="menubar-sub-content"
-      dir={dir}
       className={cn(
         "z-50 min-w-[8rem] origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
         className
       )}
       {...props}
+      {...({ dir } as React.HTMLAttributes<HTMLDivElement>)}
     />
   )
 }

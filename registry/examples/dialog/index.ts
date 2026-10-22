@@ -1,5 +1,5 @@
 export { DialogDefault } from "./default"
-export { DialogCustomClose } from "./custom-close"
-export { DialogForm } from "./form"
+export { DialogShareLink } from "./share-link"
+export { DialogNoClose } from "./no-close"
 export { DialogScrollable } from "./scrollable"
 export { DialogStickyFooter } from "./sticky-footer"

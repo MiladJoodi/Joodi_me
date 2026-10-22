@@ -694,7 +694,8 @@ export const registryItems = [
       "clsx",
       "tailwind-merge",
     ],
-    registryDependencies: ["button"],
+    // popover: date-picker docs compose Calendar inside Popover — install with calendar
+    registryDependencies: ["button", "popover"],
     files: [
       {
         path: "packages/ui/src/components/calendar.tsx",

@@ -11,21 +11,21 @@ const exampleDefs = [
     name: "dialog-default",
     title: "Basic",
     description:
-      "Open a modal with `DialogTrigger`, title, description, and footer actions.",
-    requires: ["button"],
-  },
-  {
-    name: "dialog-form",
-    title: "Form",
-    description: "Place labeled inputs between the header and footer.",
+      "Edit profile with title, description, fields, and footer actions.",
     requires: ["button", "input", "label"],
   },
   {
-    name: "dialog-custom-close",
-    title: "Custom Close",
+    name: "dialog-share-link",
+    title: "Share Link",
     description:
-      "Hide the corner X with `showCloseButton={false}` and use `DialogClose`.",
+      "Hide the corner X with `showCloseButton={false}` and put Close in the footer.",
     requires: ["button", "input", "label"],
+  },
+  {
+    name: "dialog-no-close",
+    title: "No Close Button",
+    description: "Same idea without a custom share field — footer Close only.",
+    requires: ["button"],
   },
   {
     name: "dialog-scrollable",
@@ -38,7 +38,7 @@ const exampleDefs = [
     name: "dialog-sticky-footer",
     title: "Sticky Footer",
     description:
-      "Use a column flex layout so the footer stays visible while the body scrolls.",
+      "Column flex layout so the footer stays visible while the body scrolls.",
     requires: ["button"],
   },
 ]
@@ -54,12 +54,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 export function Example() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Open Dialog</Button>
+        <Button variant="outline">Edit Profile</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -68,6 +70,16 @@ export function Example() {
             Make changes to your profile here. Click save when you are done.
           </DialogDescription>
         </DialogHeader>
+        <div className="grid gap-4">
+          <div className="grid gap-2">
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" defaultValue="Ava Solstice" />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="username">Username</Label>
+            <Input id="username" defaultValue="@avasol" />
+          </div>
+        </div>
         <DialogFooter>
           <DialogClose asChild>
             <Button variant="outline">Cancel</Button>
@@ -95,9 +107,12 @@ export default async function DialogDocsPage() {
       <header className="space-y-2">
         <h1 className="text-h1">Dialog</h1>
         <p className="leading-relaxed text-muted-foreground">
-          A window overlaid on the primary content for focused tasks. Supports
-          forms, custom close controls, scrollable bodies, and sticky footers.
-          For irreversible confirmations, prefer{" "}
+          A window overlaid on the primary content for focused tasks. Default
+          width is{" "}
+          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
+            max-w-sm
+          </code>{" "}
+          (24rem). For irreversible confirmations, prefer{" "}
           <a
             href="/docs/components/alert-dialog"
             className="font-medium text-foreground underline-offset-4 hover:underline"
@@ -137,21 +152,21 @@ export default async function DialogDocsPage() {
               type: "boolean",
               defaultValue: "true",
               description:
-                "On DialogContent — corner X control. On DialogFooter — optional outline Close before children.",
+                "On DialogContent — corner X. On DialogFooter — optional outline Close.",
             },
             {
               name: "size",
               type: '"default" | "sm"',
               defaultValue: '"default"',
               description:
-                "On DialogContent — default ~32rem max width; sm ~24rem with tighter padding.",
+                "On DialogContent — default 24rem (`max-w-sm`); `sm` → 20rem.",
             },
             {
               name: "asChild",
               type: "boolean",
               defaultValue: "false",
               description:
-                "On DialogTrigger / DialogClose — merge props into the child (e.g. Button).",
+                "On DialogTrigger / DialogClose — merge props into the child.",
             },
             {
               name: "open / onOpenChange",

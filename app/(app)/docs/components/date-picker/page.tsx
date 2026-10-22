@@ -111,18 +111,6 @@ export default async function DatePickerDocsPage() {
       <DocsInstallation name="calendar" />
 
       <section className="space-y-3">
-        <h2 className="text-h3">Popover</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          Date pickers also need the popover overlay:
-        </p>
-        <ComponentSource
-          title="CLI"
-          lang="bash"
-          code="npx @sonojs/ui@latest add popover"
-        />
-      </section>
-
-      <section className="space-y-3">
         <h2 className="text-h3">Composition</h2>
         <ComponentSource
           title="structure"

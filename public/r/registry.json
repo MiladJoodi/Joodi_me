@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "sonojs",
   "homepage": "https://sonojs.dev",
-  "version": "0.1.0+003f79abb370",
-  "generatedAt": "2026-10-22T19:04:10.700Z",
+  "version": "0.1.0+7f325fe679cc",
+  "generatedAt": "2026-10-22T20:13:01.209Z",
   "items": [
     {
       "name": "accordion",
@@ -23,8 +23,8 @@
           "target": "components/ui/accordion.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "alert",
@@ -43,8 +43,8 @@
           "target": "components/ui/alert.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "alert-dialog",
@@ -76,8 +76,8 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "avatar",
@@ -96,8 +96,8 @@
           "target": "components/ui/avatar.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "badge",
@@ -117,8 +117,8 @@
           "target": "components/ui/badge.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "breadcrumb",
@@ -138,8 +138,8 @@
           "target": "components/ui/breadcrumb.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "bubble",
@@ -159,8 +159,8 @@
           "target": "components/ui/bubble.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "button",
@@ -180,8 +180,8 @@
           "target": "components/ui/button.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "card",
@@ -199,8 +199,8 @@
           "target": "components/ui/card.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "carousel",
@@ -223,8 +223,8 @@
           "target": "components/ui/carousel.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "checkbox",
@@ -244,8 +244,8 @@
           "target": "components/ui/checkbox.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "collapsible",
@@ -264,8 +264,8 @@
           "target": "components/ui/collapsible.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "combobox",
@@ -289,8 +289,8 @@
           "target": "components/ui/combobox.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "command",
@@ -314,8 +314,8 @@
           "target": "components/ui/command.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "context-menu",
@@ -335,8 +335,8 @@
           "target": "components/ui/context-menu.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "dialog",
@@ -359,8 +359,8 @@
           "target": "components/ui/dialog.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "drawer",
@@ -379,8 +379,8 @@
           "target": "components/ui/drawer.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "dropdown-menu",
@@ -400,8 +400,8 @@
           "target": "components/ui/dropdown-menu.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "empty",
@@ -420,8 +420,8 @@
           "target": "components/ui/empty.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "field",
@@ -444,8 +444,8 @@
           "target": "components/ui/field.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "hover-card",
@@ -464,8 +464,8 @@
           "target": "components/ui/hover-card.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "input",
@@ -483,8 +483,8 @@
           "target": "components/ui/input.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "textarea",
@@ -502,8 +502,8 @@
           "target": "components/ui/textarea.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "table",
@@ -521,8 +521,8 @@
           "target": "components/ui/table.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "input-group",
@@ -546,8 +546,8 @@
           "target": "components/ui/input-group.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "input-otp",
@@ -567,8 +567,8 @@
           "target": "components/ui/input-otp.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "item",
@@ -591,8 +591,8 @@
           "target": "components/ui/item.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "kbd",
@@ -610,8 +610,8 @@
           "target": "components/ui/kbd.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "marker",
@@ -631,8 +631,8 @@
           "target": "components/ui/marker.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "menubar",
@@ -652,8 +652,8 @@
           "target": "components/ui/menubar.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "message",
@@ -671,8 +671,8 @@
           "target": "components/ui/message.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "message-scroller",
@@ -694,8 +694,8 @@
           "target": "components/ui/message-scroller.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "native-select",
@@ -714,8 +714,8 @@
           "target": "components/ui/native-select.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "navigation-menu",
@@ -736,8 +736,8 @@
           "target": "components/ui/navigation-menu.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "pagination",
@@ -759,8 +759,8 @@
           "target": "components/ui/pagination.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "code-block",
@@ -785,8 +785,8 @@
           "target": "components/ui/code-block.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "use-highlighted-code",
@@ -808,8 +808,8 @@
           "target": "lib/highlighter.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "label",
@@ -828,8 +828,8 @@
           "target": "components/ui/label.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "button-group",
@@ -852,8 +852,8 @@
           "target": "components/ui/button-group.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "calendar",
@@ -868,7 +868,8 @@
         "tailwind-merge"
       ],
       "registryDependencies": [
-        "button"
+        "button",
+        "popover"
       ],
       "files": [
         {
@@ -877,8 +878,8 @@
           "target": "components/ui/calendar.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "popover",
@@ -897,8 +898,8 @@
           "target": "components/ui/popover.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "progress",
@@ -917,8 +918,8 @@
           "target": "components/ui/progress.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "radio-group",
@@ -938,8 +939,8 @@
           "target": "components/ui/radio-group.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "resizable",
@@ -959,8 +960,8 @@
           "target": "components/ui/resizable.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "scroll-area",
@@ -979,8 +980,8 @@
           "target": "components/ui/scroll-area.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "select",
@@ -1000,8 +1001,8 @@
           "target": "components/ui/select.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "separator",
@@ -1020,8 +1021,8 @@
           "target": "components/ui/separator.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "sheet",
@@ -1041,8 +1042,8 @@
           "target": "components/ui/sheet.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "skeleton",
@@ -1060,8 +1061,8 @@
           "target": "components/ui/skeleton.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "slider",
@@ -1080,8 +1081,8 @@
           "target": "components/ui/slider.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "switch",
@@ -1100,8 +1101,8 @@
           "target": "components/ui/switch.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "tabs",
@@ -1121,8 +1122,8 @@
           "target": "components/ui/tabs.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "sonner",
@@ -1141,8 +1142,8 @@
           "target": "components/ui/sonner.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "toggle",
@@ -1162,8 +1163,8 @@
           "target": "components/ui/toggle.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "toggle-group",
@@ -1186,8 +1187,8 @@
           "target": "components/ui/toggle-group.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "tooltip",
@@ -1206,8 +1207,8 @@
           "target": "components/ui/tooltip.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "trace",
@@ -1229,8 +1230,8 @@
           "target": "components/ui/trace.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "attachment",
@@ -1255,8 +1256,8 @@
           "target": "components/ui/attachment.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "spinner",
@@ -1275,8 +1276,8 @@
           "target": "components/ui/spinner.tsx"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "login-01",
@@ -1297,8 +1298,8 @@
           "type": "registry:component"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     },
     {
       "name": "chart-area",
@@ -1315,8 +1316,8 @@
           "type": "registry:component"
         }
       ],
-      "version": "0.1.0+003f79abb370",
-      "generatedAt": "2026-10-22T19:04:10.700Z"
+      "version": "0.1.0+7f325fe679cc",
+      "generatedAt": "2026-10-22T20:13:01.209Z"
     }
   ]
 }

@@ -17,10 +17,10 @@ import {
   AlertDialogSmall,
 } from "@/registry/examples/alert-dialog"
 import {
-  DialogCustomClose,
   DialogDefault,
-  DialogForm,
+  DialogNoClose,
   DialogScrollable,
+  DialogShareLink,
   DialogStickyFooter,
 } from "@/registry/examples/dialog"
 import {
@@ -898,16 +898,16 @@ export const registry = {
       component: DialogDefault,
     },
     {
-      name: "dialog-form",
+      name: "dialog-share-link",
       type: "registry:example" as const,
-      title: "Form",
-      component: DialogForm,
+      title: "Share Link",
+      component: DialogShareLink,
     },
     {
-      name: "dialog-custom-close",
+      name: "dialog-no-close",
       type: "registry:example" as const,
-      title: "Custom Close",
-      component: DialogCustomClose,
+      title: "No Close Button",
+      component: DialogNoClose,
     },
     {
       name: "dialog-scrollable",

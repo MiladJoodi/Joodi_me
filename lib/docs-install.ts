@@ -51,6 +51,7 @@ export function docsHintNpmDeps(deps: string[] | undefined): string[] {
     .sort()
 }
 
-export function docsInstallBash(name: string): string {
-  return `npx @sonojs/ui@latest add ${name}`
+export function docsInstallBash(names: string | string[]): string {
+  const list = Array.isArray(names) ? names.join(" ") : names
+  return `npx @sonojs/ui@latest add ${list}`
 }

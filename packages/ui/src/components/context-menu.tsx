@@ -8,9 +8,17 @@ import { useDirection } from "@sonojs/ui/hooks/use-direction"
 import { cn } from "@sonojs/ui/lib/utils"
 
 function ContextMenu({
+  dir: dirProp,
   ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Root>) {
-  return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />
+  const { dir: dirCtx } = useDirection()
+  return (
+    <ContextMenuPrimitive.Root
+      data-slot="context-menu"
+      dir={dirProp ?? dirCtx}
+      {...props}
+    />
+  )
 }
 
 function ContextMenuTrigger({
@@ -63,19 +71,19 @@ function ContextMenuContent({
   className,
   ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Content>) {
-  // Portal renders under <body>; set dir so RTL from DirectionProvider still applies.
+  // Portal under <body> — HTML dir for CSS; Root `dir` covers Radix positioning.
   const { dir } = useDirection()
 
   return (
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         data-slot="context-menu-content"
-        dir={dir}
         className={cn(
           "z-50 max-h-(--radix-context-menu-content-available-height) min-w-36 origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
           className
         )}
         {...props}
+        {...({ dir } as React.HTMLAttributes<HTMLDivElement>)}
       />
     </ContextMenuPrimitive.Portal>
   )
@@ -137,12 +145,12 @@ function ContextMenuSubContent({
   return (
     <ContextMenuPrimitive.SubContent
       data-slot="context-menu-sub-content"
-      dir={dir}
       className={cn(
         "z-50 min-w-32 origin-(--radix-context-menu-content-transform-origin) overflow-hidden rounded-lg border bg-popover p-1 text-popover-foreground shadow-lg duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
         className
       )}
       {...props}
+      {...({ dir } as React.HTMLAttributes<HTMLDivElement>)}
     />
   )
 }

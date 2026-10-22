@@ -14,10 +14,10 @@ const defaultRegistry = "https://sonojs.dev/r"
 function printHelp() {
   console.log(`Usage:
   sonojs init [--cwd <dir>] [--registry <url-or-path>] [--overwrite]
-  sonojs add <name> [--registry <url-or-path>] [--cwd <dir>] [--overwrite]
+  sonojs add <name> [name...] [--registry <url-or-path>] [--cwd <dir>] [--overwrite]
 
 init  — installs design system (styles/sonojs.css), lib/utils.ts, components.json
-add   — copies one component into components/ui/ (run init first)
+add   — copies component(s) into components/ui/ (run init first)
 
 Environment:
   SONOJS_REGISTRY   Default registry base (URL or local directory)
@@ -78,11 +78,12 @@ Next:
 `)
 }
 
-async function cmdAdd(name, rest) {
+async function cmdAdd(names, rest) {
   const { registry, cwd, overwrite } = parseFlags(rest)
   const npmDeps = new Set()
+  const seen = new Set()
 
-  async function addOne(itemName, seen = new Set()) {
+  async function addOne(itemName) {
     if (seen.has(itemName)) return
     seen.add(itemName)
 
@@ -92,7 +93,7 @@ async function cmdAdd(name, rest) {
     })
 
     for (const dep of item.registryDependencies ?? []) {
-      await addOne(dep, seen)
+      await addOne(dep)
     }
 
     const { written, skipped } = await installRegistryItemFiles(item, {
@@ -109,7 +110,9 @@ async function cmdAdd(name, rest) {
     for (const dep of item.dependencies ?? []) npmDeps.add(dep)
   }
 
-  await addOne(name)
+  for (const name of names) {
+    await addOne(name)
+  }
 
   installNpmDependencies(cwd, [...npmDeps])
 }
@@ -130,12 +133,17 @@ async function main() {
     }
 
     if (command === "add") {
-      const name = rest[0]
-      if (!name || name.startsWith("-")) {
+      const names = []
+      let i = 0
+      for (; i < rest.length; i++) {
+        if (rest[i].startsWith("-")) break
+        names.push(rest[i])
+      }
+      if (names.length === 0) {
         printHelp()
         process.exit(1)
       }
-      await cmdAdd(name, rest.slice(1))
+      await cmdAdd(names, rest.slice(i))
       return
     }
 
