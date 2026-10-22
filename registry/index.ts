@@ -23,6 +23,29 @@ import {
   AttachmentStates,
 } from "@/registry/examples/attachment"
 import {
+  AvatarBadgeExample,
+  AvatarBasic,
+  AvatarDefault,
+  AvatarGroupExample,
+  AvatarSizes,
+} from "@/registry/examples/avatar"
+import {
+  BadgeColorsExample,
+  BadgeDefault,
+  BadgeIconExample,
+  BadgeLinkExample,
+  BadgeSpinnerExample,
+  BadgeVariants,
+} from "@/registry/examples/badge"
+import {
+  BreadcrumbBasic,
+  BreadcrumbDefault,
+  BreadcrumbDropdownExample,
+  BreadcrumbEllipsisExample,
+  BreadcrumbLinkExample,
+  BreadcrumbSeparatorExample,
+} from "@/registry/examples/breadcrumb"
+import {
   ButtonDefault,
   ButtonDestructive,
   ButtonGhost,
@@ -69,6 +92,27 @@ export const registry = {
       title: "Attachment",
       description:
         "File and media attachment cards with upload states, sizes, and actions.",
+    },
+    {
+      name: "avatar",
+      type: "registry:ui" as const,
+      title: "Avatar",
+      description:
+        "An image element with a fallback for representing the user.",
+    },
+    {
+      name: "badge",
+      type: "registry:ui" as const,
+      title: "Badge",
+      description:
+        "Small status labels for counts, categories, and inline metadata.",
+    },
+    {
+      name: "breadcrumb",
+      type: "registry:ui" as const,
+      title: "Breadcrumb",
+      description:
+        "Displays the path to the current resource using a hierarchy of links.",
     },
     {
       name: "button",
@@ -179,6 +223,108 @@ export const registry = {
       type: "registry:example" as const,
       title: "Group",
       component: AttachmentGroupExample,
+    },
+    {
+      name: "avatar-default",
+      type: "registry:example" as const,
+      title: "Default",
+      component: AvatarDefault,
+    },
+    {
+      name: "avatar-basic",
+      type: "registry:example" as const,
+      title: "Basic",
+      component: AvatarBasic,
+    },
+    {
+      name: "avatar-sizes",
+      type: "registry:example" as const,
+      title: "Sizes",
+      component: AvatarSizes,
+    },
+    {
+      name: "avatar-badge",
+      type: "registry:example" as const,
+      title: "Badge",
+      component: AvatarBadgeExample,
+    },
+    {
+      name: "avatar-group",
+      type: "registry:example" as const,
+      title: "Group",
+      component: AvatarGroupExample,
+    },
+    {
+      name: "badge-default",
+      type: "registry:example" as const,
+      title: "Default",
+      component: BadgeDefault,
+    },
+    {
+      name: "badge-variants",
+      type: "registry:example" as const,
+      title: "Variants",
+      component: BadgeVariants,
+    },
+    {
+      name: "badge-icon",
+      type: "registry:example" as const,
+      title: "Icon",
+      component: BadgeIconExample,
+    },
+    {
+      name: "badge-spinner",
+      type: "registry:example" as const,
+      title: "Spinner",
+      component: BadgeSpinnerExample,
+    },
+    {
+      name: "badge-link",
+      type: "registry:example" as const,
+      title: "Link",
+      component: BadgeLinkExample,
+    },
+    {
+      name: "badge-colors",
+      type: "registry:example" as const,
+      title: "Colors",
+      component: BadgeColorsExample,
+    },
+    {
+      name: "breadcrumb-default",
+      type: "registry:example" as const,
+      title: "Default",
+      component: BreadcrumbDefault,
+    },
+    {
+      name: "breadcrumb-basic",
+      type: "registry:example" as const,
+      title: "Basic",
+      component: BreadcrumbBasic,
+    },
+    {
+      name: "breadcrumb-separator",
+      type: "registry:example" as const,
+      title: "Separator",
+      component: BreadcrumbSeparatorExample,
+    },
+    {
+      name: "breadcrumb-dropdown",
+      type: "registry:example" as const,
+      title: "Dropdown",
+      component: BreadcrumbDropdownExample,
+    },
+    {
+      name: "breadcrumb-ellipsis",
+      type: "registry:example" as const,
+      title: "Collapsed",
+      component: BreadcrumbEllipsisExample,
+    },
+    {
+      name: "breadcrumb-link",
+      type: "registry:example" as const,
+      title: "Link",
+      component: BreadcrumbLinkExample,
     },
     {
       name: "button-default",

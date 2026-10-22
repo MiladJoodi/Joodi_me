@@ -65,7 +65,7 @@ export function DirectionToggle({
       role="group"
       aria-label="Writing direction"
       className={cn(
-        "inline-flex rounded-md border border-border/80 p-0.5 text-[12px] font-medium",
+        "inline-flex h-8 items-center rounded-md border border-border/80 bg-background p-0.5 text-[11px] font-medium text-muted-foreground",
         className
       )}
     >
@@ -75,10 +75,10 @@ export function DirectionToggle({
           type="button"
           onClick={() => onValueChange(option)}
           className={cn(
-            "cursor-pointer rounded-[5px] px-2.5 py-1 uppercase transition-colors",
+            "inline-flex h-7 cursor-pointer items-center rounded-sm px-2 uppercase tracking-wide transition-colors",
             value === option
-              ? "bg-primary text-primary-foreground"
-              : "text-muted-foreground hover:text-foreground"
+              ? "bg-muted text-foreground"
+              : "hover:text-foreground"
           )}
           aria-pressed={value === option}
         >

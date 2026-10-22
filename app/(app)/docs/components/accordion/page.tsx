@@ -3,8 +3,9 @@ import {
   ComponentVariantPreview,
   DocsApiProps,
 } from "@/components/docs"
+import { withVariantCode } from "@/lib/docs-variant-examples"
 
-const examples = [
+const exampleDefs = [
   { name: "accordion-default", title: "Default" },
   { name: "accordion-multiple", title: "Multiple" },
   { name: "accordion-disabled", title: "Disabled" },
@@ -30,7 +31,9 @@ export function Example() {
   )
 }`
 
-export default function AccordionDocsPage() {
+export default async function AccordionDocsPage() {
+  const examples = await withVariantCode(exampleDefs)
+
   return (
     <article className="mx-auto max-w-3xl space-y-10">
       <header className="space-y-2">

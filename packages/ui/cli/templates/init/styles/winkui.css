@@ -328,3 +328,8 @@
   --surface: #18181b;
   --surface-foreground: #a1a1aa;
 }
+
+/* Directional icons — chevrons/arrows along the inline axis */
+[dir="rtl"] .icon-dir {
+  transform: scaleX(-1);
+}

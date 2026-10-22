@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "winkui",
   "homepage": "https://winkui.dev",
-  "version": "0.1.0+bdb5b62ef8f7",
-  "generatedAt": "2026-10-22T03:07:07.123Z",
+  "version": "0.1.0+f4d7a5f33e01",
+  "generatedAt": "2026-10-22T09:31:32.863Z",
   "items": [
     {
       "name": "accordion",
@@ -23,8 +23,8 @@
           "target": "components/ui/accordion.tsx"
         }
       ],
-      "version": "0.1.0+bdb5b62ef8f7",
-      "generatedAt": "2026-10-22T03:07:07.123Z"
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
     },
     {
       "name": "alert",
@@ -43,8 +43,8 @@
           "target": "components/ui/alert.tsx"
         }
       ],
-      "version": "0.1.0+bdb5b62ef8f7",
-      "generatedAt": "2026-10-22T03:07:07.123Z"
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
     },
     {
       "name": "alert-dialog",
@@ -76,8 +76,70 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+bdb5b62ef8f7",
-      "generatedAt": "2026-10-22T03:07:07.123Z"
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "An image element with a fallback for representing the user.",
+      "dependencies": [
+        "radix-ui",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
+        }
+      ],
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Small status labels for counts, categories, and inline metadata.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        }
+      ],
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Displays the path to the current resource using a hierarchy of links.",
+      "dependencies": [
+        "radix-ui",
+        "lucide-react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/breadcrumb.tsx"
+        }
+      ],
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
     },
     {
       "name": "button",
@@ -97,8 +159,8 @@
           "target": "components/ui/button.tsx"
         }
       ],
-      "version": "0.1.0+bdb5b62ef8f7",
-      "generatedAt": "2026-10-22T03:07:07.123Z"
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
     },
     {
       "name": "attachment",
@@ -123,8 +185,8 @@
           "target": "components/ui/attachment.tsx"
         }
       ],
-      "version": "0.1.0+bdb5b62ef8f7",
-      "generatedAt": "2026-10-22T03:07:07.123Z"
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
     },
     {
       "name": "spinner",
@@ -143,8 +205,8 @@
           "target": "components/ui/spinner.tsx"
         }
       ],
-      "version": "0.1.0+bdb5b62ef8f7",
-      "generatedAt": "2026-10-22T03:07:07.123Z"
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
     },
     {
       "name": "login-01",
@@ -165,8 +227,8 @@
           "type": "registry:component"
         }
       ],
-      "version": "0.1.0+bdb5b62ef8f7",
-      "generatedAt": "2026-10-22T03:07:07.123Z"
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
     },
     {
       "name": "chart-area",
@@ -183,8 +245,8 @@
           "type": "registry:component"
         }
       ],
-      "version": "0.1.0+bdb5b62ef8f7",
-      "generatedAt": "2026-10-22T03:07:07.123Z"
+      "version": "0.1.0+f4d7a5f33e01",
+      "generatedAt": "2026-10-22T09:31:32.863Z"
     }
   ]
 }

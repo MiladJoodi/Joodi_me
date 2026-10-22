@@ -3,8 +3,9 @@ import {
   ComponentVariantPreview,
   DocsApiProps,
 } from "@/components/docs"
+import { withVariantCode } from "@/lib/docs-variant-examples"
 
-const examples = [
+const exampleDefs = [
   { name: "alert-default", title: "Default" },
   { name: "alert-destructive", title: "Destructive" },
   { name: "alert-action", title: "Action" },
@@ -29,7 +30,9 @@ export function Example() {
   )
 }`
 
-export default function AlertDocsPage() {
+export default async function AlertDocsPage() {
+  const examples = await withVariantCode(exampleDefs)
+
   return (
     <article className="mx-auto max-w-3xl space-y-10">
       <header className="space-y-2">

@@ -3,8 +3,9 @@ import {
   ComponentVariantPreview,
   DocsApiProps,
 } from "@/components/docs"
+import { withVariantCode } from "@/lib/docs-variant-examples"
 
-const examples = [
+const exampleDefs = [
   { name: "alert-dialog-default", title: "Default" },
   { name: "alert-dialog-small", title: "Small" },
   { name: "alert-dialog-destructive", title: "Destructive" },
@@ -46,7 +47,9 @@ export function Example() {
   )
 }`
 
-export default function AlertDialogDocsPage() {
+export default async function AlertDialogDocsPage() {
+  const examples = await withVariantCode(exampleDefs)
+
   return (
     <article className="mx-auto max-w-3xl space-y-10">
       <header className="space-y-2">

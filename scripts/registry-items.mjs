@@ -75,6 +75,56 @@ export const registryItems = [
     ],
   },
   {
+    name: "avatar",
+    type: "registry:ui",
+    title: "Avatar",
+    description:
+      "An image element with a fallback for representing the user.",
+    dependencies: ["radix-ui", "clsx", "tailwind-merge"],
+    files: [
+      {
+        path: "packages/ui/src/components/avatar.tsx",
+        type: "registry:ui",
+        target: "components/ui/avatar.tsx",
+      },
+    ],
+  },
+  {
+    name: "badge",
+    type: "registry:ui",
+    title: "Badge",
+    description:
+      "Small status labels for counts, categories, and inline metadata.",
+    dependencies: [
+      "radix-ui",
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge",
+    ],
+    files: [
+      {
+        path: "packages/ui/src/components/badge.tsx",
+        type: "registry:ui",
+        target: "components/ui/badge.tsx",
+      },
+    ],
+  },
+  {
+    name: "breadcrumb",
+    type: "registry:ui",
+    title: "Breadcrumb",
+    description:
+      "Displays the path to the current resource using a hierarchy of links.",
+    dependencies: ["radix-ui", "lucide-react", "clsx", "tailwind-merge"],
+    files: [
+      {
+        path: "packages/ui/src/components/breadcrumb.tsx",
+        type: "registry:ui",
+        target: "components/ui/breadcrumb.tsx",
+      },
+    ],
+  },
+  {
     name: "button",
     type: "registry:ui",
     title: "Button",

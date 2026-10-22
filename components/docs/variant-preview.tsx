@@ -1,7 +1,9 @@
 "use client"
 
 import * as React from "react"
+import { CodeIcon, EyeIcon } from "lucide-react"
 
+import { CodePanel } from "@/components/docs/code-panel"
 import {
   DirectionProvider,
   DirectionToggle,
@@ -13,7 +15,13 @@ import { getRegistryExample } from "@/registry/index"
 export type VariantExample = {
   name: string
   title: string
+  /** Consumer-facing source for this variant (shown in Code tab). */
+  code?: string
+  /** Pre-highlighted HTML from `highlightCode` on the server. */
+  codeHtml?: string
 }
+
+type ViewMode = "preview" | "code"
 
 export function ComponentVariantPreview({
   examples,
@@ -24,8 +32,15 @@ export function ComponentVariantPreview({
 }) {
   const [active, setActive] = React.useState(examples[0]?.name ?? "")
   const [dir, setDir] = React.useState<Direction>("ltr")
+  const [view, setView] = React.useState<ViewMode>("preview")
   const example = getRegistryExample(active)
   const Preview = example?.component
+  const meta = examples.find((item) => item.name === active)
+  const hasCode = Boolean(meta?.code && meta?.codeHtml)
+
+  React.useEffect(() => {
+    if (!hasCode && view === "code") setView("preview")
+  }, [hasCode, view])
 
   return (
     <div
@@ -52,14 +67,53 @@ export function ComponentVariantPreview({
             </button>
           ))}
         </div>
-        <DirectionToggle value={dir} onValueChange={setDir} />
+        <div className="flex flex-wrap items-center gap-1.5">
+          {view === "preview" ? (
+            <DirectionToggle value={dir} onValueChange={setDir} />
+          ) : null}
+          {hasCode ? (
+            <div className="inline-flex h-8 items-center rounded-md border border-border/80 bg-background p-0.5">
+              {(
+                [
+                  { id: "preview", label: "Preview", Icon: EyeIcon },
+                  { id: "code", label: "Code", Icon: CodeIcon },
+                ] as const
+              ).map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setView(tab.id)}
+                  aria-label={tab.label}
+                  title={tab.label}
+                  className={cn(
+                    "inline-flex size-7 cursor-pointer items-center justify-center rounded-sm transition-colors",
+                    view === tab.id
+                      ? "bg-muted text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <tab.Icon className="size-3.5" aria-hidden />
+                </button>
+              ))}
+            </div>
+          ) : null}
+        </div>
       </div>
-      <DirectionProvider
-        dir={dir}
-        className="flex min-h-32 items-center justify-center bg-background p-8"
-      >
-        {Preview ? <Preview /> : null}
-      </DirectionProvider>
+
+      {view === "preview" ? (
+        <DirectionProvider
+          dir={dir}
+          className="flex min-h-32 items-center justify-center bg-background p-8"
+        >
+          {Preview ? <Preview /> : null}
+        </DirectionProvider>
+      ) : meta?.code && meta?.codeHtml ? (
+        <CodePanel
+          title={`${meta.title}.tsx`}
+          code={meta.code}
+          html={meta.codeHtml}
+        />
+      ) : null}
     </div>
   )
 }

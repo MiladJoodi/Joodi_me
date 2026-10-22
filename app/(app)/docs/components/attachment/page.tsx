@@ -3,8 +3,9 @@ import {
   ComponentVariantPreview,
   DocsApiProps,
 } from "@/components/docs"
+import { withVariantCode } from "@/lib/docs-variant-examples"
 
-const examples = [
+const exampleDefs = [
   { name: "attachment-default", title: "Default" },
   { name: "attachment-states", title: "States" },
   { name: "attachment-sizes", title: "Sizes" },
@@ -41,7 +42,9 @@ export function Example() {
   )
 }`
 
-export default function AttachmentDocsPage() {
+export default async function AttachmentDocsPage() {
+  const examples = await withVariantCode(exampleDefs)
+
   return (
     <article className="mx-auto max-w-3xl space-y-10">
       <header className="space-y-2">

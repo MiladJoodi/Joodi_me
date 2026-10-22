@@ -1,0 +1,5 @@
+export { AvatarDefault } from "./default"
+export { AvatarBasic } from "./basic"
+export { AvatarSizes } from "./sizes"
+export { AvatarBadgeExample } from "./badge"
+export { AvatarGroupExample } from "./group"

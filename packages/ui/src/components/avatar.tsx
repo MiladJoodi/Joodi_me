@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@winkui/ui/lib/utils"
 import { Avatar as AvatarPrimitive } from "radix-ui"
+
+import { cn } from "@winkui/ui/lib/utils"
 
 function Avatar({
   className,
@@ -16,7 +17,9 @@ function Avatar({
       data-slot="avatar"
       data-size={size}
       className={cn(
-        "group/avatar relative flex size-[var(--size-avatar)] shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6",
+        // rounded-full so AvatarGroup ring is circular (square ring → vertical seams).
+        // No overflow-hidden so AvatarBadge can sit on the corner.
+        "winkui group/avatar relative flex size-8 shrink-0 rounded-full bg-background select-none data-[size=lg]:size-10 data-[size=sm]:size-6",
         className
       )}
       {...props}
@@ -31,7 +34,10 @@ function AvatarImage({
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
-      className={cn("aspect-square size-full", className)}
+        className={cn(
+          "aspect-square size-full rounded-full object-cover",
+          className
+        )}
       {...props}
     />
   )
@@ -58,7 +64,7 @@ function AvatarBadge({ className, ...props }: React.ComponentProps<"span">) {
     <span
       data-slot="avatar-badge"
       className={cn(
-        "absolute right-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground ring-2 ring-background select-none",
+        "absolute inset-e-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground ring-2 ring-background select-none",
         "group-data-[size=sm]/avatar:size-2 group-data-[size=sm]/avatar:[&>svg]:hidden",
         "group-data-[size=default]/avatar:size-2.5 group-data-[size=default]/avatar:[&>svg]:size-2",
         "group-data-[size=lg]/avatar:size-3 group-data-[size=lg]/avatar:[&>svg]:size-2",
@@ -74,7 +80,7 @@ function AvatarGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="avatar-group"
       className={cn(
-        "group/avatar-group flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background",
+        "winkui group/avatar-group flex -space-x-2 rtl:space-x-reverse *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background",
         className
       )}
       {...props}

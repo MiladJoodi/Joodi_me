@@ -1,3 +1,4 @@
+export { CodePanel } from "./code-panel"
 export { ComponentSource } from "./component-source"
 export { CopyButton } from "./copy-button"
 export { ComponentVariantPreview } from "./variant-preview"

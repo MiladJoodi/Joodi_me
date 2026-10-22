@@ -3,8 +3,9 @@ import {
   ComponentVariantPreview,
   DocsApiProps,
 } from "@/components/docs"
+import { withVariantCode } from "@/lib/docs-variant-examples"
 
-const examples = [
+const exampleDefs = [
   { name: "button-default", title: "Default" },
   { name: "button-outline", title: "Outline" },
   { name: "button-secondary", title: "Secondary" },
@@ -19,7 +20,9 @@ export function Example() {
   return <Button>Button</Button>
 }`
 
-export default function ButtonDocsPage() {
+export default async function ButtonDocsPage() {
+  const examples = await withVariantCode(exampleDefs)
+
   return (
     <article className="mx-auto max-w-3xl space-y-10">
       <header className="space-y-2">

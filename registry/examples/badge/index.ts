@@ -1,0 +1,6 @@
+export { BadgeDefault } from "./default"
+export { BadgeVariants } from "./variants"
+export { BadgeIconExample } from "./icon"
+export { BadgeSpinnerExample } from "./spinner"
+export { BadgeLinkExample } from "./link"
+export { BadgeColorsExample } from "./colors"
