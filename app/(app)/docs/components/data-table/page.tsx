@@ -12,14 +12,14 @@ const exampleDefs = [
     name: "data-table-basic",
     title: "Basic",
     description:
-      "Render columns with `useTable` and SonoJS `Table` primitives.",
+      "Copy-paste one file: row `#`, LTR email, and `text-end` amounts.",
     npmRequires: ["@tanstack/react-table"],
   },
   {
     name: "data-table-sorting",
     title: "Sorting",
     description:
-      "Register `rowSortingFeature` and toggle sort from the column header.",
+      "Sort from the column header with `rowSortingFeature` (self-contained).",
     requires: ["button"],
     npmRequires: ["@tanstack/react-table", "lucide-react"],
   },
@@ -27,7 +27,7 @@ const exampleDefs = [
     name: "data-table-pagination",
     title: "Pagination",
     description:
-      "Enable `rowPaginationFeature` and wire Previous / Next to the table APIs.",
+      "Previous / Next with `rowPaginationFeature` (self-contained).",
     requires: ["button"],
     npmRequires: ["@tanstack/react-table"],
   },
@@ -35,15 +35,26 @@ const exampleDefs = [
     name: "data-table-filtering",
     title: "Filtering",
     description:
-      "Filter a column with `setFilterValue` and `filterFn: \"includesString\"`.",
+      "Filter emails with `setFilterValue` (self-contained example).",
     requires: ["button", "input"],
     npmRequires: ["@tanstack/react-table", "lucide-react"],
   },
 ]
 
+/** One file — no `./features` / `./payments` / `./column-helpers` imports. */
 const usageSource = `"use client"
 
-import { createColumnHelper, useTable } from "@tanstack/react-table"
+import {
+  createColumnHelper,
+  createPaginatedRowModel,
+  createSortedRowModel,
+  rowPaginationFeature,
+  rowSortingFeature,
+  sortFn_alphanumeric,
+  sortFn_text,
+  tableFeatures,
+  useTable,
+} from "@tanstack/react-table"
 
 import {
   Table,
@@ -54,8 +65,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-import { features } from "./features"
-
 type Payment = {
   id: string
   amount: number
@@ -63,12 +72,52 @@ type Payment = {
   email: string
 }
 
+const features = tableFeatures({
+  rowPaginationFeature,
+  rowSortingFeature,
+  paginatedRowModel: createPaginatedRowModel(),
+  sortedRowModel: createSortedRowModel(),
+  sortFns: { alphanumeric: sortFn_alphanumeric, text: sortFn_text },
+})
+
 const columnHelper = createColumnHelper<typeof features, Payment>()
 
 const columns = columnHelper.columns([
+  columnHelper.display({
+    id: "rowNumber",
+    header: () => (
+      <span className="block w-8 text-center text-muted-foreground">#</span>
+    ),
+    cell: ({ row, table }) => {
+      const pagination = table.store.state.pagination
+      const pageIndex = pagination?.pageIndex ?? 0
+      const pageSize = pagination?.pageSize ?? 10
+      return (
+        <span className="block w-8 text-center text-muted-foreground tabular-nums">
+          {pageIndex * pageSize + row.index + 1}
+        </span>
+      )
+    },
+  }),
   columnHelper.accessor("status", { header: "Status" }),
-  columnHelper.accessor("email", { header: "Email" }),
-  columnHelper.accessor("amount", { header: "Amount" }),
+  columnHelper.accessor("email", {
+    header: () => (
+      <div dir="ltr" className="text-left">
+        Email
+      </div>
+    ),
+    cell: ({ row }) => (
+      <div dir="ltr" className="text-left">
+        {String(row.getValue("email"))}
+      </div>
+    ),
+  }),
+  columnHelper.accessor("amount", {
+    header: () => <div className="text-end">Amount</div>,
+    cell: ({ row }) => (
+      <div className="text-end font-medium">{row.getValue("amount")}</div>
+    ),
+  }),
 ])
 
 export function DataTable({ data }: { data: Payment[] }) {
@@ -93,7 +142,7 @@ export function DataTable({ data }: { data: Payment[] }) {
         <TableBody>
           {table.getRowModel().rows.map((row) => (
             <TableRow key={row.id}>
-              {row.getVisibleCells().map((cell) => (
+              {row.getAllCells().map((cell) => (
                 <TableCell key={cell.id}>
                   <table.FlexRender cell={cell} />
                 </TableCell>
@@ -105,30 +154,6 @@ export function DataTable({ data }: { data: Payment[] }) {
     </div>
   )
 }`
-
-const featuresSource = `import {
-  columnFilteringFeature,
-  createFilteredRowModel,
-  createPaginatedRowModel,
-  createSortedRowModel,
-  filterFn_includesString,
-  rowPaginationFeature,
-  rowSortingFeature,
-  sortFn_alphanumeric,
-  sortFn_text,
-  tableFeatures,
-} from "@tanstack/react-table"
-
-export const features = tableFeatures({
-  columnFilteringFeature,
-  rowPaginationFeature,
-  rowSortingFeature,
-  filteredRowModel: createFilteredRowModel(),
-  paginatedRowModel: createPaginatedRowModel(),
-  sortedRowModel: createSortedRowModel(),
-  filterFns: { includesString: filterFn_includesString },
-  sortFns: { alphanumeric: sortFn_alphanumeric, text: sortFn_text },
-})`
 
 export default async function DataTableDocsPage() {
   const examples = await withVariantCode(exampleDefs)
@@ -149,12 +174,21 @@ export default async function DataTableDocsPage() {
           <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
             @tanstack/react-table
           </code>
-          , then opt into features like sorting, filtering, and pagination.
-          Prefer{" "}
+          , then copy an example from the Code tab — each demo is a{" "}
+          <strong className="font-medium text-foreground">single file</strong>{" "}
+          (no extra helpers to install). Prefer{" "}
           <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
             text-end
           </code>{" "}
-          for amount columns so alignment follows RTL.
+          for amounts and{" "}
+          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
+            dir=&quot;ltr&quot;
+          </code>{" "}
+          +{" "}
+          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
+            text-left
+          </code>{" "}
+          for emails.
         </p>
       </header>
 
@@ -178,23 +212,14 @@ export default async function DataTableDocsPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-h3">Features</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          v9 features are opt-in. Share a{" "}
-          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
-            features
-          </code>{" "}
-          object across your tables:
-        </p>
-        <ComponentSource
-          title="features.ts"
-          lang="tsx"
-          code={featuresSource}
-        />
-      </section>
-
-      <section className="space-y-3">
         <h2 className="text-h3">Usage</h2>
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          One file you can paste into your app (pass your own{" "}
+          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
+            data
+          </code>
+          ). Open any example&apos;s Code tab for the full variant.
+        </p>
         <ComponentSource
           title="data-table.tsx"
           lang="tsx"

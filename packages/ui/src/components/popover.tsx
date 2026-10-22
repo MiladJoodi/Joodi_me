@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useDirection } from "@sonojs/ui/hooks/use-direction"
 import { cn } from "@sonojs/ui/lib/utils"
 import { Popover as PopoverPrimitive } from "radix-ui"
 
@@ -29,10 +30,14 @@ function PopoverContent({
   sideOffset = 4,
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Content>) {
+  // Portal renders under <body>; set dir so RTL from DirectionProvider still applies.
+  const { dir } = useDirection()
+
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
         data-slot="popover-content"
+        dir={dir}
         align={align}
         sideOffset={sideOffset}
         className={cn(

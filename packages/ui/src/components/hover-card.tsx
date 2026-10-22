@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useDirection } from "@sonojs/ui/hooks/use-direction"
 import { cn } from "@sonojs/ui/lib/utils"
 import { HoverCard as HoverCardPrimitive } from "radix-ui"
 
@@ -29,10 +30,14 @@ function HoverCardContent({
   sideOffset = 4,
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Content>) {
+  // Portal renders under <body>; set dir so RTL from DirectionProvider still applies.
+  const { dir } = useDirection()
+
   return (
     <HoverCardPrimitive.Portal data-slot="hover-card-portal">
       <HoverCardPrimitive.Content
         data-slot="hover-card-content"
+        dir={dir}
         align={align}
         sideOffset={sideOffset}
         className={cn(
