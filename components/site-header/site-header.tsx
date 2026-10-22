@@ -31,14 +31,18 @@ export function SiteHeader() {
           <Link
             href="/"
             prefetch={false}
-            className="me-2 flex shrink-0 cursor-pointer items-center rounded-[var(--radius-button)] outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="me-2 flex shrink-0 cursor-pointer items-center gap-2 rounded-[var(--radius-button)] outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
-            {/* Temporary logo test — replace with final brand mark later */}
-            <img
-              src="/images/logos/01.webp"
-              alt={siteConfig.name}
-              className="h-7 w-auto"
-            />
+            <span
+              aria-hidden
+              className="flex size-6 items-center justify-center rounded-[var(--radius-button)] bg-primary text-[length:var(--text-caption)] font-semibold tracking-tight text-primary-foreground shadow-xs"
+            >
+              S
+            </span>
+            <span className="text-[length:var(--text-secondary)] leading-none font-semibold tracking-tight text-foreground">
+              Sono<span className="text-primary">JS</span>
+            </span>
+            <span className="sr-only">{siteConfig.name}</span>
           </Link>
           <MainNav items={siteConfig.navItems} className="hidden lg:flex" />
 

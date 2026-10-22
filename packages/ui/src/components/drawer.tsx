@@ -102,7 +102,8 @@ function DrawerContent({
         dir={dir}
         className={cn(
           // Floating inset panel: full radius + border (not edge-flush).
-          "sonojs group/drawer-content fixed z-50 flex h-auto flex-col overflow-hidden rounded-3xl border border-border bg-popover text-popover-foreground shadow-xl",
+          // !select-text — Vaul sets [data-vaul-drawer]{user-select:none} on fine pointers.
+          "sonojs group/drawer-content fixed z-50 flex h-auto flex-col overflow-hidden rounded-3xl border border-border bg-popover text-popover-foreground shadow-xl !select-text",
           // After resolveEdgeSide, Vaul's data attribute is always physical.
           "data-[vaul-drawer-direction=top]:inset-x-2 data-[vaul-drawer-direction=top]:top-2 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[calc(80vh-0.5rem)]",
           "data-[vaul-drawer-direction=bottom]:inset-x-2 data-[vaul-drawer-direction=bottom]:bottom-2 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[calc(80vh-0.5rem)]",
@@ -112,8 +113,14 @@ function DrawerContent({
         )}
         {...props}
       >
+        {/* Bottom handle stays draggable; body is no-drag so text select / clicks don't swipe the panel. */}
         <div className="mx-auto mt-4 hidden h-1.5 w-[100px] shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block" />
-        {children}
+        <div
+          data-vaul-no-drag
+          className="flex min-h-0 flex-1 flex-col overflow-hidden"
+        >
+          {children}
+        </div>
       </DrawerPrimitive.Content>
     </DrawerPortal>
   )
@@ -149,7 +156,7 @@ function DrawerTitle({
   return (
     <DrawerPrimitive.Title
       data-slot="drawer-title"
-      className={cn("font-semibold text-foreground", className)}
+      className={cn("cursor-text font-semibold text-foreground select-text", className)}
       {...props}
     />
   )
@@ -162,7 +169,10 @@ function DrawerDescription({
   return (
     <DrawerPrimitive.Description
       data-slot="drawer-description"
-      className={cn("text-sm text-muted-foreground", className)}
+      className={cn(
+        "cursor-text text-sm text-muted-foreground select-text",
+        className
+      )}
       {...props}
     />
   )

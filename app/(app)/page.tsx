@@ -55,17 +55,12 @@ export default function HomePage() {
         </p>
 
         <h1
-          className="max-w-3xl"
+          className="max-w-3xl text-5xl font-extrabold tracking-[-0.04em] text-foreground sm:text-6xl md:text-7xl"
           style={{
             animation: "sono-fade-up 520ms var(--motion-ease) 60ms both",
           }}
         >
-          {/* Temporary logo test — replace with final brand mark later */}
-          <img
-            src="/images/logos/01.webp"
-            alt={siteConfig.name}
-            className="h-14 w-auto sm:h-16 md:h-20"
-          />
+          <span className="text-primary">{siteConfig.name}</span>
         </h1>
 
         <p
