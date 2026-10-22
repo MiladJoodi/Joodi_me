@@ -842,6 +842,16 @@ export const registryItems = [
         type: "registry:ui",
         target: "components/ui/sheet.tsx",
       },
+      {
+        path: "packages/cli/templates/init/lib/direction.ts",
+        type: "registry:lib",
+        target: "lib/direction.ts",
+      },
+      {
+        path: "packages/cli/templates/init/hooks/use-direction.tsx",
+        type: "registry:lib",
+        target: "hooks/use-direction.tsx",
+      },
     ],
   },
   {
