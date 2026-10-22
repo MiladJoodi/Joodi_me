@@ -18,6 +18,8 @@ export function FieldInvalid() {
           defaultValue="not-an-email"
           aria-invalid
           autoComplete="email"
+          dir="ltr"
+          className="text-left"
         />
         <FieldDescription>We never share your email.</FieldDescription>
         <FieldError>Enter a valid email address.</FieldError>

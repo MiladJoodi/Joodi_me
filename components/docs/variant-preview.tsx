@@ -10,8 +10,8 @@ import {
   DirectionToggle,
 } from "@/components/direction"
 import type { Direction } from "@/lib/direction"
+import { RegistryExamplePreview } from "@/components/docs/registry-example-preview"
 import { cn } from "@/lib/utils"
-import { getRegistryExample } from "@/registry/index"
 
 export type VariantExample = {
   name: string
@@ -93,16 +93,11 @@ export function ComponentVariantPreview({
   const [active, setActive] = React.useState(examples[0]?.name ?? "")
   const [dir, setDir] = React.useState<Direction>("ltr")
   const [view, setView] = React.useState<ViewMode>("preview")
-  const example = getRegistryExample(active)
-  const Preview = example?.component
   const meta = examples.find((item) => item.name === active)
   const hasCode = Boolean(meta?.code && meta?.codeHtml)
   const requires = meta?.requires?.filter(Boolean) ?? []
   const npmRequires = meta?.npmRequires?.filter(Boolean) ?? []
-
-  React.useEffect(() => {
-    if (!hasCode && view === "code") setView("preview")
-  }, [hasCode, view])
+  const effectiveView: ViewMode = hasCode ? view : "preview"
 
   return (
     <div className={cn("space-y-3", className)}>
@@ -130,7 +125,7 @@ export function ComponentVariantPreview({
             ))}
           </div>
           <div className="flex shrink-0 items-center gap-1.5 self-start">
-            {view === "preview" && showDirection ? (
+            {effectiveView === "preview" && showDirection ? (
               <DirectionToggle value={dir} onValueChange={setDir} />
             ) : null}
             {hasCode ? (
@@ -149,7 +144,7 @@ export function ComponentVariantPreview({
                     title={tab.label}
                     className={cn(
                       "inline-flex size-7 cursor-pointer items-center justify-center rounded-sm transition-colors",
-                      view === tab.id
+                      effectiveView === tab.id
                         ? "bg-muted text-foreground"
                         : "text-muted-foreground hover:text-foreground"
                     )}
@@ -162,17 +157,17 @@ export function ComponentVariantPreview({
           </div>
         </div>
 
-        {view === "preview" ? (
+        {effectiveView === "preview" ? (
           showDirection ? (
             <DirectionProvider
               dir={dir}
               className="flex min-h-32 items-center justify-center bg-background p-8"
             >
-              {Preview ? <Preview /> : null}
+              {active ? <RegistryExamplePreview name={active} /> : null}
             </DirectionProvider>
           ) : (
             <div className="flex min-h-32 items-center justify-center bg-background p-8">
-              {Preview ? <Preview /> : null}
+              {active ? <RegistryExamplePreview name={active} /> : null}
             </div>
           )
         ) : meta?.code && meta?.codeHtml ? (
