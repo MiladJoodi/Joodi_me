@@ -5,6 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { CheckIcon, CopyIcon } from "lucide-react"
 
 import { Button } from "@sonojs/ui/components/button"
+import { useHighlightedCode } from "@sonojs/ui/hooks/use-highlighted-code"
 import { cn } from "@sonojs/ui/lib/utils"
 
 const codeBlockVariants = cva(
@@ -135,15 +136,95 @@ function CodeBlockContent({
   wrap = false,
   lineNumbers = false,
   startLine = 1,
+  language,
   ...props
 }: React.ComponentProps<"pre"> & {
   wrap?: boolean
   lineNumbers?: boolean
   startLine?: number
+  /** Shiki language id (`tsx`, `json`, `bash`, …). String children are highlighted. */
+  language?: string
+}) {
+  if (language && typeof children === "string") {
+    return (
+      <CodeBlockContentHighlighted
+        className={className}
+        style={style}
+        wrap={wrap}
+        lineNumbers={lineNumbers}
+        startLine={startLine}
+        language={language}
+        code={children}
+        {...props}
+      />
+    )
+  }
+
+  return (
+    <CodeBlockContentFrame
+      className={className}
+      style={style}
+      wrap={wrap}
+      lineNumbers={lineNumbers}
+      startLine={startLine}
+      language={language}
+      {...props}
+    >
+      {lineNumbers && typeof children === "string"
+        ? children
+            .replace(/\n$/, "")
+            .split("\n")
+            .map((line, index) => (
+              <CodeBlockLine key={index}>{line}</CodeBlockLine>
+            ))
+        : children}
+    </CodeBlockContentFrame>
+  )
+}
+
+function CodeBlockContentHighlighted({
+  code,
+  language,
+  lineNumbers = false,
+  ...props
+}: Omit<React.ComponentProps<typeof CodeBlockContentFrame>, "children"> & {
+  code: string
+  language: string
+}) {
+  const lines = useHighlightedCode(code, language)
+
+  return (
+    <CodeBlockContentFrame
+      lineNumbers={lineNumbers}
+      language={language}
+      {...props}
+    >
+      {lines.map((line, index) => (
+        <CodeBlockLine key={index}>{line}</CodeBlockLine>
+      ))}
+    </CodeBlockContentFrame>
+  )
+}
+
+function CodeBlockContentFrame({
+  className,
+  children,
+  style,
+  wrap = false,
+  lineNumbers = false,
+  startLine = 1,
+  language,
+  ...props
+}: React.ComponentProps<"pre"> & {
+  wrap?: boolean
+  lineNumbers?: boolean
+  startLine?: number
+  language?: string
 }) {
   return (
     <pre
       data-slot="code-block-content"
+      data-language={language || undefined}
       data-wrap={wrap || undefined}
       data-numbered={lineNumbers || undefined}
       dir="ltr"
@@ -159,14 +240,7 @@ function CodeBlockContent({
         data-slot="code-block-code"
         className="grid min-h-lh min-w-max content-start in-data-numbered:grid-cols-[auto_1fr] in-data-wrap:min-w-0"
       >
-        {lineNumbers && typeof children === "string"
-          ? children
-              .replace(/\n$/, "")
-              .split("\n")
-              .map((line, index) => (
-                <CodeBlockLine key={index}>{line}</CodeBlockLine>
-              ))
-          : children}
+        {children}
       </code>
     </pre>
   )
