@@ -16,7 +16,7 @@
   }
 }
 
-/* Text shimmer (attachment uploading/processing) — based on currentColor */
+/* Text shimmer (attachment uploading/processing) */
 @property --shimmer-angle {
   syntax: "<angle>";
   inherits: true;
@@ -31,25 +31,12 @@
   inherits: false;
 }
 
-@theme inline {
-  @keyframes tw-shimmer {
-    from {
-      background-position: 100% 0;
-    }
-    to {
-      background-position: 0 0;
-    }
-  }
-}
-
 @utility shimmer {
-  /* Narrower band so most of the glyph stays at full currentColor */
-  --_spread: var(--shimmer-spread, calc(1.5ch + 24px));
+  --_spread: var(--shimmer-spread, calc(3ch + 40px));
   --_base: currentColor;
-  /* Opaque lift — never fade toward the card (was alpha*0.2 → washed out) */
   --_highlight: var(
     --shimmer-color,
-    color-mix(in oklab, currentColor 72%, white)
+    oklch(from currentColor l c h / calc(alpha * 0.2))
   );
 
   background-image: var(
@@ -57,10 +44,10 @@
     linear-gradient(
       calc(90deg + var(--shimmer-angle)),
       var(--_base) calc(50% - var(--_spread)),
-      color-mix(in oklab, var(--_highlight), var(--_base) 45%)
+      color-mix(in oklch, var(--_highlight), var(--_base) 50%)
         calc(50% - var(--_spread) * 0.5),
       var(--_highlight) 50%,
-      color-mix(in oklab, var(--_highlight), var(--_base) 45%)
+      color-mix(in oklch, var(--_highlight), var(--_base) 50%)
         calc(50% + var(--_spread) * 0.5),
       var(--_base) calc(50% + var(--_spread))
     )
@@ -76,7 +63,7 @@
   @variant dark {
     --_highlight: var(
       --shimmer-color,
-      color-mix(in oklab, currentColor 55%, white)
+      oklch(from currentColor max(0.8, calc(l + 0.4)) c h / calc(alpha + 0.4))
     );
   }
 
@@ -91,81 +78,45 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .shimmer {
-    animation: none;
-    background-image: none;
-    -webkit-text-fill-color: currentColor;
-  }
+@utility shimmer-once {
+  animation-iteration-count: 1;
 }
 
-/*
- * Attachment uploading/processing title shimmer.
- * Plain selectors — reliable when `group-data-*:shimmer` is not emitted.
- */
-.winkui[data-slot="attachment"][data-state="uploading"]
-  [data-slot="attachment-title"],
-.winkui[data-slot="attachment"][data-state="processing"]
-  [data-slot="attachment-title"] {
-  --_spread: var(--shimmer-spread, calc(1.5ch + 24px));
-  --_base: currentColor;
-  --_highlight: var(
-    --shimmer-color,
-    color-mix(in oklab, currentColor 72%, white)
-  );
-  background-image: linear-gradient(
-    calc(90deg + var(--shimmer-angle, 20deg)),
-    var(--_base) calc(50% - var(--_spread)),
-    color-mix(in oklab, var(--_highlight), var(--_base) 45%)
-      calc(50% - var(--_spread) * 0.5),
-    var(--_highlight) 50%,
-    color-mix(in oklab, var(--_highlight), var(--_base) 45%)
-      calc(50% + var(--_spread) * 0.5),
-    var(--_base) calc(50% + var(--_spread))
-  );
-  background-repeat: no-repeat;
-  background-size: calc(200% + var(--_spread) * 2) 100%;
-  background-position: 0 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: tw-shimmer var(--shimmer-duration, 2s) linear infinite;
-}
-
-.dark
-  .winkui[data-slot="attachment"][data-state="uploading"]
-  [data-slot="attachment-title"],
-.dark
-  .winkui[data-slot="attachment"][data-state="processing"]
-  [data-slot="attachment-title"],
-.winkui.dark[data-slot="attachment"][data-state="uploading"]
-  [data-slot="attachment-title"],
-.winkui.dark[data-slot="attachment"][data-state="processing"]
-  [data-slot="attachment-title"] {
-  --_highlight: var(
-    --shimmer-color,
-    color-mix(in oklab, currentColor 55%, white)
-  );
-}
-
-[dir="rtl"]
-  .winkui[data-slot="attachment"][data-state="uploading"]
-  [data-slot="attachment-title"],
-[dir="rtl"]
-  .winkui[data-slot="attachment"][data-state="processing"]
-  [data-slot="attachment-title"],
-.winkui[data-slot="attachment"][data-state="uploading"]:dir(rtl)
-  [data-slot="attachment-title"],
-.winkui[data-slot="attachment"][data-state="processing"]:dir(rtl)
-  [data-slot="attachment-title"] {
+@utility shimmer-reverse {
   animation-direction: reverse;
 }
 
+@utility shimmer-none {
+  --shimmer-image: none;
+  --shimmer-text-fill: currentColor;
+}
+
+@utility shimmer-color-* {
+  --shimmer-color: --value(--color, [color]);
+  --shimmer-color: color-mix(
+    in oklch,
+    --value(--color, [color]) calc(--modifier(integer) * 1%),
+    transparent
+  );
+}
+
+@utility shimmer-duration-* {
+  --shimmer-duration: calc(--value(integer) * 1ms);
+}
+
+@utility shimmer-spread-* {
+  --shimmer-spread: calc(var(--spacing) * --value(integer));
+  --shimmer-spread: --value([length], [percentage]);
+}
+
+@utility shimmer-angle-* {
+  --shimmer-angle: calc(--value(integer) * 1deg);
+}
+
+/* Kept for backwards compatibility. Unlayered, so it still wins over other
+   utilities on a plain .shimmer element. Variants are handled in the utility. */
 @media (prefers-reduced-motion: reduce) {
-  .winkui[data-slot="attachment"][data-state="uploading"]
-    [data-slot="attachment-title"],
-  .winkui[data-slot="attachment"][data-state="processing"]
-    [data-slot="attachment-title"] {
+  .shimmer {
     animation: none;
     background-image: none;
     -webkit-text-fill-color: currentColor;
@@ -237,6 +188,15 @@
 }
 
 @theme inline {
+  @keyframes tw-shimmer {
+    from {
+      background-position: 100% 0;
+    }
+    to {
+      background-position: 0 0;
+    }
+  }
+
   --breakpoint-3xl: 1600px;
   --font-sans: var(--font-wink-sans);
   --font-mono: var(--font-wink-mono);
