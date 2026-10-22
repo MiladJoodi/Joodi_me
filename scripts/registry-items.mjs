@@ -299,12 +299,29 @@ export const registryItems = [
     title: "Drawer",
     description:
       "A panel that slides in from an edge. Prefer direction start/end for RTL-safe sides.",
-    dependencies: ["vaul", "clsx", "tailwind-merge"],
+    dependencies: ["vaul", "sonner", "clsx", "tailwind-merge"],
+    // sonner: docs Basic example uses toast(); ships Toaster for layout.
+    registryDependencies: ["sonner"],
     files: [
       {
         path: "packages/ui/src/components/drawer.tsx",
         type: "registry:ui",
         target: "components/ui/drawer.tsx",
+      },
+      {
+        path: "packages/cli/templates/init/lib/direction.ts",
+        type: "registry:lib",
+        target: "lib/direction.ts",
+      },
+      {
+        path: "packages/cli/templates/init/hooks/use-direction.tsx",
+        type: "registry:lib",
+        target: "hooks/use-direction.tsx",
+      },
+      {
+        path: "packages/ui/src/hooks/use-mobile.ts",
+        type: "registry:lib",
+        target: "hooks/use-mobile.ts",
       },
     ],
   },
@@ -894,14 +911,24 @@ export const registryItems = [
   {
     name: "sonner",
     type: "registry:ui",
-    title: "Toast",
-    description: "Brief notifications for success, errors, and background work.",
+    title: "Sonner",
+    description: "Brief toast notifications for success, errors, and background work.",
     dependencies: ["sonner", "next-themes", "lucide-react"],
     files: [
       {
         path: "packages/ui/src/components/sonner.tsx",
         type: "registry:ui",
         target: "components/ui/sonner.tsx",
+      },
+      {
+        path: "packages/cli/templates/init/lib/direction.ts",
+        type: "registry:lib",
+        target: "lib/direction.ts",
+      },
+      {
+        path: "packages/cli/templates/init/hooks/use-direction.tsx",
+        type: "registry:lib",
+        target: "hooks/use-direction.tsx",
       },
     ],
   },

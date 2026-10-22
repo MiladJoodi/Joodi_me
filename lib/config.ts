@@ -1,4 +1,4 @@
-const PRODUCTION_APP_URL = "https://sonojs.example"
+const PRODUCTION_APP_URL = "https://sonojs.com"
 const LOCAL_APP_URL = "http://localhost:3000"
 
 function resolveAppUrl() {

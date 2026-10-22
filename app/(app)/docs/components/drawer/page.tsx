@@ -10,8 +10,9 @@ const exampleDefs = [
   {
     name: "drawer-default",
     title: "Basic",
-    description: "A bottom drawer for mobile-first actions and confirmations.",
-    requires: ["button"],
+    description:
+      "Pick a delivery time — side drawer on desktop, bottom on mobile.",
+    requires: ["button", "badge", "field", "radio-group"],
   },
   {
     name: "drawer-sides",
@@ -35,7 +36,12 @@ const exampleDefs = [
   },
 ]
 
-const usageSource = `import { Button } from "@/components/ui/button"
+const usageSource = `"use client"
+
+import * as React from "react"
+import { toast } from "sonner"
+
+import { Button } from "@/components/ui/button"
 import {
   Drawer,
   DrawerClose,
@@ -46,20 +52,39 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export function Example() {
+  const [open, setOpen] = React.useState(false)
+  const [deliveryTime, setDeliveryTime] = React.useState("asap")
+  const isMobile = useIsMobile()
+
   return (
-    <Drawer>
+    <Drawer
+      open={open}
+      onOpenChange={setOpen}
+      direction={isMobile ? "bottom" : "end"}
+    >
       <DrawerTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">Open Drawer</Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-          <DrawerDescription>This action cannot be undone.</DrawerDescription>
+          <DrawerTitle>Pick a delivery time</DrawerTitle>
+          <DrawerDescription>
+            We&apos;ll prepare your order as soon as possible.
+          </DrawerDescription>
         </DrawerHeader>
+        {/* RadioGroup of delivery slots… */}
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button
+            onClick={() => {
+              setOpen(false)
+              toast("Delivery time confirmed")
+            }}
+          >
+            Confirm Delivery Time
+          </Button>
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
           </DrawerClose>

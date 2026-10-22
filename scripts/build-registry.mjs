@@ -163,7 +163,7 @@ function main() {
   const index = {
     $schema: "https://ui.shadcn.com/schema/registry.json",
     name: "sonojs",
-    homepage: "https://sonojs.dev",
+    homepage: "https://sonojs.com",
     version,
     generatedAt,
     items: builtItems.map(toIndexEntry),

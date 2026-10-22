@@ -9,7 +9,7 @@ import { installRegistryItemFiles } from "../src/install.mjs"
 import { resolveRegistryItem } from "../src/resolve.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const defaultRegistry = "https://sonojs.dev/r"
+const defaultRegistry = "https://sonojs.com/r"
 
 function printHelp() {
   console.log(`Usage:

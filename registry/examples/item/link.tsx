@@ -29,7 +29,7 @@ export function ItemLink() {
         </a>
       </Item>
       <Item variant="outline" asChild>
-        <a href="https://sonojs.dev" target="_blank" rel="noopener noreferrer">
+        <a href="https://sonojs.com" target="_blank" rel="noopener noreferrer">
           <ItemContent>
             <ItemTitle>Documentation</ItemTitle>
             <ItemDescription>Opens in a new tab.</ItemDescription>

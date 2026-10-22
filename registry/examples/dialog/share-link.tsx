@@ -20,7 +20,7 @@ const SHARE_PATH = "/docs/components/dialog"
 
 export function DialogShareLink() {
   const [link, setLink] = React.useState(
-    `https://sonojs.dev${SHARE_PATH}`
+    `https://sonojs.com${SHARE_PATH}`
   )
 
   React.useEffect(() => {

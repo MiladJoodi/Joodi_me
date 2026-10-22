@@ -20,7 +20,7 @@ const code = `{
     "ui": "@/components/ui"
   },
   "registries": {
-    "@sonojs": "https://sonojs.dev/r/{name}.json"
+    "@sonojs": "https://sonojs.com/r/{name}.json"
   }
 }`
 

@@ -238,6 +238,10 @@ export const docsNav: {
           href: "/docs/components/slider",
         },
         {
+          title: "Sonner",
+          href: "/docs/components/sonner",
+        },
+        {
           title: "Spinner",
           href: "/docs/components/spinner",
         },
@@ -259,10 +263,6 @@ export const docsNav: {
         {
           title: "Textarea",
           href: "/docs/components/textarea",
-        },
-        {
-          title: "Toast",
-          href: "/docs/components/toast",
         },
         {
           title: "Toggle",

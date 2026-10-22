@@ -238,10 +238,11 @@ import {
   TextareaWithButton,
 } from "@/registry/examples/textarea"
 import {
-  ToastDefault,
-  ToastDescription,
-  ToastTypes,
-} from "@/registry/examples/toast"
+  SonnerDefault,
+  SonnerDescription,
+  SonnerPosition,
+  SonnerTypes,
+} from "@/registry/examples/sonner"
 import {
   ToggleDefault,
   ToggleDisabled,
@@ -787,9 +788,9 @@ export const registry = {
     {
       name: "sonner",
       type: "registry:ui" as const,
-      title: "Toast",
+      title: "Sonner",
       description:
-        "Brief notifications for success, errors, and background work.",
+        "Brief toast notifications for success, errors, and background work.",
     },
     {
       name: "toggle",
@@ -1810,22 +1811,28 @@ export const registry = {
       component: TextareaWithButton,
     },
     {
-      name: "toast-default",
+      name: "sonner-default",
       type: "registry:example" as const,
       title: "Basic",
-      component: ToastDefault,
+      component: SonnerDefault,
     },
     {
-      name: "toast-types",
+      name: "sonner-types",
       type: "registry:example" as const,
       title: "Types",
-      component: ToastTypes,
+      component: SonnerTypes,
     },
     {
-      name: "toast-description",
+      name: "sonner-description",
       type: "registry:example" as const,
       title: "Description",
-      component: ToastDescription,
+      component: SonnerDescription,
+    },
+    {
+      name: "sonner-position",
+      type: "registry:example" as const,
+      title: "Position",
+      component: SonnerPosition,
     },
     {
       name: "toggle-default",
