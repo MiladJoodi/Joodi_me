@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "winkui",
   "homepage": "https://winkui.dev",
-  "version": "0.1.0+f4d7a5f33e01",
-  "generatedAt": "2026-10-22T09:31:32.863Z",
+  "version": "0.1.0+c93f6763e9ec",
+  "generatedAt": "2026-10-22T13:02:39.198Z",
   "items": [
     {
       "name": "accordion",
@@ -23,8 +23,8 @@
           "target": "components/ui/accordion.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "alert",
@@ -43,8 +43,8 @@
           "target": "components/ui/alert.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "alert-dialog",
@@ -76,8 +76,8 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "avatar",
@@ -96,8 +96,8 @@
           "target": "components/ui/avatar.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "badge",
@@ -117,8 +117,8 @@
           "target": "components/ui/badge.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "breadcrumb",
@@ -138,8 +138,29 @@
           "target": "components/ui/breadcrumb.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "title": "Bubble",
+      "description": "Displays conversational content in a message bubble with variants, alignment, and reactions.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/ui/bubble.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/bubble.tsx"
+        }
+      ],
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "button",
@@ -159,8 +180,77 @@
           "target": "components/ui/button.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "A container that groups related buttons together with consistent styling.",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button-group.tsx"
+        }
+      ],
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "A calendar component that allows users to select a date or a range of dates.",
+      "dependencies": [
+        "react-day-picker",
+        "date-fns",
+        "lucide-react",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/ui/calendar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/calendar.tsx"
+        }
+      ],
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Visually or semantically separates content.",
+      "dependencies": [
+        "radix-ui",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "components/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        }
+      ],
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "attachment",
@@ -185,8 +275,8 @@
           "target": "components/ui/attachment.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "spinner",
@@ -205,8 +295,8 @@
           "target": "components/ui/spinner.tsx"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "login-01",
@@ -227,8 +317,8 @@
           "type": "registry:component"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     },
     {
       "name": "chart-area",
@@ -245,8 +335,8 @@
           "type": "registry:component"
         }
       ],
-      "version": "0.1.0+f4d7a5f33e01",
-      "generatedAt": "2026-10-22T09:31:32.863Z"
+      "version": "0.1.0+c93f6763e9ec",
+      "generatedAt": "2026-10-22T13:02:39.198Z"
     }
   ]
 }

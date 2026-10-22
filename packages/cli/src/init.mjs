@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile, access } from "node:fs/promises"
+﻿import { mkdir, readFile, writeFile, access } from "node:fs/promises"
 import { constants as fsConstants } from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
@@ -10,7 +10,7 @@ const INIT_FILES = [
   { from: "lib/utils.ts", to: "lib/utils.ts" },
   { from: "lib/direction.ts", to: "lib/direction.ts" },
   { from: "hooks/use-direction.tsx", to: "hooks/use-direction.tsx" },
-  { from: "styles/winkui.css", to: "styles/winkui.css" },
+  { from: "styles/sonojs.css", to: "styles/sonojs.css" },
   { from: "components.json", to: "components.json" },
 ]
 
@@ -38,14 +38,14 @@ async function findGlobalsCss(cwd) {
 }
 
 function importLineForGlobals(cwd, globalsAbs) {
-  const winkAbs = path.resolve(cwd, "styles/winkui.css")
-  let rel = path.relative(path.dirname(globalsAbs), winkAbs).replace(/\\/g, "/")
+  const sonoAbs = path.resolve(cwd, "styles/sonojs.css")
+  let rel = path.relative(path.dirname(globalsAbs), sonoAbs).replace(/\\/g, "/")
   if (!rel.startsWith(".")) rel = `./${rel}`
   return `@import "${rel}";`
 }
 
 /**
- * Ensure winkui.css is imported from the app globals stylesheet.
+ * Ensure sonojs.css is imported from the app globals stylesheet.
  */
 async function ensureGlobalsImport(cwd) {
   const found = await findGlobalsCss(cwd)
@@ -53,12 +53,12 @@ async function ensureGlobalsImport(cwd) {
     return {
       status: "missing",
       message:
-        'No globals.css found — add: @import "../styles/winkui.css";',
+        'No globals.css found — add: @import "../styles/sonojs.css";',
     }
   }
 
   let css = await readFile(found.abs, "utf8")
-  if (css.includes("styles/winkui.css") || css.includes("winkui.css")) {
+  if (css.includes("styles/sonojs.css") || css.includes("sonojs.css")) {
     return { status: "exists", rel: found.rel }
   }
 
@@ -78,10 +78,10 @@ async function ensureGlobalsImport(cwd) {
 }
 
 /**
- * Install WinkUI design system + utils into a consumer project.
- * Tokens are scoped to `.winkui` — does not override host :root theme.
+ * Install SonoJS design system + utils into a consumer project.
+ * Tokens are scoped to `.sonojs` — does not override host :root theme.
  */
-export async function initWinkuiProject({
+export async function initSonojsProject({
   cwd = process.cwd(),
   overwrite = false,
   registryUrl,
@@ -105,7 +105,7 @@ export async function initWinkuiProject({
       const base = registryUrl.replace(/\/?$/, "/")
       json.registries = {
         ...(json.registries ?? {}),
-        "@winkui": `${base}{name}.json`,
+        "@sonojs": `${base}{name}.json`,
       }
       content = `${JSON.stringify(json, null, 2)}\n`
     }

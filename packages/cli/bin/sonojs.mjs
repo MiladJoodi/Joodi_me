@@ -1,30 +1,30 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 
 import { RegistryConsistencyError } from "../src/consistency.mjs"
-import { initWinkuiProject } from "../src/init.mjs"
+import { initSonojsProject } from "../src/init.mjs"
 import { installRegistryItemFiles } from "../src/install.mjs"
 import { resolveRegistryItem } from "../src/resolve.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const defaultRegistry = "https://winkui.dev/r"
+const defaultLocalR = path.resolve(__dirname, "../../../public/r")
 
 function printHelp() {
   console.log(`Usage:
-  winkui init [--cwd <dir>] [--registry <url-or-path>] [--overwrite]
-  winkui add <name> [--registry <url-or-path>] [--cwd <dir>] [--overwrite]
+  sonojs init [--cwd <dir>] [--registry <url-or-path>] [--overwrite]
+  sonojs add <name> [--registry <url-or-path>] [--cwd <dir>] [--overwrite]
 
-init  — installs design system (styles/winkui.css), lib/utils.ts, components.json
+init  — installs design system (styles/sonojs.css), lib/utils.ts, components.json
 add   — copies one component into components/ui/ (run init first)
 
 Environment:
-  WINKUI_REGISTRY   Default registry base (URL or local directory)
+  SONOJS_REGISTRY   Default registry base (URL or local directory)
 `)
 }
 
 function parseFlags(rest) {
-  let registry = process.env.WINKUI_REGISTRY || defaultRegistry
+  let registry = process.env.SONOJS_REGISTRY || defaultLocalR
   let cwd = process.cwd()
   let overwrite = false
 
@@ -52,13 +52,13 @@ async function cmdInit(rest) {
       ? registry
       : undefined
 
-  const { written, skipped, globals } = await initWinkuiProject({
+  const { written, skipped, globals } = await initSonojsProject({
     cwd,
     overwrite,
     registryUrl,
   })
 
-  console.log("WinkUI initialized (tokens scoped to .winkui — host theme untouched)")
+  console.log("SonoJS initialized (tokens scoped to .sonojs — host theme untouched)")
   for (const file of written) console.log(`  + ${file}`)
   for (const file of skipped) {
     console.log(`  ~ skip (exists): ${file}  (use --overwrite)`)
@@ -73,7 +73,7 @@ async function cmdInit(rest) {
   console.log(`
 Next:
   npm i clsx tailwind-merge
-  winkui add button
+  sonojs add button
 `)
 }
 
@@ -146,10 +146,10 @@ async function main() {
     process.exit(1)
   } catch (error) {
     if (error instanceof RegistryConsistencyError) {
-      console.error(`winkui: ${error.message}`)
+      console.error(`sonojs: ${error.message}`)
       process.exit(2)
     }
-    console.error(`winkui: ${error instanceof Error ? error.message : error}`)
+    console.error(`sonojs: ${error instanceof Error ? error.message : error}`)
     process.exit(1)
   }
 }

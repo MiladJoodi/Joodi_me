@@ -1,10 +1,10 @@
 {
-  "name": "winkui",
+  "name": "sonojs",
   "version": "0.1.0",
-  "description": "WinkUI CLI — add components into your project (copy-source)",
+  "description": "SonoJS CLI — add components into your project (copy-source)",
   "type": "module",
   "bin": {
-    "winkui": "./bin/winkui.mjs"
+    "sonojs": "./bin/sonojs.mjs"
   },
   "exports": {
     "./consistency": "./src/consistency.mjs"

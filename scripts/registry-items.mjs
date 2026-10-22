@@ -125,6 +125,26 @@ export const registryItems = [
     ],
   },
   {
+    name: "bubble",
+    type: "registry:ui",
+    title: "Bubble",
+    description:
+      "Displays conversational content in a message bubble with variants, alignment, and reactions.",
+    dependencies: [
+      "radix-ui",
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge",
+    ],
+    files: [
+      {
+        path: "packages/ui/src/components/bubble.tsx",
+        type: "registry:ui",
+        target: "components/ui/bubble.tsx",
+      },
+    ],
+  },
+  {
     name: "button",
     type: "registry:ui",
     title: "Button",
@@ -140,6 +160,63 @@ export const registryItems = [
         path: "packages/ui/src/components/button.tsx",
         type: "registry:ui",
         target: "components/ui/button.tsx",
+      },
+    ],
+  },
+  {
+    name: "button-group",
+    type: "registry:ui",
+    title: "Button Group",
+    description:
+      "A container that groups related buttons together with consistent styling.",
+    dependencies: [
+      "radix-ui",
+      "class-variance-authority",
+      "clsx",
+      "tailwind-merge",
+    ],
+    registryDependencies: ["separator"],
+    files: [
+      {
+        path: "packages/ui/src/components/button-group.tsx",
+        type: "registry:ui",
+        target: "components/ui/button-group.tsx",
+      },
+    ],
+  },
+  {
+    name: "calendar",
+    type: "registry:ui",
+    title: "Calendar",
+    description:
+      "A calendar component that allows users to select a date or a range of dates.",
+    dependencies: [
+      "react-day-picker",
+      "date-fns",
+      "lucide-react",
+      "clsx",
+      "tailwind-merge",
+    ],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "packages/ui/src/components/calendar.tsx",
+        type: "registry:ui",
+        target: "components/ui/calendar.tsx",
+      },
+    ],
+  },
+  {
+    name: "separator",
+    type: "registry:ui",
+    title: "Separator",
+    description: "Visually or semantically separates content.",
+    dependencies: ["radix-ui", "clsx", "tailwind-merge"],
+    files: [
+      {
+        path: "packages/ui/src/components/separator.tsx",
+        type: "registry:ui",
+        target: "components/ui/separator.tsx",
       },
     ],
   },

@@ -1,14 +1,14 @@
 {
-  "name": "@winkui/ui",
+  "name": "@sonojs/ui",
   "version": "1.0.1",
-  "description": "WinkUI — design system + CLI (copy-source add)",
+  "description": "SonoJS — design system + CLI (copy-source add)",
   "license": "MIT",
   "type": "module",
   "publishConfig": {
     "access": "public"
   },
   "bin": {
-    "winkui": "./bin/winkui-ui.mjs"
+    "sonojs": "./bin/sonojs-ui.mjs"
   },
   "sideEffects": [
     "**/*.css"

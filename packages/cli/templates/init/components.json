@@ -1,11 +1,11 @@
-{
+﻿{
   "$schema": "https://ui.shadcn.com/schema.json",
   "style": "new-york",
   "rsc": true,
   "tsx": true,
   "tailwind": {
     "config": "",
-    "css": "styles/winkui.css",
+    "css": "styles/sonojs.css",
     "baseColor": "neutral",
     "cssVariables": true
   },
@@ -18,6 +18,6 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@winkui": "https://winkui.dev/r/{name}.json"
+    "@sonojs": "https://sonojs.dev/r/{name}.json"
   }
 }

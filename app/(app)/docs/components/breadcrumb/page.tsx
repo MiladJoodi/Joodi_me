@@ -301,14 +301,22 @@ export function Example() {
 }`
 
 async function getBreadcrumbExamples(): Promise<VariantExample[]> {
-  const base = [
-    { name: "breadcrumb-default", title: "Default" },
+  const base: VariantExample[] = [
+    {
+      name: "breadcrumb-default",
+      title: "Default",
+      requires: ["button", "dropdown-menu"],
+    },
     { name: "breadcrumb-basic", title: "Basic" },
     { name: "breadcrumb-separator", title: "Separator" },
-    { name: "breadcrumb-dropdown", title: "Dropdown" },
+    {
+      name: "breadcrumb-dropdown",
+      title: "Dropdown",
+      requires: ["dropdown-menu"],
+    },
     { name: "breadcrumb-ellipsis", title: "Collapsed" },
     { name: "breadcrumb-link", title: "Link" },
-  ] as const
+  ]
 
   return Promise.all(
     base.map(async (item) => {

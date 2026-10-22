@@ -1,5 +1,5 @@
 {
-  "name": "winkui",
+  "name": "sonojs",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
@@ -12,13 +12,13 @@
     "start": "next start",
     "lint": "eslint",
     "verify:cache": "node scripts/verify-cache-headers.mjs",
-    "winkui": "node packages/cli/bin/winkui.mjs",
+    "sonojs": "node packages/cli/bin/sonojs.mjs",
     "fix:ui-imports": "node scripts/fix-ui-imports.mjs",
-    "publish:ui": "npm publish -w @winkui/ui --access public"
+    "publish:ui": "npm publish -w @sonojs/ui --access public"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
-    "@winkui/ui": "*",
+    "@sonojs/ui": "*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.61.0",

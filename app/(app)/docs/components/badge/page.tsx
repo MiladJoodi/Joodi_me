@@ -112,14 +112,14 @@ export function Example() {
 }`
 
 async function getBadgeExamples(): Promise<VariantExample[]> {
-  const base = [
+  const base: VariantExample[] = [
     { name: "badge-default", title: "Default" },
     { name: "badge-variants", title: "Variants" },
     { name: "badge-icon", title: "Icon" },
-    { name: "badge-spinner", title: "Spinner" },
+    { name: "badge-spinner", title: "Spinner", requires: ["spinner"] },
     { name: "badge-link", title: "Link" },
     { name: "badge-colors", title: "Colors" },
-  ] as const
+  ]
 
   return Promise.all(
     base.map(async (item) => {

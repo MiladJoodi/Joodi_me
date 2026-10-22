@@ -1,12 +1,12 @@
-/**
- * WinkUI design system — scoped to `.winkui`.
+﻿/**
+ * SonoJS design system — scoped to `.sonojs`.
  * Does not override the host app's :root theme.
- * Components ship with class `winkui` so tokens apply locally.
+ * Components ship with class `sonojs` so tokens apply locally.
  */
 
 @custom-variant dark (&:is(.dark *));
 
-/* Map utilities → CSS vars (values come from `.winkui`, not :root) */
+/* Map utilities → CSS vars (values come from `.sonojs`, not :root) */
 @theme inline {
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -181,17 +181,17 @@
 /*
  * Token scope for installable components.
  * `color` lives in @layer base so utilities like `text-destructive` still win
- * (winkui.css is imported after Tailwind; an unlayered rule would override them).
+ * (SonoJS.css is imported after Tailwind; an unlayered rule would override them).
  */
 @layer base {
-  .winkui {
+  .sonojs {
     /* Scope tokens so host theme (e.g. body color) cannot wash out controls */
     color: var(--foreground);
     border-color: var(--border);
   }
 }
 
-.winkui {
+.sonojs {
   --content-max: 1280px;
   --sidebar-width: 240px;
   --page-gutter: 16px;
@@ -224,7 +224,7 @@
   --leading-body: 1.5;
   --leading-heading: 1.2;
 
-  /* Control sizes — WinkUI (default = 32px / h-8) */
+  /* Control sizes — SonoJS (default = 32px / h-8) */
   --size-button-sm: 28px;
   --size-button-md: 32px;
   --size-button-lg: 36px;
@@ -239,7 +239,7 @@
   --size-icon-lg: 20px;
   --touch-target: 44px;
 
-  /* Radius — WinkUI (base 10px · control ~8 · surface 10) */
+  /* Radius — SonoJS (base 10px · control ~8 · surface 10) */
   --radius: 0.625rem;
   --radius-tooltip: calc(var(--radius) * 0.6);
   --radius-control: calc(var(--radius) * 0.8);
@@ -289,8 +289,8 @@
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.dark .winkui,
-.winkui.dark {
+.dark .sonojs,
+.sonojs.dark {
   --background: #09090b;
   --foreground: #fafafa;
   --card: #18181b;

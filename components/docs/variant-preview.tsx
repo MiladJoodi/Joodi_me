@@ -4,6 +4,7 @@ import * as React from "react"
 import { CodeIcon, EyeIcon } from "lucide-react"
 
 import { CodePanel } from "@/components/docs/code-panel"
+import { CopyButton } from "@/components/docs/copy-button"
 import {
   DirectionProvider,
   DirectionToggle,
@@ -19,9 +20,35 @@ export type VariantExample = {
   code?: string
   /** Pre-highlighted HTML from `highlightCode` on the server. */
   codeHtml?: string
+  /**
+   * Extra registry items this example needs (not required by the main
+   * component). Shown as a soft install hint under the toolbar.
+   */
+  requires?: string[]
 }
 
 type ViewMode = "preview" | "code"
+
+function RequiresHint({ names }: { names: string[] }) {
+  const command = `npx @winkui/ui@latest add ${names.join(" ")}`
+
+  return (
+    <div className="flex flex-wrap items-center gap-2 border-t border-border/60 bg-muted/20 px-3 py-2 text-[12.5px] text-muted-foreground">
+      <span className="shrink-0">This example also needs</span>
+      <code className="rounded-md border border-border/70 bg-background px-1.5 py-0.5 font-mono text-[12px] text-foreground">
+        {names.join(", ")}
+      </code>
+      <span className="shrink-0">—</span>
+      <code className="min-w-0 flex-1 truncate rounded-md border border-border/70 bg-background px-1.5 py-0.5 font-mono text-[11.5px] text-foreground sm:flex-none">
+        {command}
+      </code>
+      <CopyButton
+        value={command}
+        className="text-muted-foreground hover:bg-muted hover:text-foreground"
+      />
+    </div>
+  )
+}
 
 export function ComponentVariantPreview({
   examples,
@@ -37,6 +64,7 @@ export function ComponentVariantPreview({
   const Preview = example?.component
   const meta = examples.find((item) => item.name === active)
   const hasCode = Boolean(meta?.code && meta?.codeHtml)
+  const requires = meta?.requires?.filter(Boolean) ?? []
 
   React.useEffect(() => {
     if (!hasCode && view === "code") setView("preview")
@@ -49,8 +77,8 @@ export function ComponentVariantPreview({
         className
       )}
     >
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/80 bg-muted/30 p-2">
-        <div className="flex flex-wrap gap-1">
+      <div className="flex items-start gap-2 border-b border-border/80 bg-muted/30 p-2">
+        <div className="flex min-w-0 flex-1 flex-wrap gap-1">
           {examples.map((item) => (
             <button
               key={item.name}
@@ -67,7 +95,7 @@ export function ComponentVariantPreview({
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex shrink-0 items-center gap-1.5 self-start">
           {view === "preview" ? (
             <DirectionToggle value={dir} onValueChange={setDir} />
           ) : null}
@@ -114,6 +142,8 @@ export function ComponentVariantPreview({
           html={meta.codeHtml}
         />
       ) : null}
+
+      {requires.length > 0 ? <RequiresHint names={requires} /> : null}
     </div>
   )
 }

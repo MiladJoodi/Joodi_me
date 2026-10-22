@@ -46,6 +46,14 @@ import {
   BreadcrumbSeparatorExample,
 } from "@/registry/examples/breadcrumb"
 import {
+  BubbleAlignment,
+  BubbleDefault,
+  BubbleGroupExample,
+  BubbleLinkButton,
+  BubbleReactionsExample,
+  BubbleVariants,
+} from "@/registry/examples/bubble"
+import {
   ButtonDefault,
   ButtonDestructive,
   ButtonGhost,
@@ -53,6 +61,32 @@ import {
   ButtonSecondary,
   ButtonSizes,
 } from "@/registry/examples/button"
+import {
+  ButtonGroupDefault,
+  ButtonGroupDropdown,
+  ButtonGroupInput,
+  ButtonGroupInputGroup,
+  ButtonGroupNested,
+  ButtonGroupOrientation,
+  ButtonGroupPopover,
+  ButtonGroupSelect,
+  ButtonGroupSeparatorExample,
+  ButtonGroupSize,
+  ButtonGroupSplit,
+} from "@/registry/examples/button-group"
+import {
+  CalendarBasic,
+  CalendarBookedDates,
+  CalendarCaption,
+  CalendarCustomDays,
+  CalendarDefault,
+  CalendarHijri,
+  CalendarMultiple,
+  CalendarPresets,
+  CalendarRange,
+  CalendarTime,
+  CalendarWeekNumbers,
+} from "@/registry/examples/calendar"
 import LoginForm from "@/registry/blocks/login-01/components/login-form"
 
 export type RegistryItem = {
@@ -115,10 +149,37 @@ export const registry = {
         "Displays the path to the current resource using a hierarchy of links.",
     },
     {
+      name: "bubble",
+      type: "registry:ui" as const,
+      title: "Bubble",
+      description:
+        "Displays conversational content in a message bubble with variants, alignment, and reactions.",
+    },
+    {
       name: "button",
       type: "registry:ui" as const,
       title: "Button",
       description: "Displays a button or a component that looks like a button.",
+    },
+    {
+      name: "button-group",
+      type: "registry:ui" as const,
+      title: "Button Group",
+      description:
+        "A container that groups related buttons together with consistent styling.",
+    },
+    {
+      name: "calendar",
+      type: "registry:ui" as const,
+      title: "Calendar",
+      description:
+        "A calendar component that allows users to select a date or a range of dates.",
+    },
+    {
+      name: "separator",
+      type: "registry:ui" as const,
+      title: "Separator",
+      description: "Visually or semantically separates content.",
     },
     {
       name: "spinner",
@@ -327,6 +388,42 @@ export const registry = {
       component: BreadcrumbLinkExample,
     },
     {
+      name: "bubble-default",
+      type: "registry:example" as const,
+      title: "Default",
+      component: BubbleDefault,
+    },
+    {
+      name: "bubble-variants",
+      type: "registry:example" as const,
+      title: "Variants",
+      component: BubbleVariants,
+    },
+    {
+      name: "bubble-alignment",
+      type: "registry:example" as const,
+      title: "Alignment",
+      component: BubbleAlignment,
+    },
+    {
+      name: "bubble-group",
+      type: "registry:example" as const,
+      title: "Group",
+      component: BubbleGroupExample,
+    },
+    {
+      name: "bubble-reactions",
+      type: "registry:example" as const,
+      title: "Reactions",
+      component: BubbleReactionsExample,
+    },
+    {
+      name: "bubble-link-button",
+      type: "registry:example" as const,
+      title: "Link / Button",
+      component: BubbleLinkButton,
+    },
+    {
       name: "button-default",
       type: "registry:example" as const,
       title: "Default",
@@ -361,6 +458,138 @@ export const registry = {
       type: "registry:example" as const,
       title: "Sizes",
       component: ButtonSizes,
+    },
+    {
+      name: "button-group-default",
+      type: "registry:example" as const,
+      title: "Default",
+      component: ButtonGroupDefault,
+    },
+    {
+      name: "button-group-orientation",
+      type: "registry:example" as const,
+      title: "Orientation",
+      component: ButtonGroupOrientation,
+    },
+    {
+      name: "button-group-size",
+      type: "registry:example" as const,
+      title: "Size",
+      component: ButtonGroupSize,
+    },
+    {
+      name: "button-group-nested",
+      type: "registry:example" as const,
+      title: "Nested",
+      component: ButtonGroupNested,
+    },
+    {
+      name: "button-group-separator",
+      type: "registry:example" as const,
+      title: "Separator",
+      component: ButtonGroupSeparatorExample,
+    },
+    {
+      name: "button-group-split",
+      type: "registry:example" as const,
+      title: "Split",
+      component: ButtonGroupSplit,
+    },
+    {
+      name: "button-group-input",
+      type: "registry:example" as const,
+      title: "Input",
+      component: ButtonGroupInput,
+    },
+    {
+      name: "button-group-input-group",
+      type: "registry:example" as const,
+      title: "Input Group",
+      component: ButtonGroupInputGroup,
+    },
+    {
+      name: "button-group-dropdown",
+      type: "registry:example" as const,
+      title: "Dropdown",
+      component: ButtonGroupDropdown,
+    },
+    {
+      name: "button-group-select",
+      type: "registry:example" as const,
+      title: "Select",
+      component: ButtonGroupSelect,
+    },
+    {
+      name: "button-group-popover",
+      type: "registry:example" as const,
+      title: "Popover",
+      component: ButtonGroupPopover,
+    },
+    {
+      name: "calendar-default",
+      type: "registry:example" as const,
+      title: "Default",
+      component: CalendarDefault,
+    },
+    {
+      name: "calendar-basic",
+      type: "registry:example" as const,
+      title: "Basic",
+      component: CalendarBasic,
+    },
+    {
+      name: "calendar-range",
+      type: "registry:example" as const,
+      title: "Range",
+      component: CalendarRange,
+    },
+    {
+      name: "calendar-caption",
+      type: "registry:example" as const,
+      title: "Caption",
+      component: CalendarCaption,
+    },
+    {
+      name: "calendar-presets",
+      type: "registry:example" as const,
+      title: "Presets",
+      component: CalendarPresets,
+    },
+    {
+      name: "calendar-time",
+      type: "registry:example" as const,
+      title: "Time",
+      component: CalendarTime,
+    },
+    {
+      name: "calendar-booked-dates",
+      type: "registry:example" as const,
+      title: "Booked",
+      component: CalendarBookedDates,
+    },
+    {
+      name: "calendar-custom-days",
+      type: "registry:example" as const,
+      title: "Custom",
+      component: CalendarCustomDays,
+    },
+    {
+      name: "calendar-week-numbers",
+      type: "registry:example" as const,
+      title: "Week Numbers",
+      component: CalendarWeekNumbers,
+    },
+    {
+      name: "calendar-multiple",
+      type: "registry:example" as const,
+      title: "Multiple",
+      component: CalendarMultiple,
+    },
+    {
+      name: "calendar-hijri",
+      type: "registry:example" as const,
+      title: "Hijri",
+      component: CalendarHijri,
     },
   ],
 }

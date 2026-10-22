@@ -8,8 +8,11 @@ import { highlightCode } from "@/lib/highlight-code"
 const EXAMPLE_FOLDERS = [
   "alert-dialog",
   "attachment",
+  "breadcrumb",
   "accordion",
   "avatar",
+  "badge",
+  "bubble",
   "alert",
   "button",
 ] as const
@@ -52,7 +55,7 @@ function toConsumerSource(source: string): string {
  * Used by docs Preview | Code chrome.
  */
 export async function withVariantCode(
-  examples: { name: string; title: string }[]
+  examples: Pick<VariantExample, "name" | "title" | "requires">[]
 ): Promise<VariantExample[]> {
   return Promise.all(
     examples.map(async (item) => {

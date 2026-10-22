@@ -8,7 +8,7 @@ import { withVariantCode } from "@/lib/docs-variant-examples"
 const exampleDefs = [
   { name: "alert-default", title: "Default" },
   { name: "alert-destructive", title: "Destructive" },
-  { name: "alert-action", title: "Action" },
+  { name: "alert-action", title: "Action", requires: ["button"] },
 ]
 
 const alertSource = `import { AlertCircleIcon } from "lucide-react"

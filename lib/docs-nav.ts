@@ -50,9 +50,21 @@ export const docsNav: {
           href: "/docs/components/breadcrumb",
         },
         {
+          title: "Bubble",
+          href: "/docs/components/bubble",
+        },
+        {
           title: "Button",
           href: "/docs/components/button",
           featured: true,
+        },
+        {
+          title: "Button Group",
+          href: "/docs/components/button-group",
+        },
+        {
+          title: "Calendar",
+          href: "/docs/components/calendar",
         },
       ],
     },
