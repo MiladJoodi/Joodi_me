@@ -15,6 +15,8 @@ function InputOTP({
   return (
     <OTPInput
       data-slot="input-otp"
+      // OTP codes are always entered LTR — isolate from page RTL.
+      dir="ltr"
       containerClassName={cn(
         "flex items-center gap-2 has-disabled:opacity-50",
         containerClassName
@@ -29,7 +31,8 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="input-otp-group"
-      className={cn("flex items-center", className)}
+      dir="ltr"
+      className={cn("flex items-center gap-2", className)}
       {...props}
     />
   )
@@ -50,7 +53,10 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "relative flex h-9 w-9 items-center justify-center border-y border-r border-input text-sm shadow-xs transition-all outline-none first:rounded-l-md first:border-l last:rounded-r-md aria-invalid:border-destructive data-[active=true]:z-10 data-[active=true]:border-ring data-[active=true]:aria-invalid:border-destructive dark:bg-input/30",
+        // Separate cells (gap on group) so every side uses the same 1px border —
+        // joined slots share an edge and active borders look uneven.
+        "relative flex h-9 w-9 items-center justify-center rounded-md border border-input text-sm shadow-xs transition-all outline-none dark:bg-input/30",
+        "aria-invalid:border-destructive data-[active=true]:z-10 data-[active=true]:border-ring data-[active=true]:aria-invalid:border-destructive",
         className
       )}
       {...props}

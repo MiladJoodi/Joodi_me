@@ -20,8 +20,12 @@ export function InputGroupDropdown() {
   const [prefix, setPrefix] = React.useState("+1")
 
   return (
-    <InputGroup className="max-w-xs">
-      <InputGroupInput placeholder="Phone number" type="tel" />
+    <InputGroup dir="ltr" className="max-w-xs">
+      <InputGroupInput
+        placeholder="Phone number"
+        type="tel"
+        className="text-left"
+      />
       <InputGroupAddon>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -30,7 +34,7 @@ export function InputGroupDropdown() {
               <ChevronDownIcon className="size-3.5 opacity-60" />
             </InputGroupButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" className="min-w-20">
+          <DropdownMenuContent align="start" className="min-w-20" dir="ltr">
             <DropdownMenuItem onClick={() => setPrefix("+1")}>
               +1
             </DropdownMenuItem>

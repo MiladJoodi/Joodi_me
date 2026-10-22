@@ -22,9 +22,41 @@ export function npmPackageName(spec: string): string {
   return i === -1 ? spec : spec.slice(0, i)
 }
 
+export type RegistryInstallFile = {
+  /** Install path shown to users (prefer registry `target`). */
+  title: string
+  content: string
+}
+
 export type RegistryInstallMeta = {
   dependencies?: string[]
   registryDependencies?: string[]
+  files?: RegistryInstallFile[]
+}
+
+type RegistryJsonFile = {
+  path?: string
+  target?: string
+  content?: string
+}
+
+type RegistryJson = {
+  dependencies?: string[]
+  registryDependencies?: string[]
+  files?: RegistryJsonFile[]
+}
+
+function mapFiles(files: RegistryJsonFile[] | undefined): RegistryInstallFile[] {
+  if (!files?.length) return []
+  const out: RegistryInstallFile[] = []
+  for (const file of files) {
+    const content = file.content
+    if (!content) continue
+    const title = file.target || file.path
+    if (!title) continue
+    out.push({ title, content })
+  }
+  return out
 }
 
 export async function readRegistryInstallMeta(
@@ -33,13 +65,14 @@ export async function readRegistryInstallMeta(
   try {
     const file = path.join(process.cwd(), "public", "r", `${name}.json`)
     const raw = await readFile(file, "utf8")
-    const json = JSON.parse(raw) as RegistryInstallMeta
+    const json = JSON.parse(raw) as RegistryJson
     return {
       dependencies: json.dependencies ?? [],
       registryDependencies: json.registryDependencies ?? [],
+      files: mapFiles(json.files),
     }
   } catch {
-    return { dependencies: [], registryDependencies: [] }
+    return { dependencies: [], registryDependencies: [], files: [] }
   }
 }
 
@@ -54,4 +87,14 @@ export function docsHintNpmDeps(deps: string[] | undefined): string[] {
 export function docsInstallBash(names: string | string[]): string {
   const list = Array.isArray(names) ? names.join(" ") : names
   return `npx @sonojs/ui@latest add ${list}`
+}
+
+export function docsManualNpmCommand(deps: string[]): string | null {
+  const npm = docsHintNpmDeps(deps)
+  if (npm.length === 0) return null
+  return `npm i ${npm.join(" ")}`
+}
+
+export function docsSourceUsesAppAlias(content: string): boolean {
+  return content.includes("@/")
 }

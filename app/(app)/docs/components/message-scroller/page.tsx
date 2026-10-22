@@ -34,6 +34,10 @@ const exampleDefs = [
 ]
 
 const usageSource = `import {
+  Message,
+  MessageContent,
+} from "@/components/ui/message"
+import {
   MessageScroller,
   MessageScrollerButton,
   MessageScrollerContent,
@@ -55,7 +59,9 @@ export function Example({ messages }) {
                   messageId={message.id}
                   scrollAnchor={message.role === "user"}
                 >
-                  {/* Message + Bubble */}
+                  <Message align={message.role === "user" ? "end" : "start"}>
+                    <MessageContent>{/* Bubble */}</MessageContent>
+                  </Message>
                 </MessageScrollerItem>
               ))}
             </MessageScrollerContent>
@@ -152,7 +158,8 @@ export default async function MessageScrollerDocsPage() {
               name: "direction",
               type: '"start" | "end"',
               defaultValue: '"end"',
-              description: "On `MessageScrollerButton` — which edge to jump to.",
+              description:
+                "On `MessageScrollerButton` — vertical transcript edge to jump to (not writing direction). Row LTR/RTL comes from `Message` `align` + inherited `dir`.",
             },
           ]}
         />

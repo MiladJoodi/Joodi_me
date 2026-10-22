@@ -148,7 +148,8 @@ export default async function MessageDocsPage() {
               name: "align",
               type: '"start" | "end"',
               defaultValue: '"start"',
-              description: "On `Message` — which side of the thread.",
+              description:
+                'On `Message` — logical side of the thread (`start` = incoming, `end` = outgoing). Mirrors with writing direction: LTR left/right, RTL right/left. Same `align` values as `Bubble`.',
             },
             {
               name: "className",

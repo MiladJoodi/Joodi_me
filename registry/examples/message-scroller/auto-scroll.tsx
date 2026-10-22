@@ -58,9 +58,9 @@ export function MessageScrollerAutoScroll() {
                   </Message>
                 </MessageScrollerItem>
                 <MessageScrollerItem messageId="reply">
-                  <Message>
+                  <Message align="start">
                     <MessageContent>
-                      <Bubble variant="muted">
+                      <Bubble variant="muted" align="start">
                         <BubbleContent>
                           {text || (streaming ? "…" : "Press Stream to begin.")}
                         </BubbleContent>

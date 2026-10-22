@@ -6,11 +6,11 @@ import {
 export function NativeSelectSize() {
   return (
     <div className="flex w-full max-w-xs flex-col gap-4">
-      <NativeSelect size="sm" defaultValue="apple">
+      <NativeSelect size="sm" className="w-full" defaultValue="apple">
         <NativeSelectOption value="apple">Small</NativeSelectOption>
         <NativeSelectOption value="banana">Banana</NativeSelectOption>
       </NativeSelect>
-      <NativeSelect defaultValue="apple">
+      <NativeSelect className="w-full" defaultValue="apple">
         <NativeSelectOption value="apple">Default</NativeSelectOption>
         <NativeSelectOption value="banana">Banana</NativeSelectOption>
       </NativeSelect>

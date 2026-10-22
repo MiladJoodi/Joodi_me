@@ -8,14 +8,17 @@ import {
 export function InputGroupTextExample() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4">
-      <InputGroup>
-        <InputGroupInput placeholder="example.com" />
+      <InputGroup dir="ltr">
+        <InputGroupInput
+          placeholder="example.com"
+          className="text-left"
+        />
         <InputGroupAddon>
           <InputGroupText>https://</InputGroupText>
         </InputGroupAddon>
       </InputGroup>
-      <InputGroup>
-        <InputGroupInput placeholder="example" />
+      <InputGroup dir="ltr">
+        <InputGroupInput placeholder="example" className="text-left" />
         <InputGroupAddon align="inline-end">
           <InputGroupText>.com</InputGroupText>
         </InputGroupAddon>
