@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login-01",
+  "type": "registry:block",
+  "title": "Login",
+  "description": "A simple email/password login form.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/blocks/login-01/page.tsx",
+      "type": "registry:page",
+      "content": "import LoginForm from \"@/registry/blocks/login-01/components/login-form\"\n\nexport default function Login01Page() {\n  return (\n    <div className=\"flex min-h-[28rem] w-full items-center justify-center bg-muted p-6 md:p-10\">\n      <div className=\"w-full max-w-sm\">\n        <LoginForm />\n      </div>\n    </div>\n  )\n}\n",
+      "target": "app/login/page.tsx"
+    },
+    {
+      "path": "registry/blocks/login-01/components/login-form.tsx",
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\"\nimport { Button } from \"@winkui/ui/components/button\"\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@winkui/ui/components/card\"\nimport { Input } from \"@winkui/ui/components/input\"\nimport { Label } from \"@winkui/ui/components/label\"\n\nexport default function LoginForm({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div className={cn(\"flex flex-col gap-6\", className)} {...props}>\n      <Card>\n        <CardHeader>\n          <CardTitle>Sign in</CardTitle>\n          <CardDescription>\n            Enter your email and password to continue\n          </CardDescription>\n        </CardHeader>\n        <CardContent>\n          <form className=\"flex flex-col gap-4\">\n            <div className=\"grid gap-2\">\n              <Label htmlFor=\"email\">Email</Label>\n              <Input\n                id=\"email\"\n                type=\"email\"\n                placeholder=\"name@example.com\"\n                required\n              />\n            </div>\n            <div className=\"grid gap-2\">\n              <div className=\"flex items-center\">\n                <Label htmlFor=\"password\">Password</Label>\n                <a\n                  href=\"#\"\n                  className=\"ms-auto inline-block text-sm underline-offset-4 hover:underline\"\n                >\n                  Forgot password?\n                </a>\n              </div>\n              <Input id=\"password\" type=\"password\" required />\n            </div>\n            <Button type=\"submit\">Sign in</Button>\n            <Button variant=\"outline\" type=\"button\">\n              Continue with Google\n            </Button>\n            <p className=\"text-center text-sm text-muted-foreground\">\n              Don&apos;t have an account?{\" \"}\n              <a href=\"#\" className=\"underline underline-offset-4\">\n                Sign up\n              </a>\n            </p>\n          </form>\n        </CardContent>\n      </Card>\n    </div>\n  )\n}\n"
+    }
+  ],
+  "version": "0.1.0+e316fd85e05f",
+  "generatedAt": "2026-10-22T01:43:10.571Z"
+}

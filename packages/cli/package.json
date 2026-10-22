@@ -1,0 +1,17 @@
+{
+  "name": "winkui",
+  "version": "0.1.0",
+  "description": "WinkUI CLI — add components into your project (copy-source)",
+  "type": "module",
+  "bin": {
+    "winkui": "./bin/winkui.mjs"
+  },
+  "exports": {
+    "./consistency": "./src/consistency.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates"
+  ]
+}

@@ -1,0 +1,120 @@
+/**
+ * Calm / Vega — density + component recipes used by WinkUI (subset).
+ */
+.style-vega {
+  --control-h-xs: 1.75rem;
+  --control-h-sm: 2.25rem;
+  --control-h-md: 2.5rem;
+  --control-h-lg: 2.75rem;
+  --control-icon: 1.125rem;
+  --control-icon-sm: 0.875rem;
+  --space-control-x: 0.875rem;
+  --space-control-y: 0.375rem;
+  --space-stack: 1.5rem;
+  --space-inline: 0.5rem;
+  --text-control: 0.875rem;
+  --text-control-sm: 0.8125rem;
+  --leading-control: 1.35;
+  --radius-control: var(--radius-xl);
+
+  .cn-button {
+    @apply focus-visible:border-ring focus-visible:ring-ring/40 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-(--radius-control) border border-transparent bg-clip-padding text-(length:--text-control) leading-(--leading-control) font-normal shadow-xs transition-[color,background-color,border-color,box-shadow,transform] duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background aria-invalid:ring-2 active:not-aria-[haspopup]:scale-[0.98] [&_svg:not([class*='size-'])]:size-(--control-icon);
+  }
+
+  .cn-button-variant-default {
+    @apply bg-primary text-primary-foreground shadow-xs hover:shadow-sm active:not-aria-[haspopup]:shadow-xs;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .cn-button-variant-default:hover {
+    background-color: var(--primary-hover, #1d4ed8);
+    color: var(--primary-hover-foreground, #ffffff);
+  }
+
+  .cn-button-variant-default:active:not([aria-haspopup]) {
+    background-color: var(--primary-active, #1e40af);
+    color: #ffffff;
+  }
+
+  html.dark .cn-button-variant-default:hover,
+  .dark .cn-button-variant-default:hover {
+    background-color: var(--primary-hover, #1d4ed8);
+    color: var(--primary-hover-foreground, #ffffff);
+  }
+
+  html.dark .cn-button-variant-default:active:not([aria-haspopup]),
+  .dark .cn-button-variant-default:active:not([aria-haspopup]) {
+    background-color: var(--primary-active, #1e40af);
+    color: #ffffff;
+  }
+
+  .cn-button-variant-outline {
+    @apply border-border/80 bg-background text-foreground shadow-xs hover:border-border hover:bg-muted/70 hover:text-foreground hover:shadow-sm active:not-aria-[haspopup]:bg-muted dark:border-input dark:bg-input/20 dark:hover:bg-input/40 aria-expanded:bg-muted aria-expanded:text-foreground;
+  }
+
+  .cn-button-variant-secondary {
+    @apply bg-secondary text-secondary-foreground shadow-xs hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_4%)] hover:shadow-sm active:not-aria-[haspopup]:shadow-xs aria-expanded:bg-secondary aria-expanded:text-secondary-foreground;
+  }
+
+  .cn-button-variant-ghost {
+    @apply shadow-none hover:bg-muted/70 hover:text-foreground active:not-aria-[haspopup]:bg-muted dark:hover:bg-muted/40 aria-expanded:bg-muted aria-expanded:text-foreground;
+  }
+
+  .cn-button-variant-destructive {
+    @apply bg-destructive/10 text-destructive shadow-xs hover:bg-destructive/20 hover:shadow-sm focus-visible:border-destructive/40 focus-visible:ring-destructive/25 active:not-aria-[haspopup]:bg-destructive/25 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40;
+  }
+
+  .cn-button-variant-link {
+    @apply text-primary underline-offset-4 shadow-none hover:underline active:not-aria-[haspopup]:scale-100;
+  }
+
+  .cn-button-size-xs {
+    @apply h-(--control-h-xs) gap-1.5 rounded-[min(var(--radius-xl),12px)] px-2.5 text-(length:--text-control-sm) [&_svg:not([class*='size-'])]:size-(--control-icon-sm);
+  }
+
+  .cn-button-size-sm {
+    @apply h-(--control-h-sm) gap-(--space-inline) rounded-[min(var(--radius-xl),14px)] px-(--space-control-x) text-(length:--text-control-sm);
+  }
+
+  .cn-button-size-default {
+    @apply h-(--control-h-md) gap-(--space-inline) px-(--space-control-x);
+  }
+
+  .cn-button-size-lg {
+    @apply h-(--control-h-lg) gap-2.5 px-4;
+  }
+
+  .cn-button-size-icon-xs {
+    @apply size-(--control-h-xs) rounded-[min(var(--radius-xl),12px)] [&_svg:not([class*='size-'])]:size-(--control-icon-sm);
+  }
+
+  .cn-button-size-icon-sm {
+    @apply size-(--control-h-sm) rounded-[min(var(--radius-xl),14px)];
+  }
+
+  .cn-button-size-icon {
+    @apply size-(--control-h-md);
+  }
+
+  .cn-button-size-icon-lg {
+    @apply size-(--control-h-lg);
+  }
+}
+
+.style-vega [data-slot="layout"] {
+  background-color: transparent;
+}
+
+.style-vega [data-home-surface] {
+  background-color: var(--background);
+}
+
+.style-vega .cn-input {
+  @apply border-input bg-background text-foreground shadow-none;
+}
+
+.style-vega .cn-input:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 28%, transparent);
+}

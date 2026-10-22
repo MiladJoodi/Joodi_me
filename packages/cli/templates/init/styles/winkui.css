@@ -1,0 +1,213 @@
+/**
+ * WinkUI design system — scoped to `.winkui`.
+ * Does not override the host app's :root theme.
+ * Components ship with class `winkui` so tokens apply locally.
+ */
+
+@custom-variant dark (&:is(.dark *));
+
+/* Map utilities → CSS vars (values come from `.winkui`, not :root) */
+@theme inline {
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  /* Accordion open/close (same as tw-animate-css on the docs site) */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(
+      --radix-accordion-content-height,
+      var(--bits-accordion-content-height, auto)
+    );
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(
+      --radix-accordion-content-height,
+      var(--bits-accordion-content-height, auto)
+    );
+  }
+  to {
+    height: 0;
+  }
+}
+
+/*
+ * Token scope for installable components.
+ * `color` lives in @layer base so utilities like `text-destructive` still win
+ * (winkui.css is imported after Tailwind; an unlayered rule would override them).
+ */
+@layer base {
+  .winkui {
+    /* Own text color so host theme (e.g. white body text) cannot wash out controls */
+    color: var(--foreground);
+  }
+}
+
+.winkui {
+  --content-max: 1280px;
+  --sidebar-width: 240px;
+  --page-gutter: 16px;
+  --card-padding: 24px;
+  --form-gap: 16px;
+  --section-gap: 48px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  --text-h1: 32px;
+  --text-h1-lg: 40px;
+  --text-h2: 26px;
+  --text-h2-lg: 32px;
+  --text-h3: 22px;
+  --text-h3-lg: 24px;
+  --text-h4: 18px;
+  --text-h4-lg: 20px;
+  --text-body: 16px;
+  --text-secondary: 14px;
+  --text-caption: 12px;
+  --text-button: 14px;
+  --leading-body: 1.5;
+  --leading-heading: 1.2;
+
+  /* Control sizes — WinkUI (default = 32px / h-8) */
+  --size-button-sm: 28px;
+  --size-button-md: 32px;
+  --size-button-lg: 36px;
+  --size-input: 32px;
+  --size-checkbox: 16px;
+  --size-switch-w: 32px;
+  --size-switch-h: 1.15rem;
+  --size-avatar: 32px;
+  --size-badge: 22px;
+  --size-icon-inline: 14px;
+  --size-icon: 16px;
+  --size-icon-lg: 20px;
+  --touch-target: 44px;
+
+  /* Radius — WinkUI (base 10px · control ~8 · surface 10) */
+  --radius: 0.625rem;
+  --radius-tooltip: calc(var(--radius) * 0.6);
+  --radius-control: calc(var(--radius) * 0.8);
+  --radius-surface: var(--radius);
+  --radius-button: var(--radius-control);
+  --radius-input: var(--radius-control);
+  --radius-card: var(--radius-surface);
+  --radius-dialog: var(--radius-surface);
+
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1d4ed8;
+  --primary-hover-foreground: #ffffff;
+  --primary-active: #1e40af;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #dc2626;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #2563eb;
+  --chart-1: #2563eb;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #1d4ed8;
+  --chart-5: #1e40af;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #09090b;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e4e4e7;
+  --sidebar-ring: #2563eb;
+  --surface: #f8fafc;
+  --surface-foreground: #09090b;
+  --motion-fast: 180ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark .winkui,
+.winkui.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #18181b;
+  --card-foreground: #fafafa;
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+  --primary: #396ef0;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1d4ed8;
+  --primary-hover-foreground: #ffffff;
+  --primary-active: #1e40af;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #f87171;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #396ef0;
+  --chart-1: #3b82f6;
+  --chart-2: #60a5fa;
+  --chart-3: #93c5fd;
+  --chart-4: #2563eb;
+  --chart-5: #1d4ed8;
+  --sidebar: #09090b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #396ef0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #396ef0;
+  --surface: #18181b;
+  --surface-foreground: #a1a1aa;
+}

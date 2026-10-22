@@ -1,0 +1,25 @@
+---
+description: Docs site chrome — pointer cursor on clickable UI
+globs: app/**/*.{tsx,ts},components/**/*.{tsx,ts}
+alwaysApply: false
+---
+
+# WinkUI docs site — cursor pointer
+
+Applies to **this docs website** (`app/`, `components/`).
+
+For **installable** components (`registry/`, `packages/ui`), see `.cursor/rules/winkui-registry-cursor.mdc` — those also require `cursor-pointer`.
+
+## Rule
+
+On the WinkUI docs site, every clickable control must show a pointer cursor:
+
+- `<button>`, custom click handlers, icon toggles, nav links that act as controls, tabs, ghost menu triggers
+- Use Tailwind `cursor-pointer`
+- Disabled / non-interactive: `cursor-not-allowed` or keep `disabled:pointer-events-none` — never `cursor-pointer` when disabled
+
+```tsx
+// ✅ Site chrome
+<button type="button" className="cursor-pointer …" />
+<Link href="/docs" className="cursor-pointer …" />
+```

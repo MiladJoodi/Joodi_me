@@ -1,0 +1,21 @@
+/**
+ * WinkUI direction utilities.
+ * Prefer Tailwind logical utilities (ms/me, ps/pe, start/end, text-start, border-s).
+ * Use these only for glyphs that must mirror in RTL (chevrons, arrows, carets).
+ */
+
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .rtl-flip-inline {
+  transform: scaleX(-1);
+}
+
+/**
+ * Directional icons: add class `icon-dir` to Lucide (etc.) arrows/chevrons
+ * that point along the inline axis.
+ */
+[dir="rtl"] .icon-dir {
+  transform: scaleX(-1);
+}

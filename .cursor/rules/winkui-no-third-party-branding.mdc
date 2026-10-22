@@ -1,0 +1,22 @@
+---
+description: Do not name third-party UI kits (e.g. competing registry brands) in WinkUI copy or comments
+alwaysApply: true
+---
+
+# WinkUI — no third-party UI kit branding
+
+WinkUI must read as its own product. Do **not** mention other component-kit / registry brand names in docs, README, package descriptions, CSS/TS comments, rules, or user-facing UI.
+
+## Allowed exception
+
+Registry / `components.json` **`$schema` URLs** that point at the public registry JSON schema host (format compatibility only). Do not add that name in prose next to them.
+
+## Instead write
+
+| Avoid | Prefer |
+|---|---|
+| “X-style CLI” | “copy-source CLI” / “WinkUI CLI” |
+| “X nova / new-york sizes” | “WinkUI control scale (`h-8` default, `--radius: 0.625rem`)” |
+| Comments citing another kit | Comment the token or pixel value only |
+
+When aligning sizes with an external reference, describe **numbers and tokens**, not the other product’s name.

@@ -1,0 +1,35 @@
+---
+description: Installable registry UI — cursor-pointer on every clickable control
+globs: registry/**/*.{tsx,ts},packages/ui/src/components/**/*.{tsx,ts}
+alwaysApply: true
+---
+
+# WinkUI registry — cursor pointer on clickables
+
+Applies to **installable** sources: `registry/ui|blocks|charts|examples` and their `packages/ui` mirrors (what `winkui add` ships).
+
+## Rule
+
+Every interactive control must show a pointer cursor:
+
+- `<button>`, Button / Toggle / Tab triggers
+- Accordion / Collapsible / Dialog / Sheet / Popover **triggers** and **close** buttons
+- Checkbox, Switch, Radio, Select trigger, Slider thumbs, menu items that activate
+- Use Tailwind `cursor-pointer`
+- Disabled: `disabled:cursor-not-allowed` and/or `disabled:pointer-events-none` — never leave a disabled control looking clickable
+
+```tsx
+// ✅
+const buttonVariants = cva("… cursor-pointer disabled:pointer-events-none …")
+
+<AccordionPrimitive.Trigger className={cn("… cursor-pointer …")} />
+
+// ❌ Missing pointer on a clickable trigger
+<AccordionPrimitive.Trigger className="flex flex-1 …" />
+```
+
+## Parity
+
+Change both `packages/ui` and `registry/` then `npm run registry:build`.
+
+Docs site chrome still uses `.cursor/rules/winkui-site-cursor.mdc` as well.

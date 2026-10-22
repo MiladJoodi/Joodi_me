@@ -1,26 +1,457 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "../styles/vega-tokens.css";
+@import "../styles/style-vega.css" layer(base);
+@import "../styles/direction.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant style-vega (&:where(.style-vega *));
+@custom-variant dark (&:is(.dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility container-wrapper {
+  @apply mx-auto w-full max-w-[var(--content-max)] px-[var(--page-gutter)];
+}
+
+@utility text-h1 {
+  font-size: var(--text-h1);
+  line-height: var(--leading-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+
+  @media (min-width: 768px) {
+    font-size: var(--text-h1-lg);
+  }
+}
+
+@utility text-h2 {
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+
+  @media (min-width: 768px) {
+    font-size: var(--text-h2-lg);
+  }
+}
+
+@utility text-h3 {
+  font-size: var(--text-h3);
+  line-height: var(--leading-heading);
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: var(--text-h3-lg);
+  }
+}
+
+@utility text-h4 {
+  font-size: var(--text-h4);
+  line-height: var(--leading-heading);
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: var(--text-h4-lg);
+  }
+}
+
+@utility text-body {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  font-weight: 400;
+}
+
+@utility text-secondary {
+  font-size: var(--text-secondary);
+  line-height: var(--leading-body);
+  font-weight: 400;
+}
+
+@utility text-caption {
+  font-size: var(--text-caption);
+  line-height: var(--leading-body);
+  font-weight: 400;
+}
+
+@theme inline {
+  --breakpoint-3xl: 1600px;
+  --font-sans: var(--font-wink-sans);
+  --font-mono: var(--font-wink-mono);
+  --font-heading: var(--font-wink-sans);
+  /* Tailwind rounded-* ↔ WinkUI radius scale */
+  --radius-sm: calc(var(--radius) * 0.6); /* ~6px */
+  --radius-md: calc(var(--radius) * 0.8); /* ~8px — controls */
+  --radius-lg: var(--radius); /* 10px — surfaces */
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-code: var(--code);
+  --color-code-foreground: var(--code-foreground);
+}
+
+:root {
+  --header-height: 3.5rem;
+
+  /* Layout */
+  --content-max: 1280px;
+  --sidebar-width: 240px;
+  --page-gutter: 16px;
+  --card-padding: 24px;
+  --form-gap: 16px;
+  --section-gap: 48px;
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Typography */
+  --text-h1: 32px;
+  --text-h1-lg: 40px;
+  --text-h2: 26px;
+  --text-h2-lg: 32px;
+  --text-h3: 22px;
+  --text-h3-lg: 24px;
+  --text-h4: 18px;
+  --text-h4-lg: 20px;
+  --text-body: 16px;
+  --text-secondary: 14px;
+  --text-caption: 12px;
+  --text-button: 14px;
+  --text-code: 14px;
+  --leading-body: 1.5;
+  --leading-heading: 1.2;
+  --leading-code: 1.65;
+  --code-tab-size: 2;
+
+  /*
+   * Code block chrome — VS Code Dark+ surface (independent of brand primary).
+   * Token colors come from shiki `dark-plus` (inline), not these refs.
+   * Refs kept for docs / future line-number UI.
+   */
+  --code-bg: #1e1e1e;
+  --code-fg: #d4d4d4;
+  --code-border: #2b2b2b;
+  --code-header-fg: #858585;
+  --code-line-number: #858585;
+  --code-selection: #264f78;
+  --code-syntax-keyword: #c586c0;
+  --code-syntax-string: #ce9178;
+  --code-syntax-function: #dcdcaa;
+  --code-syntax-variable: #9cdcfe;
+  --code-syntax-number: #b5cea8;
+  --code-syntax-type: #4ec9b0;
+  --code-syntax-comment: #6a9955;
+  --code-syntax-operator: #d4d4d4;
+  --code: var(--code-bg);
+  --code-foreground: var(--code-fg);
+
+  /* Control sizes — WinkUI (default = 32px / h-8) */
+  --size-button-sm: 28px; /* h-7 */
+  --size-button-md: 32px; /* h-8 */
+  --size-button-lg: 36px; /* h-9 */
+  --size-input: 32px;
+  --size-checkbox: 16px; /* size-4 */
+  --size-switch-w: 32px; /* w-8 */
+  --size-switch-h: 1.15rem;
+  --size-avatar: 32px;
+  --size-badge: 22px;
+  --size-icon-inline: 14px;
+  --size-icon: 16px;
+  --size-icon-lg: 20px;
+  --touch-target: 44px;
+
+  /*
+   * Border radius — WinkUI
+   * Base 0.625rem (10px) · sm ~6 · md ~8 (controls) · lg 10 (surfaces)
+   */
+  --radius: 0.625rem;
+  --radius-tooltip: calc(var(--radius) * 0.6);
+  --radius-control: calc(var(--radius) * 0.8);
+  --radius-surface: var(--radius);
+  --radius-button: var(--radius-control);
+  --radius-sidebar-button: var(--radius-control);
+  --radius-input: var(--radius-control);
+  --radius-card: var(--radius-surface);
+  --radius-code: var(--radius-surface);
+  --radius-dialog: var(--radius-surface);
+
+  /* Neutral chrome — primary only on actions */
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1d4ed8;
+  --primary-hover-foreground: #ffffff;
+  --primary-active: #1e40af;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #dc2626;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #2563eb;
+  --chart-1: #2563eb;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #1d4ed8;
+  --chart-5: #1e40af;
+  --chart-up: #16a34a;
+  --chart-down: #e11d48;
+  --chart-mute: #71717a;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #09090b;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e4e4e7;
+  --sidebar-ring: #2563eb;
+  --surface: #f8fafc;
+  --surface-foreground: #09090b;
+  --motion-fast: 180ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #18181b;
+  --card-foreground: #fafafa;
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+  /* Dark primary #396ef0 — closest darker to #3b82f6 with ≥4.5:1 vs white */
+  --primary: #396ef0;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1d4ed8;
+  --primary-hover-foreground: #ffffff;
+  --primary-active: #1e40af;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #f87171;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #396ef0;
+  --chart-1: #3b82f6;
+  --chart-2: #60a5fa;
+  --chart-3: #93c5fd;
+  --chart-4: #2563eb;
+  --chart-5: #1d4ed8;
+  --chart-up: #4ade80;
+  --chart-down: #f25f70;
+  --chart-mute: #a1a1aa;
+  --sidebar: #09090b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #396ef0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #396ef0;
+  --surface: #18181b;
+  --surface-foreground: #a1a1aa;
+  /* Code tokens stay Dark Modern in both themes (see :root --code-*) */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 22%, transparent);
+    color: var(--foreground);
+  }
+
+  /* Code blocks — selection independent of brand primary */
+  .wink-code-block ::selection,
+  .wink-code-block *::selection {
+    background: var(--code-selection);
+    color: var(--code-fg);
+  }
+
+  :where(code):not(.wink-code-block code):not(pre code) {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: var(--text-code);
+    font-weight: 400;
+    line-height: var(--leading-code);
+  }
+}
+
+@utility wink-inline-code {
+  border-radius: var(--radius-tooltip);
+  background: var(--muted);
+  padding: 0.125rem 0.375rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: var(--text-code);
+  font-weight: 400;
+  line-height: var(--leading-code);
+}
+
+@utility wink-code-block {
+  overflow: hidden;
+  border-radius: var(--radius-code);
+  border: 1px solid var(--code-border);
+  background: var(--code-bg);
+  color: var(--code-fg);
+}
+
+@utility wink-code-pre {
+  overflow-x: auto;
+  padding: var(--space-4);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: var(--text-code);
+  font-weight: 400;
+  line-height: var(--leading-code);
+  tab-size: var(--code-tab-size);
+  white-space: pre;
+  color: var(--code-fg);
+}
+
+@utility wink-code-shiki {
+  overflow-x: auto;
+}
+
+@layer components {
+  /* Shiki output — lock typography (nested @utility rules were not sticking) */
+  .wink-code-shiki pre,
+  .wink-code-shiki pre.shiki,
+  .wink-code-shiki code,
+  .wink-code-shiki .line,
+  .wink-code-shiki span {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    /* 14px = VS Code editor default; keep synced with --text-code */
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: var(--leading-code);
+  }
+
+  .wink-code-shiki pre,
+  .wink-code-shiki pre.shiki {
+    margin: 0;
+    overflow-x: auto;
+    padding: var(--space-4);
+    background: transparent !important;
+    tab-size: var(--code-tab-size);
+    white-space: pre;
+    color: var(--code-fg);
+  }
+
+  .wink-code-shiki code {
+    background: transparent;
+  }
+
+  .wink-code-shiki .line {
+    display: inline-block;
+    min-width: 100%;
+  }
+}
+
+@keyframes docs-collapsible-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes docs-collapsible-up {
+  from {
+    height: var(--radix-collapsible-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes wink-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wink-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

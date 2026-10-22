@@ -10,6 +10,12 @@
 !.yarn/releases
 !.yarn/versions
 
+desktop.ini
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+
 # testing
 /coverage
 

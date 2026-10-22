@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@winkui/ui/*": ["./packages/ui/src/*"]
     }
   },
   "include": [

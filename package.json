@@ -1,17 +1,36 @@
 {
-  "name": "01",
+  "name": "winkui",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "next dev",
+    "registry:build": "node scripts/build-registry.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:cache": "node scripts/verify-cache-headers.mjs",
+    "winkui": "node packages/cli/bin/winkui.mjs",
+    "fix:ui-imports": "node scripts/fix-ui-imports.mjs",
+    "publish:ui": "npm publish -w @winkui/ui --access public"
   },
   "dependencies": {
+    "@base-ui/react": "^1.9.0",
+    "@winkui/ui": "*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.61.0",
     "next": "16.2.6",
+    "next-themes": "^0.4.6",
+    "radix-ui": "^1.8.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "recharts": "^3.10.1",
+    "shiki": "^4.5.0",
+    "tailwind-merge": "^3.7.0",
+    "tw-animate-css": "^1.4.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

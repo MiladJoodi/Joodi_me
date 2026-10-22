@@ -1,0 +1,157 @@
+#!/usr/bin/env node
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+
+import { RegistryConsistencyError } from "../src/consistency.mjs"
+import { initWinkuiProject } from "../src/init.mjs"
+import { installRegistryItemFiles } from "../src/install.mjs"
+import { resolveRegistryItem } from "../src/resolve.mjs"
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const defaultRegistry = "https://winkui.dev/r"
+
+function printHelp() {
+  console.log(`Usage:
+  winkui init [--cwd <dir>] [--registry <url-or-path>] [--overwrite]
+  winkui add <name> [--registry <url-or-path>] [--cwd <dir>] [--overwrite]
+
+init  — installs design system (styles/winkui.css), lib/utils.ts, components.json
+add   — copies one component into components/ui/ (run init first)
+
+Environment:
+  WINKUI_REGISTRY   Default registry base (URL or local directory)
+`)
+}
+
+function parseFlags(rest) {
+  let registry = process.env.WINKUI_REGISTRY || defaultRegistry
+  let cwd = process.cwd()
+  let overwrite = false
+
+  for (let i = 0; i < rest.length; i++) {
+    if (rest[i] === "--registry" && rest[i + 1]) {
+      registry = rest[i + 1]
+      i++
+    } else if (rest[i] === "--cwd" && rest[i + 1]) {
+      cwd = path.resolve(rest[i + 1])
+      i++
+    } else if (rest[i] === "--overwrite") {
+      overwrite = true
+    }
+  }
+
+  return { registry, cwd, overwrite }
+}
+
+async function cmdInit(rest) {
+  const { registry, cwd, overwrite } = parseFlags(rest)
+  const registryUrl =
+    registry.startsWith("http://") ||
+    registry.startsWith("https://") ||
+    registry.startsWith("file:")
+      ? registry
+      : undefined
+
+  const { written, skipped, globals } = await initWinkuiProject({
+    cwd,
+    overwrite,
+    registryUrl,
+  })
+
+  console.log("WinkUI initialized (tokens scoped to .winkui — host theme untouched)")
+  for (const file of written) console.log(`  + ${file}`)
+  for (const file of skipped) {
+    console.log(`  ~ skip (exists): ${file}  (use --overwrite)`)
+  }
+  if (globals?.status === "patched") {
+    console.log(`  + import in ${globals.rel}`)
+  } else if (globals?.status === "exists") {
+    console.log(`  ~ import already in ${globals.rel}`)
+  } else if (globals?.status === "missing") {
+    console.log(`  ! ${globals.message}`)
+  }
+  console.log(`
+Next:
+  npm i clsx tailwind-merge
+  winkui add button
+`)
+}
+
+async function cmdAdd(name, rest) {
+  const { registry, cwd, overwrite } = parseFlags(rest)
+  const npmDeps = new Set()
+
+  async function addOne(itemName, seen = new Set()) {
+    if (seen.has(itemName)) return
+    seen.add(itemName)
+
+    const { item, index } = await resolveRegistryItem({
+      name: itemName,
+      registryUrl: registry,
+    })
+
+    for (const dep of item.registryDependencies ?? []) {
+      await addOne(dep, seen)
+    }
+
+    const { written, skipped } = await installRegistryItemFiles(item, {
+      cwd,
+      overwrite,
+    })
+
+    console.log(`Added ${item.name} from ${index.name} @ ${index.version}`)
+    for (const file of written) console.log(`  + ${file}`)
+    for (const file of skipped) {
+      console.log(`  ~ skip (exists): ${file}  (use --overwrite)`)
+    }
+
+    for (const dep of item.dependencies ?? []) npmDeps.add(dep)
+  }
+
+  await addOne(name)
+
+  if (npmDeps.size > 0) {
+    console.log(
+      `\nInstall peer deps if needed:\n  npm i ${[...npmDeps].join(" ")}`
+    )
+  }
+}
+
+async function main() {
+  const args = process.argv.slice(2)
+  if (args.length === 0 || args[0] === "--help" || args[0] === "-h") {
+    printHelp()
+    process.exit(0)
+  }
+
+  const [command, ...rest] = args
+
+  try {
+    if (command === "init") {
+      await cmdInit(rest)
+      return
+    }
+
+    if (command === "add") {
+      const name = rest[0]
+      if (!name || name.startsWith("-")) {
+        printHelp()
+        process.exit(1)
+      }
+      await cmdAdd(name, rest.slice(1))
+      return
+    }
+
+    printHelp()
+    process.exit(1)
+  } catch (error) {
+    if (error instanceof RegistryConsistencyError) {
+      console.error(`winkui: ${error.message}`)
+      process.exit(2)
+    }
+    console.error(`winkui: ${error instanceof Error ? error.message : error}`)
+    process.exit(1)
+  }
+}
+
+main()

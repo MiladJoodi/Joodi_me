@@ -1,0 +1,360 @@
+/**
+ * Vega (calm) surfaces + WinkUI primary palette.
+ * Primary: #2563EB (light) / #396EF0 (dark, AA vs white).
+ * Unlayered so these beat `.theme-*` Primary Color overrides.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Light — pure white paper (no blue-tint fills; accents stay on primary only) */
+/* -------------------------------------------------------------------------- */
+
+.style-vega {
+  /* WinkUI primary — #2563EB */
+  --vega-primary: #2563eb;
+  --vega-primary-foreground: #ffffff;
+  --vega-primary-hover: #1d4ed8;
+  --vega-primary-active: #1e40af;
+  --vega-ring: #2563eb;
+  --vega-brand: #2563eb;
+  --vega-brand-foreground: #ffffff;
+  /* Chart series — blue sequential aligned to primary */
+  --vega-chart-1: #2563eb;
+  --vega-chart-2: #3b82f6;
+  --vega-chart-3: #60a5fa;
+  --vega-chart-4: #1d4ed8;
+  --vega-chart-5: #1e40af;
+
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: var(--vega-primary);
+  --primary-foreground: var(--vega-primary-foreground);
+  --primary-hover: var(--vega-primary-hover);
+  --primary-active: var(--vega-primary-active);
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #dc2626;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: var(--vega-ring);
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #09090b;
+  --sidebar-primary: var(--vega-primary);
+  --sidebar-primary-foreground: var(--vega-primary-foreground);
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e4e4e7;
+  --sidebar-ring: var(--vega-ring);
+
+  --chart-1: var(--vega-chart-1);
+  --chart-2: var(--vega-chart-2);
+  --chart-3: var(--vega-chart-3);
+  --chart-4: var(--vega-chart-4);
+  --chart-5: var(--vega-chart-5);
+  /* Neon area/spark semantics — shared SoT (market cards) */
+  --chart-up: #16a34a;
+  --chart-down: #e11d48;
+  --chart-mute: #52525b;
+  --color-chart-1: var(--vega-chart-1);
+  --color-chart-2: var(--vega-chart-2);
+  --color-chart-3: var(--vega-chart-3);
+  --color-chart-4: var(--vega-chart-4);
+  --color-chart-5: var(--vega-chart-5);
+
+  /* Border radius — WinkUI scale (aligned with app/globals.css) */
+  --radius: 0.625rem;
+  --radius-tooltip: calc(var(--radius) * 0.6);
+  --radius-control: calc(var(--radius) * 0.8);
+  --radius-surface: var(--radius);
+  --radius-button: var(--radius-control);
+  --radius-sidebar-button: var(--radius-control);
+  --radius-input: var(--radius-control);
+  --radius-card: var(--radius-surface);
+  --radius-code: var(--radius-surface);
+  --radius-dialog: var(--radius-surface);
+  --radius-field: var(--radius-input);
+  --radius-overlay: var(--radius-dialog);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --sidebar-width: 240px;
+  --content-max: 1280px;
+  --page-gutter: 16px;
+  --card-padding: 24px;
+  --form-gap: 16px;
+  --section-gap: 48px;
+
+  --surface: #f8fafc;
+  --surface-muted: #f4f4f5;
+  --surface-border: #1a243314;
+  --surface-filter: none;
+  --surface-opacity: 1;
+  --surface-foreground: #1a2433;
+
+  --field: #ffffff;
+  --field-border: #1a24331f;
+  --field-shadow: 0 1px 2px 0 #1a243308;
+
+  --control: #ffffff;
+  --control-border: #1a243314;
+  --control-shadow: 0 1px 2px 0 #1a24330a;
+
+  --overlay: #ffffff;
+  --overlay-shadow: 0 18px 40px -24px #1a243333;
+
+  --shadow-surface: 0 1px 2px 0 #1a243308, 0 8px 24px -18px #1a243314;
+  --shadow-field: 0 1px 2px 0 #1a243308;
+  --shadow-overlay: 0 18px 40px -24px #1a243333;
+  --shadow-control: 0 1px 2px 0 #1a24330a;
+  --shadow-press: inset 0 1px 2px #1a243314;
+
+  --motion-fast: 200ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: light;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dark — calm sky-blue chrome (same family as light). Page background stays   */
+/* Nova-dark flat; charts keep their own branded neon palette below.           */
+/* -------------------------------------------------------------------------- */
+
+html.dark .style-vega,
+.dark .style-vega {
+  /* Dark primary #396EF0 — closest darker to #3B82F6 with ≥4.5:1 vs white */
+  --vega-primary: #396ef0;
+  --vega-primary-foreground: #ffffff;
+  --vega-primary-hover: #1d4ed8;
+  --vega-primary-hover-foreground: #ffffff;
+  --vega-primary-active: #1e40af;
+  --vega-ring: #396ef0;
+  --vega-brand: #396ef0;
+  --vega-brand-foreground: #ffffff;
+  --vega-chart-1: #3b82f6;
+  --vega-chart-2: #60a5fa;
+  --vega-chart-3: #93c5fd;
+  --vega-chart-4: #2563eb;
+  --vega-chart-5: #1d4ed8;
+
+  /* Neutral zinc shell — primary stays brand blue only */
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #18181b;
+  --card-foreground: #fafafa;
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+  --primary: var(--vega-primary);
+  --primary-foreground: var(--vega-primary-foreground);
+  --primary-hover: var(--vega-primary-hover);
+  --primary-hover-foreground: var(--vega-primary-hover-foreground);
+  --primary-active: var(--vega-primary-active);
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #f87171;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: var(--vega-ring);
+
+  --sidebar: #09090b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: var(--vega-primary);
+  --sidebar-primary-foreground: var(--vega-primary-foreground);
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #27272a;
+  --sidebar-ring: var(--vega-ring);
+
+  --chart-1: var(--vega-chart-1);
+  --chart-2: var(--vega-chart-2);
+  --chart-3: var(--vega-chart-3);
+  --chart-4: var(--vega-chart-4);
+  --chart-5: var(--vega-chart-5);
+  /* Neon area/spark semantics — dark (brighter neon) */
+  --chart-up: #4ADE80;
+  --chart-down: #F25F70;
+  --chart-mute: #d4d4d8;
+  --color-chart-1: var(--vega-chart-1);
+  --color-chart-2: var(--vega-chart-2);
+  --color-chart-3: var(--vega-chart-3);
+  --color-chart-4: var(--vega-chart-4);
+  --color-chart-5: var(--vega-chart-5);
+
+  --surface: oklch(0.2 0.012 250);
+  --surface-muted: oklch(0.269 0.016 250);
+  --surface-border: oklch(0.78 0.03 250 / 16%);
+  --surface-filter: none;
+  --surface-opacity: 1;
+  --surface-foreground: oklch(0.72 0.02 250);
+
+  --field: oklch(0.205 0.012 250);
+  --field-border: oklch(0.78 0.03 250 / 18%);
+  --field-shadow: inset 0 1px 0 0 oklch(0.85 0.02 250 / 5%);
+
+  --control: oklch(0.205 0.012 250);
+  --control-border: oklch(0.78 0.03 250 / 16%);
+  --control-shadow: 0 1px 0 0 oklch(0.85 0.02 250 / 6%) inset;
+
+  --overlay: oklch(0.205 0.012 250);
+  --overlay-shadow: 0 24px 48px -28px oklch(0.12 0.02 250 / 55%);
+
+  --shadow-surface: 0 1px 0 0 oklch(0.85 0.02 250 / 5%) inset,
+    0 12px 28px -20px oklch(0.1 0.02 250 / 42%);
+  --shadow-field: inset 0 1px 0 0 oklch(0.85 0.02 250 / 5%);
+  --shadow-overlay: 0 24px 48px -28px oklch(0.12 0.02 250 / 55%);
+  --shadow-control: 0 1px 0 0 oklch(0.85 0.02 250 / 6%) inset;
+  --shadow-press: inset 0 1px 2px oklch(0.1 0.02 250 / 30%);
+
+  color-scheme: dark;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Atmosphere + hide Primary Color                                            */
+/* -------------------------------------------------------------------------- */
+
+.style-vega [data-slot="layout"] {
+  background-color: transparent;
+}
+
+.style-vega [data-slot="header-primary-colors"] {
+  display: none !important;
+}
+
+/*
+ * One continuous white paper under hero + collage — never a second slab on
+ * [data-collage-surface] (that hard edge read as a separator line).
+ * No tinted / stained washes — keep the shell flat white in light.
+ */
+.style-vega [data-home-surface] {
+  background-color: #ffffff;
+  background-image: none;
+  background-size: auto;
+  background-attachment: scroll;
+  color-scheme: light;
+}
+
+html.dark .style-vega [data-home-surface],
+.dark .style-vega [data-home-surface] {
+  background-color: oklch(0.145 0 0);
+  background-image: none;
+  color-scheme: dark;
+}
+
+.style-vega [data-collage-surface] {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/*
+ * Keep chart + brand palette when legacy theme-* classes remain on body.
+ */
+html body.style-vega.theme-default,
+html body.style-vega.theme-neutral,
+html body.style-vega.theme-blue,
+html body.style-vega.theme-green,
+html body.style-vega.theme-amber,
+html body.style-vega.theme-rose,
+html body.style-vega.theme-purple,
+html body.style-vega.theme-orange,
+html body.style-vega.theme-teal,
+html body.style-vega.theme-red,
+html body.style-vega.theme-yellow,
+html body.style-vega.theme-violet,
+html body.style-vega.theme-default .theme-container,
+html body.style-vega.theme-neutral .theme-container,
+html body.style-vega.theme-blue .theme-container,
+html body.style-vega.theme-green .theme-container,
+html body.style-vega.theme-amber .theme-container,
+html body.style-vega.theme-rose .theme-container,
+html body.style-vega.theme-purple .theme-container,
+html body.style-vega.theme-orange .theme-container,
+html body.style-vega.theme-teal .theme-container,
+html body.style-vega.theme-red .theme-container,
+html body.style-vega.theme-yellow .theme-container,
+html body.style-vega.theme-violet .theme-container,
+html body.style-vega .theme-container,
+html body.style-vega {
+  --primary: var(--vega-primary);
+  --primary-foreground: var(--vega-primary-foreground);
+  --primary-hover: var(--vega-primary-hover);
+  --primary-active: var(--vega-primary-active);
+  --ring: var(--vega-ring);
+  --chart-1: var(--vega-chart-1);
+  --chart-2: var(--vega-chart-2);
+  --chart-3: var(--vega-chart-3);
+  --chart-4: var(--vega-chart-4);
+  --chart-5: var(--vega-chart-5);
+  /* Neon area/spark semantics — shared SoT (market cards) */
+  --chart-up: #16a34a;
+  --chart-down: #e11d48;
+  --chart-mute: #52525b;
+  --color-chart-1: var(--vega-chart-1);
+  --color-chart-2: var(--vega-chart-2);
+  --color-chart-3: var(--vega-chart-3);
+  --color-chart-4: var(--vega-chart-4);
+  --color-chart-5: var(--vega-chart-5);
+}
+
+html.dark body.style-vega.theme-default,
+html.dark body.style-vega.theme-neutral,
+html.dark body.style-vega.theme-blue,
+html.dark body.style-vega.theme-green,
+html.dark body.style-vega.theme-amber,
+html.dark body.style-vega.theme-rose,
+html.dark body.style-vega.theme-purple,
+html.dark body.style-vega.theme-orange,
+html.dark body.style-vega.theme-teal,
+html.dark body.style-vega.theme-red,
+html.dark body.style-vega.theme-yellow,
+html.dark body.style-vega.theme-violet,
+html.dark body.style-vega.theme-default .theme-container,
+html.dark body.style-vega.theme-neutral .theme-container,
+html.dark body.style-vega.theme-blue .theme-container,
+html.dark body.style-vega.theme-green .theme-container,
+html.dark body.style-vega.theme-amber .theme-container,
+html.dark body.style-vega.theme-rose .theme-container,
+html.dark body.style-vega.theme-purple .theme-container,
+html.dark body.style-vega.theme-orange .theme-container,
+html.dark body.style-vega.theme-teal .theme-container,
+html.dark body.style-vega.theme-red .theme-container,
+html.dark body.style-vega.theme-yellow .theme-container,
+html.dark body.style-vega.theme-violet .theme-container,
+html.dark body.style-vega .theme-container,
+html.dark body.style-vega {
+  --primary: var(--vega-primary);
+  --primary-foreground: var(--vega-primary-foreground);
+  --primary-hover: var(--vega-primary-hover);
+  --primary-hover-foreground: var(--vega-primary-hover-foreground);
+  --primary-active: var(--vega-primary-active);
+  --ring: var(--vega-ring);
+  --chart-1: var(--vega-chart-1);
+  --chart-2: var(--vega-chart-2);
+  --chart-3: var(--vega-chart-3);
+  --chart-4: var(--vega-chart-4);
+  --chart-5: var(--vega-chart-5);
+  /* Neon area/spark semantics — dark (brighter neon) */
+  --chart-up: #4ADE80;
+  --chart-down: #F25F70;
+  --chart-mute: #d4d4d8;
+  --color-chart-1: var(--vega-chart-1);
+  --color-chart-2: var(--vega-chart-2);
+  --color-chart-3: var(--vega-chart-3);
+  --color-chart-4: var(--vega-chart-4);
+  --color-chart-5: var(--vega-chart-5);
+}
