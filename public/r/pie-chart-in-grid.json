@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pie-chart-in-grid",
+  "type": "registry:chart",
+  "title": "Pie Chart In Grid",
+  "description": "CSS Grid of responsive donuts — layout teaching demo, RTL-aware chrome.",
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "chart",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#1e3a8a",
+      "chart-2": "#ea580c",
+      "chart-3": "#f59e0b",
+      "chart-4": "#6366f1"
+    },
+    "dark": {
+      "chart-1": "#3b82f6",
+      "chart-2": "#f97316",
+      "chart-3": "#fbbf24",
+      "chart-4": "#818cf8"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/pie-chart-in-grid.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { Label, Pie, PieChart as RechartsPieChart } from \"recharts\"\n\nimport { cn } from \"@/lib/utils\"\nimport {\n  ChartContainer,\n  type ChartConfig,\n} from \"@/components/ui/chart\"\n\nimport { useChartDir } from \"./_lib/use-chart-dir\"\n\n/**\n * Pie Chart In Grid — CSS Grid of responsive donuts (layout teaching demo).\n * Shared ring geometry; center cell captions; no metric scrub / on-slice labels.\n * Tokens: `--chart-1…4`. Spec: `registry/charts/PORT.md`\n * Installs to: components/charts/pie-chart-in-grid.tsx\n */\n\nexport type PieChartInGridSlice = {\n  name: string\n  value: number\n}\n\nexport type PieChartInGridProps = {\n  title?: string\n  subtitle?: string\n  data?: PieChartInGridSlice[]\n  className?: string\n}\n\nconst SERIES_VARS = [\n  \"var(--chart-1)\",\n  \"var(--chart-2)\",\n  \"var(--chart-3)\",\n  \"var(--chart-4)\",\n] as const\n\nconst DEMO_DATA: PieChartInGridSlice[] = [\n  { name: \"west\", value: 400 },\n  { name: \"midwest\", value: 300 },\n  { name: \"south\", value: 300 },\n  { name: \"northeast\", value: 200 },\n]\n\nconst SLICE_LABELS: Record<string, string> = {\n  west: \"West\",\n  midwest: \"Midwest\",\n  south: \"South\",\n  northeast: \"Northeast\",\n}\n\nfunction seriesColor(index: number) {\n  return SERIES_VARS[index % SERIES_VARS.length]!\n}\n\nfunction buildConfig(data: PieChartInGridSlice[]): ChartConfig {\n  const config: ChartConfig = {\n    value: { label: \"Sales\" },\n  }\n  data.forEach((slice, index) => {\n    config[slice.name] = {\n      label: SLICE_LABELS[slice.name] ?? slice.name,\n      color: seriesColor(index),\n    }\n  })\n  return config\n}\n\nfunction withFills(slices: PieChartInGridSlice[]) {\n  return slices.map((slice) => ({\n    ...slice,\n    fill: `var(--color-${slice.name})`,\n  }))\n}\n\nfunction CellLabel({ children }: { children: string }) {\n  return (\n    <Label\n      position=\"center\"\n      style={{\n        fontFamily: \"var(--font-sono-sans), var(--font-sans)\",\n        fontSize: 11,\n      }}\n      fill=\"var(--muted-foreground)\"\n    >\n      {children}\n    </Label>\n  )\n}\n\nfunction GridDonut({\n  data,\n  config,\n  caption,\n  className,\n}: {\n  data: ReturnType<typeof withFills>\n  config: ChartConfig\n  caption: string\n  className?: string\n}) {\n  return (\n    <div dir=\"ltr\" className={cn(\"min-h-0 min-w-0\", className)}>\n      <ChartContainer\n        config={config}\n        className=\"aspect-square h-full max-h-full w-full max-w-full border border-border font-sans text-xs\"\n        aria-label={`Donut chart, ${caption}`}\n      >\n        <RechartsPieChart accessibilityLayer>\n          <Pie\n            data={data}\n            dataKey=\"value\"\n            nameKey=\"name\"\n            outerRadius=\"80%\"\n            innerRadius=\"60%\"\n            isAnimationActive={false}\n          />\n          <CellLabel>{caption}</CellLabel>\n        </RechartsPieChart>\n      </ChartContainer>\n    </div>\n  )\n}\n\nfunction PieChartInGrid({\n  title = \"Pie charts in a CSS grid\",\n  subtitle = \"Same donut, different grid spans — resize the window to see responsive sizing.\",\n  data = DEMO_DATA,\n  className,\n}: PieChartInGridProps) {\n  const { ref } = useChartDir()\n  const chartConfig = React.useMemo(() => buildConfig(data), [data])\n  const plotData = React.useMemo(() => withFills(data), [data])\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        \"mx-auto flex w-full min-w-0 max-w-[960px] flex-col gap-4 font-sans sm:gap-5\",\n        className\n      )}\n    >\n      <header className=\"space-y-1\">\n        <h3 className=\"text-xl font-bold tracking-tight text-foreground sm:text-2xl\">\n          {title}\n        </h3>\n        <p className=\"text-sm text-muted-foreground\">{subtitle}</p>\n      </header>\n\n      <p className=\"text-sm leading-relaxed text-muted-foreground\">\n        Put each chart in its own grid item. The demos below share one data set\n        and sit in a{\" \"}\n        <code className=\"rounded-md bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground\">\n          grid-cols-3\n        </code>{\" \"}\n        /{\" \"}\n        <code className=\"rounded-md bg-muted px-1.5 py-0.5 font-mono text-xs text-foreground\">\n          grid-rows-3\n        </code>{\" \"}\n        layout — try narrowing the viewport.\n      </p>\n\n      <div className=\"grid min-h-[400px] w-full grid-cols-3 grid-rows-3 gap-2.5 rounded-lg border border-border p-2.5\">\n        <GridDonut\n          data={plotData}\n          config={chartConfig}\n          caption=\"2×2 cell\"\n          className=\"col-span-2 row-span-2\"\n        />\n        <GridDonut\n          data={plotData}\n          config={chartConfig}\n          caption=\"1×1 cell\"\n          className=\"col-start-3 row-start-1\"\n        />\n        <GridDonut\n          data={plotData}\n          config={chartConfig}\n          caption=\"1×1 cell\"\n          className=\"col-start-3 row-start-2\"\n        />\n        <GridDonut\n          data={plotData}\n          config={chartConfig}\n          caption=\"3×1 cell\"\n          className=\"col-span-3 row-start-3 mx-auto h-full\"\n        />\n      </div>\n\n      <ul className=\"flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground\">\n        {data.map((slice, index) => (\n          <li key={slice.name} className=\"inline-flex items-center gap-1.5\">\n            <span\n              className=\"size-2 shrink-0 rounded-full\"\n              style={{ backgroundColor: seriesColor(index) }}\n              aria-hidden\n            />\n            <span>{SLICE_LABELS[slice.name] ?? slice.name}</span>\n          </li>\n        ))}\n      </ul>\n\n      <table className=\"sr-only\">\n        <caption>{title}</caption>\n        <thead>\n          <tr>\n            <th scope=\"col\">Name</th>\n            <th scope=\"col\">Value</th>\n          </tr>\n        </thead>\n        <tbody>\n          {data.map((slice) => (\n            <tr key={`a11y-${slice.name}`}>\n              <td>{SLICE_LABELS[slice.name] ?? slice.name}</td>\n              <td>{slice.value}</td>\n            </tr>\n          ))}\n        </tbody>\n      </table>\n    </div>\n  )\n}\n\nexport default function PieChartInGridDemo(props: PieChartInGridProps) {\n  return <PieChartInGrid {...props} />\n}\n\nexport { PieChartInGrid }\n",
+      "target": "components/charts/pie-chart-in-grid.tsx"
+    }
+  ],
+  "version": "0.1.0+02db735797f7",
+  "generatedAt": "2026-10-23T21:35:15.265Z"
+}

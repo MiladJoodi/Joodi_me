@@ -3,32 +3,43 @@
 import * as React from "react"
 import type { ComponentType } from "react"
 
-import { loadExample } from "@/registry/example-loaders"
+import {
+  ensureExample,
+  getCachedExample,
+} from "@/components/docs/example-component-cache"
 
-/** Loads a registry example by name. Mounts after paint to keep SSR/client HTML aligned. */
+/**
+ * Loads a registry example by name.
+ * Module cache + page prefetch avoid empty→content height jumps on tab switches.
+ */
 export function RegistryExamplePreview({ name }: { name: string }) {
-  const [Component, setComponent] = React.useState<ComponentType | null>(null)
+  const [Component, setComponent] = React.useState<ComponentType | null>(
+    () => getCachedExample(name) ?? null
+  )
   const [missing, setMissing] = React.useState(false)
 
   React.useEffect(() => {
     let alive = true
-    setComponent(null)
-    setMissing(false)
-
-    const loader = loadExample(name)
-    if (!loader) {
-      setMissing(true)
+    const cached = getCachedExample(name)
+    if (cached) {
+      setComponent(() => cached)
+      setMissing(false)
       return
     }
 
-    void loader()
-      .then((mod) => {
-        if (!alive) return
-        setComponent(() => mod.default)
-      })
-      .catch(() => {
-        if (alive) setMissing(true)
-      })
+    // Not cached yet — clear. Parent preview frame keeps minHeight so CLS stays low.
+    setComponent(null)
+    setMissing(false)
+
+    void ensureExample(name).then((Comp) => {
+      if (!alive) return
+      if (!Comp) {
+        setMissing(true)
+        setComponent(null)
+        return
+      }
+      setComponent(() => Comp)
+    })
 
     return () => {
       alive = false
@@ -37,7 +48,7 @@ export function RegistryExamplePreview({ name }: { name: string }) {
 
   if (missing) return null
   if (!Component) {
-    return <div className="min-h-32" aria-hidden />
+    return <div className="min-h-32 w-full" aria-hidden />
   }
 
   return <Component />

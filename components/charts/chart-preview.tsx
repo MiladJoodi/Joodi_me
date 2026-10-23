@@ -10,8 +10,8 @@ import type { Direction } from "@/lib/direction"
 import { cn } from "@/lib/utils"
 
 /**
- * Wide charts stage with LTR default + RTL layout toggle.
- * Does not change demo locale/data — English demos stay English.
+ * Charts stage with LTR/RTL layout toggle.
+ * English demos stay English — toggle only affects layout.
  */
 export function ChartPreview({
   children,
@@ -20,7 +20,6 @@ export function ChartPreview({
   className,
 }: {
   children: React.ReactNode
-  /** Stretch like FarsiUI interactive / fullWidth demos */
   fullWidth?: boolean
   title?: string
   className?: string
@@ -36,7 +35,6 @@ export function ChartPreview({
       <DirectionProvider
         dir={dir}
         className={cn(
-          // Center the demo so max-width charts don't stick to inline-start when dir flips.
           "flex w-full min-w-0 max-w-none justify-center rounded-xl border border-border/80 bg-background p-4 md:p-6",
           fullWidth && "md:p-8"
         )}

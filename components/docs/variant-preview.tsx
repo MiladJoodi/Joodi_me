@@ -11,6 +11,7 @@ import {
   DirectionToggle,
 } from "@/components/direction"
 import type { Direction } from "@/lib/direction"
+import { prefetchExamples } from "@/components/docs/example-component-cache"
 import { RegistryExamplePreview } from "@/components/docs/registry-example-preview"
 import { cn } from "@/lib/utils"
 import {
@@ -105,17 +106,51 @@ export function ComponentVariantPreview({
   const [active, setActive] = React.useState(examples[0]?.name ?? "")
   const [dir, setDir] = React.useState<Direction>("ltr")
   const [view, setView] = React.useState<ViewMode>("preview")
+  const [frameMinHeight, setFrameMinHeight] = React.useState<number | undefined>()
+  const frameRef = React.useRef<HTMLDivElement>(null)
   const meta = examples.find((item) => item.name === active)
   const hasCode = Boolean(meta?.code && meta?.codeHtml)
   const requires = meta?.requires?.filter(Boolean) ?? []
   const npmRequires = meta?.npmRequires?.filter(Boolean) ?? []
   const effectiveView: ViewMode = hasCode ? view : "preview"
 
+  // Warm every variant on this page so Preview tab switches stay height-stable.
+  React.useEffect(() => {
+    prefetchExamples(examples.map((item) => item.name))
+  }, [examples])
+
+  // Lock the preview frame to the tallest measured height so load/swap does not jump.
+  React.useEffect(() => {
+    if (effectiveView !== "preview") return
+    const el = frameRef.current
+    if (!el || typeof ResizeObserver === "undefined") return
+
+    const ro = new ResizeObserver((entries) => {
+      const h = entries[0]?.contentRect.height
+      if (!h) return
+      setFrameMinHeight((prev) =>
+        prev == null ? h : Math.max(prev, h)
+      )
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [effectiveView, active])
+
   // Root Toaster sits outside this island — publish dir so Sonner RTL matches.
   useRegisterPreviewDirection(
     dir,
     showDirection && effectiveView === "preview"
   )
+
+  const previewFrameClass = cn(
+    "flex min-h-32 items-center justify-center bg-background p-8",
+    allowOverflow &&
+      "relative z-20 min-h-[28rem] items-start justify-center overflow-visible pt-10 pb-16"
+  )
+  const previewFrameStyle =
+    frameMinHeight != null && !allowOverflow
+      ? { minHeight: frameMinHeight }
+      : undefined
 
   return (
     <div className={cn("space-y-3", className)}>
@@ -186,29 +221,19 @@ export function ComponentVariantPreview({
         </div>
 
         {effectiveView === "preview" ? (
-          showDirection ? (
-            <DirectionProvider
-              dir={dir}
-              className={cn(
-                "flex min-h-32 items-center justify-center bg-background p-8",
-                // Tall + top-aligned so non-portaled menus open inside the frame.
-                allowOverflow &&
-                  "relative z-20 min-h-[28rem] items-start justify-center overflow-visible pt-10 pb-16"
-              )}
-            >
-              {active ? <RegistryExamplePreview name={active} /> : null}
-            </DirectionProvider>
-          ) : (
-            <div
-              className={cn(
-                "flex min-h-32 items-center justify-center bg-background p-8",
-                allowOverflow &&
-                  "relative z-20 min-h-[28rem] items-start justify-center overflow-visible pt-10 pb-16"
-              )}
-            >
-              {active ? <RegistryExamplePreview name={active} /> : null}
-            </div>
-          )
+          <div
+            ref={frameRef}
+            className={previewFrameClass}
+            style={previewFrameStyle}
+          >
+            {showDirection ? (
+              <DirectionProvider dir={dir} className="contents">
+                {active ? <RegistryExamplePreview name={active} /> : null}
+              </DirectionProvider>
+            ) : active ? (
+              <RegistryExamplePreview name={active} />
+            ) : null}
+          </div>
         ) : meta?.code && meta?.codeHtml ? (
           <>
             <CodePanel

@@ -5,8 +5,8 @@ import * as React from "react"
 export type ChartDir = "ltr" | "rtl"
 
 /**
- * Reads writing direction from the nearest `[dir]` ancestor (or `<html>`).
- * No docs-site DirectionProvider required — works after `sonojs add`.
+ * Reads writing direction from the nearest ancestor `[dir]` (not self).
+ * Works after `sonojs add` — no docs DirectionProvider required.
  */
 export function useChartDir(): {
   dir: ChartDir
@@ -20,8 +20,9 @@ export function useChartDir(): {
     if (!el) return
 
     const read = () => {
-      const host = el.closest("[dir]")
-      setDir(host?.getAttribute("dir") === "rtl" ? "rtl" : "ltr")
+      const host =
+        el.parentElement?.closest("[dir]") ?? document.documentElement
+      setDir(host.getAttribute("dir") === "rtl" ? "rtl" : "ltr")
     }
 
     read()

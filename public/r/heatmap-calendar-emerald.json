@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "heatmap-calendar-emerald",
+  "type": "registry:chart",
+  "title": "Heatmap Calendar Emerald",
+  "description": "Sunday-start calendar heatmap with soft green (`--chart-up`) intensity — RTL-aware.",
+  "registryDependencies": [
+    "heatmap-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-up": "#0d9488"
+    },
+    "dark": {
+      "chart-up": "#2dd4bf"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/heatmap-calendar-emerald.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { MARKET_UP } from \"./_lib/chart-styles\"\nimport {\n  CalendarHeatmap,\n  generateCalendarHeatData,\n  type CalendarHeatmapProps,\n} from \"./_lib/heatmap-shared\"\n\n/**\n * Heatmap Calendar Emerald — same Sunday-start grid with soft green intensity.\n * Uses `--chart-up` (works in light and dark).\n * Installs to: components/charts/heatmap-calendar-emerald.tsx\n */\n\nconst DEMO_END = new Date(2026, 9, 23)\nconst DEMO_DATA = generateCalendarHeatData(365, 9107, DEMO_END)\n\n/** All props optional — demo fills `data` when omitted. */\nexport type HeatmapCalendarEmeraldProps = Partial<CalendarHeatmapProps>\n\nfunction HeatmapCalendarEmerald({\n  title = \"Calendar Heatmap · Emerald\",\n  subtitle = \"Same year grid with a soft green intensity scale — readable in light and dark.\",\n  data = DEMO_DATA,\n  days = 365,\n  end = DEMO_END,\n  unit = \"commits\",\n  color = MARKET_UP,\n  ...rest\n}: HeatmapCalendarEmeraldProps = {}) {\n  return (\n    <CalendarHeatmap\n      title={title}\n      subtitle={subtitle}\n      data={data}\n      days={days}\n      end={end}\n      unit={unit}\n      color={color}\n      {...rest}\n    />\n  )\n}\n\n/** Docs / gallery default export — `<HeatmapCalendarEmeraldDemo />` needs no props. */\nexport default function HeatmapCalendarEmeraldDemo(\n  props: HeatmapCalendarEmeraldProps = {}\n) {\n  return <HeatmapCalendarEmerald {...props} />\n}\n\nexport { HeatmapCalendarEmerald }\n",
+      "target": "components/charts/heatmap-calendar-emerald.tsx"
+    }
+  ],
+  "version": "0.1.0+02db735797f7",
+  "generatedAt": "2026-10-23T21:35:15.265Z"
+}

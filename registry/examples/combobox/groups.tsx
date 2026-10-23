@@ -28,7 +28,7 @@ const timezones = [
       "(GMT+0) London",
       "(GMT+1) Paris",
       "(GMT+1) Berlin",
-      "(GMT+3:30) Tehran",
+      "(GMT+3) Istanbul",
     ],
   },
   {

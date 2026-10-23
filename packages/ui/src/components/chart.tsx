@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { cn } from "@sonojs/ui/lib/utils"
+import { useDirection } from "@sonojs/ui/hooks/use-direction"
 import * as RechartsPrimitive from "recharts"
 import type { TooltipValueType } from "recharts"
 
@@ -135,6 +136,7 @@ function ChartTooltipContent({
   color,
   nameKey,
   labelKey,
+  dir: dirProp,
 }: React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
   React.ComponentProps<"div"> & {
     hideLabel?: boolean
@@ -150,6 +152,9 @@ function ChartTooltipContent({
     "accessibilityLayer"
   >) {
   const { config } = useChart()
+  // Plot islands often force dir=ltr for SVG; tooltip chrome must still follow page/context dir.
+  const { dir: dirCtx } = useDirection()
+  const dir = dirProp ?? dirCtx
 
   const tooltipLabel = React.useMemo(() => {
     if (hideLabel || !payload?.length) {
@@ -199,6 +204,7 @@ function ChartTooltipContent({
 
   return (
     <div
+      dir={dir}
       className={cn(
         // Quiet panel — pointer-events-none so it never steals the next hover target.
         "pointer-events-none grid min-w-[9rem] items-start gap-1.5 rounded-md border border-border bg-background px-2.5 py-2 text-xs shadow-sm",

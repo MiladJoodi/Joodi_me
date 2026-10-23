@@ -2,8 +2,13 @@
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 
+import { applyRegistryCssVars } from "../src/apply-css-vars.mjs"
 import { RegistryConsistencyError } from "../src/consistency.mjs"
-import { ensureTwAnimateImport, initSonojsProject } from "../src/init.mjs"
+import {
+  ensureChartNeonVars,
+  ensureTwAnimateImport,
+  initSonojsProject,
+} from "../src/init.mjs"
 import {
   installInitNpmDependencies,
   installNpmDependencies,
@@ -56,11 +61,12 @@ async function cmdInit(rest) {
       ? registry
       : undefined
 
-  const { written, skipped, globals, twAnimate } = await initSonojsProject({
-    cwd,
-    overwrite,
-    registryUrl,
-  })
+  const { written, skipped, globals, twAnimate, chartNeon } =
+    await initSonojsProject({
+      cwd,
+      overwrite,
+      registryUrl,
+    })
 
   console.log("SonoJS initialized (theme tokens on :root via styles/sonojs.css)")
   for (const file of written) console.log(`  + ${file}`)
@@ -77,6 +83,11 @@ async function cmdInit(rest) {
   if (twAnimate?.status === "patched") {
     console.log("  + @import tw-animate-css in styles/sonojs.css")
   }
+  if (chartNeon?.status === "patched") {
+    console.log(
+      `  + chart neon cssVars → ${chartNeon.file} (${chartNeon.keys?.join(", ")})`
+    )
+  }
 
   installInitNpmDependencies(cwd)
 
@@ -90,6 +101,8 @@ async function cmdAdd(names, rest) {
   const { registry, cwd, overwrite } = parseFlags(rest)
   const npmDeps = new Set()
   const seen = new Set()
+  /** @type {{ light?: Record<string, string>, dark?: Record<string, string> }} */
+  const mergedCssVars = { light: {}, dark: {} }
 
   async function addOne(itemName) {
     if (seen.has(itemName)) return
@@ -115,11 +128,34 @@ async function cmdAdd(names, rest) {
       console.log(`  ~ skip (exists): ${file}  (use --overwrite)`)
     }
 
+    if (item.cssVars?.light) {
+      Object.assign(mergedCssVars.light, item.cssVars.light)
+    }
+    if (item.cssVars?.dark) {
+      Object.assign(mergedCssVars.dark, item.cssVars.dark)
+    }
+
     for (const dep of item.dependencies ?? []) npmDeps.add(dep)
   }
 
   for (const name of names) {
     await addOne(name)
+  }
+
+  const hasCssVars =
+    Object.keys(mergedCssVars.light).length > 0 ||
+    Object.keys(mergedCssVars.dark).length > 0
+  if (hasCssVars) {
+    const cssResult = await applyRegistryCssVars(cwd, mergedCssVars)
+    if (cssResult.status === "patched") {
+      console.log(
+        `  + cssVars → ${cssResult.file} (${cssResult.keys?.join(", ")})`
+      )
+    } else if (cssResult.status === "missing") {
+      console.log(
+        "  ! No styles/sonojs.css or globals.css — set --chart-* tokens manually from the registry item cssVars"
+      )
+    }
   }
 
   // Sheet/Dialog/Popover enter-exit — install package + CSS import if missing
@@ -130,6 +166,13 @@ async function cmdAdd(names, rest) {
   const twAnimate = await ensureTwAnimateImport(cwd)
   if (twAnimate?.status === "patched") {
     console.log("  + @import tw-animate-css in styles/sonojs.css")
+  }
+
+  const chartNeon = await ensureChartNeonVars(cwd)
+  if (chartNeon?.status === "patched") {
+    console.log(
+      `  + chart neon cssVars → ${chartNeon.file} (${chartNeon.keys?.join(", ")})`
+    )
   }
 
   if (seen.has("sonner")) {

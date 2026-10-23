@@ -1,0 +1,35 @@
+# SonoJS charts — locked visual pattern
+
+**Status: LOCKED.** Canonical demo: `registry/charts/bar/simple-bar-chart.tsx`  
+**Human checklist:** `registry/charts/PORT.md`  
+**Shared chrome:** `registry/charts/_lib/chart-styles.ts`
+
+Do not restyle Simple Bar (or invent a second dual-series look) without an explicit unlock from the user. After any allowed edit: `npm run registry:build`.
+
+## Dual series (do not invent a second pair)
+
+| Token | Light | Dark |
+|---|---|---|
+| `--chart-1` | `#1E3A8A` navy | `#3B82F6` |
+| `--chart-2` | `#EA580C` orange | `#F97316` |
+
+Defined in `app/globals.css` + `styles/vega-tokens.css` and mirrored on `simple-bar-chart` registry `cssVars`. Component source uses CSS vars only — no hex in `simple-bar-chart.tsx`.
+
+`--chart-3…5` = semantic accents only (status / alert), never a third default series for “variety.”
+
+## Chrome (canonical)
+
+- Title bold + muted subtitle; metric header (total + delta + active month); idle = last category
+- Grouped flat bars, top radius `8`, width 36/28, category gap 18%/16%, barGap 8/6
+- Scrub: dim inactive 40%; one neutral `foreground` total while scrubbing — never series-colored always-on labels (except chart-local tip labels where the type requires them, e.g. pyramid `%`)
+- Horizontal dashed grid only (`4 4`, border @ ~0.4 opacity)
+- No axis / tick lines; axis ticks via foreground mix; no rotated Y unit label
+- Legend: bottom center, `size-2` rounded-full dots (HTML outside SVG)
+- Tooltip: `ChartTooltip` + `ChartTooltipContent` (`rounded-xl`)
+- `useChartDir` + LTR data; RTL flips layout only
+- `accessibilityLayer` + keyboard `aria-live` + `sr-only` table
+- `prefers-reduced-motion` → no / zero-duration animation; no idle pulse
+
+## When porting
+
+Match this pattern first. Deviate only when the chart type cannot (heatmap, sparkline, etc.) — and say so in the PR.

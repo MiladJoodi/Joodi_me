@@ -36,7 +36,7 @@ export const chartsNav: ChartsNavGroup[] = CHART_CATEGORIES.map((category) => {
       id: entry.id,
       title: entry.title,
       href: chartViewHref(entry.id),
-      featured: entry.status === "ported",
+      featured: entry.featured === true,
       status: entry.status,
     })),
   }

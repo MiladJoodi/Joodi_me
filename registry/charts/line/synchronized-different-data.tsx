@@ -1,0 +1,640 @@
+"use client"
+
+import * as React from "react"
+import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts"
+
+import { cn } from "@/lib/utils"
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@/components/ui/chart"
+
+import {
+  CHART_SERIES_A,
+  CHART_SERIES_B,
+  chartDashedGridClassName,
+} from "../_lib/chart-styles"
+import { useChartDir } from "../_lib/use-chart-dir"
+
+/**
+ * Synchronized Different Data — locked gallery chrome (navy × orange).
+ * Two syncId panels with different densities; `syncMethod` snaps within 2 days.
+ * Metric header scrubber; RTL-aware axes.
+ * Installs to: components/charts/synchronized-different-data.tsx
+ */
+
+export type SynchronizedDifferentDataPoint = {
+  /** ISO date (YYYY-MM-DD). */
+  date: string
+  value: number
+}
+
+export type SynchronizedDifferentDataProps = {
+  title?: string
+  subtitle?: string
+  dailyData?: SynchronizedDifferentDataPoint[]
+  sampledData?: SynchronizedDifferentDataPoint[]
+  className?: string
+  /** Category order / Y-axis side. Omit to follow page `dir`. */
+  plotDir?: "ltr" | "rtl"
+  /** Hover / touch / keyboard scrub (update metric from daily series). Default on. */
+  scrub?: boolean
+}
+
+const NARROW_MQ = "(max-width: 639px)"
+const LINE_MS = 200
+const SYNC_ID = "sono-different-data"
+const MAX_DISTANCE_MS = 2 * 24 * 60 * 60 * 1000
+const AXIS_TICK_FILL =
+  "color-mix(in oklab, var(--foreground) 58%, transparent)"
+
+const syncPanelClassName = [
+  "aspect-auto h-40 w-full min-w-0 max-w-none overflow-visible font-sans text-xs tabular-nums sm:h-44",
+  "[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-surface]:overflow-visible",
+  chartDashedGridClassName,
+].join(" ")
+
+function isoDate(dayOffset: number): string {
+  const d = new Date(Date.UTC(2026, 0, 1 + dayOffset))
+  return d.toISOString().slice(0, 10)
+}
+
+const DEMO_DAILY: SynchronizedDifferentDataPoint[] = Array.from(
+  { length: 30 },
+  (_, i) => ({
+    date: isoDate(i),
+    value: Math.round(50 + 30 * Math.sin(i / 3) + (i % 7) * 2),
+  })
+)
+
+const DEMO_SAMPLED: SynchronizedDifferentDataPoint[] = DEMO_DAILY.filter(
+  (_, i) => i % 5 === 0
+)
+
+/**
+ * Snap to the nearest date in this chart, but only if it is within two days.
+ * Passed to Recharts `syncMethod` so dense + sparse panels stay aligned.
+ */
+export const closestDate = (
+  ticks: ReadonlyArray<{ value: unknown }>,
+  data: { activeLabel?: unknown }
+) => {
+  const hovered = Date.parse(String(data.activeLabel))
+  if (Number.isNaN(hovered)) {
+    return -1
+  }
+  let bestIndex = -1
+  let bestDistance = Infinity
+  ticks.forEach((tick, index) => {
+    const distance = Math.abs(Date.parse(String(tick.value)) - hovered)
+    if (distance < bestDistance) {
+      bestDistance = distance
+      bestIndex = index
+    }
+  })
+  return bestDistance <= MAX_DISTANCE_MS ? bestIndex : -1
+}
+
+const dailyConfig = {
+  value: {
+    label: "Daily",
+    color: CHART_SERIES_A,
+  },
+} satisfies ChartConfig
+
+const sampledConfig = {
+  value: {
+    label: "Every 5 days",
+    color: CHART_SERIES_B,
+  },
+} satisfies ChartConfig
+
+const LINE_TOOLTIP_CURSOR = {
+  stroke: "color-mix(in oklab, var(--foreground) 18%, transparent)",
+  strokeWidth: 1,
+} as const
+
+function useNarrowViewport() {
+  const [narrow, setNarrow] = React.useState(false)
+
+  React.useEffect(() => {
+    const mql = window.matchMedia(NARROW_MQ)
+    const onChange = () => setNarrow(mql.matches)
+    onChange()
+    mql.addEventListener("change", onChange)
+    return () => mql.removeEventListener("change", onChange)
+  }, [])
+
+  return narrow
+}
+
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = React.useState(false)
+
+  React.useEffect(() => {
+    const mql = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const onChange = () => setReduced(mql.matches)
+    onChange()
+    mql.addEventListener("change", onChange)
+    return () => mql.removeEventListener("change", onChange)
+  }, [])
+
+  return reduced
+}
+
+function formatAxisDay(date: string, locale: string) {
+  const d = new Date(`${date}T00:00:00`)
+  if (Number.isNaN(d.getTime())) return date
+  return new Intl.DateTimeFormat(locale, {
+    month: "short",
+    day: "numeric",
+  }).format(d)
+}
+
+function formatFullDate(date: string, locale: string) {
+  const d = new Date(`${date}T00:00:00`)
+  if (Number.isNaN(d.getTime())) return date
+  return new Intl.DateTimeFormat(locale, {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(d)
+}
+
+function formatNumber(value: number, locale: string) {
+  return new Intl.NumberFormat(locale).format(Math.round(value))
+}
+
+function formatCompact(value: number, locale: string) {
+  return new Intl.NumberFormat(locale, {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(value)
+}
+
+function SynchronizedDifferentData({
+  title = "Daily Sessions – Jan 2026",
+  subtitle = "Synced panels with different densities — snap within two days.",
+  dailyData = DEMO_DAILY,
+  sampledData = DEMO_SAMPLED,
+  className,
+  plotDir,
+  scrub = true,
+}: SynchronizedDifferentDataProps) {
+  const { dir, ref } = useChartDir()
+  const plotRtl = (plotDir ?? dir) === "rtl"
+  const narrow = useNarrowViewport()
+  const reducedMotion = usePrefersReducedMotion()
+  const chartAreaRef = React.useRef<HTMLDivElement>(null)
+  const liveRef = React.useRef<HTMLParagraphElement>(null)
+  const scrubbingRef = React.useRef(false)
+  const locale = "en"
+
+  const lastIndex = Math.max(0, dailyData.length - 1)
+  const [activeIndex, setActiveIndex] = React.useState(lastIndex)
+  const [scrubbing, setScrubbing] = React.useState(false)
+  const [dataTrack, setDataTrack] = React.useState({
+    dailyData,
+    lastIndex,
+  })
+  if (
+    dataTrack.dailyData !== dailyData ||
+    dataTrack.lastIndex !== lastIndex
+  ) {
+    setDataTrack({ dailyData, lastIndex })
+    setActiveIndex(lastIndex)
+  }
+
+  const liveIndex = scrub ? activeIndex : lastIndex
+  const liveScrubbing = scrub && scrubbing
+  const active = dailyData[liveIndex] ?? dailyData[lastIndex]
+  const previous = liveIndex > 0 ? dailyData[liveIndex - 1] : null
+  const total = active ? active.value : 0
+  const prevTotal = previous ? previous.value : null
+  const deltaPct =
+    prevTotal != null && prevTotal !== 0
+      ? ((total - prevTotal) / prevTotal) * 100
+      : null
+  const deltaUp = deltaPct != null && deltaPct >= 0
+  const dateLabel = active ? formatFullDate(active.date, locale) : ""
+
+  const announce = React.useCallback(
+    (index: number) => {
+      const point = dailyData[index]
+      if (!point || !liveRef.current) return
+      liveRef.current.textContent = `${formatFullDate(point.date, locale)}: ${formatNumber(point.value, locale)}`
+    },
+    [dailyData, locale]
+  )
+
+  const moveActive = React.useCallback(
+    (next: number, fromKeyboard = false) => {
+      const clamped = Math.min(lastIndex, Math.max(0, next))
+      setActiveIndex(clamped)
+      if (fromKeyboard) announce(clamped)
+    },
+    [announce, lastIndex]
+  )
+
+  const indexFromClientX = React.useCallback(
+    (clientX: number) => {
+      const el = chartAreaRef.current
+      if (!el || dailyData.length === 0) return lastIndex
+      const rect = el.getBoundingClientRect()
+      if (rect.width <= 0) return lastIndex
+      let ratio = (clientX - rect.left) / rect.width
+      if (plotRtl) ratio = 1 - ratio
+      ratio = Math.min(1, Math.max(0, ratio))
+      return Math.min(
+        lastIndex,
+        Math.floor(ratio * dailyData.length)
+      )
+    },
+    [dailyData.length, lastIndex, plotRtl]
+  )
+
+  const onDailyMouseMove = React.useCallback(
+    (chartState: { activeTooltipIndex?: number | string | null }) => {
+      if (!scrub) return
+      if (
+        chartState?.activeTooltipIndex === undefined ||
+        chartState.activeTooltipIndex === null
+      ) {
+        return
+      }
+      const idx = Number(chartState.activeTooltipIndex)
+      if (!Number.isFinite(idx)) return
+      scrubbingRef.current = true
+      setScrubbing(true)
+      setActiveIndex(Math.min(lastIndex, Math.max(0, idx)))
+    },
+    [lastIndex, scrub]
+  )
+
+  const onSampledMouseMove = React.useCallback(
+    (chartState: {
+      activeTooltipIndex?: number | string | null
+      activeLabel?: unknown
+    }) => {
+      if (!scrub) return
+      const label = chartState?.activeLabel
+      if (label == null) {
+        // Fall back to local index → nearest daily date via closestDate idea
+        if (
+          chartState?.activeTooltipIndex === undefined ||
+          chartState.activeTooltipIndex === null
+        ) {
+          return
+        }
+        const local = Number(chartState.activeTooltipIndex)
+        if (!Number.isFinite(local)) return
+        const sample = sampledData[local]
+        if (!sample) return
+        const ticks = dailyData.map((d) => ({ value: d.date }))
+        const nearest = closestDate(ticks, { activeLabel: sample.date })
+        if (nearest < 0) return
+        scrubbingRef.current = true
+        setScrubbing(true)
+        setActiveIndex(nearest)
+        return
+      }
+      const ticks = dailyData.map((d) => ({ value: d.date }))
+      const nearest = closestDate(ticks, { activeLabel: label })
+      if (nearest < 0) return
+      scrubbingRef.current = true
+      setScrubbing(true)
+      setActiveIndex(nearest)
+    },
+    [dailyData, sampledData, scrub]
+  )
+
+  const onChartMouseLeave = React.useCallback(() => {
+    if (!scrub) return
+    scrubbingRef.current = false
+    setScrubbing(false)
+    setActiveIndex(lastIndex)
+  }, [lastIndex, scrub])
+
+  React.useEffect(() => {
+    const el = chartAreaRef.current
+    if (!el || !scrub) return
+
+    const onStart = (e: TouchEvent) => {
+      const t = e.touches[0]
+      if (!t) return
+      scrubbingRef.current = true
+      setScrubbing(true)
+      setActiveIndex(indexFromClientX(t.clientX))
+    }
+
+    const onMove = (e: TouchEvent) => {
+      if (!scrubbingRef.current) return
+      const t = e.touches[0]
+      if (!t) return
+      e.preventDefault()
+      setActiveIndex(indexFromClientX(t.clientX))
+    }
+
+    const onEnd = () => {
+      scrubbingRef.current = false
+      setScrubbing(false)
+      setActiveIndex(lastIndex)
+    }
+
+    el.addEventListener("touchstart", onStart, { passive: true })
+    el.addEventListener("touchmove", onMove, { passive: false })
+    el.addEventListener("touchend", onEnd)
+    el.addEventListener("touchcancel", onEnd)
+    return () => {
+      el.removeEventListener("touchstart", onStart)
+      el.removeEventListener("touchmove", onMove)
+      el.removeEventListener("touchend", onEnd)
+      el.removeEventListener("touchcancel", onEnd)
+    }
+  }, [indexFromClientX, lastIndex, scrub])
+
+  const onKeyDown = React.useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (!scrub) return
+      const reverse = plotRtl
+      switch (event.key) {
+        case "ArrowLeft":
+          event.preventDefault()
+          scrubbingRef.current = true
+          setScrubbing(true)
+          moveActive(activeIndex + (reverse ? 1 : -1), true)
+          break
+        case "ArrowRight":
+          event.preventDefault()
+          scrubbingRef.current = true
+          setScrubbing(true)
+          moveActive(activeIndex + (reverse ? -1 : 1), true)
+          break
+        case "Home":
+          event.preventDefault()
+          scrubbingRef.current = true
+          setScrubbing(true)
+          moveActive(reverse ? lastIndex : 0, true)
+          break
+        case "End":
+          event.preventDefault()
+          scrubbingRef.current = true
+          setScrubbing(true)
+          moveActive(reverse ? 0 : lastIndex, true)
+          break
+        case "Escape":
+          event.preventDefault()
+          scrubbingRef.current = false
+          setScrubbing(false)
+          moveActive(lastIndex, true)
+          break
+        default:
+          break
+      }
+    },
+    [activeIndex, lastIndex, moveActive, plotRtl, scrub]
+  )
+
+  const ariaLabel = React.useMemo(() => {
+    if (!active) return title
+    const deltaText =
+      deltaPct == null
+        ? ""
+        : `, ${deltaUp ? "up" : "down"} ${Math.abs(deltaPct).toFixed(1)}% vs prior day`
+    return `Synchronized different data, ${title}, ${dateLabel} ${formatNumber(total, locale)}${deltaText}`
+  }, [active, dateLabel, deltaPct, deltaUp, locale, title, total])
+
+  const margin = narrow
+    ? {
+        top: 12,
+        right: plotRtl ? 4 : 8,
+        left: plotRtl ? 8 : 4,
+        bottom: 0,
+      }
+    : { top: 14, right: 12, left: 4, bottom: 0 }
+
+  const renderPanel = (
+    data: SynchronizedDifferentDataPoint[],
+    config: typeof dailyConfig,
+    seriesName: string,
+    strokeVar: string,
+    onMouseMove: (state: {
+      activeTooltipIndex?: number | string | null
+      activeLabel?: unknown
+    }) => void
+  ) => (
+    <ChartContainer config={config} className={syncPanelClassName}>
+      <LineChart
+        accessibilityLayer
+        data={data}
+        syncId={SYNC_ID}
+        syncMethod={closestDate}
+        margin={margin}
+        onMouseMove={scrub ? onMouseMove : undefined}
+        onMouseLeave={scrub ? onChartMouseLeave : undefined}
+      >
+        <CartesianGrid
+          vertical={false}
+          strokeDasharray="4 4"
+          stroke="var(--border)"
+          strokeOpacity={0.4}
+        />
+        <XAxis
+          dataKey="date"
+          reversed={plotRtl}
+          tickLine={false}
+          axisLine={false}
+          tickMargin={8}
+          minTickGap={narrow ? 16 : 8}
+          tick={{
+            fontSize: 11,
+            fill: AXIS_TICK_FILL,
+          }}
+          tickFormatter={(value: string) => formatAxisDay(value, locale)}
+        />
+        <YAxis
+          orientation={plotRtl ? "right" : "left"}
+          width={narrow ? 32 : 40}
+          domain={[0, 120]}
+          ticks={[0, 30, 60, 90, 120]}
+          tickLine={false}
+          axisLine={false}
+          tickMargin={8}
+          tick={{
+            fontSize: 11,
+            fill: AXIS_TICK_FILL,
+          }}
+          tickFormatter={(value: number) => formatCompact(value, locale)}
+          className="tabular-nums"
+        />
+        <ChartTooltip
+          cursor={LINE_TOOLTIP_CURSOR}
+          content={
+            <ChartTooltipContent
+              className="min-w-[11rem] rounded-xl border-border/60 shadow-sm"
+              labelFormatter={(value) => formatFullDate(String(value), locale)}
+              formatter={(value) => (
+                <div className="flex w-full flex-1 items-center justify-between gap-6">
+                  <span className="text-muted-foreground">{seriesName}</span>
+                  <span className="font-medium tabular-nums">
+                    {formatNumber(Number(value), locale)}
+                  </span>
+                </div>
+              )}
+            />
+          }
+        />
+        <Line
+          type="monotone"
+          dataKey="value"
+          name={seriesName}
+          stroke={strokeVar}
+          strokeWidth={2.5}
+          strokeOpacity={liveScrubbing ? 0.85 : 1}
+          dot={false}
+          isAnimationActive={!reducedMotion && !liveScrubbing}
+          animationDuration={reducedMotion ? 0 : LINE_MS}
+          animationEasing="ease-out"
+        />
+      </LineChart>
+    </ChartContainer>
+  )
+
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6",
+        className
+      )}
+    >
+      <header className="flex flex-col gap-4">
+        <div className="space-y-1">
+          <h3 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+            {title}
+          </h3>
+          <p className="text-sm text-muted-foreground">{subtitle}</p>
+        </div>
+
+        <div className="space-y-1">
+          <div className="flex flex-wrap items-baseline gap-2">
+            <p
+              className="text-[2rem] font-semibold leading-9 tracking-tight text-foreground"
+              aria-hidden
+            >
+              {formatNumber(total, locale)}
+            </p>
+            {deltaPct != null ? (
+              <span
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium tabular-nums",
+                  deltaUp ? "text-[var(--chart-up)]" : "text-destructive"
+                )}
+                style={{
+                  backgroundColor: deltaUp
+                    ? "color-mix(in oklab, var(--chart-up) 12%, transparent)"
+                    : "color-mix(in oklab, var(--destructive) 12%, transparent)",
+                }}
+              >
+                <span aria-hidden>{deltaUp ? "▲" : "▼"}</span>
+                {Math.abs(deltaPct).toFixed(1)}%
+                <span className="font-normal text-muted-foreground">
+                  vs prior day
+                </span>
+              </span>
+            ) : (
+              <span className="text-xs text-muted-foreground">—</span>
+            )}
+          </div>
+          <p className="text-xs text-muted-foreground">{dateLabel}</p>
+        </div>
+      </header>
+
+      <p ref={liveRef} className="sr-only" aria-live="polite" />
+
+      <div
+        ref={chartAreaRef}
+        dir="ltr"
+        role="img"
+        aria-label={ariaLabel}
+        tabIndex={scrub ? 0 : undefined}
+        onKeyDown={scrub ? onKeyDown : undefined}
+        onBlur={
+          scrub
+            ? () => {
+                scrubbingRef.current = false
+                setScrubbing(false)
+                setActiveIndex(lastIndex)
+              }
+            : undefined
+        }
+        className="flex touch-pan-y flex-col gap-3 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      >
+        {renderPanel(
+          dailyData,
+          dailyConfig,
+          "Daily",
+          "var(--color-value)",
+          onDailyMouseMove
+        )}
+        {renderPanel(
+          sampledData,
+          sampledConfig,
+          "Every 5 days",
+          "var(--color-value)",
+          onSampledMouseMove
+        )}
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+        <div className="flex items-center gap-2">
+          <span
+            className="size-2 shrink-0 rounded-full"
+            style={{ backgroundColor: "var(--chart-1)" }}
+            aria-hidden
+          />
+          <span className="text-foreground">{dailyConfig.value.label}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span
+            className="size-2 shrink-0 rounded-full"
+            style={{ backgroundColor: "var(--chart-2)" }}
+            aria-hidden
+          />
+          <span className="text-foreground">{sampledConfig.value.label}</span>
+        </div>
+      </div>
+
+      <table className="sr-only">
+        <caption>
+          {title}. {subtitle}
+        </caption>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Daily</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dailyData.map((row) => (
+            <tr key={row.date}>
+              <td>{formatFullDate(row.date, locale)}</td>
+              <td>{row.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+/** Docs / gallery default export. */
+export default function SynchronizedDifferentDataDemo(
+  props: SynchronizedDifferentDataProps
+) {
+  return <SynchronizedDifferentData {...props} />
+}
+
+export { SynchronizedDifferentData }

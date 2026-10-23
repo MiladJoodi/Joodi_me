@@ -3,21 +3,55 @@
   "name": "chart-styles",
   "type": "registry:lib",
   "title": "Chart styles",
-  "description": "Primary blue × teal dual series, bar stage sizing, and useChartDir.",
+  "description": "Locked dual series (navy × orange), bar/line/area stage sizing, neon glow helpers, useChartDir, viewport + reduced-motion hooks.",
+  "cssVars": {
+    "light": {
+      "chart-1": "#1e3a8a",
+      "chart-2": "#ea580c",
+      "chart-up": "#16a34a",
+      "chart-down": "#e11d48",
+      "chart-mute": "#52525b"
+    },
+    "dark": {
+      "chart-1": "#3b82f6",
+      "chart-2": "#f97316",
+      "chart-up": "#4ade80",
+      "chart-down": "#f25f70",
+      "chart-mute": "#d4d4d8"
+    }
+  },
   "files": [
     {
       "path": "components/charts/_lib/chart-styles.ts",
       "type": "registry:lib",
-      "content": "/**\n * Shared gallery chart chrome.\n *\n * Dual-series default: --chart-1 (primary blue) × --chart-2 (teal).\n * --chart-3…5 are semantic-only companions (amber / indigo / rose) —\n * not a third default bar series.\n */\n\nexport const CHART_SERIES_A = \"var(--chart-1)\"\nexport const CHART_SERIES_B = \"var(--chart-2)\"\n\n/** Dual series + semantic extras (3+ for up/alert/accent data only). */\nexport const CHART_BAR_COLORS = [\n  \"#2563EB\", // chart-1 primary blue\n  \"#0D9488\", // chart-2 teal\n  \"#F59E0B\", // chart-3 semantic amber\n  \"#6366F1\", // chart-4 semantic indigo\n  \"#E11D48\", // chart-5 semantic rose\n] as const\n\n/** Faint horizontal grid — sits behind bars, never competes with series. */\nexport const chartDashedGridClassName =\n  \"[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/40 dark:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50\"\n\n/**\n * Bar stage — responsive height on the 4px scale; min-w-0 so flex parents\n * cannot clip axis ticks; overflow visible for edge labels.\n */\nexport const chartContainerClassName =\n  \"aspect-auto h-56 w-full min-w-0 max-w-[640px] overflow-visible font-sans text-xs sm:h-64 [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-surface]:overflow-visible\"\n\n/** Soft hover on bar rects — opacity only, no glow filters. */\nexport const chartBarHoverClassName =\n  \"[&_.recharts-bar-rectangle]:transition-[opacity] [&_.recharts-bar-rectangle]:duration-150 [&_.recharts-bar-rectangle]:ease-out [&_.recharts-active-bar]:opacity-90\"\n\n/** Bar demos — faint grid + quiet hover. */\nexport const chartBarContainerClassName = [\n  chartContainerClassName,\n  chartDashedGridClassName,\n  chartBarHoverClassName,\n].join(\" \")\n",
+      "content": "/**\n * Shared gallery chart chrome — **LOCKED** with `simple-bar-chart`.\n *\n * Dual-series palette:\n * --chart-1 navy `#1E3A8A` (dark: `#3B82F6`) ×\n * --chart-2 orange `#EA580C` (dark: `#F97316`).\n * --chart-3…5 are semantic-only companions — not a third default series.\n *\n * Tokens: `app/globals.css` + `styles/vega-tokens.css` (+ registry cssVars).\n * Do not invent a second dual-series pair.\n */\n\nexport const CHART_SERIES_A = \"var(--chart-1)\"\nexport const CHART_SERIES_B = \"var(--chart-2)\"\n\n/** Dual series + semantic extras (3+ for up/alert/accent data only). */\nexport const CHART_BAR_COLORS = [\n  \"#1E3A8A\", // chart-1 navy\n  \"#EA580C\", // chart-2 orange\n  \"#F59E0B\", // chart-3 semantic amber\n  \"#6366F1\", // chart-4 semantic indigo\n  \"#E11D48\", // chart-5 semantic rose\n] as const\n\n/** Quiet dashed horizontal grid (~40% border — sits behind bars). */\nexport const chartDashedGridClassName =\n  \"[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/40 dark:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/40\"\n\n/**\n * Bar stage — h-64 / sm:h-72, max 640px; overflow for active total label.\n */\nexport const chartContainerClassName =\n  \"aspect-auto h-64 w-full min-w-0 max-w-[640px] overflow-visible font-sans text-xs tabular-nums sm:h-72 [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-surface]:overflow-visible\"\n\n/** Quiet opacity transition on bar rects. */\nexport const chartBarHoverClassName =\n  \"[&_.recharts-bar-rectangle]:transition-[opacity] [&_.recharts-bar-rectangle]:duration-200 [&_.recharts-bar-rectangle]:ease-out\"\n\n/** Grouped bar demos — faint grid + quiet hover. */\nexport const chartBarContainerClassName = [\n  chartContainerClassName,\n  chartDashedGridClassName,\n  chartBarHoverClassName,\n].join(\" \")\n\n/** Line demos — same stage + dashed grid (no bar-rect hover). */\nexport const chartLineContainerClassName = [\n  chartContainerClassName,\n  chartDashedGridClassName,\n].join(\" \")\n\n/** Area demos — same stage + dashed grid as line. */\nexport const chartAreaContainerClassName = chartLineContainerClassName\n\n/** Neon market triad — prefer CSS vars (see `vega-tokens` / globals). */\nexport const MARKET_UP = \"var(--chart-up)\"\nexport const MARKET_DOWN = \"var(--chart-down)\"\nexport const MARKET_MUTE = \"var(--chart-mute)\"\n\n/** Shared area/spark gradient stops under the stroke line. */\nexport function chartAreaGradientStops(\n  color: string,\n  opts?: { startOpacity?: number; endOpacity?: number }\n) {\n  const startOpacity = opts?.startOpacity ?? 0.28\n  const endOpacity = opts?.endOpacity ?? 0\n  return [\n    { offset: \"0%\", stopColor: color, stopOpacity: startOpacity },\n    { offset: \"100%\", stopColor: color, stopOpacity: endOpacity },\n  ] as const\n}\n\n/** Stroke weight matching market-card neon glow lines. */\nexport const CHART_NEON_STROKE_WIDTH = 2.25\n\n/**\n * Soft neon edge — set on Recharts Area/Line.\n * Call sites pass this when `useMarketNeon()` is true (always on for install).\n */\nexport function chartNeonGlowProps(color: string) {\n  return {\n    strokeWidth: CHART_NEON_STROKE_WIDTH,\n    style: { [\"--chart-glow\" as string]: color },\n    className:\n      \"[&_.recharts-area-curve]:[filter:drop-shadow(0_0_6px_var(--chart-glow))] [&_.recharts-line-curve]:[filter:drop-shadow(0_0_6px_var(--chart-glow))]\",\n  } as const\n}\n\n/** ChartContainer must not clip the bloom. */\nexport const chartNeonOverflowClassName =\n  \"overflow-visible [&_.recharts-surface]:overflow-visible [&_.recharts-wrapper]:overflow-visible\"\n\n/**\n * Vertical (`layout=\"vertical\"`) line demos — portrait stage for month rows\n * + value ticks (max 460px). Explicit `h-72`/`sm:h-80` required —\n * ResponsiveContainer collapses without a concrete height on ChartContainer.\n */\nexport const chartVerticalLineContainerClassName = [\n  \"aspect-auto h-64 w-full min-w-0 max-w-[460px] overflow-visible font-sans text-xs tabular-nums sm:h-72\",\n  \"[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-surface]:overflow-visible\",\n  chartDashedGridClassName,\n].join(\" \")\n",
       "target": "components/charts/_lib/chart-styles.ts"
     },
     {
       "path": "components/charts/_lib/use-chart-dir.ts",
       "type": "registry:lib",
-      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nexport type ChartDir = \"ltr\" | \"rtl\"\n\n/**\n * Reads writing direction from the nearest `[dir]` ancestor (or `<html>`).\n * No docs-site DirectionProvider required — works after `sonojs add`.\n */\nexport function useChartDir(): {\n  dir: ChartDir\n  ref: React.RefObject<HTMLDivElement | null>\n} {\n  const ref = React.useRef<HTMLDivElement | null>(null)\n  const [dir, setDir] = React.useState<ChartDir>(\"ltr\")\n\n  React.useLayoutEffect(() => {\n    const el = ref.current\n    if (!el) return\n\n    const read = () => {\n      const host = el.closest(\"[dir]\")\n      setDir(host?.getAttribute(\"dir\") === \"rtl\" ? \"rtl\" : \"ltr\")\n    }\n\n    read()\n    const obs = new MutationObserver(read)\n    obs.observe(document.documentElement, {\n      attributes: true,\n      attributeFilter: [\"dir\"],\n      subtree: true,\n    })\n    return () => obs.disconnect()\n  }, [])\n\n  return { dir, ref }\n}\n",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nexport type ChartDir = \"ltr\" | \"rtl\"\n\n/**\n * Reads writing direction from the nearest ancestor `[dir]` (not self).\n * Works after `sonojs add` — no docs DirectionProvider required.\n */\nexport function useChartDir(): {\n  dir: ChartDir\n  ref: React.RefObject<HTMLDivElement | null>\n} {\n  const ref = React.useRef<HTMLDivElement | null>(null)\n  const [dir, setDir] = React.useState<ChartDir>(\"ltr\")\n\n  React.useLayoutEffect(() => {\n    const el = ref.current\n    if (!el) return\n\n    const read = () => {\n      const host =\n        el.parentElement?.closest(\"[dir]\") ?? document.documentElement\n      setDir(host.getAttribute(\"dir\") === \"rtl\" ? \"rtl\" : \"ltr\")\n    }\n\n    read()\n    const obs = new MutationObserver(read)\n    obs.observe(document.documentElement, {\n      attributes: true,\n      attributeFilter: [\"dir\"],\n      subtree: true,\n    })\n    return () => obs.disconnect()\n  }, [])\n\n  return { dir, ref }\n}\n",
       "target": "components/charts/_lib/use-chart-dir.ts"
+    },
+    {
+      "path": "components/charts/_lib/use-narrow-viewport.ts",
+      "type": "registry:lib",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst NARROW_MQ = \"(max-width: 639px)\"\n\nfunction subscribe(onChange: () => void) {\n  const mql = window.matchMedia(NARROW_MQ)\n  mql.addEventListener(\"change\", onChange)\n  return () => mql.removeEventListener(\"change\", onChange)\n}\n\nfunction getSnapshot() {\n  return window.matchMedia(NARROW_MQ).matches\n}\n\nfunction getServerSnapshot() {\n  return false\n}\n\n/**\n * Viewport narrow flag via `useSyncExternalStore` so the first client paint\n * matches the media query (no false→true remount mid Recharts entrance).\n */\nexport function useNarrowViewport() {\n  return React.useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)\n}\n",
+      "target": "components/charts/_lib/use-narrow-viewport.ts"
+    },
+    {
+      "path": "components/charts/_lib/use-prefers-reduced-motion.ts",
+      "type": "registry:lib",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nconst REDUCE_MQ = \"(prefers-reduced-motion: reduce)\"\n\nfunction subscribe(onChange: () => void) {\n  const mql = window.matchMedia(REDUCE_MQ)\n  mql.addEventListener(\"change\", onChange)\n  return () => mql.removeEventListener(\"change\", onChange)\n}\n\nfunction getSnapshot() {\n  return window.matchMedia(REDUCE_MQ).matches\n}\n\nfunction getServerSnapshot() {\n  return false\n}\n\n/**\n * Reduced-motion preference via `useSyncExternalStore` so the first client\n * paint respects the preference (no flash of a long entrance then cut).\n */\nexport function usePrefersReducedMotion() {\n  return React.useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)\n}\n",
+      "target": "components/charts/_lib/use-prefers-reduced-motion.ts"
+    },
+    {
+      "path": "components/charts/_lib/use-market-neon.ts",
+      "type": "registry:lib",
+      "content": "\"use client\"\n\n/**\n * Neon market glow for installable area/stock charts.\n *\n * Always on — docs and `sonojs add` consumers both get `--chart-up` /\n * `--chart-down` + stroke bloom. No `style-*` body class required.\n *\n * Kept as a hook so call sites stay uniform and we can add an opt-out later\n * without rewriting every chart.\n */\nexport function useMarketNeon() {\n  return true\n}\n",
+      "target": "components/charts/_lib/use-market-neon.ts"
     }
   ],
-  "version": "0.1.0+8cfbcf3c0bba",
-  "generatedAt": "2026-10-23T05:20:48.549Z"
+  "version": "0.1.0+02db735797f7",
+  "generatedAt": "2026-10-23T21:35:15.265Z"
 }

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "heatmap-calendar",
+  "type": "registry:chart",
+  "title": "Heatmap Calendar",
+  "description": "Year of daily activity — Sunday-start SVG grid, navy intensity, holiday accents, RTL-aware.",
+  "registryDependencies": [
+    "heatmap-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#1e3a8a"
+    },
+    "dark": {
+      "chart-1": "#3b82f6"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/heatmap-calendar.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { CHART_SERIES_A } from \"./_lib/chart-styles\"\nimport {\n  CalendarHeatmap,\n  generateCalendarHeatData,\n  type CalendarHeatmapProps as CalendarHeatmapBaseProps,\n} from \"./_lib/heatmap-shared\"\n\n/**\n * Heatmap Calendar — year of daily activity (GitHub-style Sunday weeks).\n * SVG grid; locked navy `--chart-1`; holiday stroke accents.\n * Installs to: components/charts/heatmap-calendar.tsx\n */\n\n/** Sample fixed holidays (Gregorian). */\nconst SAMPLE_HOLIDAYS = [\n  \"2026-01-01\",\n  \"2026-07-04\",\n  \"2026-12-25\",\n  \"2026-12-26\",\n]\n\nconst DEMO_END = new Date(2026, 9, 23)\nconst DEMO_DATA = generateCalendarHeatData(365, 4201, DEMO_END)\n\n/** All props optional — demo fills `data` when omitted. */\nexport type HeatmapCalendarProps = Partial<CalendarHeatmapBaseProps>\n\nfunction HeatmapCalendar({\n  title = \"Calendar Heatmap\",\n  subtitle = \"One year of daily activity — Sunday-start weeks, intensity by count. Red stroke marks holidays.\",\n  data = DEMO_DATA,\n  days = 365,\n  end = DEMO_END,\n  unit = \"orders\",\n  holidays = SAMPLE_HOLIDAYS,\n  color = CHART_SERIES_A,\n  ...rest\n}: HeatmapCalendarProps = {}) {\n  return (\n    <CalendarHeatmap\n      title={title}\n      subtitle={subtitle}\n      data={data}\n      days={days}\n      end={end}\n      unit={unit}\n      holidays={holidays}\n      color={color}\n      {...rest}\n    />\n  )\n}\n\n/** Docs / gallery default export — `<HeatmapCalendarDemo />` needs no props. */\nexport default function HeatmapCalendarDemo(props: HeatmapCalendarProps = {}) {\n  return <HeatmapCalendar {...props} />\n}\n\nexport { HeatmapCalendar }\n",
+      "target": "components/charts/heatmap-calendar.tsx"
+    }
+  ],
+  "version": "0.1.0+02db735797f7",
+  "generatedAt": "2026-10-23T21:35:15.265Z"
+}

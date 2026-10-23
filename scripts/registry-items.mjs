@@ -1096,7 +1096,7 @@ export const registryItems = [
     registryDependencies: ["card"],
     files: [
       {
-        path: "registry/charts/chart-area/chart-area.tsx",
+        path: "registry/charts/area/chart-area.tsx",
         type: "registry:component",
         target: "components/charts/chart-area.tsx",
       },
@@ -1121,7 +1121,23 @@ export const registryItems = [
     type: "registry:lib",
     title: "Chart styles",
     description:
-      "Primary blue × teal dual series, bar stage sizing, and useChartDir.",
+      "Locked dual series (navy × orange), bar/line/area stage sizing, neon glow helpers, useChartDir, viewport + reduced-motion hooks.",
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+        "chart-mute": "#52525b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+        "chart-mute": "#d4d4d8",
+      },
+    },
     files: [
       {
         path: "registry/charts/_lib/chart-styles.ts",
@@ -1133,6 +1149,52 @@ export const registryItems = [
         type: "registry:lib",
         target: "components/charts/_lib/use-chart-dir.ts",
       },
+      {
+        path: "registry/charts/_lib/use-narrow-viewport.ts",
+        type: "registry:lib",
+        target: "components/charts/_lib/use-narrow-viewport.ts",
+      },
+      {
+        path: "registry/charts/_lib/use-prefers-reduced-motion.ts",
+        type: "registry:lib",
+        target: "components/charts/_lib/use-prefers-reduced-motion.ts",
+      },
+      {
+        path: "registry/charts/_lib/use-market-neon.ts",
+        type: "registry:lib",
+        target: "components/charts/_lib/use-market-neon.ts",
+      },
+    ],
+  },
+  {
+    name: "stock-shared",
+    type: "registry:lib",
+    title: "Stock shared",
+    description:
+      "Candlestick, OHLC, Renko shapes, MarketCandle generators, and stock chart helpers (semantic up/down).",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart-mock-data"],
+    files: [
+      {
+        path: "registry/charts/_lib/stock-shared.tsx",
+        type: "registry:lib",
+        target: "components/charts/_lib/stock-shared.tsx",
+      },
+    ],
+  },
+  {
+    name: "heatmap-shared",
+    type: "registry:lib",
+    title: "Heatmap shared",
+    description:
+      "Calendar and matrix SVG heatmap helpers — EN/Gregorian, RTL-aware layout.",
+    registryDependencies: ["chart-styles"],
+    files: [
+      {
+        path: "registry/charts/_lib/heatmap-shared.tsx",
+        type: "registry:lib",
+        target: "components/charts/_lib/heatmap-shared.tsx",
+      },
     ],
   },
   {
@@ -1140,14 +1202,3485 @@ export const registryItems = [
     type: "registry:chart",
     title: "Simple Bar Chart",
     description:
-      "Desktop/Mobile bar chart (Jan–Jun, seed 823) — blue × teal, RTL-aware.",
+      "Canonical grouped bar — Desktop×Mobile H1 2026, navy×orange, metric header scrubber, RTL-aware.",
     dependencies: ["recharts"],
-    registryDependencies: ["chart", "chart-mock-data", "chart-styles"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
     files: [
       {
-        path: "registry/charts/simple-bar-chart.tsx",
+        path: "registry/charts/bar/simple-bar-chart.tsx",
         type: "registry:component",
         target: "components/charts/simple-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-chart",
+    type: "registry:chart",
+    title: "Area Chart",
+    description:
+      "Dual overlapping monotone areas with neon glow (style-vega) — Desktop×Mobile H1 2026, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/area-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "stacked-area-chart",
+    type: "registry:chart",
+    title: "Stacked Area Chart",
+    description:
+      "Three stacked monotone areas with neon glow (style-vega) — Desktop×Mobile×Tablet, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/stacked-area-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/stacked-area-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-chart-range",
+    type: "registry:chart",
+    title: "Area Chart Range",
+    description:
+      "Single-series low–high temperature band with neon glow (style-vega) — metric tracks high, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-chart-range.tsx",
+        type: "registry:component",
+        target: "components/charts/area-chart-range.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-chart-connect-nulls",
+    type: "registry:chart",
+    title: "Area Chart Connect Nulls",
+    description:
+      "Single neon area — gap at nulls vs connectNulls bridge, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-chart-connect-nulls.tsx",
+        type: "registry:component",
+        target: "components/charts/area-chart-connect-nulls.tsx",
+      },
+    ],
+  },
+  {
+    name: "cardinal-area-chart",
+    type: "registry:chart",
+    title: "Cardinal Area Chart",
+    description:
+      "Side-by-side monotone vs natural area curves with neon glow (style-vega) — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/cardinal-area-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/cardinal-area-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "percent-area-chart",
+    type: "registry:chart",
+    title: "Percent Area Chart",
+    description:
+      "100% stacked areas with neon glow (style-vega) — Desktop×Mobile×Tablet share scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/percent-area-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/percent-area-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "synchronized-area-chart",
+    type: "registry:chart",
+    title: "Synchronized Area Chart",
+    description:
+      "Three syncId area panels with neon glow (style-vega) — Desktop, Mobile + Brush, Total; metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/synchronized-area-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/synchronized-area-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "tiny-area-chart",
+    type: "registry:chart",
+    title: "Tiny Area Chart",
+    description:
+      "Compact single-series area sparkline with neon glow (style-vega) — locked header chrome, no axes, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/tiny-area-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/tiny-area-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-chart-fill-by-value",
+    type: "registry:chart",
+    title: "Area Chart Fill By Value",
+    description:
+      "Single area fill split at y=0 with neon up/down (style-vega) — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-chart-fill-by-value.tsx",
+        type: "registry:component",
+        target: "components/charts/area-chart-fill-by-value.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-chart-custom-animation",
+    type: "registry:chart",
+    title: "Area Chart Custom Animation",
+    description:
+      "Single neon area with custom 900ms entrance animation — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-chart-custom-animation.tsx",
+        type: "registry:component",
+        target: "components/charts/area-chart-custom-animation.tsx",
+      },
+    ],
+  },
+  {
+    name: "range-area-chart-custom-animation",
+    type: "registry:chart",
+    title: "Range Area Chart Custom Animation",
+    description:
+      "Neon [low, high] range area with custom 1200ms entrance animation — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/range-area-chart-custom-animation.tsx",
+        type: "registry:component",
+        target: "components/charts/range-area-chart-custom-animation.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-chart-with-custom-events",
+    type: "registry:chart",
+    title: "Area Chart With Custom Events",
+    description:
+      "Neon step area with chart-root pointer events via getRelativeCoordinate — live event panel, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "chart-mock-data"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-chart-with-custom-events.tsx",
+        type: "registry:component",
+        target: "components/charts/area-chart-with-custom-events.tsx",
+      },
+    ],
+  },
+  {
+    name: "prevent-right-click",
+    type: "registry:chart",
+    title: "Prevent Right Click",
+    description:
+      "Neon monotone area with onContextMenu preventDefault — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "chart-mock-data"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/prevent-right-click.tsx",
+        type: "registry:component",
+        target: "components/charts/prevent-right-click.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-interactive",
+    type: "registry:chart",
+    title: "Area Interactive",
+    description:
+      "Toggle Store/Online period totals with neon glow (style-vega), then scrub a daily monotone area — RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-interactive.tsx",
+        type: "registry:component",
+        target: "components/charts/area-interactive.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-step",
+    type: "registry:chart",
+    title: "Area Step",
+    description:
+      "Single neon step area (type=step) — Store H1 2026, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-step.tsx",
+        type: "registry:component",
+        target: "components/charts/area-step.tsx",
+      },
+    ],
+  },
+  {
+    name: "area-gradient",
+    type: "registry:chart",
+    title: "Area Gradient",
+    description:
+      "Stacked Store×Online natural areas with neon glow gradients (style-vega) — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/area-gradient.tsx",
+        type: "registry:component",
+        target: "components/charts/area-gradient.tsx",
+      },
+    ],
+  },
+  {
+    name: "market-cards",
+    type: "registry:chart",
+    title: "Market Cards",
+    description:
+      "Neon SVG area sparkline cards — 30-day up, KWD down, gold flat (style-vega glow); RTL-aware.",
+    dependencies: [],
+    registryDependencies: ["chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+        "chart-mute": "#52525b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+        "chart-mute": "#d4d4d8",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/market-cards.tsx",
+        type: "registry:component",
+        target: "components/charts/market-cards.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-default",
+    type: "registry:chart",
+    title: "Area Default",
+    description:
+      "Classic single-series natural Store area — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-default.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-default.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-linear",
+    type: "registry:chart",
+    title: "Area Linear",
+    description:
+      "Classic single-series linear Store area — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-linear.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-linear.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-step",
+    type: "registry:chart",
+    title: "Area Step",
+    description:
+      "Classic single-series step Store area — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-step.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-step.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-legend",
+    type: "registry:chart",
+    title: "Area Legend",
+    description:
+      "Classic stacked Desktop×Mobile natural areas with ChartLegend — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-legend.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-legend.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-stacked",
+    type: "registry:chart",
+    title: "Area Stacked",
+    description:
+      "Classic stacked Desktop×Mobile natural areas — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-stacked.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-stacked.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-stacked-expand",
+    type: "registry:chart",
+    title: "Area Stacked Expand",
+    description:
+      "Classic 100% stacked Desktop×Mobile natural areas (stackOffset expand) — locked chrome, share scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-stacked-expand.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-stacked-expand.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-icons",
+    type: "registry:chart",
+    title: "Area Icons",
+    description:
+      "Classic stacked Desktop×Mobile natural areas with ChartLegend Lucide icons — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts", "lucide-react"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-icons.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-icons.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-gradient",
+    type: "registry:chart",
+    title: "Area Gradient",
+    description:
+      "Classic stacked Store×Online natural areas with neon glow gradients (style-vega) — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-gradient.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-gradient.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-area-axes",
+    type: "registry:chart",
+    title: "Area Axes",
+    description:
+      "Classic stacked Store×Online natural areas with sparse Y-axis (tickCount 3) — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/area/chart-area-axes.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-area-axes.tsx",
+      },
+    ],
+  },
+  {
+    name: "two-level-pie-chart",
+    type: "registry:chart",
+    title: "Two Level Pie Chart",
+    description:
+      "Nested region×channel pies — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/two-level-pie-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/two-level-pie-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "straight-angle-pie-chart",
+    type: "registry:chart",
+    title: "Straight Angle Pie Chart",
+    description:
+      "Half-pie (180→0) province share — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/straight-angle-pie-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/straight-angle-pie-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "custom-active-shape-pie-chart",
+    type: "registry:chart",
+    title: "Custom Active Shape Pie Chart",
+    description:
+      "Donut with expanded active sector and callout — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/custom-active-shape-pie-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/custom-active-shape-pie-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "pie-chart-with-customized-label",
+    type: "registry:chart",
+    title: "Pie Chart With Customized Label",
+    description:
+      "Full pie with mid-slice percent labels — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/pie-chart-with-customized-label.tsx",
+        type: "registry:component",
+        target: "components/charts/pie-chart-with-customized-label.tsx",
+      },
+    ],
+  },
+  {
+    name: "pie-chart-with-padding-angle",
+    type: "registry:chart",
+    title: "Pie Chart With Padding Angle",
+    description:
+      "Thin rounded donut with slice gaps — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/pie-chart-with-padding-angle.tsx",
+        type: "registry:component",
+        target: "components/charts/pie-chart-with-padding-angle.tsx",
+      },
+    ],
+  },
+  {
+    name: "pie-chart-in-grid",
+    type: "registry:chart",
+    title: "Pie Chart In Grid",
+    description:
+      "CSS Grid of responsive donuts — layout teaching demo, RTL-aware chrome.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/pie-chart-in-grid.tsx",
+        type: "registry:component",
+        target: "components/charts/pie-chart-in-grid.tsx",
+      },
+    ],
+  },
+  {
+    name: "pie-with-gradient",
+    type: "registry:chart",
+    title: "Pie With Gradient",
+    description:
+      "Gradient donut with channel cards — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/pie-with-gradient.tsx",
+        type: "registry:component",
+        target: "components/charts/pie-with-gradient.tsx",
+      },
+    ],
+  },
+  {
+    name: "pie-donut-text",
+    type: "registry:chart",
+    title: "Pie Donut Text",
+    description:
+      "Donut with centered ring-total text — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#10b981",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#34d399",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/pie-donut-text.tsx",
+        type: "registry:component",
+        target: "components/charts/pie-donut-text.tsx",
+      },
+    ],
+  },
+  {
+    name: "pie-interactive",
+    type: "registry:chart",
+    title: "Pie Interactive",
+    description:
+      "Month Select drives active donut sector — locked chrome, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "select"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#10b981",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#34d399",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/pie-interactive.tsx",
+        type: "registry:component",
+        target: "components/charts/pie-interactive.tsx",
+      },
+    ],
+  },
+  {
+    name: "simple-line-chart",
+    type: "registry:chart",
+    title: "Simple Line Chart",
+    description:
+      "Dual monotone lines — Desktop×Mobile H1 2026, navy×orange, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/simple-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/simple-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "dashed-line-chart",
+    type: "registry:chart",
+    title: "Dashed Line Chart",
+    description:
+      "Dual dashed monotone lines — Desktop×Mobile H1 2026, navy×orange, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/dashed-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/dashed-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "vertical-line-chart",
+    type: "registry:chart",
+    title: "Vertical Line Chart",
+    description:
+      "Dual linear lines, layout=vertical — Desktop×Mobile H1 2026, navy×orange, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/vertical-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/vertical-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-chart-connect-nulls",
+    type: "registry:chart",
+    title: "Line Chart Connect Nulls",
+    description:
+      "Stacked gap vs connectNulls monotone lines — Desktop H1 2026 with a missing month, navy, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-chart-connect-nulls.tsx",
+        type: "registry:component",
+        target: "components/charts/line-chart-connect-nulls.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-chart-with-reference-lines",
+    type: "registry:chart",
+    title: "Line Chart With Reference Lines",
+    description:
+      "Dual monotone lines with month + value ReferenceLines — Desktop×Mobile H1 2026, navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-chart-with-reference-lines.tsx",
+        type: "registry:component",
+        target: "components/charts/line-chart-with-reference-lines.tsx",
+      },
+    ],
+  },
+  {
+    name: "customized-label-line-chart",
+    type: "registry:chart",
+    title: "Customized Label Line Chart",
+    description:
+      "Dual monotone lines with alternating Desktop point labels and angled X ticks — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/customized-label-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/customized-label-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "highlight-and-zoom-line-chart",
+    type: "registry:chart",
+    title: "Highlight And Zoom Line Chart",
+    description:
+      "Drag-to-zoom dual-axis Cost×Impressions lines with ReferenceArea highlight — navy×orange, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/highlight-and-zoom-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/highlight-and-zoom-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-chart-axis-interval",
+    type: "registry:chart",
+    title: "Line Chart Axis Interval",
+    description:
+      "Stacked Desktop×Mobile lines comparing Recharts axis interval presets — navy×orange, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "chart-mock-data"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-chart-axis-interval.tsx",
+        type: "registry:component",
+        target: "components/charts/line-chart-axis-interval.tsx",
+      },
+    ],
+  },
+  {
+    name: "biaxial-line-chart",
+    type: "registry:chart",
+    title: "Biaxial Line Chart",
+    description:
+      "Dual Y-axis monotone lines — revenue×orders independent scales, navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/biaxial-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/biaxial-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-chart-with-x-axis-padding",
+    type: "registry:chart",
+    title: "Line Chart With X Axis Padding",
+    description:
+      "Dual monotone lines with XAxis padding — Desktop×Mobile H1 2026, navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-chart-with-x-axis-padding.tsx",
+        type: "registry:component",
+        target: "components/charts/line-chart-with-x-axis-padding.tsx",
+      },
+    ],
+  },
+  {
+    name: "customized-dot-line-chart",
+    type: "registry:chart",
+    title: "Customized Dot Line Chart",
+    description:
+      "Dual monotone lines with smile/frown Desktop dots by threshold — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/customized-dot-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/customized-dot-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "synchronized-line-chart",
+    type: "registry:chart",
+    title: "Synchronized Line Chart",
+    description:
+      "Three syncId panels — Desktop line, Mobile line + Brush, Total area; navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/synchronized-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/synchronized-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "synchronized-different-data",
+    type: "registry:chart",
+    title: "Synchronized Different Data",
+    description:
+      "Two syncId panels with different densities — closestDate syncMethod (±2 days), navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/synchronized-different-data.tsx",
+        type: "registry:component",
+        target: "components/charts/synchronized-different-data.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-chart-custom-shape",
+    type: "registry:chart",
+    title: "Line Chart Custom Shape",
+    description:
+      "Dual monotone lines with opacity-fade entrance shape — Desktop×Mobile H1 2026, navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-chart-custom-shape.tsx",
+        type: "registry:component",
+        target: "components/charts/line-chart-custom-shape.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-chart-has-multi-series",
+    type: "registry:chart",
+    title: "Line Chart Has Multi Series",
+    description:
+      "Overlapping multi-series lines (each Line owns partial categories) — New York×Chicago×Austin, navy×orange×amber, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-chart-has-multi-series.tsx",
+        type: "registry:component",
+        target: "components/charts/line-chart-has-multi-series.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-chart-negative-values-with-reference-lines",
+    type: "registry:chart",
+    title: "Line Chart Negative Values With Reference Lines",
+    description:
+      "Numeric X/Y path crossing the origin with zero ReferenceLines — navy, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-chart-negative-values-with-reference-lines.tsx",
+        type: "registry:component",
+        target:
+          "components/charts/line-chart-negative-values-with-reference-lines.tsx",
+      },
+    ],
+  },
+  {
+    name: "compare-two-lines",
+    type: "registry:chart",
+    title: "Compare Two Lines",
+    description:
+      "Hover-compare portfolio vs reinvestment (+ principal) — navy×orange gradients, delta ReferenceLine, metric header, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/compare-two-lines.tsx",
+        type: "registry:component",
+        target: "components/charts/compare-two-lines.tsx",
+      },
+    ],
+  },
+  {
+    name: "dynamic-z-index-line-chart",
+    type: "registry:chart",
+    title: "Dynamic Z Index Line Chart",
+    description:
+      "Three monotone lines; legend hover dims a series and raises its z-index — navy×orange×amber, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/dynamic-z-index-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/dynamic-z-index-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "tiny-line-chart",
+    type: "registry:chart",
+    title: "Tiny Line Chart",
+    description:
+      "Compact single-series sparkline — locked header chrome, no axes, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/tiny-line-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/tiny-line-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "animated-time-series",
+    type: "registry:chart",
+    title: "Animated Time Series",
+    description:
+      "Sliding six-month window over a dual-series year — navy×orange, metric scrubber, pauses on scrub / reduced-motion.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/animated-time-series.tsx",
+        type: "registry:component",
+        target: "components/charts/animated-time-series.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-interactive",
+    type: "registry:chart",
+    title: "Line Interactive",
+    description:
+      "Toggle Store/Online period totals, then scrub a daily monotone line — navy×orange locked chrome, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-interactive.tsx",
+        type: "registry:component",
+        target: "components/charts/line-interactive.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-step",
+    type: "registry:chart",
+    title: "Line Step",
+    description:
+      "Dual step lines (type=step) — Desktop×Mobile H1 2026, navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-step.tsx",
+        type: "registry:component",
+        target: "components/charts/line-step.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-default",
+    type: "registry:chart",
+    title: "Line Default",
+    description:
+      "Classic single-series natural Store line — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-default.tsx",
+        type: "registry:component",
+        target: "components/charts/line-default.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-dots-colors",
+    type: "registry:chart",
+    title: "Line Dots Colors",
+    description:
+      "Natural sales line with per-region colored dots — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-dots-colors.tsx",
+        type: "registry:component",
+        target: "components/charts/line-dots-colors.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-label-custom",
+    type: "registry:chart",
+    title: "Line Label Custom",
+    description:
+      "Natural sales line with always-on region tip labels — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/line/line-label-custom.tsx",
+        type: "registry:component",
+        target: "components/charts/line-label-custom.tsx",
+      },
+    ],
+  },
+  {
+    name: "line-bar-area-composed-chart",
+    type: "registry:chart",
+    title: "Line Bar Area Composed Chart",
+    description:
+      "Composed Area(orders) + Bar(online) + Line(store) — navy×orange×amber, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/composed/line-bar-area-composed-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/line-bar-area-composed-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "same-data-composed-chart",
+    type: "registry:chart",
+    title: "Same Data Composed Chart",
+    description:
+      "Composed Bar + trend Line on one sales series — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/composed/same-data-composed-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/same-data-composed-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "vertical-composed-chart",
+    type: "registry:chart",
+    title: "Vertical Composed Chart",
+    description:
+      "Vertical layout sales bars with target line — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/composed/vertical-composed-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/vertical-composed-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "composed-chart-with-axis-labels",
+    type: "registry:chart",
+    title: "Composed Chart With Axis Labels",
+    description:
+      "Dual-axis revenue/cost/margin composed chart with axis labels — navy×orange×amber, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/composed/composed-chart-with-axis-labels.tsx",
+        type: "registry:component",
+        target: "components/charts/composed-chart-with-axis-labels.tsx",
+      },
+    ],
+  },
+  {
+    name: "scatter-and-line-of-best-fit",
+    type: "registry:chart",
+    title: "Scatter And Line Of Best Fit",
+    description:
+      "Ad spend vs sales scatter with dashed OLS fit — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/composed/scatter-and-line-of-best-fit.tsx",
+        type: "registry:component",
+        target: "components/charts/scatter-and-line-of-best-fit.tsx",
+      },
+    ],
+  },
+  {
+    name: "banded-chart",
+    type: "registry:chart",
+    title: "Banded Chart",
+    description:
+      "Confidence band Area + actual sales Line — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/composed/banded-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/banded-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "target-price-chart",
+    type: "registry:chart",
+    title: "Target Price Chart",
+    description:
+      "Share price, consensus range, dashed analyst target — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/composed/target-price-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/target-price-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "asset-returns",
+    type: "registry:chart",
+    title: "Asset Returns",
+    description:
+      "Horizontal asset return % bars with lookback tabs and max/min stats — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts", "lucide-react"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/asset-returns.tsx",
+        type: "registry:component",
+        target: "components/charts/asset-returns.tsx",
+      },
+    ],
+  },
+  {
+    name: "monthly-savings",
+    type: "registry:chart",
+    title: "Monthly Savings",
+    description:
+      "Compound monthly balance by savings channel with rounded-top bars — navy×orange, metric scrubber, RTL-aware.",
+    dependencies: ["recharts", "lucide-react"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/monthly-savings.tsx",
+        type: "registry:component",
+        target: "components/charts/monthly-savings.tsx",
+      },
+    ],
+  },
+  {
+    name: "candlestick",
+    type: "registry:chart",
+    title: "Candlestick",
+    description:
+      "OHLC candlesticks with custom wick/body shape — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/candlestick.tsx",
+        type: "registry:component",
+        target: "components/charts/candlestick.tsx",
+      },
+    ],
+  },
+  {
+    name: "candlestick-dashboard",
+    type: "registry:chart",
+    title: "Candlestick Dashboard",
+    description:
+      "Symbol KPI card + OHLC candles + volume strip — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/candlestick-dashboard.tsx",
+        type: "registry:component",
+        target: "components/charts/candlestick-dashboard.tsx",
+      },
+    ],
+  },
+  {
+    name: "candlestick-bar",
+    type: "registry:chart",
+    title: "Candlestick Bar",
+    description:
+      "Synced OHLC candles + signed change bars with Brush — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/candlestick-bar.tsx",
+        type: "registry:component",
+        target: "components/charts/candlestick-bar.tsx",
+      },
+    ],
+  },
+  {
+    name: "candlestick-category",
+    type: "registry:chart",
+    title: "Candlestick Category",
+    description:
+      "Category-axis OHLC candles with dashed news ReferenceLine — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/candlestick-category.tsx",
+        type: "registry:component",
+        target: "components/charts/candlestick-category.tsx",
+      },
+    ],
+  },
+  {
+    name: "candlestick-line",
+    type: "registry:chart",
+    title: "Candlestick Line",
+    description:
+      "OHLC candles with SMA overlay line — semantic up/down + orange SMA, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/candlestick-line.tsx",
+        type: "registry:component",
+        target: "components/charts/candlestick-line.tsx",
+      },
+    ],
+  },
+  {
+    name: "sparklines",
+    type: "registry:chart",
+    title: "Sparklines",
+    description:
+      "KPI area spark cards + watchlist trend/volume minis — navy×orange×amber, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/sparklines.tsx",
+        type: "registry:component",
+        target: "components/charts/sparklines.tsx",
+      },
+    ],
+  },
+  {
+    name: "stock-ohlc",
+    type: "registry:chart",
+    title: "Stock Ohlc",
+    description:
+      "Classic OHLC bars (H–L stem, open/close ticks) — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/stock-ohlc.tsx",
+        type: "registry:component",
+        target: "components/charts/stock-ohlc.tsx",
+      },
+    ],
+  },
+  {
+    name: "stock-line",
+    type: "registry:chart",
+    title: "Stock Line",
+    description:
+      "Close-price area with gradient fill + symbol card — navy stroke, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/stock-line.tsx",
+        type: "registry:component",
+        target: "components/charts/stock-line.tsx",
+      },
+    ],
+  },
+  {
+    name: "stock-column",
+    type: "registry:chart",
+    title: "Stock Column",
+    description:
+      "Close as columns tinted bullish/bearish per bar — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/stock-column.tsx",
+        type: "registry:component",
+        target: "components/charts/stock-column.tsx",
+      },
+    ],
+  },
+  {
+    name: "stock-with-volume",
+    type: "registry:chart",
+    title: "Stock With Volume",
+    description:
+      "Synced OHLC candles + volume strip tinted by direction — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/stock-with-volume.tsx",
+        type: "registry:component",
+        target: "components/charts/stock-with-volume.tsx",
+      },
+    ],
+  },
+  {
+    name: "stock-multi-series",
+    type: "registry:chart",
+    title: "Stock Multi Series",
+    description:
+      "Indexed multi-ticker relative returns — navy×orange×amber lines, summary cards, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: [
+      "chart",
+      "chart-styles",
+      "chart-mock-data",
+      "stock-shared",
+    ],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/stock-multi-series.tsx",
+        type: "registry:component",
+        target: "components/charts/stock-multi-series.tsx",
+      },
+    ],
+  },
+  {
+    name: "stock-trendline",
+    type: "registry:chart",
+    title: "Stock Trendline",
+    description:
+      "Close price + dashed SMA overlay — navy×orange, symbol card, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/stock-trendline.tsx",
+        type: "registry:component",
+        target: "components/charts/stock-trendline.tsx",
+      },
+    ],
+  },
+  {
+    name: "tremor-area-charts",
+    type: "registry:chart",
+    title: "KPI Area Charts",
+    description:
+      "KPI mini areas + hero dual series + stacked/share variants — navy×orange×amber, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/tremor-area-charts.tsx",
+        type: "registry:component",
+        target: "components/charts/tremor-area-charts.tsx",
+      },
+    ],
+  },
+  {
+    name: "realtime-mountain-chart",
+    type: "registry:chart",
+    title: "Realtime Mountain Chart",
+    description:
+      "Live mountain area with pulsing tip + play/pause — semantic up/down stroke, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/realtime-mountain-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/realtime-mountain-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "realtime-candlestick",
+    type: "registry:chart",
+    title: "Realtime Candlestick",
+    description:
+      "Live forming OHLC candles + volume strip, sticky Y domain, play/pause — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/realtime-candlestick.tsx",
+        type: "registry:component",
+        target: "components/charts/realtime-candlestick.tsx",
+      },
+    ],
+  },
+  {
+    name: "heikin-ashi",
+    type: "registry:chart",
+    title: "Heikin Ashi",
+    description:
+      "Smoothed Heikin Ashi candles via toHeikinAshi — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/heikin-ashi.tsx",
+        type: "registry:component",
+        target: "components/charts/heikin-ashi.tsx",
+      },
+    ],
+  },
+  {
+    name: "renko-chart",
+    type: "registry:chart",
+    title: "Renko Chart",
+    description:
+      "Fixed brick-size Renko bricks via toRenko — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: [
+      "chart",
+      "chart-styles",
+      "chart-mock-data",
+      "stock-shared",
+    ],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/renko-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/renko-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "volume-profile",
+    type: "registry:chart",
+    title: "Volume Profile",
+    description:
+      "Horizontal volume-by-price bins with POC highlight — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/volume-profile.tsx",
+        type: "registry:component",
+        target: "components/charts/volume-profile.tsx",
+      },
+    ],
+  },
+  {
+    name: "order-book-depth",
+    type: "registry:chart",
+    title: "Order Book Depth",
+    description:
+      "Cumulative bid/ask step areas around mid — semantic up/down, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: [
+      "chart",
+      "chart-styles",
+      "chart-mock-data",
+      "stock-shared",
+    ],
+    cssVars: {
+      light: {
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/order-book-depth.tsx",
+        type: "registry:component",
+        target: "components/charts/order-book-depth.tsx",
+      },
+    ],
+  },
+  {
+    name: "drawdown-chart",
+    type: "registry:chart",
+    title: "Drawdown Chart",
+    description:
+      "Equity line + underwater drawdown area — dual synced panels, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/drawdown-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/drawdown-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "bollinger-bands",
+    type: "registry:chart",
+    title: "Bollinger Bands",
+    description:
+      "Close + SMA mid + ±σ band fill — stacked envelope, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: [
+      "chart",
+      "chart-styles",
+      "chart-mock-data",
+      "stock-shared",
+    ],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#d97706",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/bollinger-bands.tsx",
+        type: "registry:component",
+        target: "components/charts/bollinger-bands.tsx",
+      },
+    ],
+  },
+  {
+    name: "candlestick-indicators",
+    type: "registry:chart",
+    title: "Candlestick Indicators",
+    description:
+      "OHLC + RSI(14) + MACD(12,26,9) synced panels — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#d97706",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/candlestick-indicators.tsx",
+        type: "registry:component",
+        target: "components/charts/candlestick-indicators.tsx",
+      },
+    ],
+  },
+  {
+    name: "multi-timeframe",
+    type: "registry:chart",
+    title: "Multi Timeframe",
+    description:
+      "Daily / weekly / monthly close lines from one series — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "stock-shared"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#d97706",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/stock/multi-timeframe.tsx",
+        type: "registry:component",
+        target: "components/charts/multi-timeframe.tsx",
+      },
+    ],
+  },
+  {
+    name: "heatmap-calendar",
+    type: "registry:chart",
+    title: "Heatmap Calendar",
+    description:
+      "Year of daily activity — Sunday-start SVG grid, navy intensity, holiday accents, RTL-aware.",
+    registryDependencies: ["heatmap-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/heatmap/heatmap-calendar.tsx",
+        type: "registry:component",
+        target: "components/charts/heatmap-calendar.tsx",
+      },
+    ],
+  },
+  {
+    name: "heatmap-calendar-emerald",
+    type: "registry:chart",
+    title: "Heatmap Calendar Emerald",
+    description:
+      "Sunday-start calendar heatmap with soft green (`--chart-up`) intensity — RTL-aware.",
+    registryDependencies: ["heatmap-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-up": "#0d9488",
+      },
+      dark: {
+        "chart-up": "#2dd4bf",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/heatmap/heatmap-calendar-emerald.tsx",
+        type: "registry:component",
+        target: "components/charts/heatmap-calendar-emerald.tsx",
+      },
+    ],
+  },
+  {
+    name: "heatmap-matrix",
+    type: "registry:chart",
+    title: "Heatmap Matrix",
+    description:
+      "Day × hour SVG intensity grid — navy `--chart-1`, floating tip, RTL-aware.",
+    registryDependencies: ["heatmap-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/heatmap/heatmap-matrix.tsx",
+        type: "registry:component",
+        target: "components/charts/heatmap-matrix.tsx",
+      },
+    ],
+  },
+  {
+    name: "heatmap-matrix-values",
+    type: "registry:chart",
+    title: "Heatmap Matrix Values",
+    description:
+      "Day × hour SVG grid with in-cell values — soft green `--chart-up`, RTL-aware.",
+    registryDependencies: ["heatmap-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-up": "#0d9488",
+      },
+      dark: {
+        "chart-up": "#2dd4bf",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/heatmap/heatmap-matrix-values.tsx",
+        type: "registry:component",
+        target: "components/charts/heatmap-matrix-values.tsx",
+      },
+    ],
+  },
+  {
+    name: "stacked-bar-chart",
+    type: "registry:chart",
+    title: "Stacked Bar Chart",
+    description:
+      "Stacked Desktop+Mobile H1 2026 — navy×orange locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/stacked-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/stacked-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "box-plot",
+    type: "registry:chart",
+    title: "Box Plot",
+    description:
+      "IQR box + median + whiskers + outliers by category — navy×orange locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/box-plot.tsx",
+        type: "registry:component",
+        target: "components/charts/box-plot.tsx",
+      },
+    ],
+  },
+  {
+    name: "waterfall",
+    type: "registry:chart",
+    title: "Waterfall",
+    description:
+      "P&L bridge with floating range bars — increase/decrease/total fills, locked chrome scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+        "chart-down": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+        "chart-down": "#f25f70",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/waterfall.tsx",
+        type: "registry:component",
+        target: "components/charts/waterfall.tsx",
+      },
+    ],
+  },
+  {
+    name: "mix-bar-chart",
+    type: "registry:chart",
+    title: "Mix Bar Chart",
+    description:
+      "Store+Online stacked beside Orders — navy×orange×amber, legend focus/lock, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/mix-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/mix-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "positive-and-negative-bar-chart",
+    type: "registry:chart",
+    title: "Positive And Negative Bar Chart",
+    description:
+      "Grouped Online×Store bars that cross zero — signed Y ticks, zero reference line, locked chrome scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/positive-and-negative-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/positive-and-negative-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-chart-with-customized-event",
+    type: "registry:chart",
+    title: "Bar Chart With Customized Event",
+    description:
+      "Click a month to drive chips + detail panel — average reference line, locked chrome, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-up": "#16a34a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-up": "#4ade80",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-chart-with-customized-event.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-chart-with-customized-event.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-chart-has-background",
+    type: "registry:chart",
+    title: "Bar Chart Has Background",
+    description:
+      "Grouped Desktop×Mobile with a muted background track on Desktop — locked chrome scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-chart-has-background.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-chart-has-background.tsx",
+      },
+    ],
+  },
+  {
+    name: "ranged-stacked-bar-chart",
+    type: "registry:chart",
+    title: "Ranged Stacked Bar Chart",
+    description:
+      "Prep/Pack/Ship minute ranges via BarStack — navy×orange×amber, locked chrome scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/ranged-stacked-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/ranged-stacked-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "tiny-bar-chart",
+    type: "registry:chart",
+    title: "Tiny Bar Chart",
+    description:
+      "Compact single-series sparkline bars — locked header chrome, no axes, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/tiny-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/tiny-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-active",
+    type: "registry:chart",
+    title: "Bar Active",
+    description:
+      "Per-category fills with a dashed featured bar outline — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-active.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-active.tsx",
+      },
+    ],
+  },
+  {
+    name: "population-pyramid",
+    type: "registry:chart",
+    title: "Population Pyramid",
+    description:
+      "Horizontal Male×Female by age — navy×orange locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/population-pyramid.tsx",
+        type: "registry:component",
+        target: "components/charts/population-pyramid.tsx",
+      },
+    ],
+  },
+  {
+    name: "timeline",
+    type: "registry:chart",
+    title: "Timeline",
+    description:
+      "Horizontal ranged cycles per test — semantic outcome colors, locked chrome scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/timeline.tsx",
+        type: "registry:component",
+        target: "components/charts/timeline.tsx",
+      },
+    ],
+  },
+  {
+    name: "animated-bar-width",
+    type: "registry:chart",
+    title: "Animated Bar Width",
+    description:
+      "Single-series bars that expand on scrub — navy locked chrome, metric header, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/animated-bar-width.tsx",
+        type: "registry:component",
+        target: "components/charts/animated-bar-width.tsx",
+      },
+    ],
+  },
+  {
+    name: "animated-bar-time-series",
+    type: "registry:chart",
+    title: "Animated Bar Time Series",
+    description:
+      "Sliding window over a longer series — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/animated-bar-time-series.tsx",
+        type: "registry:component",
+        target: "components/charts/animated-bar-time-series.tsx",
+      },
+    ],
+  },
+  {
+    name: "custom-shape-bar-chart",
+    type: "registry:chart",
+    title: "Custom Shape Bar Chart",
+    description:
+      "Bevelled custom bar paths by category — locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/custom-shape-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/custom-shape-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "brush-bar-chart",
+    type: "registry:chart",
+    title: "Brush Bar Chart",
+    description:
+      "Bipolar dual-series with range brush — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/brush-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/brush-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "biaxial-bar-chart",
+    type: "registry:chart",
+    title: "Biaxial Bar Chart",
+    description:
+      "Dual Y-axes with independent scales — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/biaxial-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/biaxial-bar-chart.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-chart-with-label-background",
+    type: "registry:chart",
+    title: "Bar Chart With Label Background",
+    description:
+      "Stacked bars with inside segment labels — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-chart-with-label-background.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-chart-with-label-background.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-chart-range",
+    type: "registry:chart",
+    title: "Bar Chart Range",
+    description:
+      "Ranged [low, high] bars — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-chart-range.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-chart-range.tsx",
+      },
+    ],
+  },
+  {
+    name: "stacked-bar-chart-with-horizontal-line",
+    type: "registry:chart",
+    title: "Stacked Bar Chart With Horizontal Line",
+    description:
+      "Three-stack sales with dashed target line — locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/stacked-bar-chart-with-horizontal-line.tsx",
+        type: "registry:component",
+        target: "components/charts/stacked-bar-chart-with-horizontal-line.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-default",
+    type: "registry:chart",
+    title: "Bar Default",
+    description:
+      "Single-series monthly store bars — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-default.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-default.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-multiple",
+    type: "registry:chart",
+    title: "Bar Multiple",
+    description:
+      "Grouped Desktop + Mobile bars — navy×orange locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-multiple.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-multiple.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-stacked",
+    type: "registry:chart",
+    title: "Bar Stacked",
+    description:
+      "Stacked Desktop + Mobile bars — navy×orange locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-stacked.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-stacked.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-label",
+    type: "registry:chart",
+    title: "Bar Label",
+    description:
+      "Single-series bars with always-on top labels — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-label.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-label.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-label-custom",
+    type: "registry:chart",
+    title: "Bar Label Custom",
+    description:
+      "Horizontal Store bars with always-on tip labels — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-label-custom.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-label-custom.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-interactive",
+    type: "registry:chart",
+    title: "Bar Interactive",
+    description:
+      "Toggle Store/Online period totals, then scrub daily bars — navy×orange locked chrome, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-interactive.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-interactive.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-horizontal",
+    type: "registry:chart",
+    title: "Bar Horizontal",
+    description:
+      "Horizontal single-series bars — navy locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-horizontal.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-horizontal.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-mixed",
+    type: "registry:chart",
+    title: "Bar Mixed",
+    description:
+      "Horizontal bars with per-category colors — locked chrome, metric header scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-mixed.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-mixed.tsx",
+      },
+    ],
+  },
+  {
+    name: "bar-negative",
+    type: "registry:chart",
+    title: "Bar Negative",
+    description:
+      "Single-series signed bars with navy gains / orange losses and a zero line — locked chrome, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/bar/bar-negative.tsx",
+        type: "registry:component",
+        target: "components/charts/bar-negative.tsx",
       },
     ],
   },

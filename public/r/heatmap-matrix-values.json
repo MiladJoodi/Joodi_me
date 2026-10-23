@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "heatmap-matrix-values",
+  "type": "registry:chart",
+  "title": "Heatmap Matrix Values",
+  "description": "Day × hour SVG grid with in-cell values — soft green `--chart-up`, RTL-aware.",
+  "registryDependencies": [
+    "heatmap-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-up": "#0d9488"
+    },
+    "dark": {
+      "chart-up": "#2dd4bf"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/heatmap-matrix-values.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { MARKET_UP } from \"./_lib/chart-styles\"\nimport {\n  EN_WEEKDAYS_FULL,\n  generateMatrixHeatData,\n  MatrixHeatmap,\n  type MatrixHeatmapProps,\n} from \"./_lib/heatmap-shared\"\n\n/**\n * Heatmap Matrix Values — day × hour grid with in-cell counts when wide enough.\n * Soft green `--chart-up`; RTL flips columns.\n * Installs to: components/charts/heatmap-matrix-values.tsx\n */\n\nconst HOURS = Array.from({ length: 24 }, (_, i) => String(i))\nconst DEMO_VALUES = generateMatrixHeatData(7, 24, 5511)\nconst DEMO_ROWS = [...EN_WEEKDAYS_FULL]\n\n/** All props optional — demo fills rows/cols/values when omitted. */\nexport type HeatmapMatrixValuesProps = Partial<MatrixHeatmapProps>\n\nfunction HeatmapMatrixValues({\n  title = \"Matrix Heatmap · Values\",\n  subtitle = \"Same day × hour grid with counts drawn in cells when there is room.\",\n  rows = DEMO_ROWS,\n  cols = HOURS,\n  values = DEMO_VALUES,\n  color = MARKET_UP,\n  showValues = true,\n  valueUnit = \"visits\",\n  ...rest\n}: HeatmapMatrixValuesProps = {}) {\n  return (\n    <MatrixHeatmap\n      title={title}\n      subtitle={subtitle}\n      rows={rows}\n      cols={cols}\n      values={values}\n      color={color}\n      showValues={showValues}\n      valueUnit={valueUnit}\n      {...rest}\n    />\n  )\n}\n\n/** Docs / gallery default export — `<HeatmapMatrixValuesDemo />` needs no props. */\nexport default function HeatmapMatrixValuesDemo(\n  props: HeatmapMatrixValuesProps = {}\n) {\n  return <HeatmapMatrixValues {...props} />\n}\n\nexport { HeatmapMatrixValues }\n",
+      "target": "components/charts/heatmap-matrix-values.tsx"
+    }
+  ],
+  "version": "0.1.0+02db735797f7",
+  "generatedAt": "2026-10-23T21:35:15.265Z"
+}

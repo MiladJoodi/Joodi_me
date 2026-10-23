@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "heatmap-matrix",
+  "type": "registry:chart",
+  "title": "Heatmap Matrix",
+  "description": "Day × hour SVG intensity grid — navy `--chart-1`, floating tip, RTL-aware.",
+  "registryDependencies": [
+    "heatmap-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#1e3a8a"
+    },
+    "dark": {
+      "chart-1": "#3b82f6"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/heatmap-matrix.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { CHART_SERIES_A } from \"./_lib/chart-styles\"\nimport {\n  EN_WEEKDAYS_FULL,\n  generateMatrixHeatData,\n  MatrixHeatmap,\n  type MatrixHeatmapProps as MatrixHeatmapBaseProps,\n} from \"./_lib/heatmap-shared\"\n\n/**\n * Heatmap Matrix — day × hour intensity grid (7 × 24).\n * SVG cells; locked navy `--chart-1`; RTL flips column growth.\n * Installs to: components/charts/heatmap-matrix.tsx\n */\n\nconst HOURS = Array.from({ length: 24 }, (_, i) => String(i))\nconst DEMO_VALUES = generateMatrixHeatData(7, 24, 7703)\nconst DEMO_ROWS = [...EN_WEEKDAYS_FULL]\n\n/** All props optional — demo fills rows/cols/values when omitted. */\nexport type HeatmapMatrixProps = Partial<MatrixHeatmapBaseProps>\n\nfunction HeatmapMatrix({\n  title = \"Matrix Heatmap\",\n  subtitle = \"Traffic by weekday and hour — columns follow writing direction.\",\n  rows = DEMO_ROWS,\n  cols = HOURS,\n  values = DEMO_VALUES,\n  color = CHART_SERIES_A,\n  valueUnit = \"visits\",\n  ...rest\n}: HeatmapMatrixProps = {}) {\n  return (\n    <MatrixHeatmap\n      title={title}\n      subtitle={subtitle}\n      rows={rows}\n      cols={cols}\n      values={values}\n      color={color}\n      valueUnit={valueUnit}\n      {...rest}\n    />\n  )\n}\n\n/** Docs / gallery default export — `<HeatmapMatrixDemo />` needs no props. */\nexport default function HeatmapMatrixDemo(props: HeatmapMatrixProps = {}) {\n  return <HeatmapMatrix {...props} />\n}\n\nexport { HeatmapMatrix }\n",
+      "target": "components/charts/heatmap-matrix.tsx"
+    }
+  ],
+  "version": "0.1.0+02db735797f7",
+  "generatedAt": "2026-10-23T21:35:15.265Z"
+}

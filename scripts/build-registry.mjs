@@ -62,6 +62,25 @@ function rewriteConsumerImports(content) {
     )
 }
 
+/**
+ * Authoring may live under `registry/charts/<category>/` (`../_lib`), while
+ * install `target` stays flat (`components/charts/<slug>.tsx` → `./_lib`).
+ */
+function rewriteChartLibImports(content, targetPath) {
+  if (!targetPath) return content
+  const targetDir = path.posix.dirname(targetPath.replace(/\\/g, "/"))
+  if (!targetDir.startsWith("components/charts")) return content
+
+  let rel = path.posix.relative(targetDir, "components/charts/_lib")
+  if (!rel || rel === "") rel = "."
+  if (!rel.startsWith(".")) rel = `./${rel}`
+
+  return content.replace(
+    /from\s+["'](?:\.\/|\.\.\/)+_lib\//g,
+    `from "${rel}/`
+  )
+}
+
 function buildItemPayload(item, version, generatedAt) {
   const files = item.files.map((file) => {
     const abs = path.join(root, file.path)
@@ -71,6 +90,9 @@ function buildItemPayload(item, version, generatedAt) {
     let content = readFileSync(abs, "utf8")
     if (file.path.startsWith("packages/ui/")) {
       content = rewriteConsumerImports(content)
+    }
+    if (file.target) {
+      content = rewriteChartLibImports(content, file.target)
     }
     const payload = {
       path: file.target || file.path,
@@ -89,6 +111,7 @@ function buildItemPayload(item, version, generatedAt) {
     description: item.description,
     dependencies: item.dependencies,
     registryDependencies: item.registryDependencies,
+    ...(item.cssVars ? { cssVars: item.cssVars } : {}),
     files,
     version,
     generatedAt,
@@ -103,6 +126,7 @@ function toIndexEntry(item) {
     description: item.description,
     dependencies: item.dependencies,
     registryDependencies: item.registryDependencies,
+    ...(item.cssVars ? { cssVars: item.cssVars } : {}),
     files: item.files.map(({ content: _content, ...file }) => file),
     version: item.version,
     generatedAt: item.generatedAt,

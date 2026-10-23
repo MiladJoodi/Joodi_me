@@ -385,15 +385,16 @@
   --border: #e4e4e7;
   --input: #e4e4e7;
   --ring: #2563eb;
-  /* Chart: 1–2 dual series (blue×teal); 3–5 semantic only */
-  --chart-1: #2563eb;
-  --chart-2: #0d9488;
+  /* Chart: 1–2 dual series (navy × orange); 3–5 semantic only */
+  --chart-1: #1e3a8a;
+  --chart-2: #ea580c;
   --chart-3: #f59e0b;
   --chart-4: #6366f1;
   --chart-5: #e11d48;
-  --chart-up: #0d9488;
+  /* Neon semantics — match style-vega / install cssVars */
+  --chart-up: #16a34a;
   --chart-down: #e11d48;
-  --chart-mute: #71717a;
+  --chart-mute: #52525b;
   --sidebar: #ffffff;
   --sidebar-foreground: #09090b;
   --sidebar-primary: #2563eb;
@@ -431,14 +432,15 @@
   --border: #27272a;
   --input: #27272a;
   --ring: #396ef0;
-  --chart-1: #396ef0;
-  --chart-2: #2dd4bf;
+  --chart-1: #3b82f6;
+  --chart-2: #f97316;
   --chart-3: #fbbf24;
   --chart-4: #818cf8;
   --chart-5: #fb7185;
-  --chart-up: #2dd4bf;
-  --chart-down: #fb7185;
-  --chart-mute: #a1a1aa;
+  /* Neon semantics — match style-vega / install cssVars */
+  --chart-up: #4ade80;
+  --chart-down: #f25f70;
+  --chart-mute: #d4d4d8;
   --sidebar: #09090b;
   --sidebar-foreground: #fafafa;
   --sidebar-primary: #396ef0;
@@ -467,7 +469,13 @@
   }
 
   ::selection {
+    /* Light: soft primary wash. Dark: stronger mix — 22% vanishes on #09090b. */
     background: color-mix(in oklab, var(--primary) 22%, transparent);
+    color: var(--foreground);
+  }
+
+  .dark ::selection {
+    background: color-mix(in oklab, var(--primary) 48%, transparent);
     color: var(--foreground);
   }
 
@@ -596,4 +604,5 @@
     opacity: 1;
   }
 }
+
 

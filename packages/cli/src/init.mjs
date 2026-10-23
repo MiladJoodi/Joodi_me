@@ -3,8 +3,24 @@ import { constants as fsConstants } from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 
+import { applyRegistryCssVars } from "./apply-css-vars.mjs"
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const templatesRoot = path.resolve(__dirname, "../templates/init")
+
+/** Neon semantics — same hex as docs `style-vega` / registry cssVars. */
+export const CHART_NEON_CSS_VARS = {
+  light: {
+    "chart-up": "#16a34a",
+    "chart-down": "#e11d48",
+    "chart-mute": "#52525b",
+  },
+  dark: {
+    "chart-up": "#4ade80",
+    "chart-down": "#f25f70",
+    "chart-mute": "#d4d4d8",
+  },
+}
 
 const INIT_FILES = [
   { from: "lib/utils.ts", to: "lib/utils.ts" },
@@ -62,6 +78,14 @@ export async function ensureTwAnimateImport(cwd) {
   css = `@import "tw-animate-css";\n\n${css}`
   await writeFile(sonoAbs, css, "utf8")
   return { status: "patched" }
+}
+
+/**
+ * Ensure `--chart-up` / `--chart-down` / `--chart-mute` exist (and match vega).
+ * Covers projects that inited before neon tokens were part of the baseline.
+ */
+export async function ensureChartNeonVars(cwd) {
+  return applyRegistryCssVars(cwd, CHART_NEON_CSS_VARS)
 }
 
 /**
@@ -137,6 +161,7 @@ export async function initSonojsProject({
 
   const globals = await ensureGlobalsImport(cwd)
   const twAnimate = await ensureTwAnimateImport(cwd)
+  const chartNeon = await ensureChartNeonVars(cwd)
 
-  return { written, skipped, globals, twAnimate }
+  return { written, skipped, globals, twAnimate, chartNeon }
 }

@@ -66,6 +66,17 @@ What docs show must be what users install. No stale registry payloads.
 - Authoritative rule: `.cursor/rules/sonojs-registry-parity.mdc`
 <!-- END:sonojs-registry-parity -->
 
+<!-- BEGIN:sonojs-charts-locked -->
+# SonoJS charts — locked pattern
+
+Gallery charts follow the **LOCKED** Simple Bar chrome (navy × orange, metric header scrubber). Do not restyle without an explicit unlock.
+
+- Canonical: `registry/charts/bar/simple-bar-chart.tsx`
+- Checklist: `registry/charts/PORT.md`
+- Rule: `.cursor/rules/sonojs-charts-locked.mdc`
+- After edits: `npm run registry:build`
+<!-- END:sonojs-charts-locked -->
+
 <!-- BEGIN:sonojs-registry-deps -->
 # SonoJS registry dependencies
 

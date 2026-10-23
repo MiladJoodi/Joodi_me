@@ -17,7 +17,7 @@ Blocks/charts still live under `registry/blocks/`, `registry/charts/`.
 - Catalog contract: `lib/charts-catalog.ts` (status `pending` | `ported`)
 - Folder tree: `registry/charts/` (classic folders + `gallery/<category>/` + `_lib/`)
 - Preview chrome: `components/charts/ChartPreview` (LTR default, RTL toggle, wide stage)
-- Per-file checklist: [`registry/charts/PORT.md`](charts/PORT.md)
+- Per-file checklist + **locked visual pattern**: [`registry/charts/PORT.md`](charts/PORT.md) (canonical: `simple-bar-chart`)
 - Do **not** mass-copy demos; port one id when requested.
 
 ## Add a UI component

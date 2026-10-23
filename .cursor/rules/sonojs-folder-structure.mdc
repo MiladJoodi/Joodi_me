@@ -24,7 +24,11 @@ registry/
       components/
         login-form.tsx
   charts/
-    chart-area/
+    _lib/                 # shared chart helpers
+    bar/                  # by category (gallery + classic)
+      simple-bar-chart.tsx
+      stacked-bar-chart.tsx
+    area/
       chart-area.tsx
       index.ts
 ```
@@ -33,11 +37,12 @@ UI components: author in `packages/ui/src/components/` only (`registry:build` �
 
 Rules:
 
-1. **One folder per item name** (`button`, `login-01`, `chart-area`). Folder name matches the registry / docs slug.
-2. **Examples** live under `registry/examples/<component>/`, not `registry/examples/<component>-<variant>.tsx` at the root of `examples/`.
-3. **Blocks / charts** already use (or must use) a dedicated folder; keep all files for that item inside it.
-4. Prefer a small `index.ts` barrel when the folder has multiple entry files consumers import together.
-5. Shared utilities stay in `lib/`, `hooks/`, or `packages/ui/src/lib` — not inside a random component folder unless they are private to that item.
+1. **Charts:** author under `registry/charts/<category>/<slug>.tsx`. Folder = catalog category (`bar`, `area`, …). Consumer install stays flat: `components/charts/<slug>.tsx`.
+2. **One folder per UI item name** (`button`, `login-01`). Folder name matches the registry / docs slug.
+3. **Examples** live under `registry/examples/<component>/`, not `registry/examples/<component>-<variant>.tsx` at the root of `examples/`.
+4. **Blocks** use a dedicated folder per block; keep all files for that item inside it.
+5. Prefer a small `index.ts` barrel when the folder has multiple entry files consumers import together.
+6. Shared utilities stay in `lib/`, `hooks/`, or `packages/ui/src/lib` — not inside a random component folder unless they are private to that item.
 
 ## `@sonojs/ui` package
 

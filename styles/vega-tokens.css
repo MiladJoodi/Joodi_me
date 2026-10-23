@@ -17,9 +17,9 @@
   --vega-ring: #2563eb;
   --vega-brand: #2563eb;
   --vega-brand-foreground: #ffffff;
-  /* Chart: 1–2 dual series; 3–5 semantic (amber / indigo / rose) */
-  --vega-chart-1: #2563eb;
-  --vega-chart-2: #0d9488;
+  /* Chart: 1–2 dual series (navy × orange); 3–5 semantic */
+  --vega-chart-1: #1e3a8a;
+  --vega-chart-2: #ea580c;
   --vega-chart-3: #f59e0b;
   --vega-chart-4: #6366f1;
   --vega-chart-5: #e11d48;
@@ -58,7 +58,7 @@
   --chart-2: var(--vega-chart-2);
   --chart-3: var(--vega-chart-3);
   --chart-4: var(--vega-chart-4);
-  --chart-5: var(--vega-chart-5);
+  
   /* Neon area/spark semantics — shared SoT (market cards) */
   --chart-up: #16a34a;
   --chart-down: #e11d48;
@@ -143,8 +143,8 @@ html.dark .style-vega,
   --vega-ring: #396ef0;
   --vega-brand: #396ef0;
   --vega-brand-foreground: #ffffff;
-  --vega-chart-1: #396ef0;
-  --vega-chart-2: #2dd4bf;
+  --vega-chart-1: #3b82f6;
+  --vega-chart-2: #f97316;
   --vega-chart-3: #fbbf24;
   --vega-chart-4: #818cf8;
   --vega-chart-5: #fb7185;
@@ -185,7 +185,7 @@ html.dark .style-vega,
   --chart-2: var(--vega-chart-2);
   --chart-3: var(--vega-chart-3);
   --chart-4: var(--vega-chart-4);
-  --chart-5: var(--vega-chart-5);
+  
   /* Neon area/spark semantics — dark (brighter neon) */
   --chart-up: #4ADE80;
   --chart-down: #F25F70;
@@ -299,7 +299,7 @@ html body.style-vega {
   --chart-2: var(--vega-chart-2);
   --chart-3: var(--vega-chart-3);
   --chart-4: var(--vega-chart-4);
-  --chart-5: var(--vega-chart-5);
+  
   /* Neon area/spark semantics — shared SoT (market cards) */
   --chart-up: #16a34a;
   --chart-down: #e11d48;
@@ -347,7 +347,7 @@ html.dark body.style-vega {
   --chart-2: var(--vega-chart-2);
   --chart-3: var(--vega-chart-3);
   --chart-4: var(--vega-chart-4);
-  --chart-5: var(--vega-chart-5);
+  
   /* Neon area/spark semantics — dark (brighter neon) */
   --chart-up: #4ADE80;
   --chart-down: #F25F70;
