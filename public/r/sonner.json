@@ -13,7 +13,7 @@
     {
       "path": "components/ui/sonner.tsx",
       "type": "registry:ui",
-      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  CircleCheckIcon,\n  InfoIcon,\n  Loader2Icon,\n  OctagonXIcon,\n  TriangleAlertIcon,\n} from \"lucide-react\"\nimport { useTheme } from \"next-themes\"\nimport { Toaster as Sonner, type ToasterProps } from \"sonner\"\n\nimport { useDirection } from \"@/hooks/use-direction\"\n\nfunction Toaster({ ...props }: ToasterProps) {\n  const { theme = \"system\" } = useTheme()\n  // Portaled under body — pass dir so RTL from DirectionProvider still applies.\n  const { dir } = useDirection()\n\n  return (\n    <Sonner\n      theme={theme as ToasterProps[\"theme\"]}\n      className=\"toaster group\"\n      dir={dir}\n      icons={{\n        success: <CircleCheckIcon className=\"size-4\" />,\n        info: <InfoIcon className=\"size-4\" />,\n        warning: <TriangleAlertIcon className=\"size-4\" />,\n        error: <OctagonXIcon className=\"size-4\" />,\n        loading: <Loader2Icon className=\"size-4 animate-spin\" />,\n      }}\n      style={\n        {\n          \"--normal-bg\": \"var(--popover)\",\n          \"--normal-text\": \"var(--popover-foreground)\",\n          \"--normal-border\": \"var(--border)\",\n          \"--border-radius\": \"var(--radius)\",\n        } as React.CSSProperties\n      }\n      {...props}\n    />\n  )\n}\n\nexport { Toaster }\n",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport {\n  CircleCheckIcon,\n  InfoIcon,\n  Loader2Icon,\n  OctagonXIcon,\n  TriangleAlertIcon,\n} from \"lucide-react\"\nimport { useTheme } from \"next-themes\"\nimport { Toaster as Sonner, type ToasterProps } from \"sonner\"\n\nimport { useDirection } from \"@/hooks/use-direction\"\n\nfunction Toaster({ dir: dirProp, ...props }: ToasterProps) {\n  const { theme = \"system\" } = useTheme()\n  // Portaled under body — prefer explicit dir, else DirectionProvider / <html>.\n  const { dir: contextDir } = useDirection()\n  const dir = dirProp ?? contextDir\n\n  return (\n    <Sonner\n      theme={theme as ToasterProps[\"theme\"]}\n      className=\"toaster group\"\n      dir={dir}\n      icons={{\n        success: <CircleCheckIcon className=\"size-4\" />,\n        info: <InfoIcon className=\"size-4\" />,\n        warning: <TriangleAlertIcon className=\"size-4\" />,\n        error: <OctagonXIcon className=\"size-4\" />,\n        loading: <Loader2Icon className=\"size-4 animate-spin\" />,\n      }}\n      style={\n        {\n          \"--normal-bg\": \"var(--popover)\",\n          \"--normal-text\": \"var(--popover-foreground)\",\n          \"--normal-border\": \"var(--border)\",\n          \"--border-radius\": \"var(--radius)\",\n        } as React.CSSProperties\n      }\n      {...props}\n    />\n  )\n}\n\nexport { Toaster }\n",
       "target": "components/ui/sonner.tsx"
     },
     {
@@ -29,6 +29,6 @@
       "target": "hooks/use-direction.tsx"
     }
   ],
-  "version": "0.1.0+a1da1e0cd119",
-  "generatedAt": "2026-10-22T23:11:43.121Z"
+  "version": "0.1.0+bcfdb0b77779",
+  "generatedAt": "2026-10-23T02:00:06.122Z"
 }

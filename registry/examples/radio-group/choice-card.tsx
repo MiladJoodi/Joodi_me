@@ -26,35 +26,35 @@ export function RadioGroupChoiceCard() {
         <FieldGroup className="gap-3">
           <FieldLabel htmlFor="plan-plus">
             <Field orientation="horizontal">
+              <RadioGroupItem value="plus" id="plan-plus" />
               <FieldContent>
                 <FieldTitle>Plus</FieldTitle>
                 <FieldDescription>
                   For individuals and small teams.
                 </FieldDescription>
               </FieldContent>
-              <RadioGroupItem value="plus" id="plan-plus" />
             </Field>
           </FieldLabel>
           <FieldLabel htmlFor="plan-pro">
             <Field orientation="horizontal">
+              <RadioGroupItem value="pro" id="plan-pro" />
               <FieldContent>
                 <FieldTitle>Pro</FieldTitle>
                 <FieldDescription>
                   For growing businesses.
                 </FieldDescription>
               </FieldContent>
-              <RadioGroupItem value="pro" id="plan-pro" />
             </Field>
           </FieldLabel>
           <FieldLabel htmlFor="plan-enterprise">
             <Field orientation="horizontal">
+              <RadioGroupItem value="enterprise" id="plan-enterprise" />
               <FieldContent>
                 <FieldTitle>Enterprise</FieldTitle>
                 <FieldDescription>
                   For large teams and enterprises.
                 </FieldDescription>
               </FieldContent>
-              <RadioGroupItem value="enterprise" id="plan-enterprise" />
             </Field>
           </FieldLabel>
         </FieldGroup>

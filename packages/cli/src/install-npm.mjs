@@ -2,6 +2,16 @@ import { spawnSync } from "node:child_process"
 import { readFileSync } from "node:fs"
 import path from "node:path"
 
+/**
+ * Packages `sonojs init` installs. Skipped again on `add` (except
+ * `tw-animate-css`, which stays installable via item deps / add path).
+ */
+export const INIT_NPM_PACKAGES = [
+  "clsx",
+  "tailwind-merge",
+  "tw-animate-css",
+]
+
 /** Already covered by `sonojs init` — do not reinstall on every add. */
 export const INIT_BASELINE_NPM = new Set(["clsx", "tailwind-merge"])
 
@@ -34,6 +44,37 @@ function readInstalledNames(cwd) {
   }
 }
 
+function runNpmInstall(cwd, specs) {
+  if (specs.length === 0) return []
+
+  console.log("\nInstalling npm packages:")
+  for (const dep of specs) console.log(`  + ${dep}`)
+
+  const result = spawnSync("npm", ["i", ...specs], {
+    cwd,
+    stdio: "inherit",
+    shell: true,
+  })
+
+  if (result.status !== 0) {
+    throw new Error(
+      `npm install failed — run manually:\n  npm i ${specs.join(" ")}`
+    )
+  }
+
+  return specs
+}
+
+/**
+ * Install clsx / tailwind-merge / tw-animate-css if missing from package.json.
+ * Called by `sonojs init` so consumers never run these by hand.
+ */
+export function installInitNpmDependencies(cwd) {
+  const installed = readInstalledNames(cwd)
+  const extra = INIT_NPM_PACKAGES.filter((name) => !installed.has(name)).sort()
+  return runNpmInstall(cwd, extra)
+}
+
 /**
  * Install npm packages required by registry items (e.g. react-day-picker@^9).
  * Skips init baseline. Bare names already in package.json are skipped.
@@ -51,22 +92,5 @@ export function installNpmDependencies(cwd, deps) {
     })
     .sort()
 
-  if (extra.length === 0) return []
-
-  console.log("\nInstalling npm packages:")
-  for (const dep of extra) console.log(`  + ${dep}`)
-
-  const result = spawnSync("npm", ["i", ...extra], {
-    cwd,
-    stdio: "inherit",
-    shell: true,
-  })
-
-  if (result.status !== 0) {
-    throw new Error(
-      `npm install failed — run manually:\n  npm i ${extra.join(" ")}`
-    )
-  }
-
-  return extra
+  return runNpmInstall(cwd, extra)
 }

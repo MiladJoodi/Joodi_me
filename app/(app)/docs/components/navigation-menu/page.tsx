@@ -85,7 +85,7 @@ export default async function NavigationMenuDocsPage() {
       </header>
 
       <section className="space-y-4">
-        <ComponentVariantPreview examples={examples} />
+        <ComponentVariantPreview examples={examples} allowOverflow />
       </section>
 
       <DocsInstallation name="navigation-menu" />

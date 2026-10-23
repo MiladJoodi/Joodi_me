@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
   transpilePackages: ["@sonojs/ui"],
   // Keep Shiki off Turbopack transforms (token colors / grammars stay intact)
   serverExternalPackages: ["shiki"],
+  // Slow disks freeze on Turbopack FS cache compaction — disable in local dev
+  experimental: {
+    turbopackFileSystemCacheForDev: false,
+  },
   async headers() {
     return [
       {

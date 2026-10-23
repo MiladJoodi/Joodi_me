@@ -148,7 +148,7 @@ function BlocksSidebarBody({ className }: { className?: string }) {
 
 export function BlocksSidebar() {
   return (
-    <Sidebar className={SIDEBAR_SHELL_CLASS}>
+    <Sidebar collapsible="none" className={SIDEBAR_SHELL_CLASS}>
       <BlocksSidebarBody />
     </Sidebar>
   )

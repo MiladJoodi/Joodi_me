@@ -148,7 +148,7 @@ function ChartsSidebarBody({ className }: { className?: string }) {
 
 export function ChartsSidebar() {
   return (
-    <Sidebar className={SIDEBAR_SHELL_CLASS}>
+    <Sidebar collapsible="none" className={SIDEBAR_SHELL_CLASS}>
       <ChartsSidebarBody />
     </Sidebar>
   )

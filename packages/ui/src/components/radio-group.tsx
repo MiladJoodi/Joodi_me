@@ -1,17 +1,23 @@
 "use client"
 
 import * as React from "react"
-import { cn } from "@sonojs/ui/lib/utils"
 import { CircleIcon } from "lucide-react"
 import { RadioGroup as RadioGroupPrimitive } from "radix-ui"
 
+import { useDirection } from "@sonojs/ui/hooks/use-direction"
+import { cn } from "@sonojs/ui/lib/utils"
+
 function RadioGroup({
   className,
+  dir: dirProp,
   ...props
 }: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {
+  const { dir: dirCtx } = useDirection()
+
   return (
     <RadioGroupPrimitive.Root
       data-slot="radio-group"
+      dir={dirProp ?? dirCtx}
       className={cn("grid gap-3", className)}
       {...props}
     />

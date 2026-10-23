@@ -25,7 +25,8 @@ const exampleDefs = [
   {
     name: "select-scrollable",
     title: "Scrollable",
-    description: "Long lists scroll inside the content panel.",
+    description:
+      "Long lists stay a fixed height (`max-h-48`) and scroll inside the panel.",
     npmRequires: ["lucide-react"],
   },
   {

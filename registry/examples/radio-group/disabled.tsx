@@ -8,7 +8,7 @@ import {
 
 export function RadioGroupDisabled() {
   return (
-    <RadioGroup defaultValue="option-one" disabled>
+    <RadioGroup defaultValue="option-one" disabled className="w-full max-w-sm">
       <div className="flex items-center gap-3">
         <RadioGroupItem value="option-one" id="rd1" />
         <Label htmlFor="rd1">Option One</Label>

@@ -161,7 +161,7 @@ function DocsSidebarBody({ className }: { className?: string }) {
 
 export function DocsSidebar() {
   return (
-    <Sidebar className={SIDEBAR_SHELL_CLASS}>
+    <Sidebar collapsible="none" className={SIDEBAR_SHELL_CLASS}>
       <DocsSidebarBody />
     </Sidebar>
   )

@@ -1,7 +1,13 @@
 ﻿/**
  * SonoJS design system — theme tokens on `:root` / `.dark`.
  * `init` imports this from globals.css; `add` only copies components.
+ *
+ * `tw-animate-css` powers Sheet/Dialog/Popover enter-exit (`animate-in`,
+ * `slide-in-from-*`, `fade-in-0`, …). Same package the docs site uses.
+ * Install with: npm i tw-animate-css
  */
+
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 

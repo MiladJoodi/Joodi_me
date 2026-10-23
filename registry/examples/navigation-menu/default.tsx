@@ -57,14 +57,22 @@ export function NavigationMenuDefault() {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-hidden select-none focus:shadow-md"
+                    className="relative flex h-full min-h-40 w-full flex-col justify-end overflow-hidden rounded-md no-underline outline-hidden select-none focus:shadow-md"
                     href="/docs"
                   >
-                    <div className="mt-4 mb-2 text-lg font-medium">SonoJS</div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components you can copy into your
-                      apps.
-                    </p>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80"
+                      alt="Workspace"
+                      className="absolute inset-0 size-full object-cover"
+                    />
+                    <div className="relative z-10 bg-gradient-to-t from-black/70 to-transparent p-4 pt-12 text-white">
+                      <div className="mb-1 text-lg font-medium">SonoJS</div>
+                      <p className="text-sm leading-tight text-white/80">
+                        Beautifully designed components you can copy into your
+                        apps.
+                      </p>
+                    </div>
                   </a>
                 </NavigationMenuLink>
               </li>

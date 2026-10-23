@@ -5,8 +5,12 @@ import { cn } from "@/lib/utils"
 
 /** Shared sidebar list chrome — docs / blocks / charts. */
 
+/**
+ * Sticky docs nav (shadcn-style): stays while the page scrolls; list scrolls inside.
+ * `self-start` is required in the layout grid — stretch makes sticky a no-op.
+ */
 export const SIDEBAR_SHELL_CLASS =
-  "sticky top-[calc(var(--header-height)+0.6rem)] z-30 hidden h-[calc(100svh-10rem)] overflow-hidden overscroll-none bg-transparent [--sidebar-menu-width:--spacing(56)] lg:flex"
+  "sticky top-[calc(var(--header-height)+0.6rem)] z-30 hidden h-[calc(100svh-var(--header-height)-2rem)] max-h-[calc(100svh-var(--header-height)-2rem)] w-full min-h-0 shrink-0 self-start overflow-hidden overscroll-none bg-transparent [--sidebar-menu-width:--spacing(56)] lg:flex"
 
 export const SIDEBAR_SEARCH_WRAP_CLASS = "shrink-0 pe-2 pt-2 pb-3"
 
@@ -75,7 +79,6 @@ export function SidebarNavBullet({
       <span
         className={cn("size-1.5 shrink-0 rounded-full", className)}
         style={{ backgroundColor: "#4ade80" }}
-        title="Featured"
         aria-label="Featured"
       />
     )

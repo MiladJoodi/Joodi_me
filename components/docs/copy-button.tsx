@@ -5,6 +5,11 @@ import { CheckIcon, CopyIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@sonojs/ui/components/button"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 export function CopyButton({
   value,
@@ -14,6 +19,7 @@ export function CopyButton({
   className?: string
 }) {
   const [copied, setCopied] = React.useState(false)
+  const label = copied ? "Copied" : "Copy"
 
   React.useEffect(() => {
     if (!copied) return
@@ -22,26 +28,31 @@ export function CopyButton({
   }, [copied])
 
   return (
-    <Button
-      type="button"
-      variant="ghost"
-      size="icon-xs"
-      className={cn(
-        "cursor-pointer text-[color:var(--code-header-fg)] hover:bg-white/10 hover:text-[color:var(--code-fg)]",
-        className
-      )}
-      aria-label={copied ? "Copied" : "Copy"}
-      onClick={async () => {
-        try {
-          await navigator.clipboard.writeText(value)
-          setCopied(true)
-        } catch {
-          // Clipboard can fail without permission; keep idle icon.
-        }
-      }}
-    >
-      {copied ? <CheckIcon /> : <CopyIcon />}
-      <span className="sr-only">{copied ? "Copied" : "Copy"}</span>
-    </Button>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon-xs"
+          className={cn(
+            "cursor-pointer text-[color:var(--code-header-fg)] hover:bg-white/10 hover:text-[color:var(--code-fg)]",
+            className
+          )}
+          aria-label={label}
+          onClick={async () => {
+            try {
+              await navigator.clipboard.writeText(value)
+              setCopied(true)
+            } catch {
+              // Clipboard can fail without permission; keep idle icon.
+            }
+          }}
+        >
+          {copied ? <CheckIcon /> : <CopyIcon />}
+          <span className="sr-only">{label}</span>
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent side="bottom">{label}</TooltipContent>
+    </Tooltip>
   )
 }

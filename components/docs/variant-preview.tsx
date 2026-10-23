@@ -5,6 +5,7 @@ import { CodeIcon, EyeIcon } from "lucide-react"
 
 import { CodePanel } from "@/components/docs/code-panel"
 import { InstallNeedsHint } from "@/components/docs/install-needs-hint"
+import { useRegisterPreviewDirection } from "@/components/docs/preview-direction"
 import {
   DirectionProvider,
   DirectionToggle,
@@ -12,6 +13,11 @@ import {
 import type { Direction } from "@/lib/direction"
 import { RegistryExamplePreview } from "@/components/docs/registry-example-preview"
 import { cn } from "@/lib/utils"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 export type VariantExample = {
   name: string
@@ -84,11 +90,17 @@ export function ComponentVariantPreview({
   examples,
   className,
   showDirection = true,
+  allowOverflow = false,
 }: {
   examples: VariantExample[]
   className?: string
   /** Hide LTR/RTL when the preview has no directional layout (e.g. code). */
   showDirection?: boolean
+  /**
+   * Let popovers / menus paint outside the frame (no overflow clip).
+   * Use for Navigation Menu and similar non-portaled overlays.
+   */
+  allowOverflow?: boolean
 }) {
   const [active, setActive] = React.useState(examples[0]?.name ?? "")
   const [dir, setDir] = React.useState<Direction>("ltr")
@@ -99,14 +111,27 @@ export function ComponentVariantPreview({
   const npmRequires = meta?.npmRequires?.filter(Boolean) ?? []
   const effectiveView: ViewMode = hasCode ? view : "preview"
 
+  // Root Toaster sits outside this island — publish dir so Sonner RTL matches.
+  useRegisterPreviewDirection(
+    dir,
+    showDirection && effectiveView === "preview"
+  )
+
   return (
     <div className={cn("space-y-3", className)}>
       {meta ? (
         <ExampleLead title={meta.title} description={meta.description} />
       ) : null}
 
-      <div className="overflow-hidden rounded-xl border border-border/80">
-        <div className="flex items-start gap-2 border-b border-border/80 bg-muted/30 p-2">
+      <div
+        className={cn(
+          "rounded-xl border border-border/80",
+          allowOverflow
+            ? "relative z-20 overflow-visible"
+            : "overflow-hidden"
+        )}
+      >
+        <div className="flex items-start gap-2 rounded-t-xl border-b border-border/80 bg-muted/30 p-2">
           <div className="flex min-w-0 flex-1 flex-wrap gap-1">
             {examples.map((item) => (
               <button
@@ -136,21 +161,24 @@ export function ComponentVariantPreview({
                     { id: "code", label: "Code", Icon: CodeIcon },
                   ] as const
                 ).map((tab) => (
-                  <button
-                    key={tab.id}
-                    type="button"
-                    onClick={() => setView(tab.id)}
-                    aria-label={tab.label}
-                    title={tab.label}
-                    className={cn(
-                      "inline-flex size-7 cursor-pointer items-center justify-center rounded-sm transition-colors",
-                      effectiveView === tab.id
-                        ? "bg-muted text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    <tab.Icon className="size-3.5" aria-hidden />
-                  </button>
+                  <Tooltip key={tab.id}>
+                    <TooltipTrigger asChild>
+                      <button
+                        type="button"
+                        onClick={() => setView(tab.id)}
+                        aria-label={tab.label}
+                        className={cn(
+                          "inline-flex size-7 cursor-pointer items-center justify-center rounded-sm transition-colors",
+                          effectiveView === tab.id
+                            ? "bg-muted text-foreground"
+                            : "text-muted-foreground hover:text-foreground"
+                        )}
+                      >
+                        <tab.Icon className="size-3.5" aria-hidden />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom">{tab.label}</TooltipContent>
+                  </Tooltip>
                 ))}
               </div>
             ) : null}
@@ -161,12 +189,23 @@ export function ComponentVariantPreview({
           showDirection ? (
             <DirectionProvider
               dir={dir}
-              className="flex min-h-32 items-center justify-center bg-background p-8"
+              className={cn(
+                "flex min-h-32 items-center justify-center bg-background p-8",
+                // Tall + top-aligned so non-portaled menus open inside the frame.
+                allowOverflow &&
+                  "relative z-20 min-h-[28rem] items-start justify-center overflow-visible pt-10 pb-16"
+              )}
             >
               {active ? <RegistryExamplePreview name={active} /> : null}
             </DirectionProvider>
           ) : (
-            <div className="flex min-h-32 items-center justify-center bg-background p-8">
+            <div
+              className={cn(
+                "flex min-h-32 items-center justify-center bg-background p-8",
+                allowOverflow &&
+                  "relative z-20 min-h-[28rem] items-start justify-center overflow-visible pt-10 pb-16"
+              )}
+            >
               {active ? <RegistryExamplePreview name={active} /> : null}
             </div>
           )

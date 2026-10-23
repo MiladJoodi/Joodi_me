@@ -83,15 +83,12 @@ export default async function PaginationDocsPage() {
       <header className="space-y-2">
         <h1 className="text-h1">Pagination</h1>
         <p className="leading-relaxed text-muted-foreground">
-          Page navigation with previous / next links. Chevrons use{" "}
+          Page navigation with previous / next links. Page numbers stay{" "}
           <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
-            icon-dir
+            LTR
           </code>{" "}
-          for RTL. Pass{" "}
-          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
-            text
-          </code>{" "}
-          on Previous / Next to localize labels.
+          (1 → 2 → 3) in both writing directions. Pass custom children on
+          Previous / Next to localize labels.
         </p>
       </header>
 

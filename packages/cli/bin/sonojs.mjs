@@ -3,8 +3,11 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 
 import { RegistryConsistencyError } from "../src/consistency.mjs"
-import { initSonojsProject } from "../src/init.mjs"
-import { installNpmDependencies } from "../src/install-npm.mjs"
+import { ensureTwAnimateImport, initSonojsProject } from "../src/init.mjs"
+import {
+  installInitNpmDependencies,
+  installNpmDependencies,
+} from "../src/install-npm.mjs"
 import { installRegistryItemFiles } from "../src/install.mjs"
 import { resolveRegistryItem } from "../src/resolve.mjs"
 
@@ -53,7 +56,7 @@ async function cmdInit(rest) {
       ? registry
       : undefined
 
-  const { written, skipped, globals } = await initSonojsProject({
+  const { written, skipped, globals, twAnimate } = await initSonojsProject({
     cwd,
     overwrite,
     registryUrl,
@@ -71,9 +74,14 @@ async function cmdInit(rest) {
   } else if (globals?.status === "missing") {
     console.log(`  ! ${globals.message}`)
   }
+  if (twAnimate?.status === "patched") {
+    console.log("  + @import tw-animate-css in styles/sonojs.css")
+  }
+
+  installInitNpmDependencies(cwd)
+
   console.log(`
 Next:
-  npm i clsx tailwind-merge
   sonojs add button
 `)
 }
@@ -114,7 +122,15 @@ async function cmdAdd(names, rest) {
     await addOne(name)
   }
 
+  // Sheet/Dialog/Popover enter-exit — install package + CSS import if missing
+  // (covers projects that inited before tw-animate was part of the baseline).
+  npmDeps.add("tw-animate-css")
   installNpmDependencies(cwd, [...npmDeps])
+
+  const twAnimate = await ensureTwAnimateImport(cwd)
+  if (twAnimate?.status === "patched") {
+    console.log("  + @import tw-animate-css in styles/sonojs.css")
+  }
 }
 
 async function main() {

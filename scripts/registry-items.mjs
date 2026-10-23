@@ -835,7 +835,13 @@ export const registryItems = [
     title: "Sheet",
     description:
       "A panel that slides in from an edge. Prefer side start/end for RTL-safe edges.",
-    dependencies: ["radix-ui", "lucide-react", "clsx", "tailwind-merge"],
+    dependencies: [
+      "radix-ui",
+      "lucide-react",
+      "clsx",
+      "tailwind-merge",
+      "tw-animate-css",
+    ],
     files: [
       {
         path: "packages/ui/src/components/sheet.tsx",

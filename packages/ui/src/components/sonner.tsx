@@ -13,10 +13,11 @@ import { Toaster as Sonner, type ToasterProps } from "sonner"
 
 import { useDirection } from "@sonojs/ui/hooks/use-direction"
 
-function Toaster({ ...props }: ToasterProps) {
+function Toaster({ dir: dirProp, ...props }: ToasterProps) {
   const { theme = "system" } = useTheme()
-  // Portaled under body — pass dir so RTL from DirectionProvider still applies.
-  const { dir } = useDirection()
+  // Portaled under body — prefer explicit dir, else DirectionProvider / <html>.
+  const { dir: contextDir } = useDirection()
+  const dir = dirProp ?? contextDir
 
   return (
     <Sonner

@@ -45,6 +45,26 @@ function importLineForGlobals(cwd, globalsAbs) {
 }
 
 /**
+ * Ensure existing sonojs.css pulls enter/exit utilities (Sheet, Dialog, …).
+ * Safe when the file was skipped because it already existed.
+ */
+export async function ensureTwAnimateImport(cwd) {
+  const sonoAbs = path.resolve(cwd, "styles/sonojs.css")
+  if (!(await pathExists(sonoAbs))) {
+    return { status: "missing" }
+  }
+
+  let css = await readFile(sonoAbs, "utf8")
+  if (css.includes("tw-animate-css")) {
+    return { status: "exists" }
+  }
+
+  css = `@import "tw-animate-css";\n\n${css}`
+  await writeFile(sonoAbs, css, "utf8")
+  return { status: "patched" }
+}
+
+/**
  * Ensure sonojs.css is imported from the app globals stylesheet.
  */
 async function ensureGlobalsImport(cwd) {
@@ -116,6 +136,7 @@ export async function initSonojsProject({
   }
 
   const globals = await ensureGlobalsImport(cwd)
+  const twAnimate = await ensureTwAnimateImport(cwd)
 
-  return { written, skipped, globals }
+  return { written, skipped, globals, twAnimate }
 }

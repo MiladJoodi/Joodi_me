@@ -12,7 +12,7 @@ const tags = Array.from({ length: 50 }).map(
 export function ScrollAreaDefault() {
   return (
     <ScrollArea className="h-72 w-48 rounded-md border">
-      <div className="p-4">
+      <div className="p-4 text-start">
         <h4 className="mb-4 text-sm leading-none font-medium">Tags</h4>
         {tags.map((tag) => (
           <React.Fragment key={tag}>

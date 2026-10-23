@@ -8,6 +8,12 @@ import { withVariantCode } from "@/lib/docs-variant-examples"
 
 const exampleDefs = [
   {
+    name: "resizable-handle",
+    title: "Handle",
+    description: "Pass `withHandle` on `ResizableHandle` for a visible grip.",
+    npmRequires: ["lucide-react", "react-resizable-panels@^4"],
+  },
+  {
     name: "resizable-default",
     title: "Basic",
     description: "Drag the separator to resize adjacent panels.",
@@ -17,12 +23,6 @@ const exampleDefs = [
     name: "resizable-vertical",
     title: "Vertical",
     description: 'Set `orientation="vertical"` to stack panels.',
-    npmRequires: ["lucide-react", "react-resizable-panels@^4"],
-  },
-  {
-    name: "resizable-handle",
-    title: "Handle",
-    description: "Pass `withHandle` on `ResizableHandle` for a visible grip.",
     npmRequires: ["lucide-react", "react-resizable-panels@^4"],
   },
 ]

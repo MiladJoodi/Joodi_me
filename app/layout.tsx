@@ -1,8 +1,11 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 
+import {
+  DocsToaster,
+  PreviewDirectionProvider,
+} from "@/components/docs"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { siteConfig } from "@/lib/config"
 
@@ -46,10 +49,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider>
-            {children}
-            <Toaster />
-          </TooltipProvider>
+          <PreviewDirectionProvider>
+            <TooltipProvider>
+              {children}
+              <DocsToaster />
+            </TooltipProvider>
+          </PreviewDirectionProvider>
         </ThemeProvider>
       </body>
     </html>
