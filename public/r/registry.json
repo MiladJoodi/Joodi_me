@@ -3,7 +3,7 @@
   "name": "sonojs",
   "homepage": "https://sonojs.com",
   "version": "0.1.0+faa4ab01f844",
-  "generatedAt": "2026-10-23T22:13:37.997Z",
+  "generatedAt": "2026-10-23T22:43:09.677Z",
   "items": [
     {
       "name": "accordion",
@@ -24,7 +24,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "alert",
@@ -44,7 +44,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "alert-dialog",
@@ -77,7 +77,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "avatar",
@@ -97,7 +97,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "badge",
@@ -118,7 +118,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "breadcrumb",
@@ -139,7 +139,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bubble",
@@ -160,7 +160,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "button",
@@ -181,7 +181,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "card",
@@ -200,7 +200,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "carousel",
@@ -224,7 +224,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "checkbox",
@@ -245,7 +245,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "collapsible",
@@ -265,7 +265,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "combobox",
@@ -290,7 +290,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "command",
@@ -315,7 +315,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "context-menu",
@@ -336,7 +336,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "dialog",
@@ -360,7 +360,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "drawer",
@@ -399,7 +399,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "dropdown-menu",
@@ -420,7 +420,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "empty",
@@ -440,7 +440,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "field",
@@ -464,7 +464,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "hover-card",
@@ -484,7 +484,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "input",
@@ -503,7 +503,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "textarea",
@@ -522,7 +522,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "table",
@@ -541,7 +541,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "input-group",
@@ -566,7 +566,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "input-otp",
@@ -587,7 +587,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "item",
@@ -611,7 +611,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "kbd",
@@ -630,7 +630,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "marker",
@@ -651,7 +651,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "menubar",
@@ -672,7 +672,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "message",
@@ -691,7 +691,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "message-scroller",
@@ -714,7 +714,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "native-select",
@@ -734,7 +734,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "navigation-menu",
@@ -756,7 +756,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "pagination",
@@ -779,7 +779,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "code-block",
@@ -805,7 +805,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "use-highlighted-code",
@@ -828,7 +828,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "label",
@@ -848,7 +848,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "button-group",
@@ -872,7 +872,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "calendar",
@@ -898,7 +898,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "popover",
@@ -918,7 +918,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "progress",
@@ -938,7 +938,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "radio-group",
@@ -959,7 +959,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "resizable",
@@ -980,7 +980,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "scroll-area",
@@ -1000,7 +1000,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "select",
@@ -1021,7 +1021,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "separator",
@@ -1041,7 +1041,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "sheet",
@@ -1073,7 +1073,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "skeleton",
@@ -1092,7 +1092,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "slider",
@@ -1112,7 +1112,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "switch",
@@ -1132,7 +1132,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "tabs",
@@ -1153,7 +1153,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "sonner",
@@ -1183,7 +1183,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "toggle",
@@ -1204,7 +1204,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "toggle-group",
@@ -1228,7 +1228,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "tooltip",
@@ -1248,7 +1248,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "trace",
@@ -1271,7 +1271,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "attachment",
@@ -1297,7 +1297,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "spinner",
@@ -1317,7 +1317,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "login-01",
@@ -1339,7 +1339,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart",
@@ -1359,7 +1359,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area",
@@ -1381,7 +1381,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-mock-data",
@@ -1396,7 +1396,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-styles",
@@ -1452,7 +1452,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stock-shared",
@@ -1473,7 +1473,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "heatmap-shared",
@@ -1491,7 +1491,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "simple-bar-chart",
@@ -1523,7 +1523,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-chart",
@@ -1559,7 +1559,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stacked-area-chart",
@@ -1597,7 +1597,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-chart-range",
@@ -1631,7 +1631,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-chart-connect-nulls",
@@ -1665,7 +1665,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "cardinal-area-chart",
@@ -1701,7 +1701,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "percent-area-chart",
@@ -1739,7 +1739,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "synchronized-area-chart",
@@ -1777,7 +1777,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "tiny-area-chart",
@@ -1811,7 +1811,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-chart-fill-by-value",
@@ -1847,7 +1847,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-chart-custom-animation",
@@ -1881,7 +1881,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "range-area-chart-custom-animation",
@@ -1915,7 +1915,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-chart-with-custom-events",
@@ -1950,7 +1950,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "prevent-right-click",
@@ -1985,7 +1985,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-interactive",
@@ -2021,7 +2021,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-step",
@@ -2055,7 +2055,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "area-gradient",
@@ -2091,7 +2091,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "market-cards",
@@ -2126,7 +2126,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-default",
@@ -2156,7 +2156,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-linear",
@@ -2186,7 +2186,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-step",
@@ -2216,7 +2216,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-legend",
@@ -2248,7 +2248,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-stacked",
@@ -2280,7 +2280,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-stacked-expand",
@@ -2312,7 +2312,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-icons",
@@ -2345,7 +2345,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-gradient",
@@ -2381,7 +2381,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-area-axes",
@@ -2413,7 +2413,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "two-level-pie-chart",
@@ -2451,7 +2451,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "straight-angle-pie-chart",
@@ -2489,7 +2489,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "custom-active-shape-pie-chart",
@@ -2525,7 +2525,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "pie-chart-with-customized-label",
@@ -2561,7 +2561,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "pie-chart-with-padding-angle",
@@ -2597,7 +2597,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "pie-chart-in-grid",
@@ -2633,7 +2633,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "pie-with-gradient",
@@ -2669,7 +2669,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "pie-donut-text",
@@ -2707,7 +2707,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "pie-interactive",
@@ -2746,7 +2746,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "pie-stacked",
@@ -2784,7 +2784,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-simple",
@@ -2822,7 +2822,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-separator-none",
@@ -2860,7 +2860,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-label",
@@ -2898,7 +2898,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-label-custom",
@@ -2936,7 +2936,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-label-list",
@@ -2974,7 +2974,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-legend",
@@ -3012,7 +3012,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-donut",
@@ -3050,7 +3050,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-donut-active",
@@ -3088,7 +3088,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-donut-text",
@@ -3126,7 +3126,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-stacked",
@@ -3164,7 +3164,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "chart-pie-interactive",
@@ -3203,7 +3203,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "simple-line-chart",
@@ -3235,7 +3235,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "dashed-line-chart",
@@ -3267,7 +3267,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "vertical-line-chart",
@@ -3299,7 +3299,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-chart-connect-nulls",
@@ -3329,7 +3329,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-chart-with-reference-lines",
@@ -3361,7 +3361,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "customized-label-line-chart",
@@ -3393,7 +3393,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "highlight-and-zoom-line-chart",
@@ -3425,7 +3425,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-chart-axis-interval",
@@ -3458,7 +3458,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "biaxial-line-chart",
@@ -3490,7 +3490,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-chart-with-x-axis-padding",
@@ -3522,7 +3522,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "customized-dot-line-chart",
@@ -3556,7 +3556,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "synchronized-line-chart",
@@ -3590,7 +3590,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "synchronized-different-data",
@@ -3622,7 +3622,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-chart-custom-shape",
@@ -3654,7 +3654,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-chart-has-multi-series",
@@ -3688,7 +3688,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-chart-negative-values-with-reference-lines",
@@ -3718,7 +3718,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "compare-two-lines",
@@ -3750,7 +3750,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "dynamic-z-index-line-chart",
@@ -3784,7 +3784,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "tiny-line-chart",
@@ -3814,7 +3814,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "animated-time-series",
@@ -3846,7 +3846,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-interactive",
@@ -3878,7 +3878,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-step",
@@ -3910,7 +3910,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-default",
@@ -3940,7 +3940,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-dots-colors",
@@ -3978,7 +3978,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-label-custom",
@@ -4010,7 +4010,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "line-bar-area-composed-chart",
@@ -4044,7 +4044,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "same-data-composed-chart",
@@ -4076,7 +4076,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "vertical-composed-chart",
@@ -4108,7 +4108,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "composed-chart-with-axis-labels",
@@ -4142,7 +4142,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "scatter-and-line-of-best-fit",
@@ -4174,7 +4174,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "banded-chart",
@@ -4206,7 +4206,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "target-price-chart",
@@ -4238,7 +4238,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "asset-returns",
@@ -4271,7 +4271,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "monthly-savings",
@@ -4304,7 +4304,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "candlestick",
@@ -4337,7 +4337,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "candlestick-dashboard",
@@ -4372,7 +4372,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "candlestick-bar",
@@ -4407,7 +4407,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "candlestick-category",
@@ -4442,7 +4442,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "candlestick-line",
@@ -4477,7 +4477,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "sparklines",
@@ -4516,7 +4516,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stock-ohlc",
@@ -4549,7 +4549,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stock-line",
@@ -4584,7 +4584,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stock-column",
@@ -4617,7 +4617,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stock-with-volume",
@@ -4650,7 +4650,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stock-multi-series",
@@ -4690,7 +4690,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stock-trendline",
@@ -4727,7 +4727,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "tremor-area-charts",
@@ -4766,7 +4766,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "realtime-mountain-chart",
@@ -4801,7 +4801,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "realtime-candlestick",
@@ -4834,7 +4834,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "heikin-ashi",
@@ -4867,7 +4867,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "renko-chart",
@@ -4901,7 +4901,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "volume-profile",
@@ -4934,7 +4934,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "order-book-depth",
@@ -4968,7 +4968,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "drawdown-chart",
@@ -5003,7 +5003,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bollinger-bands",
@@ -5043,7 +5043,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "candlestick-indicators",
@@ -5082,7 +5082,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "multi-timeframe",
@@ -5121,7 +5121,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "heatmap-calendar",
@@ -5148,7 +5148,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "heatmap-calendar-emerald",
@@ -5175,7 +5175,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "heatmap-matrix",
@@ -5202,7 +5202,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "heatmap-matrix-values",
@@ -5229,7 +5229,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stacked-bar-chart",
@@ -5261,7 +5261,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "box-plot",
@@ -5293,7 +5293,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "waterfall",
@@ -5329,7 +5329,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "mix-bar-chart",
@@ -5363,7 +5363,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "positive-and-negative-bar-chart",
@@ -5397,7 +5397,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-chart-with-customized-event",
@@ -5431,7 +5431,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-chart-has-background",
@@ -5463,7 +5463,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "ranged-stacked-bar-chart",
@@ -5497,7 +5497,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "tiny-bar-chart",
@@ -5527,7 +5527,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-active",
@@ -5565,7 +5565,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "population-pyramid",
@@ -5597,7 +5597,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "timeline",
@@ -5629,7 +5629,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "animated-bar-width",
@@ -5661,7 +5661,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "animated-bar-time-series",
@@ -5693,7 +5693,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "custom-shape-bar-chart",
@@ -5731,7 +5731,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "brush-bar-chart",
@@ -5763,7 +5763,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "biaxial-bar-chart",
@@ -5795,7 +5795,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-chart-with-label-background",
@@ -5827,7 +5827,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-chart-range",
@@ -5859,7 +5859,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "stacked-bar-chart-with-horizontal-line",
@@ -5893,7 +5893,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-default",
@@ -5925,7 +5925,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-multiple",
@@ -5957,7 +5957,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-stacked",
@@ -5989,7 +5989,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-label",
@@ -6021,7 +6021,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-label-custom",
@@ -6053,7 +6053,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-interactive",
@@ -6085,7 +6085,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-horizontal",
@@ -6117,7 +6117,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-mixed",
@@ -6155,7 +6155,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     },
     {
       "name": "bar-negative",
@@ -6193,7 +6193,7 @@
         }
       ],
       "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:13:37.997Z"
+      "generatedAt": "2026-10-23T22:43:09.677Z"
     }
   ]
 }
