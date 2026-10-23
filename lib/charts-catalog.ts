@@ -12,7 +12,10 @@ export type ChartsCatalogEntry = {
   fullWidth?: boolean
 }
 
-/** Same order as FarsiUI `chart-examples.json` categories (+ classic `radial`). */
+/**
+ * Same category order as FarsiUI `lib/chart-examples.json`.
+ * Classic-only `radial` sits after gallery `radial-bar`.
+ */
 export const CHART_CATEGORIES = [
   "bar",
   "line",
@@ -25,13 +28,206 @@ export const CHART_CATEGORIES = [
   "treemap",
   "sunburst",
   "radar",
-  "radial",
   "radial-bar",
+  "radial",
   "scatter",
   "responsive",
   "legend",
   "tooltip",
 ] as const
+
+/**
+ * Gallery slug order per category — mirrors FarsiUI `chart-examples.json` `examples`.
+ * Used so sidebar lists match FarsiUI (e.g. Bar starts with Simple Bar Chart).
+ */
+export const GALLERY_ORDER_BY_CATEGORY: Record<string, readonly string[]> = {
+  bar: [
+    "simple-bar-chart",
+    "stacked-bar-chart",
+    "population-pyramid",
+    "timeline",
+    "box-plot",
+    "animated-bar-width",
+    "waterfall",
+    "animated-bar-time-series",
+    "mix-bar-chart",
+    "custom-shape-bar-chart",
+    "positive-and-negative-bar-chart",
+    "brush-bar-chart",
+    "bar-chart-with-customized-event",
+    "biaxial-bar-chart",
+    "bar-chart-has-background",
+    "bar-chart-with-label-background",
+    "ranged-stacked-bar-chart",
+    "bar-chart-range",
+    "tiny-bar-chart",
+    "stacked-bar-chart-with-horizontal-line",
+    "bar-interactive",
+    "bar-horizontal",
+    "bar-active",
+  ],
+  line: [
+    "simple-line-chart",
+    "dashed-line-chart",
+    "vertical-line-chart",
+    "biaxial-line-chart",
+    "line-chart-connect-nulls",
+    "line-chart-with-x-axis-padding",
+    "line-chart-with-reference-lines",
+    "customized-dot-line-chart",
+    "customized-label-line-chart",
+    "synchronized-line-chart",
+    "synchronized-different-data",
+    "line-chart-custom-shape",
+    "highlight-and-zoom-line-chart",
+    "line-chart-has-multi-series",
+    "line-chart-axis-interval",
+    "line-chart-negative-values-with-reference-lines",
+    "compare-two-lines",
+    "dynamic-z-index-line-chart",
+    "tiny-line-chart",
+    "animated-time-series",
+    "line-interactive",
+    "line-step",
+  ],
+  composed: [
+    "line-bar-area-composed-chart",
+    "same-data-composed-chart",
+    "vertical-composed-chart",
+    "composed-chart-with-axis-labels",
+    "scatter-and-line-of-best-fit",
+    "banded-chart",
+    "target-price-chart",
+  ],
+  area: [
+    "area-chart",
+    "stacked-area-chart",
+    "area-chart-range",
+    "area-chart-connect-nulls",
+    "cardinal-area-chart",
+    "percent-area-chart",
+    "synchronized-area-chart",
+    "tiny-area-chart",
+    "area-chart-fill-by-value",
+    "area-chart-custom-animation",
+    "range-area-chart-custom-animation",
+    "area-chart-with-custom-events",
+    "prevent-right-click",
+    "area-interactive",
+    "area-step",
+    "area-gradient",
+    "market-cards",
+  ],
+  stock: [
+    "asset-returns",
+    "monthly-savings",
+    "candlestick",
+    "candlestick-dashboard",
+    "candlestick-bar",
+    "candlestick-category",
+    "candlestick-line",
+    "sparklines",
+    "stock-ohlc",
+    "stock-line",
+    "stock-column",
+    "stock-with-volume",
+    "stock-multi-series",
+    "stock-trendline",
+    "tremor-area-charts",
+    "realtime-mountain-chart",
+    "realtime-candlestick",
+    "heikin-ashi",
+    "renko-chart",
+    "volume-profile",
+    "order-book-depth",
+    "drawdown-chart",
+    "bollinger-bands",
+    "candlestick-indicators",
+    "multi-timeframe",
+  ],
+  heatmap: [
+    "heatmap-calendar",
+    "heatmap-calendar-emerald",
+    "heatmap-matrix",
+    "heatmap-matrix-values",
+  ],
+  pie: [
+    "two-level-pie-chart",
+    "straight-angle-pie-chart",
+    "custom-active-shape-pie-chart",
+    "pie-chart-with-customized-label",
+    "pie-chart-with-padding-angle",
+    "pie-chart-in-grid",
+    "pie-with-gradient",
+    "pie-donut-text",
+    "pie-interactive",
+    "pie-stacked",
+  ],
+  gauge: [
+    "gauge-default",
+    "gauge-levels",
+    "gauge-custom-colors",
+    "gauge-corner-radius",
+    "gauge-custom-arcs",
+    "gauge-no-animation",
+    "hc-gauge-default",
+    "hc-gauge-rounded-ends",
+    "hc-gauge-thin-ring",
+    "hc-gauge-semicircle",
+    "hc-gauge-custom-pivot",
+    "hc-gauge-combo",
+    "hc-gauge-fuel",
+    "hc-gauge-activity",
+    "hc-gauge-kpi",
+    "hc-gauge-rounded-bands",
+    "hc-gauge-threshold",
+    "hc-gauge-custom-dial",
+  ],
+  treemap: [
+    "bundle-size-treemap",
+    "simple-treemap",
+    "custom-content-treemap",
+    "nested-treemap",
+    "treemap-with-padding-and-gaps",
+  ],
+  sunburst: [
+    "bundle-size-sunburst",
+    "sunburst-chart",
+    "sunburst-chart-theme-colors",
+  ],
+  radar: [
+    "simple-radar-chart",
+    "specified-domain-radar-chart",
+    "range-radar-chart-custom-animation",
+    "radar-lines-only",
+    "radar-icons",
+    "radar-multiple",
+  ],
+  "radial-bar": [
+    "simple-radial-bar-chart",
+    "radial-bar-chart-click-to-focus-legend",
+    "radial-text",
+    "radial-shape",
+    "radial-stacked",
+  ],
+  scatter: [
+    "simple-scatter-chart",
+    "joint-line-scatter-chart",
+    "bubble-chart",
+    "custom-animation",
+    "scatter-chart-with-labels",
+    "multiple-y-axes-scatter-chart",
+    "scatter-chart-with-cells",
+    "scatter-chart-performance",
+  ],
+  responsive: [
+    "area-responsive-container",
+    "composed-responsive-container",
+    "pie-responsive-container",
+  ],
+  legend: ["legend-effect-opacity", "legend-position", "legend-styles"],
+  tooltip: ["custom-content-of-tooltip", "tooltip-styles", "tooltip-advanced"],
+}
 
 export type ChartCategory = (typeof CHART_CATEGORIES)[number]
 
@@ -311,7 +507,23 @@ export function getChartEntry(id: string) {
 }
 
 export function getChartsByCategory(category: string) {
-  return chartsCatalog.filter((item) => item.category === category)
+  const items = chartsCatalog.filter((item) => item.category === category)
+  const galleryOrder = GALLERY_ORDER_BY_CATEGORY[category] ?? []
+  const galleryRank = new Map(galleryOrder.map((id, i) => [id, i]))
+  const catalogRank = new Map(chartsCatalog.map((item, i) => [item.id, i]))
+
+  return [...items].sort((a, b) => {
+    // Gallery first (FarsiUI examples shell), then classic shadcn-style demos.
+    if (a.kind !== b.kind) {
+      return a.kind === "gallery" ? -1 : 1
+    }
+    if (a.kind === "gallery") {
+      const ra = galleryRank.get(a.id) ?? Number.MAX_SAFE_INTEGER
+      const rb = galleryRank.get(b.id) ?? Number.MAX_SAFE_INTEGER
+      if (ra !== rb) return ra - rb
+    }
+    return (catalogRank.get(a.id) ?? 0) - (catalogRank.get(b.id) ?? 0)
+  })
 }
 
 export function isChartCategory(value: string): value is ChartCategory {
