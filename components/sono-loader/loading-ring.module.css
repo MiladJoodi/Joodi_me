@@ -1,0 +1,93 @@
+/* Self-contained liquid LoadingRing — all motion & chrome live here */
+
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ball {
+  position: relative;
+  isolation: isolate;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: var(--muted);
+}
+
+.column {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.crest {
+  pointer-events: none;
+  position: absolute;
+  inset-inline: 0;
+  top: -1.25rem;
+  height: 1.75rem;
+  color: var(--primary);
+}
+
+.body {
+  position: absolute;
+  inset-inline: 0;
+  top: -1px;
+  bottom: 0;
+  background: var(--primary);
+}
+
+.label {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--muted-foreground);
+}
+
+.waveSvg {
+  display: block;
+  height: 100%;
+  width: 200%;
+  max-width: none;
+}
+
+.waveFront,
+.waveBack {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 100%;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.waveFront {
+  color: var(--primary);
+  animation: waveShift 1.6s linear infinite;
+}
+
+.waveBack {
+  color: color-mix(in oklab, var(--primary) 65%, transparent);
+  animation: waveShift 2.2s linear infinite reverse;
+}
+
+@keyframes waveShift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    /* Wrapper = ball width; SVG is 200% → -100% = one seamless tile */
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waveFront,
+  .waveBack {
+    animation: none;
+  }
+}

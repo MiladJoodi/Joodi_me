@@ -4,7 +4,11 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import { chartsNav, getChartsCurrentLabel } from "@/lib/charts-nav"
+import {
+  chartsNav,
+  getChartsActiveCategoryId,
+  getChartsCurrentLabel,
+} from "@/lib/charts-nav"
 import { cn } from "@/lib/utils"
 import { ListIndexNav } from "@/components/sidebar-nav/list-index-nav"
 import {
@@ -17,6 +21,7 @@ import {
   SIDEBAR_EMPTY_CLASS,
   SIDEBAR_GROUP_COUNT_CLASS,
   SIDEBAR_GROUP_TRIGGER_CLASS,
+  SIDEBAR_ITEM_ACTIVE,
   SIDEBAR_NESTED_ITEM_CLASS,
   SIDEBAR_NESTED_RAIL_CLASS,
   SIDEBAR_SEARCH_INPUT_CLASS,
@@ -42,23 +47,108 @@ import {
   SidebarMenuItem,
 } from "@sonojs/ui/components/sidebar"
 
+const OPEN_GROUPS_KEY = "sonojs-charts-sidebar-open"
+
+function readOpenGroups(): Record<string, boolean> {
+  if (typeof window === "undefined") return {}
+  try {
+    const raw = sessionStorage.getItem(OPEN_GROUPS_KEY)
+    if (!raw) return {}
+    return JSON.parse(raw) as Record<string, boolean>
+  } catch {
+    return {}
+  }
+}
+
+function writeOpenGroups(next: Record<string, boolean>) {
+  try {
+    sessionStorage.setItem(OPEN_GROUPS_KEY, JSON.stringify(next))
+  } catch {
+    // ignore quota / private mode
+  }
+}
+
 function ChartsSidebarBody({ className }: { className?: string }) {
   const pathname = usePathname()
   const [query, setQuery] = React.useState("")
   const normalized = normalizeNavSearch(query)
+  const activeCategoryId = getChartsActiveCategoryId(pathname)
 
-  const filtered = chartsNav
-    .map((group) => ({
-      ...group,
-      items: group.items.filter(
-        (item) =>
-          matchesNavQuery(item.title, normalized) ||
-          matchesNavQuery(group.title, normalized)
-      ),
-    }))
-    .filter((group) => group.items.length > 0)
+  const [openGroups, setOpenGroups] = React.useState<Record<string, boolean>>(
+    {}
+  )
+  const [hydrated, setHydrated] = React.useState(false)
 
-  const showIndex = matchesNavQuery("Charts", normalized)
+  React.useLayoutEffect(() => {
+    const saved = readOpenGroups()
+    setOpenGroups({
+      ...saved,
+      ...(activeCategoryId ? { [activeCategoryId]: true } : {}),
+    })
+    setHydrated(true)
+    // Mount restore only; active category kept open via effect below.
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount
+  }, [])
+
+  React.useEffect(() => {
+    if (!activeCategoryId) return
+    setOpenGroups((prev) => {
+      if (prev[activeCategoryId]) return prev
+      const next = { ...prev, [activeCategoryId]: true }
+      writeOpenGroups(next)
+      return next
+    })
+  }, [activeCategoryId])
+
+  const filtered = React.useMemo(() => {
+    return chartsNav
+      .map((group) => {
+        const items = group.items.filter(
+          (item) =>
+            !normalized ||
+            matchesNavQuery(item.title, normalized) ||
+            matchesNavQuery(item.id, normalized) ||
+            matchesNavQuery(group.title, normalized)
+        )
+        const categoryMatch =
+          !normalized || matchesNavQuery(group.title, normalized)
+
+        if (normalized && !categoryMatch && items.length === 0) {
+          return null
+        }
+
+        return {
+          ...group,
+          items:
+            normalized && categoryMatch && items.length === 0
+              ? group.items
+              : items,
+        }
+      })
+      .filter((group): group is NonNullable<typeof group> => group != null)
+  }, [normalized])
+
+  React.useEffect(() => {
+    if (!normalized) return
+    setOpenGroups((prev) => {
+      const next = { ...prev }
+      for (const group of filtered) {
+        next[group.id] = true
+      }
+      writeOpenGroups(next)
+      return next
+    })
+  }, [normalized, filtered])
+
+  const setGroupOpen = React.useCallback((id: string, next: boolean) => {
+    setOpenGroups((prev) => {
+      const updated = { ...prev, [id]: next }
+      writeOpenGroups(updated)
+      return updated
+    })
+  }, [])
+
+  const showIndex = matchesNavQuery("Charts", normalized) || !normalized
 
   return (
     <div className={cn("flex h-full w-full flex-col", className)}>
@@ -93,50 +183,81 @@ function ChartsSidebarBody({ className }: { className?: string }) {
                     </Link>
                   </SidebarMenuItem>
                 ) : null}
-                {filtered.map((group) => (
-                  <SidebarMenuItem key={group.title}>
-                    <Collapsible
-                      defaultOpen
-                      className="group/charts-folder"
-                    >
-                      <CollapsibleTrigger
-                        className={SIDEBAR_GROUP_TRIGGER_CLASS}
+                {filtered.map((group) => {
+                  const categoryActive = group.id === activeCategoryId
+                  const open = hydrated
+                    ? (openGroups[group.id] ?? Boolean(normalized))
+                    : categoryActive
+
+                  return (
+                    <SidebarMenuItem key={group.id}>
+                      <Collapsible
+                        open={open}
+                        onOpenChange={(next) => setGroupOpen(group.id, next)}
+                        className="group/charts-folder"
                       >
-                        <span className="min-w-0 flex-1 truncate text-start">
-                          {group.title}
-                        </span>
-                        <span className={SIDEBAR_GROUP_COUNT_CLASS}>
-                          {group.items.length}
-                        </span>
-                        <SidebarNavChevron group="charts-folder" />
-                      </CollapsibleTrigger>
-                      <CollapsibleContent
-                        className={SIDEBAR_COLLAPSIBLE_CONTENT_CLASS}
-                      >
-                        <div className={SIDEBAR_NESTED_RAIL_CLASS}>
-                          {group.items.map((item) => {
-                            const active = pathname === item.href
-                            return (
-                              <Link
-                                key={item.href}
-                                href={item.href}
-                                prefetch={false}
-                                data-active={active || undefined}
-                                className={cn(
-                                  SIDEBAR_NESTED_ITEM_CLASS,
-                                  sidebarItemStateClass(active)
-                                )}
-                              >
-                                <SidebarNavBullet featured={item.featured} />
-                                <SidebarNavLabel label={item.title} />
-                              </Link>
-                            )
-                          })}
-                        </div>
-                      </CollapsibleContent>
-                    </Collapsible>
-                  </SidebarMenuItem>
-                ))}
+                        <CollapsibleTrigger
+                          className={cn(
+                            SIDEBAR_GROUP_TRIGGER_CLASS,
+                            categoryActive && SIDEBAR_ITEM_ACTIVE
+                          )}
+                        >
+                          <span className="min-w-0 flex-1 truncate text-start">
+                            {group.title}
+                          </span>
+                          <span className={SIDEBAR_GROUP_COUNT_CLASS}>
+                            {group.items.length}
+                          </span>
+                          <SidebarNavChevron group="charts-folder" />
+                        </CollapsibleTrigger>
+                        <CollapsibleContent
+                          className={SIDEBAR_COLLAPSIBLE_CONTENT_CLASS}
+                        >
+                          <div className={SIDEBAR_NESTED_RAIL_CLASS}>
+                            <Link
+                              href={group.href}
+                              prefetch={false}
+                              data-active={
+                                pathname === group.href || undefined
+                              }
+                              className={cn(
+                                SIDEBAR_NESTED_ITEM_CLASS,
+                                sidebarItemStateClass(pathname === group.href)
+                              )}
+                            >
+                              <SidebarNavBullet />
+                              <SidebarNavLabel label="Overview" />
+                            </Link>
+                            {group.items.map((item) => {
+                              const active = pathname === item.href
+                              return (
+                                <Link
+                                  key={item.id}
+                                  href={item.href}
+                                  prefetch={false}
+                                  data-active={active || undefined}
+                                  title={item.status === "pending" ? "Pending" : undefined}
+                                  className={cn(
+                                    SIDEBAR_NESTED_ITEM_CLASS,
+                                    sidebarItemStateClass(active),
+                                    item.status === "pending" &&
+                                      !active &&
+                                      "opacity-70"
+                                  )}
+                                >
+                                  <SidebarNavBullet
+                                    featured={item.featured}
+                                  />
+                                  <SidebarNavLabel label={item.title} />
+                                </Link>
+                              )
+                            })}
+                          </div>
+                        </CollapsibleContent>
+                      </Collapsible>
+                    </SidebarMenuItem>
+                  )
+                })}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>

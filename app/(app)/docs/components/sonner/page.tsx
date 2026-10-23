@@ -64,6 +64,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {children}
+        {/* Required — without this, toast() shows nothing */}
         <Toaster />
       </body>
     </html>
@@ -90,19 +91,20 @@ export default async function SonnerDocsPage() {
         <h1 className="text-h1">Sonner</h1>
         <p className="leading-relaxed text-muted-foreground">
           Brief toast notifications for success, errors, and background work.
-          Mount{" "}
+          After{" "}
+          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
+            add sonner
+          </code>
+          , mount{" "}
           <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
             Toaster
           </code>{" "}
-          once in the root layout, then call{" "}
+          once in the root layout — without it,{" "}
           <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
             toast()
           </code>{" "}
-          from{" "}
-          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
-            sonner
-          </code>
-          . Writing direction is passed through so layout flips in RTL.
+          shows nothing. Writing direction is passed through so layout flips in
+          RTL.
         </p>
       </header>
 
@@ -115,9 +117,26 @@ export default async function SonnerDocsPage() {
       <section className="space-y-3">
         <h2 className="text-h3">Setup</h2>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          Add the toaster next to your app shell (inside the theme provider if
-          you use one).
+          Required. Mount{" "}
+          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
+            Toaster
+          </code>{" "}
+          once in your root layout (inside{" "}
+          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
+            ThemeProvider
+          </code>{" "}
+          if you use one). Until you do,{" "}
+          <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
+            toast()
+          </code>{" "}
+          will not appear.
         </p>
+        <div className="flex flex-wrap items-center gap-2 rounded-xl border border-border/80 bg-muted/20 px-3 py-2 text-[12.5px] text-muted-foreground">
+          <span className="shrink-0">Then mount</span>
+          <code className="min-w-0 flex-1 truncate rounded-md border border-border/70 bg-background px-1.5 py-0.5 font-mono text-[11.5px] text-foreground sm:flex-none">
+            {"<Toaster />"} in app/layout.tsx
+          </code>
+        </div>
         <ComponentSource title="layout.tsx" lang="tsx" code={setupSource} />
       </section>
 

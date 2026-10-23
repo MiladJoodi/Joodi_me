@@ -12,6 +12,14 @@ Edit **`packages/ui/src/components/<name>.tsx`** only.
 
 Blocks/charts still live under `registry/blocks/`, `registry/charts/`.
 
+## Charts port (skeleton → file-by-file)
+
+- Catalog contract: `lib/charts-catalog.ts` (status `pending` | `ported`)
+- Folder tree: `registry/charts/` (classic folders + `gallery/<category>/` + `_lib/`)
+- Preview chrome: `components/charts/ChartPreview` (LTR default, RTL toggle, wide stage)
+- Per-file checklist: [`registry/charts/PORT.md`](charts/PORT.md)
+- Do **not** mass-copy demos; port one id when requested.
+
 ## Add a UI component
 
 1. `packages/ui/src/components/<name>.tsx`

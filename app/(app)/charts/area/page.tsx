@@ -1,31 +1,53 @@
-import { ComponentSource } from "@/components/docs"
-import { ChartAreaDefault } from "@/registry/charts/chart-area"
+import Link from "next/link"
 
-const chartSource = `import { ChartAreaDefault } from "@/registry/charts/chart-area"
+import {
+  CHART_CATEGORY_META,
+  chartViewHref,
+  getChartsByCategory,
+} from "@/lib/charts-catalog"
 
-export default function Page() {
-  return <ChartAreaDefault />
-}`
+/** Static route keeps `/charts/area` out of the dynamic `[category]` segment. */
+export default function ChartAreaCategoryPage() {
+  const category = "area" as const
+  const meta = CHART_CATEGORY_META[category]
+  const entries = getChartsByCategory(category)
 
-export default function ChartAreaPage() {
   return (
-    <article className="mx-auto max-w-3xl space-y-8">
+    <article className="w-full max-w-none space-y-8">
       <header className="space-y-2">
-        <h1 className="text-h1">Area chart</h1>
-        <p className="text-muted-foreground">
-          A simple area chart with Vega chart tokens.
-        </p>
+        <h1 className="text-h1">{meta.title}</h1>
+        <p className="max-w-2xl text-muted-foreground">{meta.description}</p>
       </header>
 
-      <section className="space-y-3">
-        <h2 className="text-h3">Preview</h2>
-        <ChartAreaDefault />
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-h3">Code</h2>
-        <ComponentSource title="chart-area.tsx" code={chartSource} />
-      </section>
+      <ul className="divide-y divide-border/80 rounded-xl border border-border/80">
+        {entries.map((entry) => (
+          <li key={entry.id}>
+            <Link
+              href={chartViewHref(entry.id)}
+              className="flex cursor-pointer items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-muted/40"
+            >
+              <span className="min-w-0">
+                <span className="block font-medium text-foreground">
+                  {entry.title}
+                </span>
+                <span className="block text-xs text-muted-foreground">
+                  {entry.id} · {entry.kind}
+                  {entry.fullWidth ? " · full width" : ""}
+                </span>
+              </span>
+              <span
+                className={
+                  entry.status === "ported"
+                    ? "shrink-0 text-xs font-medium text-emerald-600 dark:text-emerald-400"
+                    : "shrink-0 text-xs text-muted-foreground"
+                }
+              >
+                {entry.status}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </article>
   )
 }

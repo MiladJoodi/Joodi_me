@@ -17,12 +17,12 @@
   --vega-ring: #2563eb;
   --vega-brand: #2563eb;
   --vega-brand-foreground: #ffffff;
-  /* Chart series — blue sequential aligned to primary */
+  /* Chart: 1–2 dual series; 3–5 semantic (amber / indigo / rose) */
   --vega-chart-1: #2563eb;
-  --vega-chart-2: #3b82f6;
-  --vega-chart-3: #60a5fa;
-  --vega-chart-4: #1d4ed8;
-  --vega-chart-5: #1e40af;
+  --vega-chart-2: #0d9488;
+  --vega-chart-3: #f59e0b;
+  --vega-chart-4: #6366f1;
+  --vega-chart-5: #e11d48;
 
   --background: #ffffff;
   --foreground: #09090b;
@@ -143,11 +143,11 @@ html.dark .style-vega,
   --vega-ring: #396ef0;
   --vega-brand: #396ef0;
   --vega-brand-foreground: #ffffff;
-  --vega-chart-1: #3b82f6;
-  --vega-chart-2: #60a5fa;
-  --vega-chart-3: #93c5fd;
-  --vega-chart-4: #2563eb;
-  --vega-chart-5: #1d4ed8;
+  --vega-chart-1: #396ef0;
+  --vega-chart-2: #2dd4bf;
+  --vega-chart-3: #fbbf24;
+  --vega-chart-4: #818cf8;
+  --vega-chart-5: #fb7185;
 
   /* Neutral zinc shell — primary stays brand blue only */
   --background: #09090b;

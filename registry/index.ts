@@ -86,6 +86,13 @@ export const registry = {
       description: "A carousel with motion and swipe built using Embla.",
     },
     {
+      name: "chart",
+      type: "registry:ui" as const,
+      title: "Chart",
+      description:
+        "Recharts helpers — ChartContainer, tooltip, legend, and theme CSS variables.",
+    },
+    {
       name: "checkbox",
       type: "registry:ui" as const,
       title: "Checkbox",
@@ -412,10 +419,24 @@ export const registry = {
   ],
   charts: [
     {
+      name: "chart",
+      type: "registry:ui" as const,
+      title: "Chart",
+      description:
+        "Recharts helpers — ChartContainer, tooltip, legend, and theme CSS variables.",
+    },
+    {
       name: "chart-area",
       type: "registry:chart" as const,
       title: "Area chart",
       description: "A simple area chart.",
+    },
+    {
+      name: "simple-bar-chart",
+      type: "registry:chart" as const,
+      title: "Simple Bar Chart",
+      description:
+        "Two-series bar chart from Recharts docs (seed 823), SonoJS chrome.",
     },
   ],
 }

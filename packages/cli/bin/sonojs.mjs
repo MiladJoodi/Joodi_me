@@ -131,6 +131,18 @@ async function cmdAdd(names, rest) {
   if (twAnimate?.status === "patched") {
     console.log("  + @import tw-animate-css in styles/sonojs.css")
   }
+
+  if (seen.has("sonner")) {
+    console.log(`
+Next — mount <Toaster /> once in your root layout (inside ThemeProvider if you use one):
+  import { Toaster } from "@/components/ui/sonner"
+  …
+  <body>
+    {children}
+    <Toaster />
+  </body>
+`)
+  }
 }
 
 async function main() {

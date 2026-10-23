@@ -1,4 +1,6 @@
 export { CodePanel } from "./code-panel"
+export { ComponentsDirectory } from "./components-directory"
+export type { ComponentsDirectoryItem } from "./components-directory"
 export { ComponentSource } from "./component-source"
 export { CopyButton } from "./copy-button"
 export { DocsToaster } from "./docs-toaster"

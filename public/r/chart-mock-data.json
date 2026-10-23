@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-mock-data",
+  "type": "registry:lib",
+  "title": "Chart mock data",
+  "description": "Recharts-compatible generateMockData (LCG) for gallery demos.",
+  "files": [
+    {
+      "path": "components/charts/_lib/chart-mock-data.ts",
+      "type": "registry:lib",
+      "content": "/**\n * Local stand-in for `@recharts/devtools` mock helpers.\n * RNG matches recharts/devtools LCG so demos match official seeds (e.g. 823).\n */\n\nexport type MockDataType = {\n  label: string\n  x: number\n  y: number\n  z: number\n}\n\n/**\n * LCG — not for security use.\n * @see https://en.wikipedia.org/wiki/Linear_congruential_generator\n */\nexport function* random(seed: number): Generator<number, number, unknown> {\n  const m = 2 ** 16 + 1\n  const a = 75\n  const c = 74\n  let x = seed\n  if (x > 0 && x < 1) {\n    x = Math.round(x * 1000)\n  }\n  while (x < 0) {\n    x += m\n  }\n  while (true) {\n    x = (a * x + c) % m\n    yield Math.round(x)\n  }\n}\n\nexport function between(\n  rng: Generator<number, number, unknown>,\n  min: number,\n  max: number\n): number {\n  const val = rng.next().value\n  return (val % (max - min)) + min\n}\n\n/** Same API as Recharts docs `generateMockData(length, seed)`. */\nexport function generateMockData(length: number, seed: number): MockDataType[] {\n  const result: MockDataType[] = []\n  const gen = random(seed)\n  for (let i = 0; i < length; i++) {\n    result.push({\n      label: `Iter: ${i}`,\n      x: between(gen, 100, 300),\n      y: between(gen, 400, 800),\n      z: between(gen, 1000, 2000),\n    })\n  }\n  return result\n}\n",
+      "target": "components/charts/_lib/chart-mock-data.ts"
+    }
+  ],
+  "version": "0.1.0+8cfbcf3c0bba",
+  "generatedAt": "2026-10-23T05:20:48.549Z"
+}

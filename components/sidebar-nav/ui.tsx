@@ -6,6 +6,16 @@ import { cn } from "@/lib/utils"
 /** Shared sidebar list chrome — docs / blocks / charts. */
 
 /**
+ * Shared layout grid for docs / charts / blocks.
+ * One gap token (`--sidebar-content-gap`) so sidebar and main never sit flush.
+ */
+export const SIDEBAR_LAYOUT_PROVIDER_CLASS =
+  "min-h-min flex-1 items-start px-0 lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:gap-x-[var(--sidebar-content-gap)]"
+
+export const SIDEBAR_LAYOUT_MAIN_CLASS =
+  "h-full w-full min-w-0 py-6 md:py-8 lg:pe-2"
+
+/**
  * Sticky docs nav (shadcn-style): stays while the page scrolls; list scrolls inside.
  * `self-start` is required in the layout grid — stretch makes sticky a no-op.
  */

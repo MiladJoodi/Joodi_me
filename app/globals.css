@@ -8,6 +8,8 @@
 @source "../packages/ui/src/**/*.{ts,tsx}";
 @source "../registry/**/*.{ts,tsx}";
 @source "../components/**/*.{ts,tsx}";
+/* Switch thumb LTR/RTL travel — ensure compound variants emit. */
+@source inline("ltr:data-[state=checked]:translate-x-[calc(100%-2px)] rtl:data-[state=checked]:-translate-x-[calc(100%-2px)]");
 
 @custom-variant style-vega (&:where(.style-vega *));
 @custom-variant dark (&:is(.dark *));
@@ -271,6 +273,8 @@
   /* Layout */
   --content-max: 1280px;
   --sidebar-width: 240px;
+  /* Gap between sticky sidebar column and main content (docs / charts / blocks) */
+  --sidebar-content-gap: var(--space-8);
   --page-gutter: 16px;
   --card-padding: 24px;
   --form-gap: 16px;
@@ -381,12 +385,13 @@
   --border: #e4e4e7;
   --input: #e4e4e7;
   --ring: #2563eb;
+  /* Chart: 1–2 dual series (blue×teal); 3–5 semantic only */
   --chart-1: #2563eb;
-  --chart-2: #3b82f6;
-  --chart-3: #60a5fa;
-  --chart-4: #1d4ed8;
-  --chart-5: #1e40af;
-  --chart-up: #16a34a;
+  --chart-2: #0d9488;
+  --chart-3: #f59e0b;
+  --chart-4: #6366f1;
+  --chart-5: #e11d48;
+  --chart-up: #0d9488;
   --chart-down: #e11d48;
   --chart-mute: #71717a;
   --sidebar: #ffffff;
@@ -426,13 +431,13 @@
   --border: #27272a;
   --input: #27272a;
   --ring: #396ef0;
-  --chart-1: #3b82f6;
-  --chart-2: #60a5fa;
-  --chart-3: #93c5fd;
-  --chart-4: #2563eb;
-  --chart-5: #1d4ed8;
-  --chart-up: #4ade80;
-  --chart-down: #f25f70;
+  --chart-1: #396ef0;
+  --chart-2: #2dd4bf;
+  --chart-3: #fbbf24;
+  --chart-4: #818cf8;
+  --chart-5: #fb7185;
+  --chart-up: #2dd4bf;
+  --chart-down: #fb7185;
   --chart-mute: #a1a1aa;
   --sidebar: #09090b;
   --sidebar-foreground: #fafafa;
@@ -591,3 +596,4 @@
     opacity: 1;
   }
 }
+

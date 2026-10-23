@@ -13,6 +13,8 @@
 
 /* Keep invalid/checked utilities available for installable controls */
 @source inline("border-destructive bg-destructive text-destructive data-[state=checked]:bg-destructive data-[state=checked]:border-destructive data-[invalid=true]:text-destructive data-[invalid=true]:[&_[data-slot=label]]:text-destructive data-[invalid=true]:[&_[data-slot=field-label]]:text-destructive");
+/* Switch thumb LTR/RTL travel */
+@source inline("ltr:data-[state=checked]:translate-x-[calc(100%-2px)] rtl:data-[state=checked]:-translate-x-[calc(100%-2px)]");
 
 /* Map utilities → CSS vars (values from :root) */
 @theme inline {
@@ -301,10 +303,10 @@
   --input: #e4e4e7;
   --ring: #2563eb;
   --chart-1: #2563eb;
-  --chart-2: #3b82f6;
-  --chart-3: #60a5fa;
-  --chart-4: #1d4ed8;
-  --chart-5: #1e40af;
+  --chart-2: #0d9488;
+  --chart-3: #f59e0b;
+  --chart-4: #6366f1;
+  --chart-5: #e11d48;
   --sidebar: #ffffff;
   --sidebar-foreground: #09090b;
   --sidebar-primary: #2563eb;
@@ -341,11 +343,11 @@
   --border: #27272a;
   --input: #27272a;
   --ring: #396ef0;
-  --chart-1: #3b82f6;
-  --chart-2: #60a5fa;
-  --chart-3: #93c5fd;
-  --chart-4: #2563eb;
-  --chart-5: #1d4ed8;
+  --chart-1: #396ef0;
+  --chart-2: #2dd4bf;
+  --chart-3: #fbbf24;
+  --chart-4: #818cf8;
+  --chart-5: #fb7185;
   --sidebar: #09090b;
   --sidebar-foreground: #fafafa;
   --sidebar-primary: #396ef0;

@@ -1,4 +1,10 @@
-import { ChartsListIndex, ChartsSidebar } from "@/components/sidebar-nav"
+import {
+  ChartsListIndex,
+  ChartsSidebar,
+  SIDEBAR_LAYOUT_MAIN_CLASS,
+  SIDEBAR_LAYOUT_PROVIDER_CLASS,
+} from "@/components/sidebar-nav"
+import { cn } from "@/lib/utils"
 import { SidebarProvider } from "@sonojs/ui/components/sidebar"
 
 export default function ChartsLayout({
@@ -10,9 +16,9 @@ export default function ChartsLayout({
     <div className="flex flex-1 flex-col">
       <ChartsListIndex />
       <div className="container-wrapper flex flex-1 flex-col">
-        <SidebarProvider className="min-h-min flex-1 items-start px-0 lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)]">
+        <SidebarProvider className={SIDEBAR_LAYOUT_PROVIDER_CLASS}>
           <ChartsSidebar />
-          <div className="h-full w-full min-w-0 py-6 md:px-2 md:py-8">
+          <div className={cn(SIDEBAR_LAYOUT_MAIN_CLASS, "max-w-none")}>
             {children}
           </div>
         </SidebarProvider>

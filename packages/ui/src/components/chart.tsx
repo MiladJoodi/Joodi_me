@@ -70,6 +70,12 @@ function ChartContainer({
         {...props}
       >
         <ChartStyle id={chartId} config={config} />
+        {/* Keep tick glyphs LTR so ancestor dir=rtl does not scramble SVG text-anchor. */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `[data-chart=${chartId}] .recharts-yAxis-tick-labels,[data-chart=${chartId}] .recharts-xAxis-tick-labels{direction:ltr;unicode-bidi:isolate}`,
+          }}
+        />
         <RechartsPrimitive.ResponsiveContainer
           initialDimension={initialDimension}
         >
@@ -160,7 +166,7 @@ function ChartTooltipContent({
 
     if (labelFormatter) {
       return (
-        <div className={cn("font-medium", labelClassName)}>
+        <div className={cn("font-medium text-foreground", labelClassName)}>
           {labelFormatter(value, payload)}
         </div>
       )
@@ -170,7 +176,11 @@ function ChartTooltipContent({
       return null
     }
 
-    return <div className={cn("font-medium", labelClassName)}>{value}</div>
+    return (
+      <div className={cn("font-medium text-foreground", labelClassName)}>
+        {value}
+      </div>
+    )
   }, [
     label,
     labelFormatter,
@@ -190,7 +200,8 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        "grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl",
+        // Quiet panel — pointer-events-none so it never steals the next hover target.
+        "pointer-events-none grid min-w-[9rem] items-start gap-1.5 rounded-md border border-border bg-background px-2.5 py-2 text-xs shadow-sm",
         className
       )}
     >
@@ -201,7 +212,15 @@ function ChartTooltipContent({
           .map((item, index) => {
             const key = `${nameKey ?? item.name ?? item.dataKey ?? "value"}`
             const itemConfig = getPayloadConfigFromPayload(config, item, key)
-            const indicatorColor = color ?? item.payload?.fill ?? item.color
+            const indicatorColor =
+              color ??
+              itemConfig?.color ??
+              (typeof item.color === "string" &&
+              !item.color.startsWith("url(")
+                ? item.color
+                : undefined) ??
+              item.payload?.fill ??
+              item.color
 
             return (
               <div
@@ -241,7 +260,7 @@ function ChartTooltipContent({
                     )}
                     <div
                       className={cn(
-                        "flex flex-1 justify-between leading-none",
+                        "flex flex-1 items-center justify-between gap-4 leading-none",
                         nestLabel ? "items-end" : "items-center"
                       )}
                     >
@@ -252,7 +271,7 @@ function ChartTooltipContent({
                         </span>
                       </div>
                       {item.value != null && (
-                        <span className="font-mono font-medium text-foreground tabular-nums">
+                        <span className="font-medium text-foreground tabular-nums">
                           {typeof item.value === "number"
                             ? item.value.toLocaleString()
                             : String(item.value)}
@@ -290,7 +309,7 @@ function ChartLegendContent({
   return (
     <div
       className={cn(
-        "flex items-center justify-center gap-4",
+        "flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs sm:gap-x-6",
         verticalAlign === "top" ? "pb-3" : "pt-3",
         className
       )}
@@ -305,16 +324,22 @@ function ChartLegendContent({
             <div
               key={index}
               className={cn(
-                "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"
+                "flex items-center gap-1.5 text-muted-foreground [&>svg]:size-3 [&>svg]:text-muted-foreground"
               )}
             >
               {itemConfig?.icon && !hideIcon ? (
                 <itemConfig.icon />
               ) : (
                 <div
-                  className="h-2 w-2 shrink-0 rounded-[2px]"
+                  className="size-2.5 shrink-0 rounded-[2px]"
                   style={{
-                    backgroundColor: item.color,
+                    // Prefer config / CSS var — gradient `url(#…)` fills are not valid swatches.
+                    backgroundColor:
+                      itemConfig?.color ??
+                      (typeof item.color === "string" &&
+                      !item.color.startsWith("url(")
+                        ? item.color
+                        : `var(--color-${key})`),
                   }}
                 />
               )}

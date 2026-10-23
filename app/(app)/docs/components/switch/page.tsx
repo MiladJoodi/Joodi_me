@@ -105,11 +105,12 @@ export default async function SwitchDocsPage() {
           <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
             useDirection
           </code>{" "}
-          and positions the thumb with logical{" "}
+          and slides the thumb with{" "}
           <code className="rounded-md border border-border/70 bg-muted/50 px-1 py-0.5 font-mono text-[0.9em]">
-            start
+            translate-x
           </code>{" "}
-          so checked always slides toward the inline end.
+          (flipped in RTL) so it sits tight to the edges and checked moves toward
+          the inline end.
         </p>
         <ComponentSource
           title="direction.tsx"

@@ -1,4 +1,10 @@
-import { DocsListIndex, DocsSidebar } from "@/components/sidebar-nav"
+import {
+  DocsListIndex,
+  DocsSidebar,
+  SIDEBAR_LAYOUT_MAIN_CLASS,
+  SIDEBAR_LAYOUT_PROVIDER_CLASS,
+} from "@/components/sidebar-nav"
+import { cn } from "@/lib/utils"
 import { SidebarProvider } from "@sonojs/ui/components/sidebar"
 
 /** Docs depend on registry metadata + static MDX/TSX — bake at build; refresh on deploy. */
@@ -14,12 +20,13 @@ export default function DocsLayout({
       <DocsListIndex />
       <div className="container-wrapper flex flex-1 flex-col">
         <SidebarProvider
-          className="min-h-min flex-1 items-start px-0 [--top-spacing:var(--space-4)] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--top-spacing:var(--space-4)]"
+          className={cn(
+            SIDEBAR_LAYOUT_PROVIDER_CLASS,
+            "[--top-spacing:var(--space-4)] lg:[--top-spacing:var(--space-4)]"
+          )}
         >
           <DocsSidebar />
-          <div className="h-full w-full min-w-0 py-6 md:px-2 md:py-8">
-            {children}
-          </div>
+          <div className={SIDEBAR_LAYOUT_MAIN_CLASS}>{children}</div>
         </SidebarProvider>
       </div>
     </div>

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-styles",
+  "type": "registry:lib",
+  "title": "Chart styles",
+  "description": "Primary blue × teal dual series, bar stage sizing, and useChartDir.",
+  "files": [
+    {
+      "path": "components/charts/_lib/chart-styles.ts",
+      "type": "registry:lib",
+      "content": "/**\n * Shared gallery chart chrome.\n *\n * Dual-series default: --chart-1 (primary blue) × --chart-2 (teal).\n * --chart-3…5 are semantic-only companions (amber / indigo / rose) —\n * not a third default bar series.\n */\n\nexport const CHART_SERIES_A = \"var(--chart-1)\"\nexport const CHART_SERIES_B = \"var(--chart-2)\"\n\n/** Dual series + semantic extras (3+ for up/alert/accent data only). */\nexport const CHART_BAR_COLORS = [\n  \"#2563EB\", // chart-1 primary blue\n  \"#0D9488\", // chart-2 teal\n  \"#F59E0B\", // chart-3 semantic amber\n  \"#6366F1\", // chart-4 semantic indigo\n  \"#E11D48\", // chart-5 semantic rose\n] as const\n\n/** Faint horizontal grid — sits behind bars, never competes with series. */\nexport const chartDashedGridClassName =\n  \"[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/40 dark:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50\"\n\n/**\n * Bar stage — responsive height on the 4px scale; min-w-0 so flex parents\n * cannot clip axis ticks; overflow visible for edge labels.\n */\nexport const chartContainerClassName =\n  \"aspect-auto h-56 w-full min-w-0 max-w-[640px] overflow-visible font-sans text-xs sm:h-64 [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-surface]:overflow-visible\"\n\n/** Soft hover on bar rects — opacity only, no glow filters. */\nexport const chartBarHoverClassName =\n  \"[&_.recharts-bar-rectangle]:transition-[opacity] [&_.recharts-bar-rectangle]:duration-150 [&_.recharts-bar-rectangle]:ease-out [&_.recharts-active-bar]:opacity-90\"\n\n/** Bar demos — faint grid + quiet hover. */\nexport const chartBarContainerClassName = [\n  chartContainerClassName,\n  chartDashedGridClassName,\n  chartBarHoverClassName,\n].join(\" \")\n",
+      "target": "components/charts/_lib/chart-styles.ts"
+    },
+    {
+      "path": "components/charts/_lib/use-chart-dir.ts",
+      "type": "registry:lib",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nexport type ChartDir = \"ltr\" | \"rtl\"\n\n/**\n * Reads writing direction from the nearest `[dir]` ancestor (or `<html>`).\n * No docs-site DirectionProvider required — works after `sonojs add`.\n */\nexport function useChartDir(): {\n  dir: ChartDir\n  ref: React.RefObject<HTMLDivElement | null>\n} {\n  const ref = React.useRef<HTMLDivElement | null>(null)\n  const [dir, setDir] = React.useState<ChartDir>(\"ltr\")\n\n  React.useLayoutEffect(() => {\n    const el = ref.current\n    if (!el) return\n\n    const read = () => {\n      const host = el.closest(\"[dir]\")\n      setDir(host?.getAttribute(\"dir\") === \"rtl\" ? \"rtl\" : \"ltr\")\n    }\n\n    read()\n    const obs = new MutationObserver(read)\n    obs.observe(document.documentElement, {\n      attributes: true,\n      attributeFilter: [\"dir\"],\n      subtree: true,\n    })\n    return () => obs.disconnect()\n  }, [])\n\n  return { dir, ref }\n}\n",
+      "target": "components/charts/_lib/use-chart-dir.ts"
+    }
+  ],
+  "version": "0.1.0+8cfbcf3c0bba",
+  "generatedAt": "2026-10-23T05:20:48.549Z"
+}

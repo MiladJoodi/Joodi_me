@@ -1073,15 +1073,81 @@ export const registryItems = [
     ],
   },
   {
+    name: "chart",
+    type: "registry:ui",
+    title: "Chart",
+    description:
+      "Recharts helpers — ChartContainer, tooltip, legend, and theme CSS variables.",
+    dependencies: ["recharts", "clsx", "tailwind-merge"],
+    files: [
+      {
+        path: "packages/ui/src/components/chart.tsx",
+        type: "registry:ui",
+        target: "components/ui/chart.tsx",
+      },
+    ],
+  },
+  {
     name: "chart-area",
     type: "registry:chart",
     title: "Area chart",
     description: "A simple area chart.",
     dependencies: ["lucide-react", "recharts"],
+    registryDependencies: ["card"],
     files: [
       {
         path: "registry/charts/chart-area/chart-area.tsx",
         type: "registry:component",
+        target: "components/charts/chart-area.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-mock-data",
+    type: "registry:lib",
+    title: "Chart mock data",
+    description:
+      "Recharts-compatible generateMockData (LCG) for gallery demos.",
+    files: [
+      {
+        path: "registry/charts/_lib/chart-mock-data.ts",
+        type: "registry:lib",
+        target: "components/charts/_lib/chart-mock-data.ts",
+      },
+    ],
+  },
+  {
+    name: "chart-styles",
+    type: "registry:lib",
+    title: "Chart styles",
+    description:
+      "Primary blue × teal dual series, bar stage sizing, and useChartDir.",
+    files: [
+      {
+        path: "registry/charts/_lib/chart-styles.ts",
+        type: "registry:lib",
+        target: "components/charts/_lib/chart-styles.ts",
+      },
+      {
+        path: "registry/charts/_lib/use-chart-dir.ts",
+        type: "registry:lib",
+        target: "components/charts/_lib/use-chart-dir.ts",
+      },
+    ],
+  },
+  {
+    name: "simple-bar-chart",
+    type: "registry:chart",
+    title: "Simple Bar Chart",
+    description:
+      "Desktop/Mobile bar chart (Jan–Jun, seed 823) — blue × teal, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-mock-data", "chart-styles"],
+    files: [
+      {
+        path: "registry/charts/simple-bar-chart.tsx",
+        type: "registry:component",
+        target: "components/charts/simple-bar-chart.tsx",
       },
     ],
   },
