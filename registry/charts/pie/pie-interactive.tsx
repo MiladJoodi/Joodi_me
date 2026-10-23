@@ -25,13 +25,14 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+import { pieSliceTooltip } from "../_lib/pie-tooltip"
 import { useChartDir } from "../_lib/use-chart-dir"
 import { usePrefersReducedMotion } from "../_lib/use-prefers-reduced-motion"
 
 /**
  * Pie Interactive — month Select drives active sector + center value.
  * Hover can sync Select when `scrub`. Tokens: `--chart-1…5`. Spec: `registry/charts/PORT.md`
- * Classic twin `chart-pie-interactive` not ported here.
+ * Classic twin: `chart-pie-interactive`.
  * Installs to: components/charts/pie-interactive.tsx
  */
 
@@ -112,7 +113,7 @@ function monthLabel(month: string) {
 }
 
 const chartPieContainerClassName =
-  "mx-auto aspect-square h-auto w-full max-w-[300px] max-h-[300px] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
+  "mx-auto aspect-square h-auto w-full max-w-[380px] max-h-[min(70vh,380px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
 
 function PieInteractive({
   title = "Store sales by month",
@@ -161,10 +162,10 @@ function PieInteractive({
   )
 
   const selectMonth = React.useCallback(
-    (month: string, fromKeyboard = false) => {
+    (month: string) => {
       setActiveMonth(month)
       const slice = data.find((item) => item.month === month)
-      if (fromKeyboard && slice) announce(month, slice.store)
+      if (slice) announce(month, slice.store)
     },
     [announce, data]
   )
@@ -276,7 +277,13 @@ function PieInteractive({
                 <ChartTooltipContent
                   nameKey="month"
                   hideLabel
-                  formatter={(value) => formatNumber(Number(value), locale)}
+                  formatter={(value, _name, item) =>
+                    pieSliceTooltip(value, item, {
+                      locale,
+                      config: chartConfig,
+                      nameKey: "month",
+                    })
+                  }
                 />
               }
             />
@@ -286,7 +293,8 @@ function PieInteractive({
               nameKey="month"
               cx="50%"
               cy="50%"
-              innerRadius={60}
+              innerRadius="55%"
+              outerRadius="82%"
               startAngle={startAngle}
               endAngle={endAngle}
               stroke="var(--background)"

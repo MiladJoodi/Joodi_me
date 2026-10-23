@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "sonojs",
   "homepage": "https://sonojs.com",
-  "version": "0.1.0+02db735797f7",
-  "generatedAt": "2026-10-23T21:35:15.265Z",
+  "version": "0.1.0+faa4ab01f844",
+  "generatedAt": "2026-10-23T22:13:37.997Z",
   "items": [
     {
       "name": "accordion",
@@ -23,8 +23,8 @@
           "target": "components/ui/accordion.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "alert",
@@ -43,8 +43,8 @@
           "target": "components/ui/alert.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "alert-dialog",
@@ -76,8 +76,8 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "avatar",
@@ -96,8 +96,8 @@
           "target": "components/ui/avatar.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "badge",
@@ -117,8 +117,8 @@
           "target": "components/ui/badge.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "breadcrumb",
@@ -138,8 +138,8 @@
           "target": "components/ui/breadcrumb.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bubble",
@@ -159,8 +159,8 @@
           "target": "components/ui/bubble.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "button",
@@ -180,8 +180,8 @@
           "target": "components/ui/button.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "card",
@@ -199,8 +199,8 @@
           "target": "components/ui/card.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "carousel",
@@ -223,8 +223,8 @@
           "target": "components/ui/carousel.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "checkbox",
@@ -244,8 +244,8 @@
           "target": "components/ui/checkbox.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "collapsible",
@@ -264,8 +264,8 @@
           "target": "components/ui/collapsible.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "combobox",
@@ -289,8 +289,8 @@
           "target": "components/ui/combobox.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "command",
@@ -314,8 +314,8 @@
           "target": "components/ui/command.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "context-menu",
@@ -335,8 +335,8 @@
           "target": "components/ui/context-menu.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "dialog",
@@ -359,8 +359,8 @@
           "target": "components/ui/dialog.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "drawer",
@@ -398,8 +398,8 @@
           "target": "hooks/use-mobile.ts"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "dropdown-menu",
@@ -419,8 +419,8 @@
           "target": "components/ui/dropdown-menu.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "empty",
@@ -439,8 +439,8 @@
           "target": "components/ui/empty.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "field",
@@ -463,8 +463,8 @@
           "target": "components/ui/field.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "hover-card",
@@ -483,8 +483,8 @@
           "target": "components/ui/hover-card.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "input",
@@ -502,8 +502,8 @@
           "target": "components/ui/input.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "textarea",
@@ -521,8 +521,8 @@
           "target": "components/ui/textarea.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "table",
@@ -540,8 +540,8 @@
           "target": "components/ui/table.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "input-group",
@@ -565,8 +565,8 @@
           "target": "components/ui/input-group.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "input-otp",
@@ -586,8 +586,8 @@
           "target": "components/ui/input-otp.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "item",
@@ -610,8 +610,8 @@
           "target": "components/ui/item.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "kbd",
@@ -629,8 +629,8 @@
           "target": "components/ui/kbd.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "marker",
@@ -650,8 +650,8 @@
           "target": "components/ui/marker.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "menubar",
@@ -671,8 +671,8 @@
           "target": "components/ui/menubar.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "message",
@@ -690,8 +690,8 @@
           "target": "components/ui/message.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "message-scroller",
@@ -713,8 +713,8 @@
           "target": "components/ui/message-scroller.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "native-select",
@@ -733,8 +733,8 @@
           "target": "components/ui/native-select.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "navigation-menu",
@@ -755,8 +755,8 @@
           "target": "components/ui/navigation-menu.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "pagination",
@@ -778,8 +778,8 @@
           "target": "components/ui/pagination.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "code-block",
@@ -804,8 +804,8 @@
           "target": "components/ui/code-block.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "use-highlighted-code",
@@ -827,8 +827,8 @@
           "target": "lib/highlighter.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "label",
@@ -847,8 +847,8 @@
           "target": "components/ui/label.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "button-group",
@@ -871,8 +871,8 @@
           "target": "components/ui/button-group.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "calendar",
@@ -897,8 +897,8 @@
           "target": "components/ui/calendar.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "popover",
@@ -917,8 +917,8 @@
           "target": "components/ui/popover.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "progress",
@@ -937,8 +937,8 @@
           "target": "components/ui/progress.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "radio-group",
@@ -958,8 +958,8 @@
           "target": "components/ui/radio-group.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "resizable",
@@ -979,8 +979,8 @@
           "target": "components/ui/resizable.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "scroll-area",
@@ -999,8 +999,8 @@
           "target": "components/ui/scroll-area.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "select",
@@ -1020,8 +1020,8 @@
           "target": "components/ui/select.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "separator",
@@ -1040,8 +1040,8 @@
           "target": "components/ui/separator.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "sheet",
@@ -1072,8 +1072,8 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "skeleton",
@@ -1091,8 +1091,8 @@
           "target": "components/ui/skeleton.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "slider",
@@ -1111,8 +1111,8 @@
           "target": "components/ui/slider.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "switch",
@@ -1131,8 +1131,8 @@
           "target": "components/ui/switch.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "tabs",
@@ -1152,8 +1152,8 @@
           "target": "components/ui/tabs.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "sonner",
@@ -1182,8 +1182,8 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "toggle",
@@ -1203,8 +1203,8 @@
           "target": "components/ui/toggle.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "toggle-group",
@@ -1227,8 +1227,8 @@
           "target": "components/ui/toggle-group.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "tooltip",
@@ -1247,8 +1247,8 @@
           "target": "components/ui/tooltip.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "trace",
@@ -1270,8 +1270,8 @@
           "target": "components/ui/trace.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "attachment",
@@ -1296,8 +1296,8 @@
           "target": "components/ui/attachment.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "spinner",
@@ -1316,8 +1316,8 @@
           "target": "components/ui/spinner.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "login-01",
@@ -1338,8 +1338,8 @@
           "type": "registry:component"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart",
@@ -1358,8 +1358,8 @@
           "target": "components/ui/chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area",
@@ -1380,8 +1380,8 @@
           "target": "components/charts/chart-area.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-mock-data",
@@ -1395,8 +1395,8 @@
           "target": "components/charts/_lib/chart-mock-data.ts"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-styles",
@@ -1444,10 +1444,15 @@
           "path": "components/charts/_lib/use-market-neon.ts",
           "type": "registry:lib",
           "target": "components/charts/_lib/use-market-neon.ts"
+        },
+        {
+          "path": "components/charts/_lib/pie-tooltip.tsx",
+          "type": "registry:lib",
+          "target": "components/charts/_lib/pie-tooltip.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stock-shared",
@@ -1467,8 +1472,8 @@
           "target": "components/charts/_lib/stock-shared.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "heatmap-shared",
@@ -1485,8 +1490,8 @@
           "target": "components/charts/_lib/heatmap-shared.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "simple-bar-chart",
@@ -1517,8 +1522,8 @@
           "target": "components/charts/simple-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-chart",
@@ -1553,8 +1558,8 @@
           "target": "components/charts/area-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stacked-area-chart",
@@ -1591,8 +1596,8 @@
           "target": "components/charts/stacked-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-chart-range",
@@ -1625,8 +1630,8 @@
           "target": "components/charts/area-chart-range.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-chart-connect-nulls",
@@ -1659,8 +1664,8 @@
           "target": "components/charts/area-chart-connect-nulls.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "cardinal-area-chart",
@@ -1695,8 +1700,8 @@
           "target": "components/charts/cardinal-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "percent-area-chart",
@@ -1733,8 +1738,8 @@
           "target": "components/charts/percent-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "synchronized-area-chart",
@@ -1771,8 +1776,8 @@
           "target": "components/charts/synchronized-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "tiny-area-chart",
@@ -1805,8 +1810,8 @@
           "target": "components/charts/tiny-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-chart-fill-by-value",
@@ -1841,8 +1846,8 @@
           "target": "components/charts/area-chart-fill-by-value.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-chart-custom-animation",
@@ -1875,8 +1880,8 @@
           "target": "components/charts/area-chart-custom-animation.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "range-area-chart-custom-animation",
@@ -1909,8 +1914,8 @@
           "target": "components/charts/range-area-chart-custom-animation.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-chart-with-custom-events",
@@ -1944,8 +1949,8 @@
           "target": "components/charts/area-chart-with-custom-events.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "prevent-right-click",
@@ -1979,8 +1984,8 @@
           "target": "components/charts/prevent-right-click.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-interactive",
@@ -2015,8 +2020,8 @@
           "target": "components/charts/area-interactive.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-step",
@@ -2049,8 +2054,8 @@
           "target": "components/charts/area-step.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "area-gradient",
@@ -2085,8 +2090,8 @@
           "target": "components/charts/area-gradient.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "market-cards",
@@ -2120,8 +2125,8 @@
           "target": "components/charts/market-cards.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-default",
@@ -2150,8 +2155,8 @@
           "target": "components/charts/chart-area-default.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-linear",
@@ -2180,8 +2185,8 @@
           "target": "components/charts/chart-area-linear.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-step",
@@ -2210,8 +2215,8 @@
           "target": "components/charts/chart-area-step.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-legend",
@@ -2242,8 +2247,8 @@
           "target": "components/charts/chart-area-legend.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-stacked",
@@ -2274,8 +2279,8 @@
           "target": "components/charts/chart-area-stacked.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-stacked-expand",
@@ -2306,8 +2311,8 @@
           "target": "components/charts/chart-area-stacked-expand.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-icons",
@@ -2339,8 +2344,8 @@
           "target": "components/charts/chart-area-icons.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-gradient",
@@ -2375,8 +2380,8 @@
           "target": "components/charts/chart-area-gradient.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "chart-area-axes",
@@ -2407,8 +2412,8 @@
           "target": "components/charts/chart-area-axes.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "two-level-pie-chart",
@@ -2445,8 +2450,8 @@
           "target": "components/charts/two-level-pie-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "straight-angle-pie-chart",
@@ -2483,8 +2488,8 @@
           "target": "components/charts/straight-angle-pie-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "custom-active-shape-pie-chart",
@@ -2519,8 +2524,8 @@
           "target": "components/charts/custom-active-shape-pie-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "pie-chart-with-customized-label",
@@ -2555,8 +2560,8 @@
           "target": "components/charts/pie-chart-with-customized-label.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "pie-chart-with-padding-angle",
@@ -2591,8 +2596,8 @@
           "target": "components/charts/pie-chart-with-padding-angle.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "pie-chart-in-grid",
@@ -2627,8 +2632,8 @@
           "target": "components/charts/pie-chart-in-grid.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "pie-with-gradient",
@@ -2663,8 +2668,8 @@
           "target": "components/charts/pie-with-gradient.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "pie-donut-text",
@@ -2684,14 +2689,14 @@
           "chart-2": "#ea580c",
           "chart-3": "#f59e0b",
           "chart-4": "#6366f1",
-          "chart-5": "#10b981"
+          "chart-5": "#e11d48"
         },
         "dark": {
           "chart-1": "#3b82f6",
           "chart-2": "#f97316",
           "chart-3": "#fbbf24",
           "chart-4": "#818cf8",
-          "chart-5": "#34d399"
+          "chart-5": "#fb7185"
         }
       },
       "files": [
@@ -2701,8 +2706,8 @@
           "target": "components/charts/pie-donut-text.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "pie-interactive",
@@ -2723,14 +2728,14 @@
           "chart-2": "#ea580c",
           "chart-3": "#f59e0b",
           "chart-4": "#6366f1",
-          "chart-5": "#10b981"
+          "chart-5": "#e11d48"
         },
         "dark": {
           "chart-1": "#3b82f6",
           "chart-2": "#f97316",
           "chart-3": "#fbbf24",
           "chart-4": "#818cf8",
-          "chart-5": "#34d399"
+          "chart-5": "#fb7185"
         }
       },
       "files": [
@@ -2740,8 +2745,465 @@
           "target": "components/charts/pie-interactive.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "pie-stacked",
+      "type": "registry:chart",
+      "title": "Pie Stacked",
+      "description": "Nested Store×Online month rings — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/pie-stacked.tsx",
+          "type": "registry:component",
+          "target": "components/charts/pie-stacked.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-simple",
+      "type": "registry:chart",
+      "title": "Pie Simple",
+      "description": "Classic full pie of province sales share — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-simple.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-simple.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-separator-none",
+      "type": "registry:chart",
+      "title": "Pie Separator None",
+      "description": "Full pie with no slice separators — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-separator-none.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-separator-none.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-label",
+      "type": "registry:chart",
+      "title": "Pie Label",
+      "description": "Full pie with always-on value labels — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-label.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-label.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-label-custom",
+      "type": "registry:chart",
+      "title": "Pie Label Custom",
+      "description": "Full pie with custom value labels (no leader lines) — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-label-custom.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-label-custom.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-label-list",
+      "type": "registry:chart",
+      "title": "Pie Label List",
+      "description": "Full pie with on-slice province names via LabelList — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-label-list.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-label-list.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-legend",
+      "type": "registry:chart",
+      "title": "Pie Legend",
+      "description": "Full pie with wrapped ChartLegend — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-legend.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-legend.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-donut",
+      "type": "registry:chart",
+      "title": "Pie Donut",
+      "description": "Payment-method donut — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-donut.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-donut.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-donut-active",
+      "type": "registry:chart",
+      "title": "Pie Donut Active",
+      "description": "Donut with expanded active sector — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-donut-active.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-donut-active.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-donut-text",
+      "type": "registry:chart",
+      "title": "Pie Donut Text",
+      "description": "Classic donut with centered ring-total text — locked chrome, slice scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-donut-text.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-donut-text.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-stacked",
+      "type": "registry:chart",
+      "title": "Pie Stacked",
+      "description": "Classic nested Store×Online month rings — locked chrome, ring scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-stacked.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-stacked.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
+    },
+    {
+      "name": "chart-pie-interactive",
+      "type": "registry:chart",
+      "title": "Pie Interactive",
+      "description": "Classic month Select drives active donut sector — locked chrome, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles",
+        "select"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/chart-pie-interactive.tsx",
+          "type": "registry:component",
+          "target": "components/charts/chart-pie-interactive.tsx"
+        }
+      ],
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "simple-line-chart",
@@ -2772,8 +3234,8 @@
           "target": "components/charts/simple-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "dashed-line-chart",
@@ -2804,8 +3266,8 @@
           "target": "components/charts/dashed-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "vertical-line-chart",
@@ -2836,8 +3298,8 @@
           "target": "components/charts/vertical-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-chart-connect-nulls",
@@ -2866,8 +3328,8 @@
           "target": "components/charts/line-chart-connect-nulls.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-chart-with-reference-lines",
@@ -2898,8 +3360,8 @@
           "target": "components/charts/line-chart-with-reference-lines.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "customized-label-line-chart",
@@ -2930,8 +3392,8 @@
           "target": "components/charts/customized-label-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "highlight-and-zoom-line-chart",
@@ -2962,8 +3424,8 @@
           "target": "components/charts/highlight-and-zoom-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-chart-axis-interval",
@@ -2995,8 +3457,8 @@
           "target": "components/charts/line-chart-axis-interval.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "biaxial-line-chart",
@@ -3027,8 +3489,8 @@
           "target": "components/charts/biaxial-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-chart-with-x-axis-padding",
@@ -3059,8 +3521,8 @@
           "target": "components/charts/line-chart-with-x-axis-padding.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "customized-dot-line-chart",
@@ -3093,8 +3555,8 @@
           "target": "components/charts/customized-dot-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "synchronized-line-chart",
@@ -3127,8 +3589,8 @@
           "target": "components/charts/synchronized-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "synchronized-different-data",
@@ -3159,8 +3621,8 @@
           "target": "components/charts/synchronized-different-data.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-chart-custom-shape",
@@ -3191,8 +3653,8 @@
           "target": "components/charts/line-chart-custom-shape.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-chart-has-multi-series",
@@ -3225,8 +3687,8 @@
           "target": "components/charts/line-chart-has-multi-series.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-chart-negative-values-with-reference-lines",
@@ -3255,8 +3717,8 @@
           "target": "components/charts/line-chart-negative-values-with-reference-lines.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "compare-two-lines",
@@ -3287,8 +3749,8 @@
           "target": "components/charts/compare-two-lines.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "dynamic-z-index-line-chart",
@@ -3321,8 +3783,8 @@
           "target": "components/charts/dynamic-z-index-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "tiny-line-chart",
@@ -3351,8 +3813,8 @@
           "target": "components/charts/tiny-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "animated-time-series",
@@ -3383,8 +3845,8 @@
           "target": "components/charts/animated-time-series.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-interactive",
@@ -3415,8 +3877,8 @@
           "target": "components/charts/line-interactive.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-step",
@@ -3447,8 +3909,8 @@
           "target": "components/charts/line-step.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-default",
@@ -3477,8 +3939,8 @@
           "target": "components/charts/line-default.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-dots-colors",
@@ -3515,8 +3977,8 @@
           "target": "components/charts/line-dots-colors.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-label-custom",
@@ -3547,8 +4009,8 @@
           "target": "components/charts/line-label-custom.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "line-bar-area-composed-chart",
@@ -3581,8 +4043,8 @@
           "target": "components/charts/line-bar-area-composed-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "same-data-composed-chart",
@@ -3613,8 +4075,8 @@
           "target": "components/charts/same-data-composed-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "vertical-composed-chart",
@@ -3645,8 +4107,8 @@
           "target": "components/charts/vertical-composed-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "composed-chart-with-axis-labels",
@@ -3679,8 +4141,8 @@
           "target": "components/charts/composed-chart-with-axis-labels.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "scatter-and-line-of-best-fit",
@@ -3711,8 +4173,8 @@
           "target": "components/charts/scatter-and-line-of-best-fit.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "banded-chart",
@@ -3743,8 +4205,8 @@
           "target": "components/charts/banded-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "target-price-chart",
@@ -3775,8 +4237,8 @@
           "target": "components/charts/target-price-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "asset-returns",
@@ -3808,8 +4270,8 @@
           "target": "components/charts/asset-returns.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "monthly-savings",
@@ -3841,8 +4303,8 @@
           "target": "components/charts/monthly-savings.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "candlestick",
@@ -3874,8 +4336,8 @@
           "target": "components/charts/candlestick.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "candlestick-dashboard",
@@ -3909,8 +4371,8 @@
           "target": "components/charts/candlestick-dashboard.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "candlestick-bar",
@@ -3944,8 +4406,8 @@
           "target": "components/charts/candlestick-bar.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "candlestick-category",
@@ -3979,8 +4441,8 @@
           "target": "components/charts/candlestick-category.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "candlestick-line",
@@ -4014,8 +4476,8 @@
           "target": "components/charts/candlestick-line.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "sparklines",
@@ -4053,8 +4515,8 @@
           "target": "components/charts/sparklines.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stock-ohlc",
@@ -4086,8 +4548,8 @@
           "target": "components/charts/stock-ohlc.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stock-line",
@@ -4121,8 +4583,8 @@
           "target": "components/charts/stock-line.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stock-column",
@@ -4154,8 +4616,8 @@
           "target": "components/charts/stock-column.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stock-with-volume",
@@ -4187,8 +4649,8 @@
           "target": "components/charts/stock-with-volume.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stock-multi-series",
@@ -4227,8 +4689,8 @@
           "target": "components/charts/stock-multi-series.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stock-trendline",
@@ -4264,8 +4726,8 @@
           "target": "components/charts/stock-trendline.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "tremor-area-charts",
@@ -4303,8 +4765,8 @@
           "target": "components/charts/tremor-area-charts.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "realtime-mountain-chart",
@@ -4338,8 +4800,8 @@
           "target": "components/charts/realtime-mountain-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "realtime-candlestick",
@@ -4371,8 +4833,8 @@
           "target": "components/charts/realtime-candlestick.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "heikin-ashi",
@@ -4404,8 +4866,8 @@
           "target": "components/charts/heikin-ashi.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "renko-chart",
@@ -4438,8 +4900,8 @@
           "target": "components/charts/renko-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "volume-profile",
@@ -4471,8 +4933,8 @@
           "target": "components/charts/volume-profile.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "order-book-depth",
@@ -4505,8 +4967,8 @@
           "target": "components/charts/order-book-depth.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "drawdown-chart",
@@ -4540,8 +5002,8 @@
           "target": "components/charts/drawdown-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bollinger-bands",
@@ -4580,8 +5042,8 @@
           "target": "components/charts/bollinger-bands.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "candlestick-indicators",
@@ -4619,8 +5081,8 @@
           "target": "components/charts/candlestick-indicators.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "multi-timeframe",
@@ -4658,8 +5120,8 @@
           "target": "components/charts/multi-timeframe.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "heatmap-calendar",
@@ -4685,8 +5147,8 @@
           "target": "components/charts/heatmap-calendar.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "heatmap-calendar-emerald",
@@ -4712,8 +5174,8 @@
           "target": "components/charts/heatmap-calendar-emerald.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "heatmap-matrix",
@@ -4739,8 +5201,8 @@
           "target": "components/charts/heatmap-matrix.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "heatmap-matrix-values",
@@ -4766,8 +5228,8 @@
           "target": "components/charts/heatmap-matrix-values.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stacked-bar-chart",
@@ -4798,8 +5260,8 @@
           "target": "components/charts/stacked-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "box-plot",
@@ -4830,8 +5292,8 @@
           "target": "components/charts/box-plot.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "waterfall",
@@ -4866,8 +5328,8 @@
           "target": "components/charts/waterfall.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "mix-bar-chart",
@@ -4900,8 +5362,8 @@
           "target": "components/charts/mix-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "positive-and-negative-bar-chart",
@@ -4934,8 +5396,8 @@
           "target": "components/charts/positive-and-negative-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-chart-with-customized-event",
@@ -4968,8 +5430,8 @@
           "target": "components/charts/bar-chart-with-customized-event.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-chart-has-background",
@@ -5000,8 +5462,8 @@
           "target": "components/charts/bar-chart-has-background.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "ranged-stacked-bar-chart",
@@ -5034,8 +5496,8 @@
           "target": "components/charts/ranged-stacked-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "tiny-bar-chart",
@@ -5064,8 +5526,8 @@
           "target": "components/charts/tiny-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-active",
@@ -5102,8 +5564,8 @@
           "target": "components/charts/bar-active.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "population-pyramid",
@@ -5134,8 +5596,8 @@
           "target": "components/charts/population-pyramid.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "timeline",
@@ -5166,8 +5628,8 @@
           "target": "components/charts/timeline.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "animated-bar-width",
@@ -5198,8 +5660,8 @@
           "target": "components/charts/animated-bar-width.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "animated-bar-time-series",
@@ -5230,8 +5692,8 @@
           "target": "components/charts/animated-bar-time-series.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "custom-shape-bar-chart",
@@ -5268,8 +5730,8 @@
           "target": "components/charts/custom-shape-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "brush-bar-chart",
@@ -5300,8 +5762,8 @@
           "target": "components/charts/brush-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "biaxial-bar-chart",
@@ -5332,8 +5794,8 @@
           "target": "components/charts/biaxial-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-chart-with-label-background",
@@ -5364,8 +5826,8 @@
           "target": "components/charts/bar-chart-with-label-background.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-chart-range",
@@ -5396,8 +5858,8 @@
           "target": "components/charts/bar-chart-range.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "stacked-bar-chart-with-horizontal-line",
@@ -5430,8 +5892,8 @@
           "target": "components/charts/stacked-bar-chart-with-horizontal-line.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-default",
@@ -5462,8 +5924,8 @@
           "target": "components/charts/bar-default.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-multiple",
@@ -5494,8 +5956,8 @@
           "target": "components/charts/bar-multiple.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-stacked",
@@ -5526,8 +5988,8 @@
           "target": "components/charts/bar-stacked.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-label",
@@ -5558,8 +6020,8 @@
           "target": "components/charts/bar-label.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-label-custom",
@@ -5590,8 +6052,8 @@
           "target": "components/charts/bar-label-custom.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-interactive",
@@ -5622,8 +6084,8 @@
           "target": "components/charts/bar-interactive.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-horizontal",
@@ -5654,8 +6116,8 @@
           "target": "components/charts/bar-horizontal.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-mixed",
@@ -5692,8 +6154,8 @@
           "target": "components/charts/bar-mixed.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     },
     {
       "name": "bar-negative",
@@ -5730,8 +6192,8 @@
           "target": "components/charts/bar-negative.tsx"
         }
       ],
-      "version": "0.1.0+02db735797f7",
-      "generatedAt": "2026-10-23T21:35:15.265Z"
+      "version": "0.1.0+faa4ab01f844",
+      "generatedAt": "2026-10-23T22:13:37.997Z"
     }
   ]
 }

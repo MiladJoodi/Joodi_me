@@ -7,6 +7,7 @@ import {
   PieChart as RechartsPieChart,
   Sector,
   type PieSectorDataItem,
+  type PieSectorShapeProps,
 } from "recharts"
 
 import { cn } from "@/lib/utils"
@@ -107,7 +108,7 @@ function formatPct(value: number) {
 }
 
 const chartPieContainerClassName =
-  "mx-auto aspect-square h-auto w-full max-w-[500px] max-h-[min(80vh,500px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
+  "mx-auto aspect-square h-auto w-full max-w-[380px] max-h-[min(70vh,380px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
 
 function renderActiveShape(
   props: PieSectorDataItem,
@@ -347,10 +348,19 @@ function CustomActiveShapePieChart({
     ]
   )
 
-  const activeShape = React.useCallback(
-    (props: PieSectorDataItem) =>
-      renderActiveShape(props, locale, SLICE_LABELS),
-    [locale]
+  const renderShape = React.useCallback(
+    (props: PieSectorShapeProps) => {
+      const { index, outerRadius = 0, ...rest } = props
+      if (index === liveIndex) {
+        return renderActiveShape(
+          props as PieSectorDataItem,
+          locale,
+          SLICE_LABELS
+        )
+      }
+      return <Sector {...rest} outerRadius={outerRadius} />
+    },
+    [liveIndex, locale]
   )
 
   const cellOpacity = (index: number) => {
@@ -438,8 +448,7 @@ function CustomActiveShapePieChart({
               endAngle={endAngle}
               stroke="var(--background)"
               strokeWidth={2}
-              activeIndex={liveIndex}
-              activeShape={activeShape}
+              shape={renderShape}
               isAnimationActive={!reducedMotion}
               animationDuration={PIE_MS}
               onMouseEnter={
@@ -458,7 +467,7 @@ function CustomActiveShapePieChart({
               ))}
             </Pie>
             {/* Callout replaces tooltip body. */}
-            <ChartTooltip content={() => null} />
+            <ChartTooltip cursor={false} content={() => null} />
             <ChartLegend content={<ChartLegendContent nameKey="name" />} />
           </RechartsPieChart>
         </ChartContainer>

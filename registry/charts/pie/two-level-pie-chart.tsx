@@ -11,6 +11,7 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { pieSliceTooltip } from "../_lib/pie-tooltip"
 import { useChartDir } from "../_lib/use-chart-dir"
 import { usePrefersReducedMotion } from "../_lib/use-prefers-reduced-motion"
 
@@ -134,7 +135,7 @@ function formatPct(value: number) {
 type ActiveRing = "inner" | "outer"
 
 const chartPieContainerClassName =
-  "mx-auto aspect-square h-auto w-full max-w-[500px] max-h-[min(80vh,500px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
+  "mx-auto aspect-square h-auto w-full max-w-[380px] max-h-[min(70vh,380px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
 
 function TwoLevelPieChart({
   title = "Sales by region & channel",
@@ -435,10 +436,18 @@ function TwoLevelPieChart({
               ))}
             </Pie>
             <ChartTooltip
+              cursor={false}
               content={
                 <ChartTooltipContent
                   nameKey="name"
-                  formatter={(value) => formatNumber(Number(value), locale)}
+                  hideLabel
+                  formatter={(value, _name, item) =>
+                    pieSliceTooltip(value, item, {
+                      locale,
+                      config: chartConfig,
+                      nameKey: "name",
+                    })
+                  }
                 />
               }
             />
@@ -446,7 +455,7 @@ function TwoLevelPieChart({
         </ChartContainer>
       </div>
 
-      <ul className="mx-auto flex max-w-[500px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
+      <ul className="mx-auto flex max-w-[380px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
         {innerData.map((slice, index) => (
           <li key={slice.name} className="inline-flex items-center gap-1.5">
             <span

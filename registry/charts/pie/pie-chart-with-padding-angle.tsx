@@ -6,13 +6,12 @@ import { Cell, Pie, PieChart as RechartsPieChart } from "recharts"
 import { cn } from "@/lib/utils"
 import {
   ChartContainer,
-  ChartLegend,
-  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { pieSliceTooltip } from "../_lib/pie-tooltip"
 import { useChartDir } from "../_lib/use-chart-dir"
 import { usePrefersReducedMotion } from "../_lib/use-prefers-reduced-motion"
 
@@ -99,7 +98,7 @@ function formatPct(value: number) {
 }
 
 const chartPieContainerClassName =
-  "mx-auto aspect-square h-auto w-full max-w-[500px] max-h-[min(80vh,500px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
+  "mx-auto aspect-square h-auto w-full max-w-[300px] max-h-[min(60vh,300px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
 
 function PieChartWithPaddingAngle({
   title = "Sales by region",
@@ -288,11 +287,18 @@ function PieChartWithPaddingAngle({
         >
           <RechartsPieChart accessibilityLayer>
             <ChartTooltip
+              cursor={false}
               content={
                 <ChartTooltipContent
                   nameKey="name"
                   hideLabel
-                  formatter={(value) => formatNumber(Number(value), locale)}
+                  formatter={(value, _name, item) =>
+                    pieSliceTooltip(value, item, {
+                      locale,
+                      config: chartConfig,
+                      nameKey: "name",
+                    })
+                  }
                 />
               }
             />
@@ -302,8 +308,8 @@ function PieChartWithPaddingAngle({
               nameKey="name"
               cx="50%"
               cy="50%"
-              innerRadius="80%"
-              outerRadius="100%"
+              innerRadius="72%"
+              outerRadius="92%"
               startAngle={startAngle}
               endAngle={endAngle}
               cornerRadius="50%"
@@ -329,13 +335,22 @@ function PieChartWithPaddingAngle({
                 />
               ))}
             </Pie>
-            <ChartLegend
-              content={<ChartLegendContent nameKey="name" />}
-              className="-translate-y-2 flex-wrap gap-2 *:basis-1/4 *:justify-center"
-            />
           </RechartsPieChart>
         </ChartContainer>
       </div>
+
+      <ul className="mx-auto flex max-w-[300px] flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs text-muted-foreground">
+        {data.map((slice, index) => (
+          <li key={slice.name} className="inline-flex items-center gap-1.5">
+            <span
+              className="size-2 shrink-0 rounded-full"
+              style={{ backgroundColor: seriesColor(index) }}
+              aria-hidden
+            />
+            <span>{SLICE_LABELS[slice.name] ?? slice.name}</span>
+          </li>
+        ))}
+      </ul>
 
       <table className="sr-only">
         <caption>{title}</caption>

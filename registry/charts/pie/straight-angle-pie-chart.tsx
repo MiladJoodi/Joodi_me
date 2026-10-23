@@ -11,6 +11,7 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { pieSliceTooltip } from "../_lib/pie-tooltip"
 import { useChartDir } from "../_lib/use-chart-dir"
 import { usePrefersReducedMotion } from "../_lib/use-prefers-reduced-motion"
 
@@ -101,8 +102,9 @@ function formatPct(value: number) {
   return `${value.toFixed(1)}%`
 }
 
+// aspect ~2.4 + large outerRadius: half-pie sits on the bottom edge with little dead air above.
 const chartPieHalfContainerClassName =
-  "mx-auto aspect-[2] h-auto w-full max-w-[500px] max-h-[min(80vh,320px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
+  "mx-auto aspect-[2.4] h-auto w-full max-w-[480px] max-h-[min(70vh,240px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
 
 function StraightAnglePieChart({
   title = "Sales share",
@@ -297,7 +299,7 @@ function StraightAnglePieChart({
               nameKey="name"
               cx="50%"
               cy="100%"
-              outerRadius="120%"
+              outerRadius="195%"
               startAngle={startAngle}
               endAngle={endAngle}
               stroke="var(--background)"
@@ -320,10 +322,18 @@ function StraightAnglePieChart({
               ))}
             </Pie>
             <ChartTooltip
+              cursor={false}
               content={
                 <ChartTooltipContent
                   nameKey="name"
-                  formatter={(value) => formatNumber(Number(value), locale)}
+                  hideLabel
+                  formatter={(value, _name, item) =>
+                    pieSliceTooltip(value, item, {
+                      locale,
+                      config: chartConfig,
+                      nameKey: "name",
+                    })
+                  }
                 />
               }
             />
@@ -331,7 +341,7 @@ function StraightAnglePieChart({
         </ChartContainer>
       </div>
 
-      <ul className="mx-auto flex max-w-[500px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
+      <ul className="mx-auto flex max-w-[480px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
         {data.map((slice, index) => (
           <li key={slice.name} className="inline-flex items-center gap-1.5">
             <span

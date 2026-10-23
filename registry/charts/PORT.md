@@ -132,7 +132,7 @@ Locked Simple Bar chrome is the **default starting point**. Chart-type or custom
 
 **two-level-pie-chart:** nested pies (inner regions / outer channels); metric = idle outer total or scrub slice + “% of ring”; no on-slice labels; region legend only; `--chart-1…5`; RTL flips start/end angles.
 
-**straight-angle-pie-chart:** half-pie `startAngle`/`endAngle` 180↔0, `cy="100%"` `outerRadius="120%"` `aspect-[2]`; no on-slice labels; metric = idle total or scrub slice + “% of total”; RTL swaps sweep so flat edge stays bottom.
+**straight-angle-pie-chart:** half-pie `startAngle`/`endAngle` 180↔0, `cy="100%"` `outerRadius="195%"` `aspect-[2.4]` (fills height — little dead air above); no on-slice labels; metric = idle total or scrub slice + “% of total”; RTL swaps sweep so flat edge stays bottom.
 
 **custom-active-shape-pie-chart:** donut with `activeShape` callout + outer ring; tooltip body suppressed; idle returns to `defaultActiveIndex` (0); value ink `foreground`, percent muted; center name uses slice fill.
 
@@ -144,9 +144,33 @@ Locked Simple Bar chrome is the **default starting point**. Chart-type or custom
 
 **pie-with-gradient:** donut with custom radial + shine `shape`, `paddingAngle={3}` `cornerRadius={10}`; active expand + outer ring; center disc idle = total / scrub = name + `%`; channel cards drive active; no hardcoded `dir`; English / `Intl`.
 
-**pie-donut-text:** compact donut (`innerRadius={60}` `strokeWidth={5}`); center `Label` always shows ring total + “Sales”; header metric scrub dims siblings; `--chart-1…5`; English / `Intl`; classic twin `chart-pie-donut-text` not ported yet.
+**pie-donut-text:** gallery donut with center ring-total Label; header metric scrub; classic twin is `chart-pie-donut-text`.
 
-**pie-interactive:** month `Select` drives active sector (expand + outer ring) + center value/month; `scrub` syncs pie hover → Select; needs registry `select`; no hardcoded `dir`; classic twin `chart-pie-interactive` not ported yet.
+**pie-interactive:** gallery month Select + active sector; needs registry `select`; classic twin is `chart-pie-interactive`.
+
+**pie-stacked:** gallery nested Store×Online month rings; ↑/↓ switch ring; classic twin is `chart-pie-stacked`.
+
+**chart-pie-simple (classic):** baseline full pie (no inner radius); province sales 275/200/187/173/90; locked metric scrub; no Card shell; English / `Intl`; featured.
+
+**chart-pie-separator-none (classic):** same data as Simple; teaching diff is `stroke="0"` (seamless slices, no background gaps); locked metric scrub; not featured.
+
+**chart-pie-label (classic):** same data as Simple; always-on value `label`; ink via `[&_.recharts-pie-label-text]:fill-foreground`; `isAnimationActive={false}` to avoid label blink; locked metric scrub.
+
+**chart-pie-label-custom (classic):** custom JSX `label` + `labelLine={false}`; value ink `var(--foreground)`; `isAnimationActive={false}`; locked metric scrub.
+
+**chart-pie-label-list (classic):** `LabelList` province names on slices; on-fill ink `#ffffff`; `isAnimationActive={false}`; locked metric scrub.
+
+**chart-pie-legend (classic):** full pie + `ChartLegend` / `ChartLegendContent nameKey="province"` wrap row (`basis-1/4`); taller stage `max-h-[300px]`; tooltip + metric scrub.
+
+**chart-pie-donut (classic):** payment-method donut (`innerRadius={60}`); card/gateway/cash/wallet/other; empty hole (no center Label — vs donut-text); locked metric scrub.
+
+**chart-pie-donut-active (classic):** province donut `innerRadius={60}` `strokeWidth={5}`; custom `shape` expands active `outerRadius+10`; idle returns to `defaultActiveIndex` (0); metric tracks featured/active slice.
+
+**chart-pie-donut-text (classic):** twin of gallery `pie-donut-text`; `innerRadius={60}` `strokeWidth={5}`; center `Label` always = ring total + “Sales”; header metric scrub; same chrome language.
+
+**chart-pie-stacked (classic):** twin of gallery `pie-stacked`; Store `outerRadius={60}` × Online `70`/`90`; shared month colors; ↑/↓ switch ring; compact 250px stage.
+
+**chart-pie-interactive (classic):** twin of gallery `pie-interactive`; `innerRadius={60}` `strokeWidth={5}`; Select + expand/halo active shape; center = active value + month; needs registry `select`; 300px stage.
 
 **simple-line-chart:** dual monotone `Line`s (Desktop×Mobile); same locked metric scrub chrome; dots dim to 40% when scrubbing inactive categories; stage uses `chartLineContainerClassName`.
 

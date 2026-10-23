@@ -50,8 +50,14 @@
       "type": "registry:lib",
       "content": "\"use client\"\n\n/**\n * Neon market glow for installable area/stock charts.\n *\n * Always on — docs and `sonojs add` consumers both get `--chart-up` /\n * `--chart-down` + stroke bloom. No `style-*` body class required.\n *\n * Kept as a hook so call sites stay uniform and we can add an opt-out later\n * without rewriting every chart.\n */\nexport function useMarketNeon() {\n  return true\n}\n",
       "target": "components/charts/_lib/use-market-neon.ts"
+    },
+    {
+      "path": "components/charts/_lib/pie-tooltip.tsx",
+      "type": "registry:lib",
+      "content": "import type { ReactNode } from \"react\"\n\ntype SliceConfig = Record<string, { label?: ReactNode } | undefined>\n\n/** Shared pie tooltip row — color swatch + slice label + en Intl value. */\nexport function pieTooltipRow({\n  value,\n  label,\n  locale,\n  color,\n}: {\n  value: number | string\n  label: ReactNode\n  locale: string\n  color?: string\n}) {\n  return (\n    <div className=\"flex w-full min-w-[8rem] items-center gap-2\">\n      {color ? (\n        <span\n          className=\"size-2.5 shrink-0 rounded-[2px]\"\n          style={{ background: color }}\n          aria-hidden\n        />\n      ) : null}\n      <div className=\"flex flex-1 items-center justify-between gap-4 leading-none\">\n        <span className=\"text-muted-foreground\">{label}</span>\n        <span className=\"font-medium tabular-nums text-foreground\">\n          {new Intl.NumberFormat(locale).format(Math.round(Number(value)))}\n        </span>\n      </div>\n    </div>\n  )\n}\n\ntype PayloadLike = {\n  name?: unknown\n  color?: string\n  dataKey?: unknown\n  payload?: Record<string, unknown>\n}\n\n/** Resolve slice label/color from chart config + payload `nameKey`. */\nexport function pieSliceTooltip(\n  value: unknown,\n  item: PayloadLike,\n  {\n    locale,\n    config,\n    nameKey,\n  }: {\n    locale: string\n    config: SliceConfig\n    nameKey: string\n  }\n) {\n  const payload = item.payload\n  const key = String(payload?.[nameKey] ?? item.name ?? \"\")\n  const label = config[key]?.label ?? key\n  const color =\n    (typeof payload?.fill === \"string\" ? payload.fill : undefined) ??\n    item.color\n  return pieTooltipRow({\n    value: Number(value),\n    label,\n    locale,\n    color,\n  })\n}\n",
+      "target": "components/charts/_lib/pie-tooltip.tsx"
     }
   ],
-  "version": "0.1.0+02db735797f7",
-  "generatedAt": "2026-10-23T21:35:15.265Z"
+  "version": "0.1.0+faa4ab01f844",
+  "generatedAt": "2026-10-23T22:13:37.997Z"
 }

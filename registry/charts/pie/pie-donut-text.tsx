@@ -11,13 +11,14 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
+import { pieSliceTooltip } from "../_lib/pie-tooltip"
 import { useChartDir } from "../_lib/use-chart-dir"
 import { usePrefersReducedMotion } from "../_lib/use-prefers-reduced-motion"
 
 /**
  * Pie Donut Text — donut with centered ring-total Label.
  * Header metric scrub; center text stays the ring total. Tokens: `--chart-1…5`.
- * Spec: `registry/charts/PORT.md` · classic twin `chart-pie-donut-text` not ported here.
+ * Spec: `registry/charts/PORT.md` · classic twin: `chart-pie-donut-text`.
  * Installs to: components/charts/pie-donut-text.tsx
  */
 
@@ -100,7 +101,7 @@ function formatPct(value: number) {
 }
 
 const chartPieContainerClassName =
-  "mx-auto aspect-square h-auto w-full max-w-[250px] max-h-[250px] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
+  "mx-auto aspect-square h-auto w-full max-w-[380px] max-h-[min(70vh,380px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
 
 function PieDonutText({
   title = "Sales by region",
@@ -294,7 +295,13 @@ function PieDonutText({
                 <ChartTooltipContent
                   nameKey="province"
                   hideLabel
-                  formatter={(value) => formatNumber(Number(value), locale)}
+                  formatter={(value, _name, item) =>
+                    pieSliceTooltip(value, item, {
+                      locale,
+                      config: chartConfig,
+                      nameKey: "province",
+                    })
+                  }
                 />
               }
             />
@@ -304,7 +311,8 @@ function PieDonutText({
               nameKey="province"
               cx="50%"
               cy="50%"
-              innerRadius={60}
+              innerRadius="55%"
+              outerRadius="82%"
               startAngle={startAngle}
               endAngle={endAngle}
               stroke="var(--background)"
@@ -373,7 +381,7 @@ function PieDonutText({
         </ChartContainer>
       </div>
 
-      <ul className="mx-auto flex max-w-[250px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
+      <ul className="mx-auto flex max-w-[380px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
         {data.map((slice, index) => (
           <li key={slice.province} className="inline-flex items-center gap-1.5">
             <span

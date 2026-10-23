@@ -109,7 +109,7 @@ function sliceLabel(slice: PieWithGradientSlice) {
 }
 
 const chartPieContainerClassName =
-  "mx-auto aspect-square h-auto w-full max-w-[400px] max-h-[min(70vh,400px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
+  "mx-auto aspect-square h-auto w-full max-w-[380px] max-h-[min(70vh,380px)] overflow-visible font-sans text-xs tabular-nums [&_.recharts-surface]:overflow-visible"
 
 type PlotRow = ReturnType<typeof withPlotRows>[number]
 
@@ -232,13 +232,17 @@ function GradientTooltip({
   payload,
   total,
   locale,
-}: TooltipContentProps & { total: number; locale: string }) {
+  dir,
+}: TooltipContentProps & { total: number; locale: string; dir: "ltr" | "rtl" }) {
   if (!(active && payload?.length)) return null
   const row = payload[0]?.payload as PlotRow | undefined
   if (!row) return null
   const pct = total > 0 ? (row.value / total) * 100 : 0
   return (
-    <div className="min-w-[10rem] rounded-md border border-border bg-background px-3 py-2.5 font-sans text-xs shadow-sm">
+    <div
+      dir={dir}
+      className="pointer-events-none min-w-[10rem] rounded-md border border-border bg-background px-3 py-2.5 text-start font-sans text-xs shadow-sm"
+    >
       <div className="mb-1.5 flex items-center gap-2">
         <span
           className="size-2.5 rounded-full"
@@ -443,7 +447,7 @@ function PieWithGradient({
     <div
       ref={ref}
       className={cn(
-        "mx-auto flex w-full min-w-0 max-w-[440px] flex-col gap-5 font-sans tabular-nums sm:gap-6",
+        "mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6",
         className
       )}
     >
@@ -539,11 +543,13 @@ function PieWithGradient({
               />
             </Pie>
             <ChartTooltip
+              cursor={false}
               content={(tooltipProps) => (
                 <GradientTooltip
                   {...tooltipProps}
                   total={total}
                   locale={locale}
+                  dir={dir}
                 />
               )}
             />

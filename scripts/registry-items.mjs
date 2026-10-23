@@ -1164,6 +1164,11 @@ export const registryItems = [
         type: "registry:lib",
         target: "components/charts/_lib/use-market-neon.ts",
       },
+      {
+        path: "registry/charts/_lib/pie-tooltip.tsx",
+        type: "registry:lib",
+        target: "components/charts/_lib/pie-tooltip.tsx",
+      },
     ],
   },
   {
@@ -2185,14 +2190,14 @@ export const registryItems = [
         "chart-2": "#ea580c",
         "chart-3": "#f59e0b",
         "chart-4": "#6366f1",
-        "chart-5": "#10b981",
+        "chart-5": "#e11d48",
       },
       dark: {
         "chart-1": "#3b82f6",
         "chart-2": "#f97316",
         "chart-3": "#fbbf24",
         "chart-4": "#818cf8",
-        "chart-5": "#34d399",
+        "chart-5": "#fb7185",
       },
     },
     files: [
@@ -2217,14 +2222,14 @@ export const registryItems = [
         "chart-2": "#ea580c",
         "chart-3": "#f59e0b",
         "chart-4": "#6366f1",
-        "chart-5": "#10b981",
+        "chart-5": "#e11d48",
       },
       dark: {
         "chart-1": "#3b82f6",
         "chart-2": "#f97316",
         "chart-3": "#fbbf24",
         "chart-4": "#818cf8",
-        "chart-5": "#34d399",
+        "chart-5": "#fb7185",
       },
     },
     files: [
@@ -2232,6 +2237,390 @@ export const registryItems = [
         path: "registry/charts/pie/pie-interactive.tsx",
         type: "registry:component",
         target: "components/charts/pie-interactive.tsx",
+      },
+    ],
+  },
+  {
+    name: "pie-stacked",
+    type: "registry:chart",
+    title: "Pie Stacked",
+    description:
+      "Nested Store×Online month rings — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/pie-stacked.tsx",
+        type: "registry:component",
+        target: "components/charts/pie-stacked.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-simple",
+    type: "registry:chart",
+    title: "Pie Simple",
+    description:
+      "Classic full pie of province sales share — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-simple.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-simple.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-separator-none",
+    type: "registry:chart",
+    title: "Pie Separator None",
+    description:
+      "Full pie with no slice separators — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-separator-none.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-separator-none.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-label",
+    type: "registry:chart",
+    title: "Pie Label",
+    description:
+      "Full pie with always-on value labels — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-label.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-label.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-label-custom",
+    type: "registry:chart",
+    title: "Pie Label Custom",
+    description:
+      "Full pie with custom value labels (no leader lines) — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-label-custom.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-label-custom.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-label-list",
+    type: "registry:chart",
+    title: "Pie Label List",
+    description:
+      "Full pie with on-slice province names via LabelList — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-label-list.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-label-list.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-legend",
+    type: "registry:chart",
+    title: "Pie Legend",
+    description:
+      "Full pie with wrapped ChartLegend — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-legend.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-legend.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-donut",
+    type: "registry:chart",
+    title: "Pie Donut",
+    description:
+      "Payment-method donut — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-donut.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-donut.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-donut-active",
+    type: "registry:chart",
+    title: "Pie Donut Active",
+    description:
+      "Donut with expanded active sector — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-donut-active.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-donut-active.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-donut-text",
+    type: "registry:chart",
+    title: "Pie Donut Text",
+    description:
+      "Classic donut with centered ring-total text — locked chrome, slice scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-donut-text.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-donut-text.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-stacked",
+    type: "registry:chart",
+    title: "Pie Stacked",
+    description:
+      "Classic nested Store×Online month rings — locked chrome, ring scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-stacked.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-stacked.tsx",
+      },
+    ],
+  },
+  {
+    name: "chart-pie-interactive",
+    type: "registry:chart",
+    title: "Pie Interactive",
+    description:
+      "Classic month Select drives active donut sector — locked chrome, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles", "select"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/pie/chart-pie-interactive.tsx",
+        type: "registry:component",
+        target: "components/charts/chart-pie-interactive.tsx",
       },
     ],
   },

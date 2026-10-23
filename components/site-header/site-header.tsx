@@ -31,19 +31,19 @@ export function SiteHeader() {
           <Link
             href="/"
             prefetch={false}
-            className="me-2 flex shrink-0 cursor-pointer items-center gap-0.5 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="me-2 flex shrink-0 cursor-pointer items-center outline-none focus-visible:rounded-md focus-visible:ring-2 focus-visible:ring-ring"
           >
+            {/* Solid Sono + outlined JS (transparent fill). */}
             <span
               aria-hidden
-              className="inline-flex items-center rounded-md bg-primary px-1.5 py-0.5 text-[length:var(--text-secondary)] font-semibold leading-none tracking-tight text-primary-foreground"
+              className="inline-flex h-7 items-stretch overflow-hidden rounded-md border-[1.5px] border-primary bg-transparent"
             >
-              Sono
-            </span>
-            <span
-              aria-hidden
-              className="text-[length:var(--text-secondary)] font-semibold leading-none tracking-tight text-primary"
-            >
-              JS
+              <span className="flex items-center bg-primary pe-2.5 ps-2.5 text-[length:var(--text-secondary)] font-semibold leading-none tracking-tight text-primary-foreground">
+                Sono
+              </span>
+              <span className="flex items-center bg-transparent pe-2.5 ps-1.5 text-[length:var(--text-secondary)] font-semibold leading-none tracking-tight text-primary">
+                JS
+              </span>
             </span>
             <span className="sr-only">{siteConfig.name}</span>
           </Link>

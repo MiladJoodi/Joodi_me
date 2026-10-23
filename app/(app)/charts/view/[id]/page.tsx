@@ -58,6 +58,18 @@ export default async function ChartViewPage({
     id === "pie-with-gradient" ||
     id === "pie-donut-text" ||
     id === "pie-interactive" ||
+    id === "pie-stacked" ||
+    id === "chart-pie-simple" ||
+    id === "chart-pie-separator-none" ||
+    id === "chart-pie-label" ||
+    id === "chart-pie-label-custom" ||
+    id === "chart-pie-label-list" ||
+    id === "chart-pie-legend" ||
+    id === "chart-pie-donut" ||
+    id === "chart-pie-donut-active" ||
+    id === "chart-pie-donut-text" ||
+    id === "chart-pie-stacked" ||
+    id === "chart-pie-interactive" ||
     id === "simple-line-chart" ||
     id === "dashed-line-chart" ||
     id === "vertical-line-chart" ||
@@ -331,6 +343,78 @@ export default async function ChartViewPage({
                                                                               name: "PieInteractive",
                                                                               path: "@/components/charts/pie-interactive",
                                                                             }
+                                                                          : id ===
+                                                                              "pie-stacked"
+                                                                            ? {
+                                                                                name: "PieStacked",
+                                                                                path: "@/components/charts/pie-stacked",
+                                                                              }
+                                                                            : id ===
+                                                                                "chart-pie-simple"
+                                                                              ? {
+                                                                                  name: "ChartPieSimple",
+                                                                                  path: "@/components/charts/chart-pie-simple",
+                                                                                }
+                                                                              : id ===
+                                                                                  "chart-pie-separator-none"
+                                                                                ? {
+                                                                                    name: "ChartPieSeparatorNone",
+                                                                                    path: "@/components/charts/chart-pie-separator-none",
+                                                                                  }
+                                                                                : id ===
+                                                                                    "chart-pie-label"
+                                                                                  ? {
+                                                                                      name: "ChartPieLabel",
+                                                                                      path: "@/components/charts/chart-pie-label",
+                                                                                    }
+                                                                                  : id ===
+                                                                                      "chart-pie-label-custom"
+                                                                                    ? {
+                                                                                        name: "ChartPieLabelCustom",
+                                                                                        path: "@/components/charts/chart-pie-label-custom",
+                                                                                      }
+                                                                                    : id ===
+                                                                                        "chart-pie-label-list"
+                                                                                      ? {
+                                                                                          name: "ChartPieLabelList",
+                                                                                          path: "@/components/charts/chart-pie-label-list",
+                                                                                        }
+                                                                                      : id ===
+                                                                                          "chart-pie-legend"
+                                                                                        ? {
+                                                                                            name: "ChartPieLegend",
+                                                                                            path: "@/components/charts/chart-pie-legend",
+                                                                                          }
+                                                                                        : id ===
+                                                                                            "chart-pie-donut"
+                                                                                          ? {
+                                                                                              name: "ChartPieDonut",
+                                                                                              path: "@/components/charts/chart-pie-donut",
+                                                                                            }
+                                                                                          : id ===
+                                                                                              "chart-pie-donut-active"
+                                                                                            ? {
+                                                                                                name: "ChartPieDonutActive",
+                                                                                                path: "@/components/charts/chart-pie-donut-active",
+                                                                                              }
+                                                                                            : id ===
+                                                                                                "chart-pie-donut-text"
+                                                                                              ? {
+                                                                                                  name: "ChartPieDonutText",
+                                                                                                  path: "@/components/charts/chart-pie-donut-text",
+                                                                                                }
+                                                                                              : id ===
+                                                                                                  "chart-pie-stacked"
+                                                                                                ? {
+                                                                                                    name: "ChartPieStacked",
+                                                                                                    path: "@/components/charts/chart-pie-stacked",
+                                                                                                  }
+                                                                                                : id ===
+                                                                                                    "chart-pie-interactive"
+                                                                                                  ? {
+                                                                                                      name: "ChartPieInteractive",
+                                                                                                      path: "@/components/charts/chart-pie-interactive",
+                                                                                                    }
       : id === "simple-line-chart"
       ? {
           name: "SimpleLineChart",
