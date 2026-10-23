@@ -34,7 +34,7 @@ export function InputGroupDropdown() {
               <ChevronDownIcon className="size-3.5 opacity-60" />
             </InputGroupButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" className="min-w-20" dir="ltr">
+          <DropdownMenuContent align="start" className="min-w-20">
             <DropdownMenuItem onClick={() => setPrefix("+1")}>
               +1
             </DropdownMenuItem>
