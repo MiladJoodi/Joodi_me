@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hc-gauge-threshold",
+  "type": "registry:chart",
+  "title": "Hc Gauge Threshold",
+  "description": "Highcharts solidgauge with zero threshold — red below / green above, English metric header.",
+  "dependencies": [
+    "highcharts",
+    "highcharts-react-official"
+  ],
+  "registryDependencies": [
+    "hc-gauge-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#d96b5c",
+      "chart-2": "#6cb87a"
+    },
+    "dark": {
+      "chart-1": "#d96b5c",
+      "chart-2": "#6cb87a"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/hc-gauge-threshold.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport type { Options } from \"highcharts\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport {\n  ChartHighchartsGauge,\n  HC_NEUTRAL,\n  HC_TRAFFIC,\n  hcNum,\n  hcTooltipValue,\n} from \"./_lib/hc-gauge-shared\"\nimport { useChartDir } from \"./_lib/use-chart-dir\"\n\n/**\n * Hc Gauge Threshold — solidgauge with zero threshold (red below / green above).\n * Locked header chrome; English / Intl. Spec: `registry/charts/PORT.md`\n * Installs to: components/charts/hc-gauge-threshold.tsx\n */\n\nexport type HcGaugeThresholdProps = {\n  title?: string\n  subtitle?: string\n  /** P&L value on −4…4 scale. Default −1.2. */\n  value?: number\n  className?: string\n}\n\nconst DEMO_VALUE = -1.2\nconst MIN = -4\nconst MAX = 4\n\nfunction buildOptions(value: number): Options {\n  return {\n    chart: { type: \"solidgauge\" },\n    pane: {\n      borderRadius: 0,\n      innerSize: \"80%\",\n      background: [\n        {\n          outerRadius: \"100%\",\n          innerRadius: \"80%\",\n          backgroundColor:\n            \"color-mix(in oklab, var(--muted-foreground) 20%, transparent)\",\n          borderWidth: 0,\n        },\n      ],\n    },\n    tooltip: {\n      pointFormatter() {\n        return `<span style=\"font-size:0.9em\">${this.series.name}</span><br/><b>${hcTooltipValue(this.y ?? 0)}</b>`\n      },\n    },\n    yAxis: {\n      min: MIN,\n      max: MAX,\n      tickAmount: 2,\n      stops: [\n        [0.4999, HC_TRAFFIC.red],\n        [0.5, HC_TRAFFIC.green],\n      ],\n      title: { text: undefined },\n      plotLines: [\n        {\n          value: 0,\n          color: HC_NEUTRAL,\n          width: 2,\n          zIndex: 5,\n        },\n      ],\n    },\n    series: [\n      {\n        type: \"solidgauge\",\n        name: \"P&L\",\n        data: [value],\n        threshold: 0,\n        dataLabels: {\n          formatter() {\n            return hcNum(this.y ?? 0)\n          },\n          style: {\n            fontSize: \"1.2em\",\n            fontWeight: \"bold\",\n          },\n        },\n      },\n    ],\n  }\n}\n\nfunction HcGaugeThreshold({\n  title = \"Threshold gauge\",\n  subtitle = \"Solid gauge with a zero threshold — red below, green above.\",\n  value = DEMO_VALUE,\n  className,\n}: HcGaugeThresholdProps) {\n  const { ref } = useChartDir()\n  const locale = \"en\"\n  const metric = hcNum(value, locale)\n  const options = React.useMemo(() => buildOptions(value), [value])\n  const side = value < 0 ? \"Below zero\" : value > 0 ? \"Above zero\" : \"At zero\"\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        \"mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6\",\n        className\n      )}\n    >\n      <header className=\"flex flex-col gap-4\">\n        <div className=\"space-y-1\">\n          <h3 className=\"text-xl font-bold tracking-tight text-foreground sm:text-2xl\">\n            {title}\n          </h3>\n          <p className=\"text-sm text-muted-foreground\">{subtitle}</p>\n        </div>\n\n        <div className=\"space-y-1\">\n          <div className=\"flex flex-wrap items-baseline gap-2\">\n            <p\n              className=\"text-[2rem] font-semibold leading-9 tracking-tight text-foreground\"\n              aria-hidden\n            >\n              {metric}\n            </p>\n            <span className=\"text-xs text-muted-foreground\">\n              {MIN}…{MAX}\n            </span>\n          </div>\n          <p className=\"text-xs text-muted-foreground\">P&L · {side}</p>\n        </div>\n      </header>\n\n      <div\n        role=\"img\"\n        aria-label={`Threshold gauge, P&L ${metric}, range ${MIN} to ${MAX}`}\n        className=\"touch-pan-y rounded-lg\"\n      >\n        <ChartHighchartsGauge options={options} />\n      </div>\n\n      <ul className=\"mx-auto flex max-w-[420px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground\">\n        <li className=\"inline-flex items-center gap-1.5\">\n          <span\n            className=\"size-2 shrink-0 rounded-full\"\n            style={{ backgroundColor: HC_TRAFFIC.red }}\n            aria-hidden\n          />\n          <span>Below 0</span>\n        </li>\n        <li className=\"inline-flex items-center gap-1.5\">\n          <span\n            className=\"size-2 shrink-0 rounded-full\"\n            style={{ backgroundColor: HC_TRAFFIC.green }}\n            aria-hidden\n          />\n          <span>Above 0</span>\n        </li>\n        <li className=\"inline-flex items-center gap-1.5\">\n          <span\n            className=\"size-2 shrink-0 rounded-full bg-foreground\"\n            aria-hidden\n          />\n          <span>Threshold</span>\n        </li>\n      </ul>\n    </div>\n  )\n}\n\nexport default function HcGaugeThresholdDemo(props: HcGaugeThresholdProps) {\n  return <HcGaugeThreshold {...props} />\n}\n\nexport { HcGaugeThreshold }\n",
+      "target": "components/charts/hc-gauge-threshold.tsx"
+    }
+  ],
+  "version": "0.1.0+f3b1cde80695",
+  "generatedAt": "2026-10-24T00:02:33.074Z"
+}

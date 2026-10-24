@@ -131,6 +131,24 @@ export default async function ChartViewPage({
     id === "heatmap-calendar-emerald" ||
     id === "heatmap-matrix" ||
     id === "heatmap-matrix-values" ||
+    id === "gauge-default" ||
+    id === "gauge-levels" ||
+    id === "gauge-custom-colors" ||
+    id === "gauge-corner-radius" ||
+    id === "gauge-custom-arcs" ||
+    id === "gauge-no-animation" ||
+    id === "hc-gauge-default" ||
+    id === "hc-gauge-rounded-ends" ||
+    id === "hc-gauge-thin-ring" ||
+    id === "hc-gauge-semicircle" ||
+    id === "hc-gauge-custom-pivot" ||
+    id === "hc-gauge-combo" ||
+    id === "hc-gauge-fuel" ||
+    id === "hc-gauge-activity" ||
+    id === "hc-gauge-kpi" ||
+    id === "hc-gauge-rounded-bands" ||
+    id === "hc-gauge-threshold" ||
+    id === "hc-gauge-custom-dial" ||
     id === "stacked-bar-chart" ||
     id === "population-pyramid" ||
     id === "box-plot" ||
@@ -720,6 +738,112 @@ export default async function ChartViewPage({
                                                                                                                       name: "HeatmapMatrixValues",
                                                                                                                       path: "@/components/charts/heatmap-matrix-values",
                                                                                                                     }
+                                                                                                                  : id === "gauge-default"
+                                                                                                                    ? {
+                                                                                                                        name: "GaugeDefault",
+                                                                                                                        path: "@/components/charts/gauge-default",
+                                                                                                                      }
+                                                                                                                    : id === "gauge-levels"
+                                                                                                                      ? {
+                                                                                                                          name: "GaugeLevels",
+                                                                                                                          path: "@/components/charts/gauge-levels",
+                                                                                                                        }
+                                                                                                                      : id ===
+                                                                                                                          "gauge-custom-colors"
+                                                                                                                        ? {
+                                                                                                                            name: "GaugeCustomColors",
+                                                                                                                            path: "@/components/charts/gauge-custom-colors",
+                                                                                                                          }
+                                                                                                                        : id ===
+                                                                                                                            "gauge-corner-radius"
+                                                                                                                          ? {
+                                                                                                                              name: "GaugeCornerRadius",
+                                                                                                                              path: "@/components/charts/gauge-corner-radius",
+                                                                                                                            }
+                                                                                                                          : id ===
+                                                                                                                              "gauge-custom-arcs"
+                                                                                                                            ? {
+                                                                                                                                name: "GaugeCustomArcs",
+                                                                                                                                path: "@/components/charts/gauge-custom-arcs",
+                                                                                                                              }
+                                                                                                                            : id ===
+                                                                                                                                "gauge-no-animation"
+                                                                                                                              ? {
+                                                                                                                                  name: "GaugeNoAnimation",
+                                                                                                                                  path: "@/components/charts/gauge-no-animation",
+                                                                                                                                }
+                                                                                                                              : id ===
+                                                                                                                                  "hc-gauge-default"
+                                                                                                                                ? {
+                                                                                                                                    name: "HcGaugeDefault",
+                                                                                                                                    path: "@/components/charts/hc-gauge-default",
+                                                                                                                                  }
+                                                                                                                                : id ===
+                                                                                                                                    "hc-gauge-rounded-ends"
+                                                                                                                                  ? {
+                                                                                                                                      name: "HcGaugeRoundedEnds",
+                                                                                                                                      path: "@/components/charts/hc-gauge-rounded-ends",
+                                                                                                                                    }
+                                                                                                                                  : id ===
+                                                                                                                                      "hc-gauge-thin-ring"
+                                                                                                                                    ? {
+                                                                                                                                        name: "HcGaugeThinRing",
+                                                                                                                                        path: "@/components/charts/hc-gauge-thin-ring",
+                                                                                                                                      }
+                                                                                                                                    : id ===
+                                                                                                                                        "hc-gauge-semicircle"
+                                                                                                                                      ? {
+                                                                                                                                          name: "HcGaugeSemicircle",
+                                                                                                                                          path: "@/components/charts/hc-gauge-semicircle",
+                                                                                                                                        }
+                                                                                                                                      : id ===
+                                                                                                                                          "hc-gauge-custom-pivot"
+                                                                                                                                        ? {
+                                                                                                                                            name: "HcGaugeCustomPivot",
+                                                                                                                                            path: "@/components/charts/hc-gauge-custom-pivot",
+                                                                                                                                          }
+                                                                                                                                        : id ===
+                                                                                                                                            "hc-gauge-combo"
+                                                                                                                                          ? {
+                                                                                                                                              name: "HcGaugeCombo",
+                                                                                                                                              path: "@/components/charts/hc-gauge-combo",
+                                                                                                                                            }
+                                                                                                                                          : id ===
+                                                                                                                                              "hc-gauge-fuel"
+                                                                                                                                            ? {
+                                                                                                                                                name: "HcGaugeFuel",
+                                                                                                                                                path: "@/components/charts/hc-gauge-fuel",
+                                                                                                                                              }
+                                                                                                                                            : id ===
+                                                                                                                                                "hc-gauge-activity"
+                                                                                                                                              ? {
+                                                                                                                                                  name: "HcGaugeActivity",
+                                                                                                                                                  path: "@/components/charts/hc-gauge-activity",
+                                                                                                                                                }
+                                                                                                                                              : id ===
+                                                                                                                                                  "hc-gauge-kpi"
+                                                                                                                                                ? {
+                                                                                                                                                    name: "HcGaugeKpi",
+                                                                                                                                                    path: "@/components/charts/hc-gauge-kpi",
+                                                                                                                                                  }
+                                                                                                                                                : id ===
+                                                                                                                                                    "hc-gauge-rounded-bands"
+                                                                                                                                                  ? {
+                                                                                                                                                      name: "HcGaugeRoundedBands",
+                                                                                                                                                      path: "@/components/charts/hc-gauge-rounded-bands",
+                                                                                                                                                    }
+                                                                                                                                                  : id ===
+                                                                                                                                                      "hc-gauge-threshold"
+                                                                                                                                                    ? {
+                                                                                                                                                        name: "HcGaugeThreshold",
+                                                                                                                                                        path: "@/components/charts/hc-gauge-threshold",
+                                                                                                                                                      }
+                                                                                                                                                    : id ===
+                                                                                                                                                        "hc-gauge-custom-dial"
+                                                                                                                                                      ? {
+                                                                                                                                                          name: "HcGaugeCustomDial",
+                                                                                                                                                          path: "@/components/charts/hc-gauge-custom-dial",
+                                                                                                                                                        }
       : id === "stacked-bar-chart"
       ? {
           name: "StackedBarChart",

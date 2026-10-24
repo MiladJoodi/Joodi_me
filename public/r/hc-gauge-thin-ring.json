@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hc-gauge-thin-ring",
+  "type": "registry:chart",
+  "title": "Hc Gauge Thin Ring",
+  "description": "Highcharts thin outer ring bands — soft violet/slate, English metric header.",
+  "dependencies": [
+    "highcharts",
+    "highcharts-react-official"
+  ],
+  "registryDependencies": [
+    "hc-gauge-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#b8a8c8",
+      "chart-2": "#8b9dc3"
+    },
+    "dark": {
+      "chart-1": "#b8a8c8",
+      "chart-2": "#8b9dc3"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/hc-gauge-thin-ring.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport type { Options } from \"highcharts\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport {\n  ChartHighchartsGauge,\n  HC_DIAL,\n  hcNum,\n  hcTooltipValue,\n} from \"./_lib/hc-gauge-shared\"\nimport { useChartDir } from \"./_lib/use-chart-dir\"\n\n/**\n * Hc Gauge Thin Ring — thin outer plotBands with dial on HC_DIAL.\n * Soft violet → slate bands; locked header chrome; English / Intl.\n * Spec: `registry/charts/PORT.md`\n * Installs to: components/charts/hc-gauge-thin-ring.tsx\n */\n\nexport type HcGaugeThinRingProps = {\n  title?: string\n  subtitle?: string\n  /** Needle value 0–100. Default 45. */\n  value?: number\n  className?: string\n}\n\nconst DEMO_VALUE = 45\n\nconst BANDS = [\n  {\n    from: 0,\n    to: 70,\n    color: \"#b8a8c8\",\n    label: \"0–70\",\n  },\n  {\n    from: 70,\n    to: 100,\n    color: \"#8b9dc3\",\n    label: \"70–100\",\n  },\n] as const\n\nfunction buildOptions(value: number): Options {\n  return {\n    chart: { type: \"gauge\" },\n    pane: {\n      borderRadius: \"50%\",\n      background: undefined,\n      margin: 20,\n    },\n    yAxis: {\n      labels: { distance: \"20%\" },\n      lineWidth: 1,\n      min: 0,\n      max: 100,\n      offset: 0,\n      tickPosition: \"outside\",\n      minorTickPosition: \"outside\",\n      plotBands: BANDS.map(({ from, to, color }) => ({\n        from,\n        to,\n        color,\n        outerRadius: \"90%\",\n        innerRadius: \"80%\",\n      })),\n    },\n    plotOptions: {\n      gauge: {\n        dial: {\n          baseWidth: 6,\n          backgroundColor: HC_DIAL,\n        },\n        pivot: {\n          backgroundColor: HC_DIAL,\n          radius: 6,\n        },\n      },\n    },\n    series: [\n      {\n        type: \"gauge\",\n        name: \"Score\",\n        data: [value],\n        tooltip: {\n          pointFormatter() {\n            return `<span style=\"font-size:0.9em\">${this.series.name}</span><br/><b>${hcTooltipValue(this.y ?? 0, \" of 100\")}</b>`\n          },\n        },\n        dataLabels: {\n          formatter() {\n            return hcNum(this.y ?? 0)\n          },\n        },\n      },\n    ],\n  }\n}\n\nfunction HcGaugeThinRing({\n  title = \"Score gauge — thin ring\",\n  subtitle = \"Narrow violet / slate bands on the outer ring with a theme dial.\",\n  value = DEMO_VALUE,\n  className,\n}: HcGaugeThinRingProps) {\n  const { ref } = useChartDir()\n  const locale = \"en\"\n  const metric = hcNum(value, locale)\n  const options = React.useMemo(() => buildOptions(value), [value])\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        \"mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6\",\n        className\n      )}\n    >\n      <header className=\"flex flex-col gap-4\">\n        <div className=\"space-y-1\">\n          <h3 className=\"text-xl font-bold tracking-tight text-foreground sm:text-2xl\">\n            {title}\n          </h3>\n          <p className=\"text-sm text-muted-foreground\">{subtitle}</p>\n        </div>\n\n        <div className=\"space-y-1\">\n          <div className=\"flex flex-wrap items-baseline gap-2\">\n            <p\n              className=\"text-[2rem] font-semibold leading-9 tracking-tight text-foreground\"\n              aria-hidden\n            >\n              {metric}\n            </p>\n            <span className=\"text-xs text-muted-foreground\">of 100</span>\n          </div>\n          <p className=\"text-xs text-muted-foreground\">Score</p>\n        </div>\n      </header>\n\n      <div\n        role=\"img\"\n        aria-label={`Gauge chart, ${title}, ${metric} of 100`}\n        className=\"touch-pan-y rounded-lg\"\n      >\n        <ChartHighchartsGauge options={options} />\n      </div>\n\n      <ul className=\"mx-auto flex max-w-[420px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground\">\n        {BANDS.map((band) => (\n          <li key={band.label} className=\"inline-flex items-center gap-1.5\">\n            <span\n              className=\"size-2 shrink-0 rounded-full\"\n              style={{ backgroundColor: band.color }}\n              aria-hidden\n            />\n            <span>{band.label}</span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  )\n}\n\nexport default function HcGaugeThinRingDemo(props: HcGaugeThinRingProps) {\n  return <HcGaugeThinRing {...props} />\n}\n\nexport { HcGaugeThinRing }\n",
+      "target": "components/charts/hc-gauge-thin-ring.tsx"
+    }
+  ],
+  "version": "0.1.0+f3b1cde80695",
+  "generatedAt": "2026-10-24T00:02:33.074Z"
+}

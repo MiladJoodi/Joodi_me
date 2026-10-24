@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gauge-no-animation",
+  "type": "registry:chart",
+  "title": "Gauge No Animation",
+  "description": "Fifteen traffic bands at 56% with needle animation off — fixed stage, English metric header.",
+  "dependencies": [
+    "react-gauge-chart",
+    "lodash"
+  ],
+  "registryDependencies": [
+    "gauge-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#6cb87a",
+      "chart-2": "#d4b45a",
+      "chart-3": "#d96b5c"
+    },
+    "dark": {
+      "chart-1": "#6cb87a",
+      "chart-2": "#d4b45a",
+      "chart-3": "#d96b5c"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/gauge-no-animation.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport {\n  ChartGauge,\n  GAUGE_NEEDLE,\n  GAUGE_TRAFFIC_COLORS,\n  GAUGE_TRAFFIC_LABELS,\n  formatGaugeMetric,\n} from \"./_lib/gauge-shared\"\nimport { useChartDir } from \"./_lib/use-chart-dir\"\n\n/**\n * Gauge No Animation — 15 traffic bands, needle locked at 56% with animate off.\n * react-gauge-chart; locked header chrome; English / Intl.\n * Spec: `registry/charts/PORT.md`\n * Installs to: components/charts/gauge-no-animation.tsx\n */\n\nexport type GaugeNoAnimationProps = {\n  title?: string\n  subtitle?: string\n  /** Band count. Default 15. */\n  levels?: number\n  /** Needle position 0–1. Default 0.56. */\n  percent?: number\n  className?: string\n}\n\nconst DEMO_LEVELS = 15\nconst DEMO_PERCENT = 0.56\n\nfunction GaugeNoAnimation({\n  title = \"Score gauge — no animation\",\n  subtitle = \"Fifteen soft traffic bands with the needle parked at 56% (no enter animation).\",\n  levels = DEMO_LEVELS,\n  percent = DEMO_PERCENT,\n  className,\n}: GaugeNoAnimationProps) {\n  const { ref } = useChartDir()\n  const locale = \"en\"\n  const metric = formatGaugeMetric(percent, locale)\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        \"mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6\",\n        className\n      )}\n    >\n      <header className=\"flex flex-col gap-4\">\n        <div className=\"space-y-1\">\n          <h3 className=\"text-xl font-bold tracking-tight text-foreground sm:text-2xl\">\n            {title}\n          </h3>\n          <p className=\"text-sm text-muted-foreground\">{subtitle}</p>\n        </div>\n\n        <div className=\"space-y-1\">\n          <div className=\"flex flex-wrap items-baseline gap-2\">\n            <p\n              className=\"text-[2rem] font-semibold leading-9 tracking-tight text-foreground\"\n              aria-hidden\n            >\n              {metric}\n            </p>\n            <span className=\"text-xs text-muted-foreground\">\n              of 100 · {levels} bands\n            </span>\n          </div>\n          <p className=\"text-xs text-muted-foreground\">Score</p>\n        </div>\n      </header>\n\n      <div\n        dir=\"ltr\"\n        role=\"img\"\n        aria-label={`Gauge chart, ${title}, ${metric}, ${levels} levels, animation off`}\n        className=\"touch-pan-y rounded-lg\"\n      >\n        <ChartGauge\n          id=\"gauge-no-animation\"\n          animate={false}\n          nrOfLevels={levels}\n          colors={[...GAUGE_TRAFFIC_COLORS]}\n          percent={percent}\n          needleColor={GAUGE_NEEDLE}\n          needleBaseColor={GAUGE_NEEDLE}\n        />\n      </div>\n\n      <ul className=\"mx-auto flex max-w-[420px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground\">\n        {GAUGE_TRAFFIC_LABELS.map((label, index) => (\n          <li key={label} className=\"inline-flex items-center gap-1.5\">\n            <span\n              className=\"size-2 shrink-0 rounded-full\"\n              style={{ backgroundColor: GAUGE_TRAFFIC_COLORS[index] }}\n              aria-hidden\n            />\n            <span>{label}</span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  )\n}\n\nexport default function GaugeNoAnimationDemo(props: GaugeNoAnimationProps) {\n  return <GaugeNoAnimation {...props} />\n}\n\nexport { GaugeNoAnimation }\n",
+      "target": "components/charts/gauge-no-animation.tsx"
+    }
+  ],
+  "version": "0.1.0+f3b1cde80695",
+  "generatedAt": "2026-10-24T00:02:33.074Z"
+}

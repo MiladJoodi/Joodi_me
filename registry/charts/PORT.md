@@ -296,6 +296,56 @@ Locked Simple Bar chrome is the **default starting point**. Chart-type or custom
 
 **heatmap-matrix-values:** same matrix with `showValues` in-cell counts (when cell width allows); `--chart-up` green.
 
+**bundle-size-treemap:** flat Recharts `Treemap` of client JS (KB) by package group; custom leaf tiles + on-fill labels; `--chart-1…5` per group; locked metric scrub (idle = total); EN package names; plot `dir="ltr"`.
+
+**simple-treemap:** classic flat module-size treemap (Flare-inspired LOC, two levels); custom leaf tiles; `--chart-1…5` per group; locked metric scrub; EN names; plot `dir="ltr"`.
+
+**custom-content-treemap:** teaching `content` renderer — group (depth 1) fill + rank + centered label; leaves are transparent stroke subdivisions; `--chart-1…5`; locked metric scrub; plot `dir="ltr"`.
+
+**nested-treemap:** `type="nest"` drill-down with breadcrumb (styled over Recharts nest index); keeps `data → render` hierarchy; click group to zoom; `--chart-1…5`; locked metric scrub; plot `dir="ltr"`.
+
+**treemap-with-padding-and-gaps:** same two-level Flare data as Simple; teaching diff is `nodeInset={10}` + `nodeGap={6}`; muted group plates so gutters read; `--chart-1…5`; locked metric scrub; plot `dir="ltr"`.
+
+**treemap-content:** teaching `content={<Cell />}` (cloneElement path) vs function content; centered leaf name + size; `--chart-1…5`; locked metric scrub; plot `dir="ltr"`.
+
+**Gauge (category):** header chrome inherits page `dir` (logical layout); plot island always `dir="ltr"` (RGC wrapper or `ChartHighchartsGauge`). Needle/dial ink = `var(--foreground)` (`GAUGE_NEEDLE` / `HC_DIAL`). HC tooltips use `--popover` / `--popover-foreground` from `hc-gauge-shared`. Soft arc hex stays fixed (readable in both themes); tracks use `color-mix` on `--muted-foreground` / `--foreground`. RGC items declare `lodash` (undeclared dep of `react-gauge-chart` for `lodash/isEqual`). Not Simple Bar scrub.
+
+**gauge-default:** `react-gauge-chart` vivid **emerald / amber / rose** light/dark bands; default library needle (`GAUGE_NEEDLE` / `--foreground`); fixed 250×420 stage; plot `dir="ltr"`; shared `gauge-shared`.
+
+**gauge-levels:** 20-band `gaugeTrafficRamp` at 86%; same chrome / traffic endpoints as `gauge-default`.
+
+**gauge-custom-colors:** 30 bands rose→sand (`#d97986` / `#c4a574`), `arcWidth={0.3}`, needle 37%; same chrome.
+
+**gauge-corner-radius:** 10 traffic bands, `arcPadding={0.1}` `cornerRadius={3}`, needle 60%; same chrome.
+
+**gauge-custom-arcs:** uneven `arcsLength={[0.3,0.5,0.2]}` traffic colors, `arcPadding={0.02}`, needle 37%; same chrome.
+
+**gauge-no-animation:** 15 traffic bands, `animate={false}`, needle 56%; same chrome.
+
+**hc-gauge-default:** Highcharts `gauge` dial; soft traffic `plotBands`; value 68; English labels via `hc-gauge-shared`; client mount; plot `dir="ltr"`.
+
+**hc-gauge-rounded-ends:** rounded pane (`borderRadius: 50%`) + dial tips; soft blue bands; value 72; same chrome.
+
+**hc-gauge-thin-ring:** thin outer `plotBands` (90%/80%); violet/slate; dial `HC_DIAL`; value 45; same chrome.
+
+**hc-gauge-semicircle:** pane −90°→90°; gold→terracotta→red; max 200; value 110 km/h; same chrome.
+
+**hc-gauge-custom-pivot:** large hollow pivot + blunt dial; soft teal; pane −150°→150°; value 78; same chrome.
+
+**hc-gauge-combo:** `solidgauge` + `gauge` dial on one value (74); teal/blue/violet stops; `borderRadius: 0`; same chrome.
+
+**hc-gauge-fuel:** semicircle `solidgauge`; rose→gold→green stops; value 64%; same chrome.
+
+**hc-gauge-activity:** 360° `solidgauge` ring; pink→rose gradient; value 79% Steps; same chrome.
+
+**hc-gauge-kpi:** three nested solidgauge rings (Conversion 82 / Engagement 59 / Retention 71); `HC_COLOR_0…2`; height 320; same chrome.
+
+**hc-gauge-rounded-bands:** dial with individually rounded plotBands (`borderRadius` per band); soft blues `#a8c4d8` / `#6ea1c7` / `#8b9dc3`; value 55; same chrome.
+
+**hc-gauge-threshold:** solidgauge −4…4 with `threshold: 0`; red below / green above (`HC_TRAFFIC`); plotLine at 0; value −1.2; same chrome.
+
+**hc-gauge-custom-dial:** solidgauge arc + circular SVG path dial (dot, no needle); `HC_COLOR_0`; value 75; pane −120…120; same chrome.
+
 ## Checklist
 
 1. **Locate source**

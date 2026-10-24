@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gauge-custom-colors",
+  "type": "registry:chart",
+  "title": "Gauge Custom Colors",
+  "description": "Rose → sand gauge with thicker arc at 37% — fixed stage, English metric header.",
+  "dependencies": [
+    "react-gauge-chart",
+    "lodash"
+  ],
+  "registryDependencies": [
+    "gauge-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#d97986",
+      "chart-2": "#c4a574"
+    },
+    "dark": {
+      "chart-1": "#d97986",
+      "chart-2": "#c4a574"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/gauge-custom-colors.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport {\n  ChartGauge,\n  GAUGE_NEEDLE,\n  formatGaugeMetric,\n} from \"./_lib/gauge-shared\"\nimport { useChartDir } from \"./_lib/use-chart-dir\"\n\n/**\n * Gauge Custom Colors — rose → sand ramp, thicker arc, needle at 37%.\n * react-gauge-chart; locked header chrome; English / Intl.\n * Spec: `registry/charts/PORT.md`\n * Installs to: components/charts/gauge-custom-colors.tsx\n */\n\nexport type GaugeCustomColorsProps = {\n  title?: string\n  subtitle?: string\n  /** Band count. Default 30. */\n  levels?: number\n  /** Needle position 0–1. Default 0.37. */\n  percent?: number\n  /** Arc thickness 0–1. Default 0.3. */\n  arcWidth?: number\n  colors?: string[]\n  className?: string\n}\n\nconst DEMO_LEVELS = 30\nconst DEMO_PERCENT = 0.37\nconst DEMO_ARC_WIDTH = 0.3\n/** Soft rose → sand (demo palette). */\nconst DEMO_COLORS = [\"#d97986\", \"#c4a574\"] as const\n\nfunction GaugeCustomColors({\n  title = \"Score gauge — custom colors\",\n  subtitle = \"Thirty soft rose → sand bands with a thicker arc at 37%.\",\n  levels = DEMO_LEVELS,\n  percent = DEMO_PERCENT,\n  arcWidth = DEMO_ARC_WIDTH,\n  colors = [...DEMO_COLORS],\n  className,\n}: GaugeCustomColorsProps) {\n  const { ref } = useChartDir()\n  const locale = \"en\"\n  const metric = formatGaugeMetric(percent, locale)\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        \"mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6\",\n        className\n      )}\n    >\n      <header className=\"flex flex-col gap-4\">\n        <div className=\"space-y-1\">\n          <h3 className=\"text-xl font-bold tracking-tight text-foreground sm:text-2xl\">\n            {title}\n          </h3>\n          <p className=\"text-sm text-muted-foreground\">{subtitle}</p>\n        </div>\n\n        <div className=\"space-y-1\">\n          <div className=\"flex flex-wrap items-baseline gap-2\">\n            <p\n              className=\"text-[2rem] font-semibold leading-9 tracking-tight text-foreground\"\n              aria-hidden\n            >\n              {metric}\n            </p>\n            <span className=\"text-xs text-muted-foreground\">\n              of 100 · {levels} bands\n            </span>\n          </div>\n          <p className=\"text-xs text-muted-foreground\">Score</p>\n        </div>\n      </header>\n\n      <div\n        dir=\"ltr\"\n        role=\"img\"\n        aria-label={`Gauge chart, ${title}, ${metric}, ${levels} levels`}\n        className=\"touch-pan-y rounded-lg\"\n      >\n        <ChartGauge\n          id=\"gauge-custom-colors\"\n          nrOfLevels={levels}\n          colors={colors}\n          arcWidth={arcWidth}\n          percent={percent}\n          needleColor={GAUGE_NEEDLE}\n        />\n      </div>\n\n      <ul className=\"mx-auto flex max-w-[420px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground\">\n        <li className=\"inline-flex items-center gap-1.5\">\n          <span\n            className=\"size-2 shrink-0 rounded-full\"\n            style={{ backgroundColor: colors[0] }}\n            aria-hidden\n          />\n          <span>Rose</span>\n        </li>\n        <li className=\"inline-flex items-center gap-1.5\">\n          <span\n            className=\"size-2 shrink-0 rounded-full\"\n            style={{\n              backgroundColor: colors[colors.length - 1] ?? colors[0],\n            }}\n            aria-hidden\n          />\n          <span>Sand</span>\n        </li>\n      </ul>\n    </div>\n  )\n}\n\nexport default function GaugeCustomColorsDemo(props: GaugeCustomColorsProps) {\n  return <GaugeCustomColors {...props} />\n}\n\nexport { GaugeCustomColors }\n",
+      "target": "components/charts/gauge-custom-colors.tsx"
+    }
+  ],
+  "version": "0.1.0+f3b1cde80695",
+  "generatedAt": "2026-10-24T00:02:33.074Z"
+}

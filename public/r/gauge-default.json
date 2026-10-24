@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gauge-default",
+  "type": "registry:chart",
+  "title": "Gauge Default",
+  "description": "Vivid traffic gauge (emerald / amber / rose) — light/dark pairs, English metric header.",
+  "dependencies": [
+    "react-gauge-chart",
+    "lodash"
+  ],
+  "registryDependencies": [
+    "gauge-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#10B981",
+      "chart-2": "#F59E0B",
+      "chart-3": "#F43F5E"
+    },
+    "dark": {
+      "chart-1": "#34D399",
+      "chart-2": "#FBBF24",
+      "chart-3": "#FB7185"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/gauge-default.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport {\n  ChartGauge,\n  GAUGE_NEEDLE,\n  GAUGE_TRAFFIC_LABELS,\n  formatGaugeMetric,\n} from \"./_lib/gauge-shared\"\nimport { useChartDir } from \"./_lib/use-chart-dir\"\n\n/**\n * Gauge Default — vivid emerald / amber / rose traffic bands.\n * Default library needle; light + dark band pairs.\n * Spec: `registry/charts/PORT.md`\n * Installs to: components/charts/gauge-default.tsx\n */\n\nexport type GaugeDefaultProps = {\n  title?: string\n  subtitle?: string\n  /** Needle position 0–1. Default 0.66 (library default). */\n  percent?: number\n  className?: string\n}\n\nconst DEMO_PERCENT = 0.66\n\n/** Vivid traffic — deeper on light, luminous on dark. */\nconst BAND_THEME = {\n  light: [\"#10B981\", \"#F59E0B\", \"#F43F5E\"] as const,\n  dark: [\"#34D399\", \"#FBBF24\", \"#FB7185\"] as const,\n}\n\nfunction useIsDark() {\n  const [dark, setDark] = React.useState(false)\n\n  React.useEffect(() => {\n    const root = document.documentElement\n    const read = () => setDark(root.classList.contains(\"dark\"))\n    read()\n    const obs = new MutationObserver(read)\n    obs.observe(root, { attributes: true, attributeFilter: [\"class\"] })\n    return () => obs.disconnect()\n  }, [])\n\n  return dark\n}\n\nfunction GaugeDefault({\n  title = \"Score gauge\",\n  subtitle = \"Vivid traffic bands — emerald / amber / rose on a fixed stage.\",\n  percent = DEMO_PERCENT,\n  className,\n}: GaugeDefaultProps) {\n  const { ref } = useChartDir()\n  const dark = useIsDark()\n  const locale = \"en\"\n  const metric = formatGaugeMetric(percent, locale)\n  const bands = dark ? BAND_THEME.dark : BAND_THEME.light\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        \"mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6\",\n        className\n      )}\n    >\n      <header className=\"flex flex-col gap-4\">\n        <div className=\"space-y-1\">\n          <h3 className=\"text-xl font-bold tracking-tight text-foreground sm:text-2xl\">\n            {title}\n          </h3>\n          <p className=\"text-sm text-muted-foreground\">{subtitle}</p>\n        </div>\n\n        <div className=\"space-y-1\">\n          <div className=\"flex flex-wrap items-baseline gap-2\">\n            <p\n              className=\"text-[2rem] font-semibold leading-9 tracking-tight text-foreground\"\n              aria-hidden\n            >\n              {metric}\n            </p>\n            <span className=\"text-xs text-muted-foreground\">of 100</span>\n          </div>\n          <p className=\"text-xs text-muted-foreground\">Score</p>\n        </div>\n      </header>\n\n      <div\n        dir=\"ltr\"\n        role=\"img\"\n        aria-label={`Gauge chart, ${title}, ${metric}`}\n        className=\"touch-pan-y rounded-lg\"\n      >\n        <ChartGauge\n          key={dark ? \"dark\" : \"light\"}\n          id=\"gauge-default\"\n          colors={[...bands]}\n          percent={percent}\n          needleColor={GAUGE_NEEDLE}\n          needleBaseColor={GAUGE_NEEDLE}\n        />\n      </div>\n\n      <ul className=\"mx-auto flex max-w-[420px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground\">\n        {GAUGE_TRAFFIC_LABELS.map((label, index) => (\n          <li key={label} className=\"inline-flex items-center gap-1.5\">\n            <span\n              className=\"size-2 shrink-0 rounded-full\"\n              style={{ backgroundColor: bands[index] }}\n              aria-hidden\n            />\n            <span>{label}</span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  )\n}\n\nexport default function GaugeDefaultDemo(props: GaugeDefaultProps) {\n  return <GaugeDefault {...props} />\n}\n\nexport { GaugeDefault }\n",
+      "target": "components/charts/gauge-default.tsx"
+    }
+  ],
+  "version": "0.1.0+f3b1cde80695",
+  "generatedAt": "2026-10-24T00:02:33.074Z"
+}

@@ -2,8 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "sonojs",
   "homepage": "https://sonojs.com",
-  "version": "0.1.0+faa4ab01f844",
-  "generatedAt": "2026-10-23T22:43:09.677Z",
+  "version": "0.1.0+f3b1cde80695",
+  "generatedAt": "2026-10-24T00:02:33.074Z",
   "items": [
     {
       "name": "accordion",
@@ -23,8 +23,8 @@
           "target": "components/ui/accordion.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "alert",
@@ -43,8 +43,8 @@
           "target": "components/ui/alert.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "alert-dialog",
@@ -76,8 +76,8 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "avatar",
@@ -96,8 +96,8 @@
           "target": "components/ui/avatar.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "badge",
@@ -117,8 +117,8 @@
           "target": "components/ui/badge.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "breadcrumb",
@@ -138,8 +138,8 @@
           "target": "components/ui/breadcrumb.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bubble",
@@ -159,8 +159,8 @@
           "target": "components/ui/bubble.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "button",
@@ -180,8 +180,8 @@
           "target": "components/ui/button.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "card",
@@ -199,8 +199,8 @@
           "target": "components/ui/card.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "carousel",
@@ -223,8 +223,8 @@
           "target": "components/ui/carousel.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "checkbox",
@@ -244,8 +244,8 @@
           "target": "components/ui/checkbox.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "collapsible",
@@ -264,8 +264,8 @@
           "target": "components/ui/collapsible.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "combobox",
@@ -289,8 +289,8 @@
           "target": "components/ui/combobox.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "command",
@@ -314,8 +314,8 @@
           "target": "components/ui/command.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "context-menu",
@@ -335,8 +335,8 @@
           "target": "components/ui/context-menu.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "dialog",
@@ -359,8 +359,8 @@
           "target": "components/ui/dialog.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "drawer",
@@ -398,8 +398,8 @@
           "target": "hooks/use-mobile.ts"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "dropdown-menu",
@@ -419,8 +419,8 @@
           "target": "components/ui/dropdown-menu.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "empty",
@@ -439,8 +439,8 @@
           "target": "components/ui/empty.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "field",
@@ -463,8 +463,8 @@
           "target": "components/ui/field.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "hover-card",
@@ -483,8 +483,8 @@
           "target": "components/ui/hover-card.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "input",
@@ -502,8 +502,8 @@
           "target": "components/ui/input.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "textarea",
@@ -521,8 +521,8 @@
           "target": "components/ui/textarea.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "table",
@@ -540,8 +540,8 @@
           "target": "components/ui/table.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "input-group",
@@ -565,8 +565,8 @@
           "target": "components/ui/input-group.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "input-otp",
@@ -586,8 +586,8 @@
           "target": "components/ui/input-otp.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "item",
@@ -610,8 +610,8 @@
           "target": "components/ui/item.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "kbd",
@@ -629,8 +629,8 @@
           "target": "components/ui/kbd.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "marker",
@@ -650,8 +650,8 @@
           "target": "components/ui/marker.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "menubar",
@@ -671,8 +671,8 @@
           "target": "components/ui/menubar.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "message",
@@ -690,8 +690,8 @@
           "target": "components/ui/message.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "message-scroller",
@@ -713,8 +713,8 @@
           "target": "components/ui/message-scroller.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "native-select",
@@ -733,8 +733,8 @@
           "target": "components/ui/native-select.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "navigation-menu",
@@ -755,8 +755,8 @@
           "target": "components/ui/navigation-menu.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "pagination",
@@ -778,8 +778,8 @@
           "target": "components/ui/pagination.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "code-block",
@@ -804,8 +804,8 @@
           "target": "components/ui/code-block.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "use-highlighted-code",
@@ -827,8 +827,8 @@
           "target": "lib/highlighter.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "label",
@@ -847,8 +847,8 @@
           "target": "components/ui/label.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "button-group",
@@ -871,8 +871,8 @@
           "target": "components/ui/button-group.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "calendar",
@@ -897,8 +897,8 @@
           "target": "components/ui/calendar.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "popover",
@@ -917,8 +917,8 @@
           "target": "components/ui/popover.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "progress",
@@ -937,8 +937,8 @@
           "target": "components/ui/progress.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "radio-group",
@@ -958,8 +958,8 @@
           "target": "components/ui/radio-group.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "resizable",
@@ -979,8 +979,8 @@
           "target": "components/ui/resizable.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "scroll-area",
@@ -999,8 +999,8 @@
           "target": "components/ui/scroll-area.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "select",
@@ -1020,8 +1020,8 @@
           "target": "components/ui/select.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "separator",
@@ -1040,8 +1040,8 @@
           "target": "components/ui/separator.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "sheet",
@@ -1072,8 +1072,8 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "skeleton",
@@ -1091,8 +1091,8 @@
           "target": "components/ui/skeleton.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "slider",
@@ -1111,8 +1111,8 @@
           "target": "components/ui/slider.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "switch",
@@ -1131,8 +1131,8 @@
           "target": "components/ui/switch.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "tabs",
@@ -1152,8 +1152,8 @@
           "target": "components/ui/tabs.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "sonner",
@@ -1182,8 +1182,8 @@
           "target": "hooks/use-direction.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "toggle",
@@ -1203,8 +1203,8 @@
           "target": "components/ui/toggle.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "toggle-group",
@@ -1227,8 +1227,8 @@
           "target": "components/ui/toggle-group.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "tooltip",
@@ -1247,8 +1247,8 @@
           "target": "components/ui/tooltip.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "trace",
@@ -1270,8 +1270,8 @@
           "target": "components/ui/trace.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "attachment",
@@ -1296,8 +1296,8 @@
           "target": "components/ui/attachment.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "spinner",
@@ -1316,8 +1316,8 @@
           "target": "components/ui/spinner.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "login-01",
@@ -1338,8 +1338,8 @@
           "type": "registry:component"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart",
@@ -1358,8 +1358,8 @@
           "target": "components/ui/chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area",
@@ -1380,8 +1380,8 @@
           "target": "components/charts/chart-area.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-mock-data",
@@ -1395,8 +1395,8 @@
           "target": "components/charts/_lib/chart-mock-data.ts"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-styles",
@@ -1449,10 +1449,15 @@
           "path": "components/charts/_lib/pie-tooltip.tsx",
           "type": "registry:lib",
           "target": "components/charts/_lib/pie-tooltip.tsx"
+        },
+        {
+          "path": "components/charts/_lib/treemap-tooltip.tsx",
+          "type": "registry:lib",
+          "target": "components/charts/_lib/treemap-tooltip.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stock-shared",
@@ -1472,8 +1477,8 @@
           "target": "components/charts/_lib/stock-shared.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "heatmap-shared",
@@ -1490,8 +1495,57 @@
           "target": "components/charts/_lib/heatmap-shared.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "gauge-shared",
+      "type": "registry:lib",
+      "title": "Gauge shared",
+      "description": "react-gauge-chart helpers — fixed stage, soft traffic ramp, English percent labels.",
+      "dependencies": [
+        "react-gauge-chart",
+        "lodash"
+      ],
+      "registryDependencies": [
+        "chart-styles"
+      ],
+      "files": [
+        {
+          "path": "components/charts/_lib/gauge-shared.tsx",
+          "type": "registry:lib",
+          "target": "components/charts/_lib/gauge-shared.tsx"
+        },
+        {
+          "path": "components/charts/_lib/react-gauge-chart.d.ts",
+          "type": "registry:lib",
+          "target": "components/charts/_lib/react-gauge-chart.d.ts"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-shared",
+      "type": "registry:lib",
+      "title": "Hc Gauge shared",
+      "description": "Highcharts gauge / solidgauge helpers — soft dial chrome, English labels, client mount.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "chart-styles"
+      ],
+      "files": [
+        {
+          "path": "components/charts/_lib/hc-gauge-shared.tsx",
+          "type": "registry:lib",
+          "target": "components/charts/_lib/hc-gauge-shared.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "simple-bar-chart",
@@ -1522,8 +1576,8 @@
           "target": "components/charts/simple-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-chart",
@@ -1558,8 +1612,8 @@
           "target": "components/charts/area-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stacked-area-chart",
@@ -1596,8 +1650,8 @@
           "target": "components/charts/stacked-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-chart-range",
@@ -1630,8 +1684,8 @@
           "target": "components/charts/area-chart-range.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-chart-connect-nulls",
@@ -1664,8 +1718,8 @@
           "target": "components/charts/area-chart-connect-nulls.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "cardinal-area-chart",
@@ -1700,8 +1754,8 @@
           "target": "components/charts/cardinal-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "percent-area-chart",
@@ -1738,8 +1792,8 @@
           "target": "components/charts/percent-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "synchronized-area-chart",
@@ -1776,8 +1830,8 @@
           "target": "components/charts/synchronized-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "tiny-area-chart",
@@ -1810,8 +1864,8 @@
           "target": "components/charts/tiny-area-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-chart-fill-by-value",
@@ -1846,8 +1900,8 @@
           "target": "components/charts/area-chart-fill-by-value.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-chart-custom-animation",
@@ -1880,8 +1934,8 @@
           "target": "components/charts/area-chart-custom-animation.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "range-area-chart-custom-animation",
@@ -1914,8 +1968,8 @@
           "target": "components/charts/range-area-chart-custom-animation.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-chart-with-custom-events",
@@ -1949,8 +2003,8 @@
           "target": "components/charts/area-chart-with-custom-events.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "prevent-right-click",
@@ -1984,8 +2038,8 @@
           "target": "components/charts/prevent-right-click.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-interactive",
@@ -2020,8 +2074,8 @@
           "target": "components/charts/area-interactive.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-step",
@@ -2054,8 +2108,8 @@
           "target": "components/charts/area-step.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "area-gradient",
@@ -2090,8 +2144,8 @@
           "target": "components/charts/area-gradient.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "market-cards",
@@ -2125,8 +2179,8 @@
           "target": "components/charts/market-cards.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-default",
@@ -2155,8 +2209,8 @@
           "target": "components/charts/chart-area-default.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-linear",
@@ -2185,8 +2239,8 @@
           "target": "components/charts/chart-area-linear.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-step",
@@ -2215,8 +2269,8 @@
           "target": "components/charts/chart-area-step.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-legend",
@@ -2247,8 +2301,8 @@
           "target": "components/charts/chart-area-legend.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-stacked",
@@ -2279,8 +2333,8 @@
           "target": "components/charts/chart-area-stacked.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-stacked-expand",
@@ -2311,8 +2365,8 @@
           "target": "components/charts/chart-area-stacked-expand.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-icons",
@@ -2344,8 +2398,8 @@
           "target": "components/charts/chart-area-icons.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-gradient",
@@ -2380,8 +2434,8 @@
           "target": "components/charts/chart-area-gradient.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-area-axes",
@@ -2412,8 +2466,8 @@
           "target": "components/charts/chart-area-axes.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "two-level-pie-chart",
@@ -2450,8 +2504,8 @@
           "target": "components/charts/two-level-pie-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "straight-angle-pie-chart",
@@ -2488,8 +2542,8 @@
           "target": "components/charts/straight-angle-pie-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "custom-active-shape-pie-chart",
@@ -2524,8 +2578,8 @@
           "target": "components/charts/custom-active-shape-pie-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "pie-chart-with-customized-label",
@@ -2560,8 +2614,8 @@
           "target": "components/charts/pie-chart-with-customized-label.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "pie-chart-with-padding-angle",
@@ -2596,8 +2650,8 @@
           "target": "components/charts/pie-chart-with-padding-angle.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "pie-chart-in-grid",
@@ -2632,8 +2686,8 @@
           "target": "components/charts/pie-chart-in-grid.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "pie-with-gradient",
@@ -2668,8 +2722,8 @@
           "target": "components/charts/pie-with-gradient.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "pie-donut-text",
@@ -2706,8 +2760,8 @@
           "target": "components/charts/pie-donut-text.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "pie-interactive",
@@ -2745,8 +2799,8 @@
           "target": "components/charts/pie-interactive.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "pie-stacked",
@@ -2783,8 +2837,8 @@
           "target": "components/charts/pie-stacked.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-simple",
@@ -2821,8 +2875,8 @@
           "target": "components/charts/chart-pie-simple.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-separator-none",
@@ -2859,8 +2913,8 @@
           "target": "components/charts/chart-pie-separator-none.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-label",
@@ -2897,8 +2951,8 @@
           "target": "components/charts/chart-pie-label.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-label-custom",
@@ -2935,8 +2989,8 @@
           "target": "components/charts/chart-pie-label-custom.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-label-list",
@@ -2973,8 +3027,8 @@
           "target": "components/charts/chart-pie-label-list.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-legend",
@@ -3011,8 +3065,8 @@
           "target": "components/charts/chart-pie-legend.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-donut",
@@ -3049,8 +3103,8 @@
           "target": "components/charts/chart-pie-donut.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-donut-active",
@@ -3087,8 +3141,8 @@
           "target": "components/charts/chart-pie-donut-active.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-donut-text",
@@ -3125,8 +3179,8 @@
           "target": "components/charts/chart-pie-donut-text.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-stacked",
@@ -3163,8 +3217,8 @@
           "target": "components/charts/chart-pie-stacked.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "chart-pie-interactive",
@@ -3202,8 +3256,8 @@
           "target": "components/charts/chart-pie-interactive.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "simple-line-chart",
@@ -3234,8 +3288,8 @@
           "target": "components/charts/simple-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "dashed-line-chart",
@@ -3266,8 +3320,8 @@
           "target": "components/charts/dashed-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "vertical-line-chart",
@@ -3298,8 +3352,8 @@
           "target": "components/charts/vertical-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-chart-connect-nulls",
@@ -3328,8 +3382,8 @@
           "target": "components/charts/line-chart-connect-nulls.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-chart-with-reference-lines",
@@ -3360,8 +3414,8 @@
           "target": "components/charts/line-chart-with-reference-lines.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "customized-label-line-chart",
@@ -3392,8 +3446,8 @@
           "target": "components/charts/customized-label-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "highlight-and-zoom-line-chart",
@@ -3424,8 +3478,8 @@
           "target": "components/charts/highlight-and-zoom-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-chart-axis-interval",
@@ -3457,8 +3511,8 @@
           "target": "components/charts/line-chart-axis-interval.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "biaxial-line-chart",
@@ -3489,8 +3543,8 @@
           "target": "components/charts/biaxial-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-chart-with-x-axis-padding",
@@ -3521,8 +3575,8 @@
           "target": "components/charts/line-chart-with-x-axis-padding.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "customized-dot-line-chart",
@@ -3555,8 +3609,8 @@
           "target": "components/charts/customized-dot-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "synchronized-line-chart",
@@ -3589,8 +3643,8 @@
           "target": "components/charts/synchronized-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "synchronized-different-data",
@@ -3621,8 +3675,8 @@
           "target": "components/charts/synchronized-different-data.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-chart-custom-shape",
@@ -3653,8 +3707,8 @@
           "target": "components/charts/line-chart-custom-shape.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-chart-has-multi-series",
@@ -3687,8 +3741,8 @@
           "target": "components/charts/line-chart-has-multi-series.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-chart-negative-values-with-reference-lines",
@@ -3717,8 +3771,8 @@
           "target": "components/charts/line-chart-negative-values-with-reference-lines.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "compare-two-lines",
@@ -3749,8 +3803,8 @@
           "target": "components/charts/compare-two-lines.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "dynamic-z-index-line-chart",
@@ -3783,8 +3837,8 @@
           "target": "components/charts/dynamic-z-index-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "tiny-line-chart",
@@ -3813,8 +3867,8 @@
           "target": "components/charts/tiny-line-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "animated-time-series",
@@ -3845,8 +3899,8 @@
           "target": "components/charts/animated-time-series.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-interactive",
@@ -3877,8 +3931,8 @@
           "target": "components/charts/line-interactive.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-step",
@@ -3909,8 +3963,8 @@
           "target": "components/charts/line-step.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-default",
@@ -3939,8 +3993,8 @@
           "target": "components/charts/line-default.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-dots-colors",
@@ -3977,8 +4031,8 @@
           "target": "components/charts/line-dots-colors.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-label-custom",
@@ -4009,8 +4063,8 @@
           "target": "components/charts/line-label-custom.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "line-bar-area-composed-chart",
@@ -4043,8 +4097,8 @@
           "target": "components/charts/line-bar-area-composed-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "same-data-composed-chart",
@@ -4075,8 +4129,8 @@
           "target": "components/charts/same-data-composed-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "vertical-composed-chart",
@@ -4107,8 +4161,8 @@
           "target": "components/charts/vertical-composed-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "composed-chart-with-axis-labels",
@@ -4141,8 +4195,8 @@
           "target": "components/charts/composed-chart-with-axis-labels.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "scatter-and-line-of-best-fit",
@@ -4173,8 +4227,8 @@
           "target": "components/charts/scatter-and-line-of-best-fit.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "banded-chart",
@@ -4205,8 +4259,8 @@
           "target": "components/charts/banded-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "target-price-chart",
@@ -4237,8 +4291,8 @@
           "target": "components/charts/target-price-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "asset-returns",
@@ -4270,8 +4324,8 @@
           "target": "components/charts/asset-returns.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "monthly-savings",
@@ -4303,8 +4357,8 @@
           "target": "components/charts/monthly-savings.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "candlestick",
@@ -4336,8 +4390,8 @@
           "target": "components/charts/candlestick.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "candlestick-dashboard",
@@ -4371,8 +4425,8 @@
           "target": "components/charts/candlestick-dashboard.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "candlestick-bar",
@@ -4406,8 +4460,8 @@
           "target": "components/charts/candlestick-bar.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "candlestick-category",
@@ -4441,8 +4495,8 @@
           "target": "components/charts/candlestick-category.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "candlestick-line",
@@ -4476,8 +4530,8 @@
           "target": "components/charts/candlestick-line.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "sparklines",
@@ -4515,8 +4569,8 @@
           "target": "components/charts/sparklines.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stock-ohlc",
@@ -4548,8 +4602,8 @@
           "target": "components/charts/stock-ohlc.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stock-line",
@@ -4583,8 +4637,8 @@
           "target": "components/charts/stock-line.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stock-column",
@@ -4616,8 +4670,8 @@
           "target": "components/charts/stock-column.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stock-with-volume",
@@ -4649,8 +4703,8 @@
           "target": "components/charts/stock-with-volume.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stock-multi-series",
@@ -4689,8 +4743,8 @@
           "target": "components/charts/stock-multi-series.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stock-trendline",
@@ -4726,8 +4780,8 @@
           "target": "components/charts/stock-trendline.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "tremor-area-charts",
@@ -4765,8 +4819,8 @@
           "target": "components/charts/tremor-area-charts.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "realtime-mountain-chart",
@@ -4800,8 +4854,8 @@
           "target": "components/charts/realtime-mountain-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "realtime-candlestick",
@@ -4833,8 +4887,8 @@
           "target": "components/charts/realtime-candlestick.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "heikin-ashi",
@@ -4866,8 +4920,8 @@
           "target": "components/charts/heikin-ashi.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "renko-chart",
@@ -4900,8 +4954,8 @@
           "target": "components/charts/renko-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "volume-profile",
@@ -4933,8 +4987,8 @@
           "target": "components/charts/volume-profile.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "order-book-depth",
@@ -4967,8 +5021,8 @@
           "target": "components/charts/order-book-depth.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "drawdown-chart",
@@ -5002,8 +5056,8 @@
           "target": "components/charts/drawdown-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bollinger-bands",
@@ -5042,8 +5096,8 @@
           "target": "components/charts/bollinger-bands.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "candlestick-indicators",
@@ -5081,8 +5135,8 @@
           "target": "components/charts/candlestick-indicators.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "multi-timeframe",
@@ -5120,8 +5174,8 @@
           "target": "components/charts/multi-timeframe.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "heatmap-calendar",
@@ -5147,8 +5201,8 @@
           "target": "components/charts/heatmap-calendar.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "heatmap-calendar-emerald",
@@ -5174,8 +5228,8 @@
           "target": "components/charts/heatmap-calendar-emerald.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "heatmap-matrix",
@@ -5201,8 +5255,8 @@
           "target": "components/charts/heatmap-matrix.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "heatmap-matrix-values",
@@ -5228,8 +5282,852 @@
           "target": "components/charts/heatmap-matrix-values.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "bundle-size-treemap",
+      "type": "registry:chart",
+      "title": "Bundle Size Treemap",
+      "description": "Client JS bundle weight by package group — flat Treemap, metric scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/bundle-size-treemap.tsx",
+          "type": "registry:component",
+          "target": "components/charts/bundle-size-treemap.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "simple-treemap",
+      "type": "registry:chart",
+      "title": "Simple Treemap",
+      "description": "Flat module-size treemap (classic baseline) — metric scrubber, RTL-aware.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/simple-treemap.tsx",
+          "type": "registry:component",
+          "target": "components/charts/simple-treemap.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "custom-content-treemap",
+      "type": "registry:chart",
+      "title": "Custom Content Treemap",
+      "description": "Custom Treemap content — group fill, rank, and label; leaf strokes; metric scrubber.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/custom-content-treemap.tsx",
+          "type": "registry:component",
+          "target": "components/charts/custom-content-treemap.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "nested-treemap",
+      "type": "registry:chart",
+      "title": "Nested Treemap",
+      "description": "Nest drill-down treemap with breadcrumb — click groups to zoom; metric scrubber.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/nested-treemap.tsx",
+          "type": "registry:component",
+          "target": "components/charts/nested-treemap.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "treemap-with-padding-and-gaps",
+      "type": "registry:chart",
+      "title": "Treemap With Padding And Gaps",
+      "description": "Flat treemap teaching nodeInset + nodeGap — same data as Simple, metric scrubber.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/treemap-with-padding-and-gaps.tsx",
+          "type": "registry:component",
+          "target": "components/charts/treemap-with-padding-and-gaps.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "treemap-content",
+      "type": "registry:chart",
+      "title": "Treemap Content",
+      "description": "Treemap content as a React element (cloneElement) — centered leaf labels, metric scrubber.",
+      "dependencies": [
+        "recharts"
+      ],
+      "registryDependencies": [
+        "chart",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#1e3a8a",
+          "chart-2": "#ea580c",
+          "chart-3": "#f59e0b",
+          "chart-4": "#6366f1",
+          "chart-5": "#e11d48"
+        },
+        "dark": {
+          "chart-1": "#3b82f6",
+          "chart-2": "#f97316",
+          "chart-3": "#fbbf24",
+          "chart-4": "#818cf8",
+          "chart-5": "#fb7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/treemap-content.tsx",
+          "type": "registry:component",
+          "target": "components/charts/treemap-content.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "gauge-default",
+      "type": "registry:chart",
+      "title": "Gauge Default",
+      "description": "Vivid traffic gauge (emerald / amber / rose) — light/dark pairs, English metric header.",
+      "dependencies": [
+        "react-gauge-chart",
+        "lodash"
+      ],
+      "registryDependencies": [
+        "gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#10B981",
+          "chart-2": "#F59E0B",
+          "chart-3": "#F43F5E"
+        },
+        "dark": {
+          "chart-1": "#34D399",
+          "chart-2": "#FBBF24",
+          "chart-3": "#FB7185"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/gauge-default.tsx",
+          "type": "registry:component",
+          "target": "components/charts/gauge-default.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "gauge-levels",
+      "type": "registry:chart",
+      "title": "Gauge Levels",
+      "description": "20 soft traffic bands with needle at 86% — fixed stage, English metric header.",
+      "dependencies": [
+        "react-gauge-chart",
+        "lodash"
+      ],
+      "registryDependencies": [
+        "gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        },
+        "dark": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/gauge-levels.tsx",
+          "type": "registry:component",
+          "target": "components/charts/gauge-levels.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "gauge-custom-colors",
+      "type": "registry:chart",
+      "title": "Gauge Custom Colors",
+      "description": "Rose → sand gauge with thicker arc at 37% — fixed stage, English metric header.",
+      "dependencies": [
+        "react-gauge-chart",
+        "lodash"
+      ],
+      "registryDependencies": [
+        "gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#d97986",
+          "chart-2": "#c4a574"
+        },
+        "dark": {
+          "chart-1": "#d97986",
+          "chart-2": "#c4a574"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/gauge-custom-colors.tsx",
+          "type": "registry:component",
+          "target": "components/charts/gauge-custom-colors.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "gauge-corner-radius",
+      "type": "registry:chart",
+      "title": "Gauge Corner Radius",
+      "description": "Ten traffic bands with rounded corners and wider gaps — fixed stage, English metric header.",
+      "dependencies": [
+        "react-gauge-chart",
+        "lodash"
+      ],
+      "registryDependencies": [
+        "gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        },
+        "dark": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/gauge-corner-radius.tsx",
+          "type": "registry:component",
+          "target": "components/charts/gauge-corner-radius.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "gauge-custom-arcs",
+      "type": "registry:chart",
+      "title": "Gauge Custom Arcs",
+      "description": "Uneven traffic arcs (30/50/20) at 37% — fixed stage, English metric header.",
+      "dependencies": [
+        "react-gauge-chart",
+        "lodash"
+      ],
+      "registryDependencies": [
+        "gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        },
+        "dark": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/gauge-custom-arcs.tsx",
+          "type": "registry:component",
+          "target": "components/charts/gauge-custom-arcs.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "gauge-no-animation",
+      "type": "registry:chart",
+      "title": "Gauge No Animation",
+      "description": "Fifteen traffic bands at 56% with needle animation off — fixed stage, English metric header.",
+      "dependencies": [
+        "react-gauge-chart",
+        "lodash"
+      ],
+      "registryDependencies": [
+        "gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        },
+        "dark": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/gauge-no-animation.tsx",
+          "type": "registry:component",
+          "target": "components/charts/gauge-no-animation.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-default",
+      "type": "registry:chart",
+      "title": "Hc Gauge Default",
+      "description": "Highcharts dial with soft traffic plotBands — English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        },
+        "dark": {
+          "chart-1": "#6cb87a",
+          "chart-2": "#d4b45a",
+          "chart-3": "#d96b5c"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-default.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-default.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-rounded-ends",
+      "type": "registry:chart",
+      "title": "Hc Gauge Rounded Ends",
+      "description": "Highcharts dial with rounded pane and dial tips — soft blue bands, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#9bbfd4",
+          "chart-2": "#6ea1c7",
+          "chart-3": "#4a7a9a"
+        },
+        "dark": {
+          "chart-1": "#9bbfd4",
+          "chart-2": "#6ea1c7",
+          "chart-3": "#4a7a9a"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-rounded-ends.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-rounded-ends.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-thin-ring",
+      "type": "registry:chart",
+      "title": "Hc Gauge Thin Ring",
+      "description": "Highcharts thin outer ring bands — soft violet/slate, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#b8a8c8",
+          "chart-2": "#8b9dc3"
+        },
+        "dark": {
+          "chart-1": "#b8a8c8",
+          "chart-2": "#8b9dc3"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-thin-ring.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-thin-ring.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-semicircle",
+      "type": "registry:chart",
+      "title": "Hc Gauge Semicircle",
+      "description": "Highcharts half-dial speedometer — soft gold to red bands, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#d4b45a",
+          "chart-2": "#c88860",
+          "chart-3": "#d96b5c"
+        },
+        "dark": {
+          "chart-1": "#d4b45a",
+          "chart-2": "#c88860",
+          "chart-3": "#d96b5c"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-semicircle.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-semicircle.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-custom-pivot",
+      "type": "registry:chart",
+      "title": "Hc Gauge Custom Pivot",
+      "description": "Highcharts dial with large hollow pivot — soft teal bands, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#7eb8a0",
+          "chart-2": "#4a9e88"
+        },
+        "dark": {
+          "chart-1": "#7eb8a0",
+          "chart-2": "#4a9e88"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-custom-pivot.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-custom-pivot.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-combo",
+      "type": "registry:chart",
+      "title": "Hc Gauge Combo",
+      "description": "Highcharts solidgauge + dial on one value — soft teal/blue/violet, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#7eb8a0",
+          "chart-2": "#6ea1c7",
+          "chart-3": "#8b9dc3"
+        },
+        "dark": {
+          "chart-1": "#7eb8a0",
+          "chart-2": "#6ea1c7",
+          "chart-3": "#8b9dc3"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-combo.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-combo.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-fuel",
+      "type": "registry:chart",
+      "title": "Hc Gauge Fuel",
+      "description": "Highcharts semicircle fuel solidgauge — soft rose/gold/green stops, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#d96b5c",
+          "chart-2": "#d4b45a",
+          "chart-3": "#6cb87a"
+        },
+        "dark": {
+          "chart-1": "#d96b5c",
+          "chart-2": "#d4b45a",
+          "chart-3": "#6cb87a"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-fuel.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-fuel.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-activity",
+      "type": "registry:chart",
+      "title": "Hc Gauge Activity",
+      "description": "Highcharts 360° activity ring — soft pink→rose gradient, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#c86b8f",
+          "chart-2": "#d97986"
+        },
+        "dark": {
+          "chart-1": "#c86b8f",
+          "chart-2": "#d97986"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-activity.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-activity.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-kpi",
+      "type": "registry:chart",
+      "title": "Hc Gauge Kpi",
+      "description": "Highcharts triple nested KPI rings — Conversion/Engagement/Retention, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#5aa8d4",
+          "chart-2": "#6b66b8",
+          "chart-3": "#5cb88a"
+        },
+        "dark": {
+          "chart-1": "#5aa8d4",
+          "chart-2": "#6b66b8",
+          "chart-3": "#5cb88a"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-kpi.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-kpi.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-rounded-bands",
+      "type": "registry:chart",
+      "title": "Hc Gauge Rounded Bands",
+      "description": "Highcharts dial with individually rounded plotBands — soft blue scale, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#a8c4d8",
+          "chart-2": "#6ea1c7",
+          "chart-3": "#8b9dc3"
+        },
+        "dark": {
+          "chart-1": "#a8c4d8",
+          "chart-2": "#6ea1c7",
+          "chart-3": "#8b9dc3"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-rounded-bands.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-rounded-bands.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-threshold",
+      "type": "registry:chart",
+      "title": "Hc Gauge Threshold",
+      "description": "Highcharts solidgauge with zero threshold — red below / green above, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#d96b5c",
+          "chart-2": "#6cb87a"
+        },
+        "dark": {
+          "chart-1": "#d96b5c",
+          "chart-2": "#6cb87a"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-threshold.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-threshold.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
+    },
+    {
+      "name": "hc-gauge-custom-dial",
+      "type": "registry:chart",
+      "title": "Hc Gauge Custom Dial",
+      "description": "Highcharts solidgauge arc with circular dot dial — soft blue accent, English metric header.",
+      "dependencies": [
+        "highcharts",
+        "highcharts-react-official"
+      ],
+      "registryDependencies": [
+        "hc-gauge-shared",
+        "chart-styles"
+      ],
+      "cssVars": {
+        "light": {
+          "chart-1": "#5aa8d4"
+        },
+        "dark": {
+          "chart-1": "#5aa8d4"
+        }
+      },
+      "files": [
+        {
+          "path": "components/charts/hc-gauge-custom-dial.tsx",
+          "type": "registry:component",
+          "target": "components/charts/hc-gauge-custom-dial.tsx"
+        }
+      ],
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stacked-bar-chart",
@@ -5260,8 +6158,8 @@
           "target": "components/charts/stacked-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "box-plot",
@@ -5292,8 +6190,8 @@
           "target": "components/charts/box-plot.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "waterfall",
@@ -5328,8 +6226,8 @@
           "target": "components/charts/waterfall.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "mix-bar-chart",
@@ -5362,8 +6260,8 @@
           "target": "components/charts/mix-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "positive-and-negative-bar-chart",
@@ -5396,8 +6294,8 @@
           "target": "components/charts/positive-and-negative-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-chart-with-customized-event",
@@ -5430,8 +6328,8 @@
           "target": "components/charts/bar-chart-with-customized-event.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-chart-has-background",
@@ -5462,8 +6360,8 @@
           "target": "components/charts/bar-chart-has-background.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "ranged-stacked-bar-chart",
@@ -5496,8 +6394,8 @@
           "target": "components/charts/ranged-stacked-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "tiny-bar-chart",
@@ -5526,8 +6424,8 @@
           "target": "components/charts/tiny-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-active",
@@ -5564,8 +6462,8 @@
           "target": "components/charts/bar-active.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "population-pyramid",
@@ -5596,8 +6494,8 @@
           "target": "components/charts/population-pyramid.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "timeline",
@@ -5628,8 +6526,8 @@
           "target": "components/charts/timeline.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "animated-bar-width",
@@ -5660,8 +6558,8 @@
           "target": "components/charts/animated-bar-width.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "animated-bar-time-series",
@@ -5692,8 +6590,8 @@
           "target": "components/charts/animated-bar-time-series.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "custom-shape-bar-chart",
@@ -5730,8 +6628,8 @@
           "target": "components/charts/custom-shape-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "brush-bar-chart",
@@ -5762,8 +6660,8 @@
           "target": "components/charts/brush-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "biaxial-bar-chart",
@@ -5794,8 +6692,8 @@
           "target": "components/charts/biaxial-bar-chart.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-chart-with-label-background",
@@ -5826,8 +6724,8 @@
           "target": "components/charts/bar-chart-with-label-background.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-chart-range",
@@ -5858,8 +6756,8 @@
           "target": "components/charts/bar-chart-range.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "stacked-bar-chart-with-horizontal-line",
@@ -5892,8 +6790,8 @@
           "target": "components/charts/stacked-bar-chart-with-horizontal-line.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-default",
@@ -5924,8 +6822,8 @@
           "target": "components/charts/bar-default.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-multiple",
@@ -5956,8 +6854,8 @@
           "target": "components/charts/bar-multiple.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-stacked",
@@ -5988,8 +6886,8 @@
           "target": "components/charts/bar-stacked.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-label",
@@ -6020,8 +6918,8 @@
           "target": "components/charts/bar-label.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-label-custom",
@@ -6052,8 +6950,8 @@
           "target": "components/charts/bar-label-custom.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-interactive",
@@ -6084,8 +6982,8 @@
           "target": "components/charts/bar-interactive.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-horizontal",
@@ -6116,8 +7014,8 @@
           "target": "components/charts/bar-horizontal.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-mixed",
@@ -6154,8 +7052,8 @@
           "target": "components/charts/bar-mixed.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     },
     {
       "name": "bar-negative",
@@ -6192,8 +7090,8 @@
           "target": "components/charts/bar-negative.tsx"
         }
       ],
-      "version": "0.1.0+faa4ab01f844",
-      "generatedAt": "2026-10-23T22:43:09.677Z"
+      "version": "0.1.0+f3b1cde80695",
+      "generatedAt": "2026-10-24T00:02:33.074Z"
     }
   ]
 }

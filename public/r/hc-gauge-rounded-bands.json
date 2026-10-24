@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hc-gauge-rounded-bands",
+  "type": "registry:chart",
+  "title": "Hc Gauge Rounded Bands",
+  "description": "Highcharts dial with individually rounded plotBands — soft blue scale, English metric header.",
+  "dependencies": [
+    "highcharts",
+    "highcharts-react-official"
+  ],
+  "registryDependencies": [
+    "hc-gauge-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#a8c4d8",
+      "chart-2": "#6ea1c7",
+      "chart-3": "#8b9dc3"
+    },
+    "dark": {
+      "chart-1": "#a8c4d8",
+      "chart-2": "#6ea1c7",
+      "chart-3": "#8b9dc3"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/hc-gauge-rounded-bands.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport type { Options } from \"highcharts\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport {\n  ChartHighchartsGauge,\n  hcNum,\n  hcTooltipValue,\n} from \"./_lib/hc-gauge-shared\"\nimport { useChartDir } from \"./_lib/use-chart-dir\"\n\n/**\n * Hc Gauge Rounded Bands — dial with individually rounded plotBands.\n * Soft blue band scale; locked header chrome; English / Intl.\n * Spec: `registry/charts/PORT.md`\n * Installs to: components/charts/hc-gauge-rounded-bands.tsx\n */\n\nexport type HcGaugeRoundedBandsProps = {\n  title?: string\n  subtitle?: string\n  /** Needle value 0–100. Default 55. */\n  value?: number\n  className?: string\n}\n\nconst DEMO_VALUE = 55\n\nconst BANDS = [\n  { from: 0, to: 50, color: \"#a8c4d8\", label: \"0–50\" },\n  { from: 50, to: 75, color: \"#6ea1c7\", label: \"50–75\" },\n  { from: 75, to: 100, color: \"#8b9dc3\", label: \"75–100\" },\n] as const\n\nfunction buildOptions(value: number): Options {\n  return {\n    chart: { type: \"gauge\" },\n    pane: {\n      startAngle: -150,\n      endAngle: 150,\n      background: undefined,\n      borderRadius: \"25%\",\n    },\n    yAxis: {\n      min: 0,\n      max: 100,\n      plotBands: BANDS.map(({ from, to, color }) => ({\n        from,\n        to,\n        color,\n        borderWidth: 1,\n        borderColor: \"var(--background)\",\n        borderRadius: { radius: 4, scope: \"individual\", where: \"all\" },\n      })),\n    },\n    series: [\n      {\n        type: \"gauge\",\n        name: \"Score\",\n        data: [value],\n        tooltip: {\n          pointFormatter() {\n            return `<span style=\"font-size:0.9em\">${this.series.name}</span><br/><b>${hcTooltipValue(this.y ?? 0, \" of 100\")}</b>`\n          },\n        },\n        dataLabels: {\n          formatter() {\n            return hcNum(this.y ?? 0)\n          },\n        },\n      },\n    ],\n  }\n}\n\nfunction HcGaugeRoundedBands({\n  title = \"Rounded bands\",\n  subtitle = \"Dial with individually rounded plot bands — soft blue scale.\",\n  value = DEMO_VALUE,\n  className,\n}: HcGaugeRoundedBandsProps) {\n  const { ref } = useChartDir()\n  const locale = \"en\"\n  const metric = hcNum(value, locale)\n  const options = React.useMemo(() => buildOptions(value), [value])\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        \"mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6\",\n        className\n      )}\n    >\n      <header className=\"flex flex-col gap-4\">\n        <div className=\"space-y-1\">\n          <h3 className=\"text-xl font-bold tracking-tight text-foreground sm:text-2xl\">\n            {title}\n          </h3>\n          <p className=\"text-sm text-muted-foreground\">{subtitle}</p>\n        </div>\n\n        <div className=\"space-y-1\">\n          <div className=\"flex flex-wrap items-baseline gap-2\">\n            <p\n              className=\"text-[2rem] font-semibold leading-9 tracking-tight text-foreground\"\n              aria-hidden\n            >\n              {metric}\n            </p>\n            <span className=\"text-xs text-muted-foreground\">of 100</span>\n          </div>\n          <p className=\"text-xs text-muted-foreground\">Score</p>\n        </div>\n      </header>\n\n      <div\n        role=\"img\"\n        aria-label={`Gauge chart, ${title}, ${metric} of 100`}\n        className=\"touch-pan-y rounded-lg\"\n      >\n        <ChartHighchartsGauge options={options} />\n      </div>\n\n      <ul className=\"mx-auto flex max-w-[420px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground\">\n        {BANDS.map((band) => (\n          <li key={band.label} className=\"inline-flex items-center gap-1.5\">\n            <span\n              className=\"size-2 shrink-0 rounded-full\"\n              style={{ backgroundColor: band.color }}\n              aria-hidden\n            />\n            <span>{band.label}</span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  )\n}\n\nexport default function HcGaugeRoundedBandsDemo(\n  props: HcGaugeRoundedBandsProps\n) {\n  return <HcGaugeRoundedBands {...props} />\n}\n\nexport { HcGaugeRoundedBands }\n",
+      "target": "components/charts/hc-gauge-rounded-bands.tsx"
+    }
+  ],
+  "version": "0.1.0+f3b1cde80695",
+  "generatedAt": "2026-10-24T00:02:33.074Z"
+}

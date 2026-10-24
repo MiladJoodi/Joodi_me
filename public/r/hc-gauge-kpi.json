@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hc-gauge-kpi",
+  "type": "registry:chart",
+  "title": "Hc Gauge Kpi",
+  "description": "Highcharts triple nested KPI rings — Conversion/Engagement/Retention, English metric header.",
+  "dependencies": [
+    "highcharts",
+    "highcharts-react-official"
+  ],
+  "registryDependencies": [
+    "hc-gauge-shared",
+    "chart-styles"
+  ],
+  "cssVars": {
+    "light": {
+      "chart-1": "#5aa8d4",
+      "chart-2": "#6b66b8",
+      "chart-3": "#5cb88a"
+    },
+    "dark": {
+      "chart-1": "#5aa8d4",
+      "chart-2": "#6b66b8",
+      "chart-3": "#5cb88a"
+    }
+  },
+  "files": [
+    {
+      "path": "components/charts/hc-gauge-kpi.tsx",
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport type { Options } from \"highcharts\"\n\nimport { cn } from \"@/lib/utils\"\n\nimport {\n  ChartHighchartsGauge,\n  HC_COLOR_0,\n  HC_COLOR_1,\n  HC_COLOR_2,\n  hcNum,\n  hcTooltipValue,\n} from \"./_lib/hc-gauge-shared\"\nimport { useChartDir } from \"./_lib/use-chart-dir\"\n\n/**\n * Hc Gauge Kpi — three nested solidgauge KPI rings.\n * Soft Highcharts blues / violet / green; locked header chrome; English / Intl.\n * Spec: `registry/charts/PORT.md`\n * Installs to: components/charts/hc-gauge-kpi.tsx\n */\n\nexport type HcGaugeKpiRing = {\n  name: string\n  value: number\n  color: string\n  outerRadius: string\n  innerRadius: string\n  track: string\n}\n\nexport type HcGaugeKpiProps = {\n  title?: string\n  subtitle?: string\n  rings?: HcGaugeKpiRing[]\n  className?: string\n}\n\nconst DEMO_RINGS: HcGaugeKpiRing[] = [\n  {\n    name: \"Conversion\",\n    value: 82,\n    color: HC_COLOR_0,\n    outerRadius: \"100%\",\n    innerRadius: \"78%\",\n    track: \"rgba(44, 175, 254, 0.25)\",\n  },\n  {\n    name: \"Engagement\",\n    value: 59,\n    color: HC_COLOR_1,\n    outerRadius: \"77%\",\n    innerRadius: \"56%\",\n    track: \"rgba(84, 79, 197, 0.25)\",\n  },\n  {\n    name: \"Retention\",\n    value: 71,\n    color: HC_COLOR_2,\n    outerRadius: \"55%\",\n    innerRadius: \"34%\",\n    track: \"rgba(0, 226, 114, 0.25)\",\n  },\n]\n\nfunction buildOptions(rings: HcGaugeKpiRing[]): Options {\n  return {\n    chart: { type: \"solidgauge\" },\n    tooltip: {\n      pointFormatter() {\n        return `<span style=\"color:${this.color};font-weight:bold\">${this.series.name}: ${hcTooltipValue(this.y ?? 0, \"%\")}</span>`\n      },\n    },\n    pane: {\n      startAngle: 0,\n      endAngle: 360,\n      margin: 0,\n      background: rings.map((ring) => ({\n        outerRadius: ring.outerRadius,\n        innerRadius: ring.innerRadius,\n        backgroundColor: ring.track,\n        borderWidth: 0,\n      })),\n    },\n    yAxis: { min: 0, max: 100, lineWidth: 0, tickPositions: [] },\n    plotOptions: {\n      solidgauge: {\n        dataLabels: { enabled: false },\n        linecap: \"round\",\n        stickyTracking: false,\n        rounded: true,\n      },\n    },\n    series: rings.map((ring) => ({\n      type: \"solidgauge\" as const,\n      name: ring.name,\n      radius: ring.outerRadius,\n      innerRadius: ring.innerRadius,\n      data: [{ color: ring.color, y: ring.value }],\n    })),\n  }\n}\n\nfunction HcGaugeKpi({\n  title = \"KPI rings\",\n  subtitle = \"Three nested solid gauges — Conversion, Engagement, Retention.\",\n  rings = DEMO_RINGS,\n  className,\n}: HcGaugeKpiProps) {\n  const { ref } = useChartDir()\n  const locale = \"en\"\n  const primary = rings[0]\n  const metric = primary\n    ? `${hcNum(primary.value, locale)}%`\n    : \"—\"\n  const options = React.useMemo(() => buildOptions(rings), [rings])\n\n  return (\n    <div\n      ref={ref}\n      className={cn(\n        \"mx-auto flex w-full min-w-0 max-w-[640px] flex-col gap-5 font-sans tabular-nums sm:gap-6\",\n        className\n      )}\n    >\n      <header className=\"flex flex-col gap-4\">\n        <div className=\"space-y-1\">\n          <h3 className=\"text-xl font-bold tracking-tight text-foreground sm:text-2xl\">\n            {title}\n          </h3>\n          <p className=\"text-sm text-muted-foreground\">{subtitle}</p>\n        </div>\n\n        <div className=\"space-y-1\">\n          <div className=\"flex flex-wrap items-baseline gap-2\">\n            <p\n              className=\"text-[2rem] font-semibold leading-9 tracking-tight text-foreground\"\n              aria-hidden\n            >\n              {metric}\n            </p>\n            <span className=\"text-xs text-muted-foreground\">\n              {primary?.name ?? \"KPI\"}\n            </span>\n          </div>\n          <p className=\"text-xs text-muted-foreground\">Outer ring</p>\n        </div>\n      </header>\n\n      <div\n        role=\"img\"\n        aria-label={`KPI gauge, ${rings.map((r) => `${r.name} ${r.value}%`).join(\", \")}`}\n        className=\"touch-pan-y rounded-lg\"\n      >\n        <ChartHighchartsGauge options={options} height={320} />\n      </div>\n\n      <ul className=\"mx-auto flex max-w-[420px] flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground\">\n        {rings.map((ring) => (\n          <li key={ring.name} className=\"inline-flex items-center gap-1.5\">\n            <span\n              className=\"size-2 shrink-0 rounded-full\"\n              style={{ backgroundColor: ring.color }}\n              aria-hidden\n            />\n            <span>\n              {ring.name} · {hcNum(ring.value, locale)}%\n            </span>\n          </li>\n        ))}\n      </ul>\n    </div>\n  )\n}\n\nexport default function HcGaugeKpiDemo(props: HcGaugeKpiProps) {\n  return <HcGaugeKpi {...props} />\n}\n\nexport { HcGaugeKpi }\n",
+      "target": "components/charts/hc-gauge-kpi.tsx"
+    }
+  ],
+  "version": "0.1.0+f3b1cde80695",
+  "generatedAt": "2026-10-24T00:02:33.074Z"
+}

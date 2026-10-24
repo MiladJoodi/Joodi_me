@@ -1169,6 +1169,11 @@ export const registryItems = [
         type: "registry:lib",
         target: "components/charts/_lib/pie-tooltip.tsx",
       },
+      {
+        path: "registry/charts/_lib/treemap-tooltip.tsx",
+        type: "registry:lib",
+        target: "components/charts/_lib/treemap-tooltip.tsx",
+      },
     ],
   },
   {
@@ -1199,6 +1204,44 @@ export const registryItems = [
         path: "registry/charts/_lib/heatmap-shared.tsx",
         type: "registry:lib",
         target: "components/charts/_lib/heatmap-shared.tsx",
+      },
+    ],
+  },
+  {
+    name: "gauge-shared",
+    type: "registry:lib",
+    title: "Gauge shared",
+    description:
+      "react-gauge-chart helpers — fixed stage, soft traffic ramp, English percent labels.",
+    // lodash: peer of react-gauge-chart (undeclared) — required for lodash/isEqual
+    dependencies: ["react-gauge-chart", "lodash"],
+    registryDependencies: ["chart-styles"],
+    files: [
+      {
+        path: "registry/charts/_lib/gauge-shared.tsx",
+        type: "registry:lib",
+        target: "components/charts/_lib/gauge-shared.tsx",
+      },
+      {
+        path: "registry/charts/_lib/react-gauge-chart.d.ts",
+        type: "registry:lib",
+        target: "components/charts/_lib/react-gauge-chart.d.ts",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-shared",
+    type: "registry:lib",
+    title: "Hc Gauge shared",
+    description:
+      "Highcharts gauge / solidgauge helpers — soft dial chrome, English labels, client mount.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["chart-styles"],
+    files: [
+      {
+        path: "registry/charts/_lib/hc-gauge-shared.tsx",
+        type: "registry:lib",
+        target: "components/charts/_lib/hc-gauge-shared.tsx",
       },
     ],
   },
@@ -4280,6 +4323,688 @@ export const registryItems = [
         path: "registry/charts/heatmap/heatmap-matrix-values.tsx",
         type: "registry:component",
         target: "components/charts/heatmap-matrix-values.tsx",
+      },
+    ],
+  },
+  {
+    name: "bundle-size-treemap",
+    type: "registry:chart",
+    title: "Bundle Size Treemap",
+    description:
+      "Client JS bundle weight by package group — flat Treemap, metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/treemap/bundle-size-treemap.tsx",
+        type: "registry:component",
+        target: "components/charts/bundle-size-treemap.tsx",
+      },
+    ],
+  },
+  {
+    name: "simple-treemap",
+    type: "registry:chart",
+    title: "Simple Treemap",
+    description:
+      "Flat module-size treemap (classic baseline) — metric scrubber, RTL-aware.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/treemap/simple-treemap.tsx",
+        type: "registry:component",
+        target: "components/charts/simple-treemap.tsx",
+      },
+    ],
+  },
+  {
+    name: "custom-content-treemap",
+    type: "registry:chart",
+    title: "Custom Content Treemap",
+    description:
+      "Custom Treemap content — group fill, rank, and label; leaf strokes; metric scrubber.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/treemap/custom-content-treemap.tsx",
+        type: "registry:component",
+        target: "components/charts/custom-content-treemap.tsx",
+      },
+    ],
+  },
+  {
+    name: "nested-treemap",
+    type: "registry:chart",
+    title: "Nested Treemap",
+    description:
+      "Nest drill-down treemap with breadcrumb — click groups to zoom; metric scrubber.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/treemap/nested-treemap.tsx",
+        type: "registry:component",
+        target: "components/charts/nested-treemap.tsx",
+      },
+    ],
+  },
+  {
+    name: "treemap-with-padding-and-gaps",
+    type: "registry:chart",
+    title: "Treemap With Padding And Gaps",
+    description:
+      "Flat treemap teaching nodeInset + nodeGap — same data as Simple, metric scrubber.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/treemap/treemap-with-padding-and-gaps.tsx",
+        type: "registry:component",
+        target: "components/charts/treemap-with-padding-and-gaps.tsx",
+      },
+    ],
+  },
+  {
+    name: "treemap-content",
+    type: "registry:chart",
+    title: "Treemap Content",
+    description:
+      "Treemap content as a React element (cloneElement) — centered leaf labels, metric scrubber.",
+    dependencies: ["recharts"],
+    registryDependencies: ["chart", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#1e3a8a",
+        "chart-2": "#ea580c",
+        "chart-3": "#f59e0b",
+        "chart-4": "#6366f1",
+        "chart-5": "#e11d48",
+      },
+      dark: {
+        "chart-1": "#3b82f6",
+        "chart-2": "#f97316",
+        "chart-3": "#fbbf24",
+        "chart-4": "#818cf8",
+        "chart-5": "#fb7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/treemap/treemap-content.tsx",
+        type: "registry:component",
+        target: "components/charts/treemap-content.tsx",
+      },
+    ],
+  },
+  {
+    name: "gauge-default",
+    type: "registry:chart",
+    title: "Gauge Default",
+    description:
+      "Vivid traffic gauge (emerald / amber / rose) — light/dark pairs, English metric header.",
+    dependencies: ["react-gauge-chart", "lodash"],
+    registryDependencies: ["gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#10B981",
+        "chart-2": "#F59E0B",
+        "chart-3": "#F43F5E",
+      },
+      dark: {
+        "chart-1": "#34D399",
+        "chart-2": "#FBBF24",
+        "chart-3": "#FB7185",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/gauge-default.tsx",
+        type: "registry:component",
+        target: "components/charts/gauge-default.tsx",
+      },
+    ],
+  },
+  {
+    name: "gauge-levels",
+    type: "registry:chart",
+    title: "Gauge Levels",
+    description:
+      "20 soft traffic bands with needle at 86% — fixed stage, English metric header.",
+    dependencies: ["react-gauge-chart", "lodash"],
+    registryDependencies: ["gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+      dark: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/gauge-levels.tsx",
+        type: "registry:component",
+        target: "components/charts/gauge-levels.tsx",
+      },
+    ],
+  },
+  {
+    name: "gauge-custom-colors",
+    type: "registry:chart",
+    title: "Gauge Custom Colors",
+    description:
+      "Rose → sand gauge with thicker arc at 37% — fixed stage, English metric header.",
+    dependencies: ["react-gauge-chart", "lodash"],
+    registryDependencies: ["gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#d97986",
+        "chart-2": "#c4a574",
+      },
+      dark: {
+        "chart-1": "#d97986",
+        "chart-2": "#c4a574",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/gauge-custom-colors.tsx",
+        type: "registry:component",
+        target: "components/charts/gauge-custom-colors.tsx",
+      },
+    ],
+  },
+  {
+    name: "gauge-corner-radius",
+    type: "registry:chart",
+    title: "Gauge Corner Radius",
+    description:
+      "Ten traffic bands with rounded corners and wider gaps — fixed stage, English metric header.",
+    dependencies: ["react-gauge-chart", "lodash"],
+    registryDependencies: ["gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+      dark: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/gauge-corner-radius.tsx",
+        type: "registry:component",
+        target: "components/charts/gauge-corner-radius.tsx",
+      },
+    ],
+  },
+  {
+    name: "gauge-custom-arcs",
+    type: "registry:chart",
+    title: "Gauge Custom Arcs",
+    description:
+      "Uneven traffic arcs (30/50/20) at 37% — fixed stage, English metric header.",
+    dependencies: ["react-gauge-chart", "lodash"],
+    registryDependencies: ["gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+      dark: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/gauge-custom-arcs.tsx",
+        type: "registry:component",
+        target: "components/charts/gauge-custom-arcs.tsx",
+      },
+    ],
+  },
+  {
+    name: "gauge-no-animation",
+    type: "registry:chart",
+    title: "Gauge No Animation",
+    description:
+      "Fifteen traffic bands at 56% with needle animation off — fixed stage, English metric header.",
+    dependencies: ["react-gauge-chart", "lodash"],
+    registryDependencies: ["gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+      dark: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/gauge-no-animation.tsx",
+        type: "registry:component",
+        target: "components/charts/gauge-no-animation.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-default",
+    type: "registry:chart",
+    title: "Hc Gauge Default",
+    description:
+      "Highcharts dial with soft traffic plotBands — English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+      dark: {
+        "chart-1": "#6cb87a",
+        "chart-2": "#d4b45a",
+        "chart-3": "#d96b5c",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-default.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-default.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-rounded-ends",
+    type: "registry:chart",
+    title: "Hc Gauge Rounded Ends",
+    description:
+      "Highcharts dial with rounded pane and dial tips — soft blue bands, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#9bbfd4",
+        "chart-2": "#6ea1c7",
+        "chart-3": "#4a7a9a",
+      },
+      dark: {
+        "chart-1": "#9bbfd4",
+        "chart-2": "#6ea1c7",
+        "chart-3": "#4a7a9a",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-rounded-ends.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-rounded-ends.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-thin-ring",
+    type: "registry:chart",
+    title: "Hc Gauge Thin Ring",
+    description:
+      "Highcharts thin outer ring bands — soft violet/slate, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#b8a8c8",
+        "chart-2": "#8b9dc3",
+      },
+      dark: {
+        "chart-1": "#b8a8c8",
+        "chart-2": "#8b9dc3",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-thin-ring.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-thin-ring.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-semicircle",
+    type: "registry:chart",
+    title: "Hc Gauge Semicircle",
+    description:
+      "Highcharts half-dial speedometer — soft gold to red bands, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#d4b45a",
+        "chart-2": "#c88860",
+        "chart-3": "#d96b5c",
+      },
+      dark: {
+        "chart-1": "#d4b45a",
+        "chart-2": "#c88860",
+        "chart-3": "#d96b5c",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-semicircle.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-semicircle.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-custom-pivot",
+    type: "registry:chart",
+    title: "Hc Gauge Custom Pivot",
+    description:
+      "Highcharts dial with large hollow pivot — soft teal bands, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#7eb8a0",
+        "chart-2": "#4a9e88",
+      },
+      dark: {
+        "chart-1": "#7eb8a0",
+        "chart-2": "#4a9e88",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-custom-pivot.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-custom-pivot.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-combo",
+    type: "registry:chart",
+    title: "Hc Gauge Combo",
+    description:
+      "Highcharts solidgauge + dial on one value — soft teal/blue/violet, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#7eb8a0",
+        "chart-2": "#6ea1c7",
+        "chart-3": "#8b9dc3",
+      },
+      dark: {
+        "chart-1": "#7eb8a0",
+        "chart-2": "#6ea1c7",
+        "chart-3": "#8b9dc3",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-combo.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-combo.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-fuel",
+    type: "registry:chart",
+    title: "Hc Gauge Fuel",
+    description:
+      "Highcharts semicircle fuel solidgauge — soft rose/gold/green stops, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#d96b5c",
+        "chart-2": "#d4b45a",
+        "chart-3": "#6cb87a",
+      },
+      dark: {
+        "chart-1": "#d96b5c",
+        "chart-2": "#d4b45a",
+        "chart-3": "#6cb87a",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-fuel.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-fuel.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-activity",
+    type: "registry:chart",
+    title: "Hc Gauge Activity",
+    description:
+      "Highcharts 360° activity ring — soft pink→rose gradient, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#c86b8f",
+        "chart-2": "#d97986",
+      },
+      dark: {
+        "chart-1": "#c86b8f",
+        "chart-2": "#d97986",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-activity.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-activity.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-kpi",
+    type: "registry:chart",
+    title: "Hc Gauge Kpi",
+    description:
+      "Highcharts triple nested KPI rings — Conversion/Engagement/Retention, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#5aa8d4",
+        "chart-2": "#6b66b8",
+        "chart-3": "#5cb88a",
+      },
+      dark: {
+        "chart-1": "#5aa8d4",
+        "chart-2": "#6b66b8",
+        "chart-3": "#5cb88a",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-kpi.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-kpi.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-rounded-bands",
+    type: "registry:chart",
+    title: "Hc Gauge Rounded Bands",
+    description:
+      "Highcharts dial with individually rounded plotBands — soft blue scale, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#a8c4d8",
+        "chart-2": "#6ea1c7",
+        "chart-3": "#8b9dc3",
+      },
+      dark: {
+        "chart-1": "#a8c4d8",
+        "chart-2": "#6ea1c7",
+        "chart-3": "#8b9dc3",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-rounded-bands.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-rounded-bands.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-threshold",
+    type: "registry:chart",
+    title: "Hc Gauge Threshold",
+    description:
+      "Highcharts solidgauge with zero threshold — red below / green above, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#d96b5c",
+        "chart-2": "#6cb87a",
+      },
+      dark: {
+        "chart-1": "#d96b5c",
+        "chart-2": "#6cb87a",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-threshold.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-threshold.tsx",
+      },
+    ],
+  },
+  {
+    name: "hc-gauge-custom-dial",
+    type: "registry:chart",
+    title: "Hc Gauge Custom Dial",
+    description:
+      "Highcharts solidgauge arc with circular dot dial — soft blue accent, English metric header.",
+    dependencies: ["highcharts", "highcharts-react-official"],
+    registryDependencies: ["hc-gauge-shared", "chart-styles"],
+    cssVars: {
+      light: {
+        "chart-1": "#5aa8d4",
+      },
+      dark: {
+        "chart-1": "#5aa8d4",
+      },
+    },
+    files: [
+      {
+        path: "registry/charts/gauge/hc-gauge-custom-dial.tsx",
+        type: "registry:component",
+        target: "components/charts/hc-gauge-custom-dial.tsx",
       },
     ],
   },
